@@ -43,16 +43,15 @@ function MyApp({Component, pageProps}) {
             networkId,
             subscriptions: {
                 wallet: wallet => {
-                    console.log("change")
+                    if (!wallet) return
                         const web3 = new Web3(wallet.provider)
                         dispatch(dispatchWeb3forUser(web3))
                 },
                 network: networkId => {
-                    console.log(networkId)
-                    if (networkId !== 1) {
+                    if (networkId !== 1 && networkId !== undefined) {
                             toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Mainnet`, {
                                 position: "bottom-right",
-                                autoClose: 5000,
+                                autoClose: 3000,
                                 hideProgressBar: false,
                                 closeOnClick: true,
                                 pauseOnHover: true,
@@ -61,11 +60,15 @@ function MyApp({Component, pageProps}) {
                             });
                             // dispatch(disconnectWallet())
                     }
+                    if (networkId === undefined) {
+                        toast.info("Disconnect", {autoClose: 1000, position: "bottom-center"})
+                    }
 
                 },
                 address: address => {
                     console.log(address)
                     if (address != currentWalletAddress) {
+                        if (!address) return
                         dispatch(changeWalletAddress(address))
                         toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`)
                     }

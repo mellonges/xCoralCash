@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days" />
+    <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/invite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/persons/[token].js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/portfolio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/prices/categories/[category].js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/prices/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account/wallet.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/account/TopPanel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/networkName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/services.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/signer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/initOnboard.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +62,17 @@
       <recent name="$PROJECT_DIR$/redux/reducers/asyncActions" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -54,6 +86,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -79,7 +112,7 @@
       <workItem from="1635252641290" duration="4081000" />
       <workItem from="1635260745623" duration="3079000" />
       <workItem from="1635268383265" duration="2216000" />
-      <workItem from="1635270727662" duration="3881000" />
+      <workItem from="1635270727662" duration="6742000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>
