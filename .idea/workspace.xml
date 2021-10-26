@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/invite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/persons/[token].js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/portfolio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/prices/categories/[category].js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/prices/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account/wallet.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/account/TopPanel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/networkName.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/services.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/signer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/initOnboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/futures/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/futures/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +19,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pages/_app.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/redux/Store.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pages/dashboard/index.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/redux/reducers/rootReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/redux/reducers/asyncActions/repairConnect.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Navbar/Navbar.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/functions/getNetworkName.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zx7jxcfeSI1k1sk3dpQJ89sEdw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -113,6 +106,8 @@
       <workItem from="1635260745623" duration="3079000" />
       <workItem from="1635268383265" duration="2216000" />
       <workItem from="1635270727662" duration="6742000" />
+      <workItem from="1635281165047" duration="766000" />
+      <workItem from="1635281993838" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>
