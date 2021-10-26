@@ -1,0 +1,87 @@
+@import "../../variables.scss";
+.searchItem {
+  padding: 18px 22px;
+  text-decoration: none !important;
+  transition: opacity linear 0.1s;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none !important;
+    border: none !important;
+  }
+
+  .tokenImage {
+    width: 50px;
+    height: 50px;
+
+    background: #c4c4c4;
+    border-radius: 19.2308px;
+    object-fit: cover;
+    margin-right: 13px;
+  }
+  .tokenFullName {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 109.3%;
+    /* or 16px */
+
+    text-transform: capitalize;
+
+    /* Fonts / Dark */
+
+    color: $darkBlue;
+  }
+  .tokenTicker {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 109.3%;
+    /* or 15px */
+
+    text-transform: capitalize;
+
+    /* Fonts / Gray 2 */
+
+    color: $grey2;
+  }
+  .tokenPrice {
+    .currentPrice {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 109.3%;
+      /* or 16px */
+
+      text-transform: capitalize;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+    }
+    .changePercent {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      margin-left: 27px;
+      line-height: 109.3%;
+      text-transform: capitalize;
+
+      &.positive {
+        color: $bgGreenDark;
+      }
+      &.negative {
+        color: $redLight;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .searchItem {
+    padding: 15px 15px;
+    .tokenFullName {
+      font-size: 14px;
+      width: 25%;
+    }
+    .tokenTicker {
+      font-style: 13px;
+    }
+  }
+}

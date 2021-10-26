@@ -1,0 +1,146 @@
+.StatusModal {
+  .iconBlock {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .icon {
+      margin-bottom: 14px;
+    }
+    .title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+  }
+  &.success {
+    .iconBlock {
+      .title {
+        color: #00aac0;
+      }
+    }
+    .confirmInfo {
+      width: 100%;
+      margin-top: 8px;
+      .row {
+        margin-top: 21px;
+        .label {
+          font-size: 14px;
+          line-height: 18px;
+          /* identical to box height */
+
+          color: #697f8a;
+        }
+        .value {
+          font-size: 14px;
+          line-height: 18px;
+          /* identical to box height */
+
+          text-align: right;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+          display: flex;
+          align-items: center;
+        }
+        .cardLogo {
+          margin-right: 23px;
+        }
+      }
+    }
+    .previewBtn {
+      width: 100%;
+      min-height: 60px;
+      background: #00aac0;
+      border-radius: 4.14664px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      color: #ffffff;
+      margin-top: 19px;
+      margin-top: 33px;
+    }
+    .bottomInfo {
+      font-size: 13px;
+      line-height: 124%;
+      /* or 16px */
+
+      /* Fonts / Gray 1 */
+
+      color: #678086;
+
+      padding: 28px 39px;
+      margin-top: 38px;
+      margin-left: -29px;
+      margin-right: -29px;
+      background: #f2f6f9;
+      margin-bottom: -31px;
+      border-radius: 2px 2px 6px 6px;
+    }
+  }
+
+  &.error {
+margin-top: 30px;
+height: 100%;
+
+    .iconBlock {
+      .title {
+        color: #ff4d4d;
+      }
+    }
+    .descr {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+      color: #11343f;
+      margin-bottom: 23px;
+    }
+    .errorCode {
+      background: #f8f8f9;
+      border-radius: 4px;
+      padding: 19px 20px;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+
+      color: #11343f;
+    }
+
+    .startOver {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      /* BG / Green Dark */
+      margin-top: 23px;
+
+      .icon {
+        margin: 0;
+        margin-right: 20px;
+      }
+      &:hover {
+        .icon path {
+          fill: #fff !important;
+        }
+      }
+    }
+  }
+}

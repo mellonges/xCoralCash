@@ -1,0 +1,413 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Asul:wght@700&display=swap");
+
+* {
+  -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-MediumItalic.eot");
+  src: local("Google Sans Medium Italic"), local("GoogleSans-MediumItalic"),
+    url("/fonts/GoogleSans-MediumItalic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/GoogleSans-MediumItalic.woff2") format("woff2"),
+    url("/fonts/GoogleSans-MediumItalic.woff") format("woff"),
+    url("/fonts/GoogleSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-Bold.eot");
+  src: local("Google Sans Bold"), local("GoogleSans-Bold"),
+    url("/fonts/GoogleSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/GoogleSans-Bold.woff2") format("woff2"),
+    url("/fonts/GoogleSans-Bold.woff") format("woff"),
+    url("/fonts/GoogleSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-Italic.eot");
+  src: local("Google Sans Italic"), local("GoogleSans-Italic"),
+    url("/fonts/GoogleSans-Italic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/GoogleSans-Italic.woff2") format("woff2"),
+    url("/fonts/GoogleSans-Italic.woff") format("woff"),
+    url("/fonts/GoogleSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-Medium.eot");
+  src: local("Google Sans Medium"), local("GoogleSans-Medium"),
+    url("/fonts/GoogleSans-Medium.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/GoogleSans-Medium.woff2") format("woff2"),
+    url("/fonts/GoogleSans-Medium.woff") format("woff"),
+    url("/fonts/GoogleSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-Regular.eot");
+  src: local("Google Sans Regular"), local("GoogleSans-Regular"),
+    url("/fonts/GoogleSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/GoogleSans-Regular.woff2") format("woff2"),
+    url("/fonts/GoogleSans-Regular.woff") format("woff"),
+    url("/fonts/GoogleSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-BoldItalic.eot");
+  src: local("Google Sans Bold Italic"), local("GoogleSans-BoldItalic"),
+    url("/fonts/GoogleSans-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/GoogleSans-BoldItalic.woff2") format("woff2"),
+    url("/fonts/GoogleSans-BoldItalic.woff") format("woff"),
+    url("/fonts/GoogleSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+body {
+  background: $bgWhite;
+  font-family: "Google Sans", sans-serif;
+}
+
+body {
+  overflow-y: scroll;
+}
+.modal-open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  #__next {
+    overflow-y: hidden !important;
+  }
+}
+
+.modal {
+  will-change: display;
+}
+
+.modal-dialog {
+  will-change: transform;
+}
+.modal-body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.locked {
+  overflow-y: hidden;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  -webkit-overflow-scrolling: auto;
+}
+.ScrollbarsCustom-Content {
+  height: 100%;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.btn-primary {
+  border: none;
+  outline: none;
+
+  &:active,
+  &:focus {
+    outline: none !important;
+    border: none !important;
+  }
+}
+.backDrop-left-mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1001;
+  background: rgba(10, 10, 11, 0.67);
+}
+.btn.btn-secondary {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  /* BG / Green Dark */
+
+  transition: background-color ease-in-out 0.1s;
+  color: $bgGreenDark;
+  background: $white;
+  border: 1px solid $bgGreenDark;
+  padding: 11px 19px;
+
+  &:hover {
+    color: $white;
+    background: $bgGreenDark;
+  }
+
+  &:focus,
+  &:active {
+    background: $bgDark !important;
+    box-shadow: none !important;
+  }
+}
+a {
+  color: $bgGreenDark;
+
+  &:hover {
+    color: $bgDark;
+    text-decoration: none;
+  }
+}
+.lazyload-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#__next,
+.wrapper,
+body,
+html {
+  height: unset;
+  min-height: 100vh;
+}
+
+.locked #__next {
+  overflow-y: hidden !important;
+}
+.wrapper {
+  background-color: #fdfdfd;
+}
+.left-side-account {
+  .ScrollbarsCustom-Track {
+    opacity: 0;
+    transition: opacity ease-in-out 0.3s;
+  }
+
+  &:hover {
+    .ScrollbarsCustom-Track {
+      opacity: 1;
+    }
+  }
+}
+.form-control:focus,
+.form-control:focus {
+  box-shadow: none !important;
+  border: 1px solid $bgGreenDark !important;
+}
+.form-control {
+  height: auto;
+  line-height: 20px;
+}
+.btn-primary {
+  background: #009fb5;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  border: none !important;
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+
+  &:focus,
+  &:active,
+  &:hover,
+  &:disabled {
+    background-color: #1599aa !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  background: #ffffff;
+  border: 1px solid #a1bbca;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.custom-selection-list {
+  .custom-select-field__control,
+  .custom-select-field__value-container {
+    background: transparent;
+    box-shadow: none !important;
+  }
+  .custom-select-field__indicator-separator {
+    display: none;
+  }
+  .custom-select-field__indicator,
+  .custom-select-field__value-container {
+    padding: 0;
+  }
+  .custom-select-field__placeholder {
+    margin: 0;
+    color: #6d757d;
+    font-size: 16px;
+    height: auto;
+    line-height: 20px;
+  }
+}
+
+.sign-up-select {
+  .custom-select-field__control {
+    padding: 8px 15px;
+    background: $white;
+    border: 1px solid #d4dada;
+
+    &.custom-select-field__control--is-focused {
+      border-color: $bgGreenDark;
+    }
+  }
+  &.invalid {
+    .custom-select-field__control {
+      border: 1px solid #ff3838;
+    }
+  }
+}
+body .pricesPageSortMobile {
+  &__control {
+    background: #f0f6fa;
+    border-radius: 4px;
+    border: none;
+    text-transform: capitalize;
+  }
+  &__indicator-separator {
+    display: none;
+  }
+}
+.chartjs-render-monitor {
+  width: 100% !important;
+}
+
+.tooltip-trigger {
+  margin-left: 10px;
+}
+body .modal-dialog {
+  max-width: 673px;
+
+  .modal-content {
+    background: #ffffff;
+    box-shadow: 0px 24.2185px 39.4673px rgba(0, 47, 67, 0.21);
+    border-radius: 6px;
+
+    .modal-header {
+      padding: 30px 29px 10px;
+      border-bottom: none;
+      position: relative;
+      border-bottom: 1px solid #ebf2f7;
+    }
+    .closeBtn {
+      position: absolute;
+      right: -40px;
+      top: 0px;
+      cursor: pointer;
+
+      &:hover {
+        svg path {
+          fill: $bgGreenDark;
+        }
+      }
+    }
+    .modal-body {
+      padding: 0;
+      padding-left: 29px;
+      padding-right: 29px;
+    }
+  }
+}
+.tooltip {
+  .tooltip-inner {
+    background: rgba($color: #03212e, $alpha: 0.97);
+    box-shadow: none;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 125.6%;
+    /* or 16px */
+
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+    padding: 20px 17px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .modal-backdrop {
+    background: rgba(3, 33, 46, 1);
+
+    &.show {
+      opacity: 0.88;
+    }
+  }
+  body .modal-dialog {
+    display: block !important;
+    margin: 0 !important;
+    min-width: 100% !important;
+    height: calc(100vh - 46px) !important;
+    margin-top: 46px !important;
+    min-height: unset;
+
+    .modal-content {
+      height: auto;
+      min-height: 100%;
+
+      .closeBtn {
+        top: -39px;
+        right: 19px;
+      }
+
+      .modal-body {
+        padding-left: 19px;
+        padding-right: 19px;
+      }
+      .modal-header {
+        padding-top: 16px;
+        padding-left: 19px;
+        padding-right: 19px;
+      }
+    }
+  }
+}
+
+.bn-onboard-custom .bn-onboard-modal-content{
+  color: $bgGreenDark;
+}
+
+.bn-onboard-custom.bn-onboard-modal { z-index: 99; }
+
+

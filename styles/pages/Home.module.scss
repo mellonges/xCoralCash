@@ -1,0 +1,1096 @@
+@import "../variables.scss";
+
+.introSection {
+  background: #00405b url("/images/Union.svg") no-repeat;
+
+  background-position: center right;
+  background-size: 52% auto;
+  min-width: 320px;
+  min-height: 722px;
+
+  .introSectionContent {
+    padding-top: 40px;
+    padding-bottom: 21px;
+    .title {
+      font-weight: bold;
+      font-size: 52px;
+      line-height: 96.3%;
+      /* or 65px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: $bgGreenLight;
+      font-family: $Asul;
+
+      span {
+        display: block;
+        color: $white;
+      }
+    }
+    .description {
+      font-size: 18px;
+      line-height: 136.2%;
+      /* or 27px */
+
+      color: $white;
+      margin-top: 21px;
+      font-weight: 400;
+      margin-bottom: 58px;
+    }
+
+    .coinCards {
+      justify-content: center;
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      .coinCard {
+        border: none;
+        top: 0;
+        border-radius: 6.28746px;
+        overflow: hidden;
+        width: 268.79px;
+        height: 380.29px;
+        position: relative;
+        margin-right: -268px;
+        flex: 0 0 auto;
+        display: flex;
+        z-index: 2;
+        box-shadow: 31.0948px 70.7006px 30.0655px rgba(0, 0, 0, 0.46);
+
+        &:last-child {
+          z-index: 1;
+          box-shadow: 31.0948px 76.7006px 87.0655px rgba(0, 0, 0, 0.26);
+          margin-right: 0;
+        }
+
+        .coinCardBg {
+          position: absolute;
+          z-index: 1;
+          height: 100%;
+          padding: 21px;
+          width: 100%;
+          top: 0;
+          left: 0;
+          background: linear-gradient(
+            0deg,
+            #008b93 2.82%,
+            rgba(1, 57, 60, 0.0885417) 49.89%,
+            rgba(1, 50, 52, 0) 100%
+          );
+          display: flex;
+          flex-direction: column;
+        }
+        .cardImage {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          background-color: #008b93;
+        }
+        .cardPrice {
+          margin-left: auto;
+          text-align: right;
+
+          .cardCurrentPrice {
+            font-weight: 500;
+            font-size: 17.0234px;
+            line-height: 22px;
+            /* identical to box height */
+
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            display: block;
+          }
+          .cardPriceChanged {
+            color: #ffffff;
+
+            opacity: 0.5;
+            font-weight: 500;
+            font-size: 13.7041px;
+            line-height: 17px;
+            letter-spacing: -0.02em;
+
+            &.positive {
+              color: $bgGreenLight;
+            }
+            &.negative {
+              color: $redLight;
+            }
+          }
+        }
+        .cardInformation {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: auto;
+
+          .category {
+            font-weight: bold;
+            font-size: 13.3608px;
+            line-height: 142.8%;
+            /* or 19px */
+
+            text-align: center;
+            letter-spacing: 0.21em;
+
+            color: #ffbf5f;
+          }
+          .coinTitle {
+            font-size: 32.499px;
+            line-height: 84.3%;
+            /* or 45px */
+
+            text-align: center;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+
+            color: $white;
+            font-family: $Asul;
+            margin-top: 19px;
+            margin-bottom: 20px;
+          }
+          .cardDescription {
+            font-weight: 500;
+            font-size: 12.5749px;
+            line-height: 126.8%;
+            /* or 16px */
+
+            text-align: center;
+
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.homePage {
+  overflow-x: hidden;
+}
+.howWorks {
+  padding: 137px 0 87px;
+  background: $bgLight url("/images/Group 1390.svg") no-repeat center top;
+  background-size: cover;
+  width: 100%;
+  margin-top: 20px;
+  min-width: 320px;
+
+  .blockTitle {
+    font-size: 30px;
+    line-height: 109.3%;
+    /* or 49px */
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: #11343f;
+
+    font-family: $Asul;
+  }
+  .items {
+    margin-top: 31px;
+    height: auto;
+
+    .icon {
+      background: #fdfeff;
+      height: 41px;
+      width: 41px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 30px;
+      flex: 0 0 auto;
+    }
+
+    .Info {
+      strong {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 152.8%;
+        /* identical to box height, or 37px */
+
+        color: $darkBlue;
+        margin-bottom: 12.4px;
+      }
+      span {
+        font-size: 15px;
+        line-height: 146.8%;
+        /* or 26px */
+
+        /* Fonts / Gray 1 */
+
+        color: #678086;
+      }
+    }
+  }
+}
+.BuySellBlock {
+  padding-top: 61px;
+  background: url("/images/Vector 4.svg") no-repeat;
+  background-position: top 8% right;
+  background-size: 57% auto;
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+
+  .title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 109.3%;
+    /* or 66px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $darkBlue;
+
+    font-family: $Asul;
+
+    span {
+      display: block;
+      color: $bgGreenDark;
+    }
+  }
+
+  .textBlock {
+    .text {
+      font-size: 16px;
+      line-height: 157.8%;
+      /* or 33px */
+      color: $darkBlue;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    .iconItem {
+      margin-bottom: 32px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .Icon {
+        margin-right: 24px;
+        /* BG / Green Dark */
+
+        background: $bgGreenDark;
+        border-radius: 50%;
+        width: 45.26px;
+        height: 45.26px;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .info {
+        font-size: 16px;
+        line-height: 128.8%;
+        /* or 22px */
+        color: #6d858b;
+
+        span {
+          display: block;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 163.8%;
+          /* or 39px */
+
+          color: $darkBlue;
+        }
+      }
+    }
+  }
+  .imageWrapper {
+    padding-left: 10%;
+  }
+  .image {
+    box-shadow: 0px 47.8539px 54.4389px rgba(0, 0, 0, 0.05);
+    max-height: 626px;
+    max-width: 100%;
+  }
+}
+.tradeAssets {
+  padding: 10px 0 73px;
+  background: #f0f6fa;
+  background-position: top 84px right;
+  background-size: 57% auto;
+  min-width: 320px;
+  overflow-y: hidden;
+
+  .title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 109.3%;
+    /* or 66px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $darkBlue;
+
+    font-family: $Asul;
+
+    span {
+      display: block;
+      color: $bgGreenDark;
+    }
+  }
+
+  .textBlock {
+    margin-top: 73px;
+    .text {
+      font-size: 16px;
+      line-height: 157%;
+      /* or 33px */
+      color: $darkBlue;
+      margin-top: 35px;
+      margin-bottom: 40px;
+    }
+    .iconItem {
+      margin-bottom: 47px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .Icon {
+        margin-right: 23px;
+        /* BG / Green Dark */
+
+        background: $bgGreenDark;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .info {
+        font-size: 16px;
+        line-height: 128.8%;
+        /* or 22px */
+        color: #6d858b;
+
+        span {
+          display: block;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 163.8%;
+          /* or 39px */
+
+          color: $darkBlue;
+        }
+      }
+    }
+  }
+  .imageBlockWrapper {
+    overflow-y: visible;
+  }
+  .imageBlock {
+    background: url("/images/Group 1413.svg") no-repeat;
+    width: 100%;
+    min-height: 485px;
+    background-size: 89%;
+    position: relative;
+
+    .twitterBlock {
+      background: url("/images/Group 1681.svg") no-repeat;
+      width: 100%;
+      height: 311.64px;
+      position: absolute;
+      bottom: -25%;
+      right: -19%;
+      font-weight: bold;
+      font-family: $Asul;
+      font-size: 14.838px;
+      line-height: 122.3%;
+      background-size: 78%;
+      /* or 23px */
+      padding: 94px 197px 0px 89px;
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      /* BG / Dark */
+
+      color: $bgDark;
+
+      a {
+        color: #02a2ff;
+      }
+    }
+  }
+}
+.thousandsOfPeople {
+  padding: 62px 0 68px;
+
+  background: #e4eff4 url("/images/Group 1306.svg") no-repeat;
+  background-position: top 75px left;
+  background-size: 54% auto;
+
+  .title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 109.3%;
+    /* or 66px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $darkBlue;
+
+    font-family: $Asul;
+
+    span {
+      display: block;
+      color: $bgGreenDark;
+    }
+  }
+
+  .textBlock {
+    padding-left: 40px;
+
+    .text {
+      font-size: 16px;
+      line-height: 152.8%;
+      /* or 33px */
+      color: $darkBlue;
+      margin-top: 35px;
+      margin-bottom: 40px;
+    }
+    .iconItem {
+      margin-bottom: 47px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .Icon {
+        margin-right: 35px;
+        /* BG / Green Dark */
+
+        background: $bgGreenDark;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .info {
+        font-size: 17px;
+        line-height: 128.8%;
+        /* or 22px */
+        color: #6d858b;
+
+        span {
+          display: block;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 163.8%;
+          /* or 39px */
+
+          color: $darkBlue;
+        }
+      }
+    }
+  }
+  .infoItem {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 152.8%;
+    /* identical to box height, or 32px */
+
+    /* BG / Dark */
+
+    color: #003d56;
+    .icon {
+      margin-right: 7px;
+      width: 29px;
+    }
+    .point {
+      margin-bottom: 11px;
+    }
+  }
+  .infoItem:first-child {
+    margin-right: 66px;
+  }
+  .submitPerson {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+    padding: 22px 39px;
+    background: $bgGreenDark;
+    margin-top: 48px;
+
+    &:hover {
+      background: #1599aa;
+    }
+  }
+}
+.buildPortfolio {
+  background: linear-gradient(180deg, #fafdff 0%, #f3f9fc 100%);
+
+  min-width: 320px;
+  position: relative;
+
+  .blockTitle {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 109.3%;
+    /* or 66px */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $bgDark;
+    font-family: $Asul;
+    max-width: 811px;
+    display: block;
+    margin: 0 auto;
+
+    span {
+      display: block;
+      color: $bgGreenDark;
+    }
+  }
+  .bg {
+    background: url("/images/Group 1682.svg") no-repeat;
+    padding: 89px 0 72px;
+    background-position: center left 121px;
+    background-size: 100% auto;
+    height: 100%;
+    width: 100%;
+  }
+  .text {
+    max-width: 447px;
+    text-align: center;
+    margin: 68px auto 0;
+    font-size: 16px;
+    line-height: 140.8%;
+    /* or 37px */
+
+    text-align: center;
+
+    /* BG / Dark */
+
+    color: #003d56;
+
+    strong {
+      display: block;
+      font-size: 22px;
+      line-height: 148.8%;
+      /* identical to box height, or 52px */
+
+      text-align: center;
+
+      /* BG / Dark */
+      margin-bottom: 9px;
+      color: #003d56;
+    }
+  }
+}
+.confidenceBlock {
+  background: $bgLight;
+  padding: 85px 0 71px;
+  min-width: 320px;
+
+  .blockTitle {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 109.3%;
+    /* or 66px */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $bgDark;
+    font-family: $Asul;
+    max-width: 811px;
+    display: block;
+    margin: 0 auto;
+
+    span {
+      color: $bgGreenDark;
+    }
+  }
+  .description {
+    margin-top: 11px;
+    font-size: 16px;
+    line-height: 163.8%;
+    /* or 39px */
+
+    text-align: center;
+
+    color: #11343f;
+  }
+  .items {
+    margin-top: 38px;
+
+    .item {
+      height: 100%;
+      padding: 0 30px;
+      .Icon {
+        width: auto;
+        align-self: center;
+        max-height: 100%;
+      }
+      .iconWrapper {
+        height: 124px;
+        text-align: center;
+      }
+      .title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 152.8%;
+        /* identical to box height, or 49px */
+
+        text-align: center;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+        margin-top: 14px;
+      }
+      .description {
+        font-size: 16px;
+        line-height: 156.8%;
+        /* or 30px */
+
+        text-align: center;
+
+        /* Fonts / Gray 1 */
+
+        color: #678086;
+        margin-top: 7px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .tradeAssets {
+    padding-bottom: 0;
+    .imageBlock {
+      .twitterBlock {
+        padding: 82px 156px 0px 76px;
+        bottom: -16%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .BuySellBlock {
+    background-image: none;
+    padding-top: 80px;
+
+    .imageWrapper {
+      width: 100%;
+      margin-top: 60px;
+      padding-left: 0;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .tradeAssets {
+    background-image: none;
+    padding-bottom: 160px;
+    overflow-y: hidden;
+
+    .row {
+      overflow: visible;
+    }
+    .textBlock {
+      margin-top: 53px;
+    }
+    .imageBlockWrapper {
+      background: url("/images/Vector 5.svg") no-repeat;
+
+      background-size: 100%;
+      background-position: center;
+    }
+    .imageBlock {
+      margin-top: 60px;
+      background-size: 80%;
+      background-position: center;
+
+      .twitterBlock {
+        max-width: 437px;
+        background-size: cover;
+        right: unset;
+        left: 50%;
+        bottom: -37%;
+        transform: translateX(-50%);
+        padding: 109px 55px 0 93px;
+      }
+    }
+  }
+  .thousandsOfPeople {
+    padding-top: 85px;
+    padding-bottom: 85px;
+
+    .title {
+      margin-top: 80px;
+      padding-right: 0;
+    }
+    .textBlock {
+      text-align: center;
+      padding-left: 0;
+      .points {
+        justify-content: center;
+      }
+    }
+  }
+  .buildPortfolio {
+  }
+  .introSection {
+    min-height: 681px;
+    .introSectionContent {
+      .coinCards {
+        .coinCard {
+          width: 206.79px;
+          height: 321.29px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .introSection {
+    background-position: top 83px right;
+    background-size: 85%;
+    min-height: auto;
+    .introSectionContent {
+      padding-top: 20px;
+      padding-bottom: 68px;
+
+      .coinCards {
+        height: 247px;
+        .coinCard {
+          width: 170.27px;
+          height: 240.91px;
+
+          &:first-child {
+            margin-right: -172px;
+          }
+
+          .coinCardBg {
+            padding: 12px 13px;
+          }
+          .cardPrice {
+            text-align: right;
+            line-height: 1;
+            .cardCurrentPrice {
+              font-size: 10.7841px;
+              line-height: 14px;
+            }
+            .cardPriceChanged {
+              font-size: 8.68138px;
+              line-height: 11px;
+            }
+          }
+          .cardInformation {
+            .category {
+              font-size: 7.42042px;
+              line-height: 142.8%;
+              /* or 11px */
+
+              text-align: center;
+              letter-spacing: 0.21em;
+            }
+            .coinTitle {
+              margin-top: 10px;
+              font-size: 29.7125px;
+              line-height: 84.3%;
+            }
+          }
+        }
+      }
+      .title {
+        margin-top: 48px;
+        font-size: 39.3882px;
+
+        text-align: center;
+        letter-spacing: -0.03em;
+        position: relative;
+        z-index: 3;
+        margin-bottom: 30px;
+        span {
+          display: block;
+        }
+      }
+      .description {
+        display: none;
+      }
+    }
+    .sectionRow {
+      flex-direction: column-reverse;
+    }
+  }
+  .howWorks {
+    background: #f0f6fa;
+    margin-top: 76px;
+    padding-top: 64px;
+    padding-bottom: 41px;
+
+    .blockTitle {
+      font-size: 30px;
+      line-height: 109.3%;
+    }
+    .items {
+      display: block !important;
+      .item {
+        margin-bottom: 20px;
+      }
+      .Info {
+        strong {
+          font-size: 20px;
+          line-height: 152.8%;
+          margin-bottom: 5px;
+        }
+        span {
+          font-size: 15px;
+          line-height: 130.8%;
+        }
+      }
+    }
+  }
+  .BuySellBlock {
+    padding-top: 74px;
+    background-size: 100% auto;
+    padding-bottom: 58px;
+    background-position: top 40px center;
+
+    background-image: url("/images/Vector 4.svg");
+    .buySellRow {
+      flex-direction: column-reverse;
+
+      .imageWrapper {
+        margin-bottom: 51px;
+        margin-top: 0px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        .image {
+          height: auto;
+        }
+      }
+      .title {
+        padding-right: 0;
+        font-size: 30px;
+        line-height: 109.3%;
+        text-align: center;
+      }
+      .text {
+        font-size: 16px;
+        line-height: 157.8%;
+
+        text-align: center;
+        padding: 0 15px;
+        margin-top: 19px;
+        margin-bottom: 34px;
+      }
+      .iconItem {
+        padding: 0 20px;
+        .Icon {
+          width: 40px;
+          height: 40px;
+          padding: 12px;
+          margin-right: 17px;
+        }
+
+        .info {
+          font-size: 15px;
+          line-height: 128.8%;
+          span {
+            font-weight: 500;
+            font-size: 19px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  .tradeAssets {
+    padding-top: 20px;
+    padding-bottom: 81px;
+    .tradeAssetsRow {
+      flex-direction: column-reverse;
+
+      .imageBlock {
+        margin-top: 0;
+        background-position: cover;
+        height: 354px;
+        min-height: auto;
+      }
+
+      .twitterBlock {
+        height: auto;
+        background-image: url("/images/Group 1684.svg");
+        max-width: 407px;
+        font-size: 11.9736px;
+        line-height: 122.3%;
+        padding: 109px 80px 86px 80px;
+        max-width: 389px;
+        bottom: -30%;
+
+        .postText {
+          transform: rotate(-4.57deg);
+        }
+      }
+      .textBlock {
+        margin-top: 134px;
+      }
+      .title {
+        font-size: 30px;
+        line-height: 109.3%;
+        text-align: center;
+        padding-right: 0;
+
+        span {
+          display: block;
+        }
+        br {
+          display: none;
+        }
+      }
+      .text {
+        font-size: 16px;
+        text-align: center;
+        line-height: 157.8%;
+        margin-top: 15px;
+        margin-bottom: 30px;
+      }
+      .iconItem {
+        padding: 0 20px;
+        .Icon {
+          width: 40px;
+          height: 40px;
+          padding: 12px;
+          margin-right: 17px;
+        }
+
+        .info {
+          font-size: 15px;
+          line-height: 128.8%;
+          span {
+            font-weight: 500;
+            font-size: 19px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  .thousandsOfPeople {
+    background-size: 100%;
+    background-position: top 20px center;
+    padding: 46px;
+    padding-bottom: 80px;
+
+    .title {
+      margin-top: 55px;
+      font-size: 30px;
+      line-height: 109.3%;
+    }
+    .textBlock {
+      .text {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 157.8%;
+        margin-bottom: 28px;
+      }
+      .infoItem {
+        font-weight: 500;
+        font-size: 16.371px;
+        margin-right: 0 !important;
+        width: 50%;
+
+        .icon {
+          width: 22px;
+
+          svg {
+            width: 22px;
+          }
+        }
+      }
+    }
+    .submitPerson {
+      margin-top: 46px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .buildPortfolio {
+    .bg {
+      padding-top: 72px;
+      padding-bottom: 60px;
+      background-image: none;
+
+      .blockTitle {
+        font-size: 30px;
+        line-height: 118.3%;
+        span {
+          display: block;
+        }
+      }
+      .text {
+        margin-top: 48px;
+        padding: 0 30px;
+        font-size: 16px;
+        line-height: 147.8%;
+        strong {
+          font-size: 23px;
+          line-height: 98.8%;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+  .confidenceBlock {
+    padding: 55px 0 105px;
+
+    .blockTitle {
+      font-size: 30px;
+      line-height: 118.3%;
+      span {
+        display: block;
+      }
+
+      & + .description {
+        display: none;
+      }
+    }
+
+    .items {
+      margin-top: 37px;
+
+      .item {
+        margin-bottom: 20px;
+        .iconWrapper {
+          height: auto;
+        }
+        .title {
+          font-size: 23px;
+          line-height: 152.8%;
+          margin-top: 5px;
+        }
+        .description {
+          margin-top: 8px;
+          font-size: 16px;
+          line-height: 147.8%;
+        }
+      }
+    }
+  }
+}

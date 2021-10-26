@@ -1,0 +1,322 @@
+@import "../../variables.scss";
+
+.notFoundText {
+  margin-top: 74px;
+  margin-bottom: 10rem;
+  .Icon {
+    width: 80.88px;
+    height: 80.88px;
+
+    background: #eaf1f5;
+    border-radius: 33.3457px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    font-family: $Asul;
+
+    font-weight: bold;
+    font-size: 30.4391px;
+    line-height: 109.3%;
+    /* identical to box height, or 33px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: #678086;
+    margin-top: 30px;
+    margin-bottom: 18px;
+  }
+  .descr {
+    font-size: 17.3938px;
+    line-height: 143.8%;
+    /* or 25px */
+
+    max-width: 442.67px;
+    text-align: center;
+
+    color: #678086;
+    margin-bottom: 37px;
+  }
+  .requestBtn {
+    padding: 15.5px 45px;
+  }
+}
+.tokensListTable {
+  width: 100%;
+
+  .divTableRow {
+    width: 100%;
+
+    &:hover {
+      background-color: $grey3;
+    }
+  }
+
+  .heading {
+    background: #f0f6fa;
+    border-radius: 5px;
+
+    .headingText {
+      font-weight: 500;
+      font-size: 12.0736px;
+      line-height: 15px;
+      /* identical to box height */
+
+      text-transform: uppercase;
+      vertical-align: middle;
+      /* Fonts / Gray 1 */
+
+      color: #678086;
+      padding: 12px 23px 12px;
+      border: none;
+
+      .sortArrow {
+        margin-left: 10px;
+
+        svg {
+          margin-bottom: 3px;
+        }
+        &.arrowAsc {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+  }
+  .tableBody {
+    width: 100%;
+  }
+  .tokenItem {
+    border-bottom: 1px solid #ecf2f4;
+    cursor: pointer;
+    .divTableCol {
+      padding: 17px 23px;
+      vertical-align: middle;
+    }
+    .tokenName {
+      .tokenNameInner {
+        display: flex;
+        align-items: center;
+        .Image {
+          width: 56px;
+          height: 56px;
+          margin-right: 16px;
+          background: #c4c4c4;
+          border-radius: 21.56px;
+        }
+        .tokenTitle {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 109.3%;
+          /* or 15px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+          /* or 17px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          margin-right: 21px;
+        }
+        .tokenTicker {
+          font-size: 14px;
+          line-height: 109.3%;
+          /* or 15px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Gray 2 */
+
+          color: #8aaab4;
+        }
+      }
+    }
+    .Price {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 109.3%;
+      /* or 15px */
+
+      text-transform: capitalize;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+    }
+    .PercentChange {
+      .percent {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-transform: capitalize;
+
+        /* BG / Green Dark */
+
+        color: #1ab0c4;
+
+        text-transform: capitalize;
+        &.positive {
+          color: $bgGreenDark;
+        }
+        &.negative {
+          color: $redLight;
+        }
+        &.neutral {
+          color: $grey2;
+        }
+      }
+    }
+    .tokenChart {
+      .chart {
+        width: 100px;
+        height: 40px;
+      }
+    }
+    .tradeBtn {
+      .tradeButton {
+        font-weight: 500;
+        font-size: 13.7984px;
+        line-height: 18px;
+        /* identical to box height */
+
+        letter-spacing: -0.02em;
+        padding: 8.5px 22px;
+        max-width: 81px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .sortSelectWrapper {
+    position: sticky !important;
+    top: 68px;
+    background: #fdfdfd;
+    width: 100%;
+    padding: 18px 0px;
+    border-bottom: 1px solid #ecf2f4;
+
+    .sortSelect {
+      width: 140px;
+      max-width: 50%;
+    }
+  }
+
+  .tokensListMobile {
+    .tokenItem {
+      padding: 22px 0;
+
+      border-bottom: 1px solid #ecf2f4;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .titleColumn {
+        width: 60%;
+      }
+      .Image {
+        width: 63px;
+        height: 63px;
+        margin-right: 20px;
+        background: #c4c4c4;
+        border-radius: 25px;
+        margin-right: 20px;
+      }
+      .tokenTitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 109.3%;
+        /* or 17px */
+
+        font-family: $Asul;
+        text-transform: capitalize;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+        margin-right: 26px;
+      }
+      .tokenTicker {
+        font-size: 16px;
+        line-height: 109.3%;
+        /* or 17px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Gray 2 */
+
+        color: $grey2;
+        margin-top: 8px;
+      }
+
+      .tokenChart {
+        margin-right: auto;
+        .chart {
+          width: 76px;
+          height: 25px;
+        }
+      }
+      .priceContainer {
+        margin-left: 16px;
+
+        .Price {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 109.3%;
+          /* or 17px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+        }
+        .percent {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 109.3%;
+          display: inline-block;
+
+          /* or 17px */
+
+          text-transform: capitalize;
+          &.positive {
+            color: $bgGreenDark;
+          }
+          &.negative {
+            color: $redLight;
+          }
+          &.neutral {
+            color: $grey2;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .tokensListMobile {
+    .tokenItem {
+      padding: 13px 0;
+
+      .priceContainer {
+        margin-left: auto;
+      }
+
+      .Image {
+        width: 47px;
+        height: 47px;
+        border-radius: 18.0769px;
+        margin-right: 12px;
+      }
+    }
+  }
+}

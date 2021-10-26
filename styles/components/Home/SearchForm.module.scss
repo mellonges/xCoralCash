@@ -1,0 +1,72 @@
+@import "../../variables.scss";
+
+.searchFormWrapper {
+  width: 100%;
+  .searchForm {
+    width: 100%;
+
+    background: $white;
+    box-shadow: -1.07416px 36.5216px 58.0048px rgba(5, 2, 72, 0.11);
+    border-radius: 4.29666px;
+    padding: 14.5px 29px;
+    border: 1.5px solid transparent;
+    transition: all ease-in-out 0.3s;
+
+    &.active,
+    &:hover {
+      border: 1.5px solid $bgGreenDark;
+      box-sizing: border-box;
+      box-shadow: 0px 28px 60px rgba(0, 0, 0, 0.03);
+      box-shadow: 0px 26.52px 80px $shadowDark;
+    }
+
+    .Input {
+      background: transparent;
+      border: none;
+      font-size: 17px;
+      line-height: 22px;
+      /* identical to box height */
+      text-overflow: ellipsis;
+      color: #333;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none !important;
+      }
+    }
+    .InputIcon {
+      border: none;
+      background: $white;
+      padding: 0;
+    }
+  }
+  .searchResults {
+    background: $white;
+    border: 1px solid #edefef;
+    box-sizing: border-box;
+    box-shadow: 0px 24px 30px rgba(0, 0, 0, 0.09);
+    border-radius: 6px;
+    margin-top: 2px;
+    width: calc(100% - 30px);
+    z-index: 100;
+
+    .noResults {
+      padding: 32px;
+
+      .btnAllTokens {
+        margin: 19px 0;
+        display: block;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .searchFormWrapper {
+    padding: 0 5px;
+
+    .searchResults {
+      width: calc(100% - 40px);
+    }
+  }
+}

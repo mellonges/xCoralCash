@@ -1,0 +1,37 @@
+.Pagination {
+  display: flex;
+  justify-content: center;
+  margin: 59px 0 151px;
+
+  .paginationItem {
+    margin: 0 10px;
+    &.disabled {
+      opacity: 0.3;
+
+      a:hover {
+        background: transparent;
+      }
+    }
+    a {
+      border: none;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 116.3%;
+      /* identical to box height, or 20px */
+
+      color: #11343f;
+      padding: 13px 18px;
+      text-align: center;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    .active,
+    &:not(.disabled) a:hover {
+      background: #f0f6fa;
+      border-radius: 4px;
+    }
+  }
+}

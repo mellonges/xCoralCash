@@ -1,0 +1,207 @@
+@import "../../variables.scss";
+
+.passwordTooltipContainer {
+  .passwordTooltipWrapper {
+    padding: 12px 14px 37px 14px;
+    background: rgba(14, 25, 40, 0.98);
+    border-radius: 3.58793px;
+    .passwordTooltip {
+      text-align: left;
+      font-weight: 500;
+      font-size: 11.6608px;
+      line-height: 15px;
+
+      color: $white;
+      ul {
+        padding: 0;
+        margin: 10px 0 0 0;
+        list-style: none;
+
+        li {
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+
+          svg {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+  }
+  .passwordTooltipArrow {
+    margin-left: auto;
+    left: 50% !important;
+    margin-left: -6px;
+  }
+}
+
+.AccountSettings {
+  .pageTitle {
+    font-family: Asul;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+  }
+
+  .saveBtn,
+  .cancelBtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 39px;
+    padding-left: 21px;
+    padding-right: 21px;
+    min-width: 140px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    .icon {
+      margin-right: 7px;
+    }
+    &:hover {
+      svg path {
+        fill: $white !important;
+      }
+    }
+  }
+
+  .cancelBtn {
+    color: $bgDark;
+    border-color: #dce5ee;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent !important;
+      border-color: #dce5ee !important;
+      color: $bgDark !important;
+    }
+  }
+
+  .section {
+    position: relative;
+    margin: 30px 0 70px 0;
+    padding: 25px 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 530px;
+      height: 1px;
+      background: #ecf2f4;
+    }
+
+    .col {
+    }
+
+    .submited {
+      width: 100%;
+      text-align: center;
+      color: $linkBtnGreen;
+      font-size: 20px;
+    }
+
+    .inputRow {
+      position: relative;
+      width: 730px;
+      margin: 10px 0;
+      color: $darkBlue;
+      font-size: 14px;
+
+      .label {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        b {
+          font-weight: 500;
+        }
+      }
+
+      .semiTransparent {
+        opacity: 0.6;
+      }
+
+      .button {
+        cursor: pointer;
+        color: $linkBtnGreen;
+      }
+    }
+    .footerRow {
+      margin: 40px 0 0 0;
+    }
+  }
+
+  .Input {
+    &.invalid {
+      border: 1px solid #ff3838;
+    }
+  }
+
+  .validationError {
+    color: #ff3838;
+    font-size: 11.6608px;
+    line-height: 15px;
+    margin-top: 4px;
+
+    svg {
+      margin-right: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .AccountSettings {
+    .pageTitle {
+      font-size: 26px;
+    }
+    .section {
+      width: 100%;
+      .col {
+        margin: 5px 0;
+        padding: 0 !important;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      .inputRow {
+        width: 100% !important;
+        .label {
+          margin-bottom: 0;
+        }
+      }
+      .Input {
+        height: 44px;
+      }
+    }
+    .saveBtn,
+    .cancelBtn {
+      width: 100%;
+      margin: 0;
+    }
+    .cancelBtn {
+      margin-top: 5px;
+    }
+    .changePasswordTitle {
+      display: none;
+    }
+  }
+}

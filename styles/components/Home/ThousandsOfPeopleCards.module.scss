@@ -1,0 +1,118 @@
+@import "../../variables.scss";
+
+.Cards {
+  position: relative;
+  min-height: 530px;
+  .cardPlaceholder {
+    position: absolute;
+    width: 379.83px;
+    height: 488.61px;
+    opacity: 0.95;
+    border-radius: 9px;
+    &.first {
+      background: rgba(1, 64, 92, 0.25);
+    }
+    &.second {
+      background: rgba(1, 64, 92, 0.25);
+    }
+  }
+  .mainCard {
+    width: 359.63px;
+    height: 508.81px;
+    border-radius: 8px;
+    position: absolute;
+    overflow: hidden;
+
+    .coinCardBg {
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      padding: 21px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        0deg,
+        #008b93 2.82%,
+        rgba(1, 57, 60, 0.0885417) 49.89%,
+        rgba(1, 50, 52, 0) 100%
+      );
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cardImage {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      background-color: #008b93;
+    }
+    .cardInformation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: auto;
+
+      .category {
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 142.8%;
+        /* or 24px */
+
+        text-align: center;
+        letter-spacing: 0.21em;
+
+        color: #ffbf5f;
+      }
+      .coinTitle {
+        font-size: 32.499px;
+        line-height: 84.3%;
+        /* or 45px */
+
+        text-align: center;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+
+        color: $white;
+        font-family: $Asul;
+        margin-top: 19px;
+        margin-bottom: 20px;
+      }
+      .cardDescription {
+        font-weight: 500;
+        font-size: 12.5749px;
+        line-height: 126.8%;
+        /* or 16px */
+
+        text-align: center;
+
+        color: $white;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .Cards {
+    justify-content: center;
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Cards {
+    min-height: 340px;
+    .cardPlaceholder {
+      &.first {
+        width: 247.06px;
+        height: 317.82px;
+      }
+      &.second {
+        width: 238.8px;
+        height: 307.2px;
+      }
+    }
+    .mainCard {
+      width: 233.92px;
+      height: 330.96px;
+    }
+  }
+}

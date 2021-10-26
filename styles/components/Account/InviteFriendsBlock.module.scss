@@ -1,0 +1,142 @@
+@import "../../variables.scss";
+
+.InviteFriendBlockWrapper {
+  padding-right: 74px;
+  .InviteFriendBlock {
+    width: 100%;
+    padding: 24px 28px;
+    background: #fafcfd;
+    border: 1px solid #ddeef2;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 44px;
+
+    .IconBlock {
+      margin-right: 51px;
+      padding-left: 17px;
+    }
+
+    .col {
+      flex: 1;
+    }
+    .textBlock {
+      .title {
+        font-size: 20px;
+        line-height: 109.3%;
+        /* or 22px */
+
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        color: #11343f;
+        font-family: $Asul;
+      }
+      .descr {
+        font-size: 14px;
+        line-height: 155.3%;
+        /* or 22px */
+        margin-top: 5px;
+
+        color: #11343f;
+        margin-bottom: 17px;
+        strong {
+          color: $bgGreenDark;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+    .inviteFormWrapper {
+      .emailField {
+        border: 1px solid #d8e1e1;
+        box-sizing: border-box;
+
+        padding: 11px 23px;
+        height: 42px;
+        font-size: 16px;
+        line-height: 155.3%;
+        /* identical to box height, or 22px */
+
+        /* Fonts / Gray 1 */
+
+        color: #678086;
+        border-radius: 4px 0 0 4px;
+
+        &.invalid {
+          border: 1px solid $redLight;
+        }
+      }
+      .sendBtn {
+        height: 42px;
+        border-radius: 0 4px 4px 0 !important;
+        padding: 12px 25px;
+        font-size: 14px;
+        line-height: 18px;
+        .loadingCircleIcon {
+          width: 18px;
+          height: 18px;
+
+          circle {
+            stroke: #fff !important;
+          }
+        }
+      }
+      .validationError,
+      .successText {
+        display: block;
+        margin-top: 6px;
+        color: $redLight;
+      }
+      .successText {
+        color: $bgGreenDark;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1400px) {
+  .InviteFriendBlockWrapper {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .InviteFriendBlockWrapper {
+    position: relative;
+    .InviteFriendBlock {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start !important;
+      .IconBlock {
+        margin-bottom: 14px;
+        width: 100%;
+        margin-right: 0;
+        padding: 0;
+      }
+      .textBlock .descr {
+        margin-bottom: 22px;
+        margin-top: 8px;
+      }
+      .closeBtn {
+        position: absolute;
+        top: 29px;
+        right: 29px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .InviteFriendBlockWrapper {
+    .InviteFriendBlock {
+      .inviteFormWrapper {
+        .emailField {
+          border-radius: 4px;
+        }
+        .sendBtn {
+          width: 100%;
+          border-radius: 4px !important;
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+}

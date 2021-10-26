@@ -1,0 +1,142 @@
+@import "../../../variables.scss";
+.user {
+  .userAvatar {
+    width: 29px;
+    height: 29px;
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 16.9167px;
+    line-height: 21px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+  }
+
+  .userName {
+    font-size: 15.4062px;
+    line-height: 96.3%;
+    /* or 15px */
+
+    letter-spacing: -0.04em;
+
+    color: #ffffff;
+    .toggleIcon {
+      margin-left: 9px;
+    }
+  }
+
+  &:hover {
+    .userAvatar,
+    .userName {
+      color: $bgGreenDark;
+
+      svg path {
+        fill: $bgGreenDark !important;
+      }
+    }
+  }
+}
+.userDropdownWrapper {
+  .userDropdown {
+    background-color: #fff;
+    padding: 8px 7px;
+    background: #ffffff;
+    box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+
+    .userInfo {
+      padding: 16px 12px;
+      background: #f4f7f9;
+      border-radius: 4px;
+      min-width: 269px;
+
+      .Avatar {
+        width: 38px;
+        height: 38px;
+
+        margin-right: 11px;
+      }
+      .Info {
+        .userName {
+          display: block;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          /* identical to box height */
+
+          letter-spacing: -0.02em;
+
+          /* Fonts / Dark */
+
+          color: $dark;
+        }
+        .email {
+          font-size: 14px;
+          line-height: 18px;
+          /* identical to box height */
+
+          letter-spacing: -0.02em;
+
+          /* Fonts / Gray 1 */
+
+          color: $grey1;
+          display: block;
+        }
+        .settingBtn {
+          width: 120px;
+          margin-top: 14px;
+          display: table;
+          font-size: 13px;
+          line-height: 17px;
+          /* identical to box height */
+
+          text-align: center;
+          letter-spacing: -0.02em;
+
+          color: $white;
+          padding: 4px 12px;
+        }
+        .settingBtn + .settingBtn {
+          margin-top: 5px;
+        }
+      }
+    }
+    .devider {
+      border: none;
+      border-bottom: 1px solid #e1eaed;
+      margin: 9px 0;
+      padding: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+    }
+    .LogOut {
+      padding: 10px 21px;
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      line-height: 18px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+
+      svg {
+        margin-right: 11px;
+      }
+
+      &:hover {
+        color: $bgGreenDark;
+
+        svg path {
+          stroke: $bgGreenDark !important;
+        }
+      }
+    }
+  }
+}

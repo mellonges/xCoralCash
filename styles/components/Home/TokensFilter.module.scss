@@ -1,0 +1,300 @@
+@import "../../variables.scss";
+.tokensFilter {
+  max-width: 965px;
+  margin: -160px auto 0;
+  .navigation {
+    height: 46.6px;
+
+    .scrollBar {
+      margin: 0 auto;
+      height: 100%;
+      max-width: 670px;
+      cursor: grab;
+    }
+
+    .categoriesNav {
+      height: 46.6px;
+      width: auto;
+      white-space: nowrap;
+      text-align: center;
+      position: relative;
+      &:after {
+      }
+      ul {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: block;
+        list-style: none;
+
+        li {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 96.3%;
+          /* or 19px */
+          flex: 0 0 auto;
+          display: inline-block;
+
+          letter-spacing: -0.03em;
+          text-transform: capitalize;
+
+          opacity: 0.5;
+          padding: 13.5px 24px;
+          margin: 0 5px;
+
+          &:first-child {
+            margin-right: 30px;
+          }
+
+          &.activeCategory {
+            background: #052734;
+            border-radius: 63.7644px;
+            color: $white;
+            opacity: 1;
+          }
+
+          a {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .tokenListRow {
+    margin-left: -6.15px;
+    margin-right: -6.15px;
+  }
+  .tokensList {
+    margin-top: 25px;
+    min-height: 417px;
+    .tokenColumn {
+      padding: 0 6.15px;
+      margin-bottom: 9.7px;
+    }
+    .tokenItem {
+      width: 100%;
+      padding: 34px 25px 25px;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 4.81595px;
+      box-shadow: 0px 8.57056px 36.5404px rgba(64, 98, 98, 0.11);
+
+      &:hover {
+        background: #e7e7e7;
+        box-shadow: 0px 8.57056px 36.5404px rgba(64, 98, 98, 0.11);
+      }
+
+      .tokenImage {
+        width: 81.67px;
+        height: 81.67px;
+
+        background: #c4c4c4;
+        flex: 0 0 auto;
+        border-radius: 38.4615px;
+        margin-right: 20px;
+        display: block;
+        object-fit: cover;
+      }
+      .information {
+        position: relative;
+        width: 56%;
+        height: 100%;
+        .priceChange {
+          font-weight: 500;
+          font-size: 13.7973px;
+          line-height: 18px;
+          letter-spacing: -0.02em;
+          color: $grey1;
+          margin-bottom: 5px;
+          &.positive {
+            color: $bgGreenDark;
+          }
+          &.negative {
+            color: $redLight;
+          }
+        }
+        .ticker {
+          font-weight: 500;
+          font-size: 10.5587px;
+          line-height: 13px;
+          /* identical to box height */
+
+          letter-spacing: -0.02em;
+
+          color: $grey2;
+        }
+        .tokenName {
+          font-weight: bold;
+          font-size: 18.9346px;
+          line-height: 109.3%;
+          letter-spacing: -0.03em;
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+          margin-top: 4px;
+          margin-bottom: 9px;
+          color: $darkBlue;
+          width: 100%;
+        }
+        .tokenPrice {
+          font-size: 16.6055px;
+          line-height: 21px;
+          letter-spacing: -0.02em;
+
+          /* Fonts / Dark */
+
+          color: $darkBlue;
+        }
+        .tokenChart {
+          margin-top: 22px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  .seeAllTokensBtn {
+    max-width: 387px;
+    font-weight: 500;
+    margin-top: 49px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+
+    color: $white;
+    text-align: center;
+    justify-content: center;
+    background: #01405c;
+    border-radius: 4px;
+    padding: 16px 25px;
+    align-items: center;
+
+    .buttonIcon {
+      justify-self: flex-end;
+    }
+
+    &:hover {
+      background-color: #003349;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .tokensFilter {
+    margin-top: 27px;
+
+    .tokensListMobile {
+      margin-top: 27px;
+      margin-bottom: 30px;
+
+      .tokenColumnMobile {
+        border-top: 1px solid #ecf2f4;
+        border-bottom: 1px solid #ecf2f4;
+        padding: 14px 19px 16px;
+
+        .tokenImage {
+          background: #c4c4c4;
+          border-radius: 21.1538px;
+          height: 54px;
+          width: 54px;
+          margin-right: 13px;
+        }
+        .title {
+          font-family: $Asul;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 109.3%;
+          /* or 16px */
+
+          letter-spacing: -0.03em;
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+          margin-bottom: 4px;
+        }
+        .ticker {
+          font-size: 12px;
+          line-height: 109.3%;
+          /* or 13px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Gray 2 */
+
+          color: $grey2;
+        }
+        .tokenChart {
+          margin-left: auto;
+          width: 63px;
+          height: 18.15px;
+        }
+        .tokenPrice {
+          .price {
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 15px */
+
+            text-transform: capitalize;
+
+            /* Fonts / Dark */
+
+            color: #11343f;
+          }
+          .priceChange {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 109.3%;
+            /* or 13px */
+
+            text-transform: capitalize;
+
+            /* BG / Green Dark */
+
+            margin-top: 5px;
+            color: $grey1;
+
+            &.positive {
+              color: $bgGreenDark;
+            }
+            &.negative {
+              color: $redLight;
+            }
+          }
+        }
+      }
+    }
+    .seeAllTokensBtnWrapper {
+      margin: 0 19px;
+    }
+    .seeAllTokensBtn {
+      max-width: 100%;
+      width: auto;
+      padding: 13px 20px;
+      font-size: 15px;
+      line-height: 19px;
+      /* identical to box height */
+
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+    .navigation {
+      .categoriesNav {
+        ul {
+          li {
+            font-size: 15px;
+            &.activeCategory {
+              background: #003d56;
+
+              a {
+                color: $white;
+              }
+            }
+            a {
+              color: $darkBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

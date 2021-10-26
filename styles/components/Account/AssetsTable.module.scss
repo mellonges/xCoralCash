@@ -1,0 +1,297 @@
+@import '../../variables.scss';
+.AssetsTable {
+  border: none;
+  .heading {
+    background: #f7fafc;
+    border-radius: 4.31201px;
+    border: none;
+
+    .headCol {
+      text-transform: uppercase;
+      padding: 10px 20px;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 14px;
+      /* identical to box height */
+
+      text-transform: uppercase;
+
+      /* BG / Dark */
+      border: none;
+      color: $grey2;
+      cursor: pointer;
+
+      &.active {
+        color: #003d56;
+      }
+
+      .sortArrow {
+        margin-left: 10px;
+
+        svg {
+          margin-bottom: 3px;
+        }
+        &.arrowAsc {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+  }
+
+  .tableRow {
+    &:hover {
+      background-color: $grey3;
+    }
+  }
+  .tableCol {
+    padding: 15px 20px;
+    border-bottom: 0.862401px solid #ecf2f4;
+    border-top: none;
+    vertical-align: middle;
+
+    .Image {
+      margin-right: 14px;
+      background: #c4c4c4;
+      border-radius: 19.2308px;
+      width: 50px;
+      height: 50px;
+    }
+    .info {
+      .tokenName {
+        font-weight: 500;
+        font-size: 13.7984px;
+        line-height: 109.3%;
+        /* identical to box height, or 15px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+      }
+      .ticker {
+        font-size: 13px;
+        line-height: 109.3%;
+        /* or 14px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Gray 2 */
+
+        color: $grey2;
+      }
+    }
+    .price {
+      .count {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+        margin-bottom: 4px;
+      }
+      .totalPrice {
+        font-size: 13px;
+        line-height: 109.3%;
+        /* or 14px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Gray 2 */
+
+        color: #8aaab4;
+      }
+    }
+    .priceChange {
+      .actualPrice {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+      }
+      .changePercent {
+        display: block;
+        font-size: 13px;
+        line-height: 109.3%;
+        /* or 14px */
+
+        text-transform: capitalize;
+
+        margin-top: 3px;
+        &.positive {
+          color: $bgGreenDark;
+        }
+        &.negative {
+          color: $redLight;
+        }
+        &.neutral {
+          color: $grey1;
+        }
+      }
+    }
+  }
+  .allocation {
+    width: 90px;
+    margin-left: auto;
+    .progressBar {
+      margin-bottom: 9px;
+    }
+    .percent {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 109.3%;
+      /* or 14px */
+
+      text-transform: capitalize;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+    }
+  }
+}
+.noResults {
+  height: 307px;
+  background: #f7fafc;
+  border-radius: 3px;
+
+  .noAssetsHolder {
+    min-height: 241px;
+    background: #f7fafc;
+    border-radius: 3px;
+    .Icon {
+      background: #eaf1f5;
+      border-radius: 20.614px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+    }
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 109.3%;
+      /* identical to box height, or 20px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #678086;
+      font-family: $Asul;
+      margin-bottom: 4px;
+    }
+    .descr {
+      font-size: 14px;
+      line-height: 143.8%;
+      /* or 20px */
+
+      text-align: center;
+
+      color: #678086;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .sortSelectWrapper {
+    position: sticky !important;
+    top: 68px;
+    background: #fdfdfd;
+    width: 100%;
+    padding: 18px 0px;
+    border-bottom: 1px solid #ecf2f4;
+
+    .sortSelect {
+      width: 140px;
+      max-width: 50%;
+    }
+  }
+  .assetsTableMobile {
+    border-top: 1px solid #ecf2f4;
+    .tokenItem {
+      padding: 14px 0;
+      border-bottom: 1px solid #ecf2f4;
+      .titleColumn {
+        .Image {
+          background: #c4c4c4;
+          border-radius: 18.0769px;
+          height: 47px;
+          width: 47px;
+          margin-right: 12px;
+        }
+        .info {
+          .tokenTitle {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 15px */
+
+            text-transform: capitalize;
+
+            /* Fonts / Dark */
+
+            color: $bgDark;
+            font-family: $Asul;
+          }
+          .tokenTicker {
+            margin-top: 5px;
+            font-size: 12px;
+            line-height: 109.3%;
+            /* or 13px */
+
+            text-transform: capitalize;
+
+            /* Fonts / Gray 2 */
+
+            color: $grey2;
+          }
+        }
+      }
+      .priceColumn {
+        text-align: right;
+        .count {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 109.3%;
+          /* or 15px */
+
+          text-align: right;
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+        }
+        .totalPrice {
+          font-size: 13px;
+          line-height: 109.3%;
+          /* or 14px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Gray 2 */
+
+          color: #8aaab4;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .sortSelectWrapper {
+    top: 47px;
+  }
+}

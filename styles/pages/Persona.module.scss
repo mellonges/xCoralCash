@@ -1,0 +1,445 @@
+@import "../variables.scss";
+.tokenPage {
+  padding: 42px 0 100px;
+  .backBtn {
+    padding: 8px 19px;
+    background: #ecf2f2;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 157.8%;
+    /* or 25px */
+
+    color: #11343f;
+    .backBtnIcon {
+      margin-right: 9px;
+    }
+  }
+  .imageTitle {
+    margin-top: 26px;
+    margin-bottom: 22px;
+    .Image {
+      border-radius: 31.9231px;
+      margin-right: 22px;
+      width: 83px;
+      height: 83px;
+      background-color: #ccc;
+    }
+    strong {
+      font-weight: bold;
+      font-size: 31.03px;
+      line-height: 109.3%;
+      /* or 26px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #11343f;
+
+      font-family: $Asul;
+      margin-bottom: 4px;
+    }
+    span {
+      font-size: 16px;
+      line-height: 109.3%;
+      /* or 17px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #abb3b6;
+    }
+    .favoriteBtn {
+      border: 1px solid #d7d9dd;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 14px 42px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.02em;
+
+      color: #003146;
+
+      .Icon {
+        margin-right: 18px;
+      }
+      &:hover {
+        color: #ffffff;
+
+        svg path {
+          stroke: #ffffff !important;
+        }
+      }
+    }
+  }
+  .tokenGraphFull {
+    width: 100%;
+    height: auto;
+
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .aboutInformation {
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 155.3%;
+    /* or 23px */
+
+    color: $darkBlue;
+
+    h2 {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 109.3%;
+      /* identical to box height, or 24px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: $darkBlue;
+      margin-bottom: 19px;
+    }
+    .textRowPlaceholder {
+      margin-bottom: 5px;
+    }
+  }
+  .showMoreTextBtn {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 157.8%;
+    /* or 25px */
+
+    color: $linkBtnGreen;
+    margin-bottom: 33px;
+  }
+  .socLnks {
+    .title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 155.3%;
+      margin-bottom: 19px;
+    }
+    .socLink {
+      display: flex;
+      align-items: center;
+      margin-bottom: 19px;
+      .socIcon {
+        color: $white;
+        width: 25px;
+        padding: 5px;
+        margin-right: 11px;
+        height: 25px;
+        background: #01405c;
+        border-radius: 50%;
+      }
+    }
+  }
+  .getFreeToken {
+    margin-top: 65px;
+    margin-bottom: 60px;
+    background: #01405c;
+    border-radius: 6px;
+    min-height: 269px;
+    padding: 10px 47px 0px 47px;
+    background-image: url("/images/greenbg.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 40% auto;
+
+    .leftText {
+      color: $white;
+      max-width: 55%;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 109.3%;
+      /* identical to box height, or 33px */
+      font-family: $Asul;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+
+      span {
+        color: $bgGreenLight;
+      }
+    }
+    .descr {
+      font-size: 15px;
+      line-height: 19px;
+
+      color: #ffffff;
+
+      margin-bottom: 30px;
+    }
+    .getTokenLinkBtn {
+      background: #ffffff;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      padding: 15px 50px;
+      color: #01405c;
+      display: inline-block;
+      font-weight: 500;
+    }
+    .tokenCard {
+      background: url("/images/cards-bg.svg") no-repeat;
+      width: 247px;
+      height: 293px;
+      background-size: cover;
+      margin-left: auto;
+      padding: 62px 0 0 0;
+      text-align: center;
+
+      .tokenImage {
+        width: 73.65px;
+        height: 73.65px;
+        border-radius: 50%;
+        transform: rotate(-8.6deg);
+        background: #ccc;
+      }
+      .tokenName {
+        transform: rotate(-8.6deg);
+        font-family: $Asul;
+        font-size: 14.3576px;
+        line-height: 109.3%;
+        /* or 16px */
+        margin-left: 20px;
+        text-align: center;
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+        margin-top: 15px;
+        color: #11343f;
+      }
+      .summ {
+        transform: rotate(-8.6deg);
+        text-align: center;
+        margin-top: 10px;
+        font-size: 33.953px;
+        line-height: 109.3%;
+        /* or 37px */
+
+        text-align: center;
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        color: #00a1b7;
+        margin-left: 20px;
+        font-weight: bold;
+        font-family: $Asul;
+      }
+    }
+  }
+  .getFreeTokenPlaceholder {
+    min-height: 269px;
+    width: 100%;
+  }
+  .informationBottom {
+    font-size: 12px;
+    line-height: 140%;
+    /* or 20px */
+
+    color: #81898c;
+  }
+  .buyBlock {
+    background: $white;
+    border: 0.931035px solid #dde3eb;
+    box-sizing: border-box;
+    box-shadow: 0px 3.72414px 16.7586px rgba(0, 0, 0, 0.04);
+    border-radius: 3.72414px;
+    width: 100%;
+    padding: 27px 28px 27px;
+    position: relative;
+
+    span {
+      font-weight: 500;
+      font-size: 16.7586px;
+      line-height: 21px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      color: $darkBlue;
+    }
+    .balance {
+      font-size: 82.8621px;
+      line-height: 105px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      color: #01405c;
+
+      opacity: 0.48;
+      padding-top: 37px;
+      padding-bottom: 48px;
+
+      sup {
+        font-size: 38.0514px;
+        line-height: 48px;
+        top: -50px;
+      }
+    }
+    .continueBtn {
+      padding: 19px 15px;
+      width: 100%;
+      font-weight: 500;
+      font-size: 14.8966px;
+      line-height: 19px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      color: #ffffff;
+      display: block;
+    }
+    &.activePopup {
+      .blockInner {
+        filter: blur(10px);
+        opacity: 0.6;
+      }
+    }
+    .buyPopup {
+      top: 0;
+      left: 0;
+      background: #ffffff;
+      border: 1px solid #d3dae3;
+      box-sizing: border-box;
+      box-shadow: 0px 28px 18px rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+      margin: 41px 20px;
+      padding: 40px 20px 30px;
+      font-weight: 500;
+      color: #01405c;
+
+      a {
+        color: #01405c;
+        display: block;
+        margin-top: 13px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .continueBtn {
+        margin-bottom: 15px;
+      }
+      .title {
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: -0.02em;
+
+        color: #11343f;
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .tokenPage {
+    .buyTokenBtn {
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 19px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      color: #ffffff;
+      padding: 18px;
+
+      margin-bottom: 31px;
+    }
+    .periodSelect {
+      margin-bottom: 20px;
+      background: #ffffff;
+      border: 1px solid #eaeff1;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+    .tokenGraphFull {
+      .chartInner {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .tokenPage {
+    .backBtn {
+      font-weight: 500;
+      font-size: 13.0526px;
+      line-height: 157.8%;
+      padding: 5px 16px;
+    }
+    .imageTitle {
+      margin-top: 21px;
+
+      .Image {
+        width: 92px;
+        height: 92px;
+        margin-right: 21px;
+      }
+      strong {
+        font-size: 27.1818px;
+        line-height: 109.3%;
+      }
+      span {
+        font-size: 17.5687px;
+        line-height: 109.3%;
+      }
+    }
+    .buyTokenBtn {
+      width: 100%;
+      max-width: unset;
+    }
+
+    .aboutInformation {
+      font-size: 16px;
+      line-height: 155.3%;
+      h2 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 109.3%;
+      }
+    }
+    .getFreeToken {
+      background-position: top right;
+      background-size: 100%;
+      .tokenCard {
+        margin-right: auto;
+      }
+      .leftText {
+        max-width: 100%;
+        text-align: center;
+      }
+      .title {
+        font-size: 32px;
+        line-height: 109.3%;
+        /* or 35px */
+
+        letter-spacing: -0.03em;
+      }
+      .descr {
+        font-size: 15px;
+        line-height: 19px;
+      }
+      .getTokenLinkBtn {
+        margin-bottom: 59px;
+      }
+    }
+  }
+}

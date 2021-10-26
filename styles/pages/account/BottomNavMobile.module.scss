@@ -1,0 +1,43 @@
+@import "../../variables.scss";
+@media screen and (max-width: 991px) {
+  .bottomMobileNav {
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 62px;
+
+    background: #03212e;
+    // padding: 0 15px 15px;
+
+    .navItem {
+      padding: 7px 15px;
+      flex-basis: 20%22;
+
+      .linkText {
+        font-size: 12px;
+
+        /* identical to box height, or 42% */
+
+        color: #9fc2cb;
+        text-align: center;
+        margin-top: 6px;
+      }
+
+      &:hover,
+      &.active {
+        .linkText {
+          color: $white;
+        }
+        .icon svg:not(.strokeIcon) path {
+          fill: $white !important;
+        }
+        .icon .strokeIcon path {
+          stroke: $white !important;
+        }
+      }
+      .icon {
+      }
+    }
+  }
+}

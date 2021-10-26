@@ -1,0 +1,129 @@
+@import "../../variables.scss";
+
+.topCategoriesBlock {
+  width: 100%;
+  padding: 53px 0 65px 0;
+  background: $bgGrey;
+
+  .scrollContainer {
+    margin-left: -9px;
+    margin-right: -9px;
+  }
+  .topCategories {
+    white-space: nowrap;
+  }
+
+  .column {
+    padding: 0 9px;
+    display: inline-block;
+    width: 203.04px;
+  }
+  .topCategoriesItemBig {
+    background-color: pink;
+    height: 100px;
+    box-shadow: 0px 1.88004px 5.64012px rgba(17, 144, 135, 0.35);
+    border-radius: 4.69583px;
+    padding: 0 14px 20px;
+    transition: 0.1s all ease-in-out;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 15.9473px;
+      line-height: 109.3%;
+      font-family: $Asul;
+      /* or 17px */
+
+      text-transform: capitalize;
+
+      color: #ffffff;
+    }
+  }
+  .categoriesSmall {
+    width: 100%;
+    margin-top: 41px;
+    .smallCategoryItem {
+      margin-right: 40px;
+      .categoryImage {
+        background: $grey1;
+        height: 44px;
+        width: 44px;
+        margin-right: 14px;
+        border-radius: 13.3293px;
+        border: none;
+        overflow: hidden;
+        object-fit: cover;
+      }
+      .title {
+        font-weight: 500;
+        font-size: 14.9955px;
+        line-height: 109.3%;
+        /* or 16px */
+        font-family: $Asul;
+        text-transform: capitalize;
+
+        color: #11343f;
+      }
+
+      &:hover {
+        .title {
+          color: #678086;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .topCategoriesBlock {
+    padding-top: 36px;
+    padding-bottom: 32px;
+    .column {
+      width: 148.22px;
+      padding: 0 4px;
+    }
+    .scrollContainer {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+    .topCategoriesItemBig {
+      height: 73px;
+      padding: 0 10px 13px 10px;
+
+      .title {
+        font-weight: bold;
+        font-size: 13.7243px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        color: #ffffff;
+      }
+    }
+    .categoriesSmall {
+      margin-top: 28px;
+
+      .smallCategoryItem {
+        margin-right: 16px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .categoryImage {
+          width: 44.5px;
+          height: 44.5px;
+          margin-right: 0;
+        }
+        .title {
+          margin-top: 11px;
+          font-size: 11.757px;
+          line-height: 109.3%;
+        }
+      }
+    }
+  }
+}

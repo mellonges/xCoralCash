@@ -1,0 +1,393 @@
+@import "../../variables.scss";
+
+.Wallet {
+  .pageTitle {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+    font-family: $Asul;
+    margin-bottom: 21px;
+  }
+  .topBlock {
+    background: url("/images/wallet-top-bg.png") no-repeat;
+    padding: 21px 39px;
+    background-position: center;
+    background-size: auto 100%;
+
+    width: 100%;
+    background-color: #f4f8fa;
+    border-radius: 6px;
+
+    .balance {
+      .Icon {
+        background: #c4c4c4;
+        border-radius: 18.4615px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        margin-right: 26px;
+        align-items: center;
+        justify-content: center;
+      }
+      .info {
+        span {
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 17px;
+          /* identical to box height */
+
+          letter-spacing: -0.02em;
+
+          /* Fonts / Gray 2 */
+
+          color: #8aaab4;
+        }
+        .balaneAmount {
+          font-weight: 500;
+          font-size: 31px;
+          line-height: 109.3%;
+          /* identical to box height, or 34px */
+
+          letter-spacing: -0.03em;
+
+          /* Fonts / Dark */
+
+          display: block;
+          color: #11343f;
+        }
+      }
+    }
+    .actionButtons {
+      .depositBtn,
+      .withdrawBtn {
+        width: 176px;
+        background-color: $bgGreenDark;
+        padding: 13px 23px;
+        font-size: 15px;
+        line-height: 18px;
+        border-radius: 4px;
+        svg {
+          margin-right: 32px;
+        }
+      }
+      .withdrawBtn {
+        margin-left: 11px;
+        font-weight: 500;
+        /* identical to box height */
+
+        color: #ffffff;
+        background: #165169;
+
+        &:hover,
+        &:focus {
+          background: #0f3e50 !important;
+        }
+      }
+    }
+  }
+  .contentInner {
+    margin-top: 48px;
+    .title {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 27px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+      font-family: $Asul;
+    }
+    .transfersTable {
+      margin-top: 25px;
+
+      thead {
+        background: #f7fafc;
+        border-radius: 4.31201px;
+
+        th {
+          padding: 10px;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 14px;
+          /* identical to box height */
+
+          text-transform: uppercase;
+
+          /* Fonts / Gray 2 */
+
+          color: #8aaab4;
+        }
+      }
+      tbody {
+        td {
+          padding: 19px 10px;
+          vertical-align: middle;
+          font-size: 14px;
+          line-height: 109.3%;
+
+          &.id {
+            font-size: 13px;
+            line-height: 109.3%;
+            /* or 14px */
+
+            text-transform: capitalize;
+
+            color: #8aaab4;
+          }
+          .operationIcon {
+            background: #8aaab4;
+            border: 2.78261px solid #ffffff;
+            width: 32px;
+            height: 32px;
+            margin-right: 19px;
+            border-radius: 50%;
+            &.failed {
+              background: #f67169;
+              border: 2.78261px solid #ffffff;
+            }
+          }
+          .operationType {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 15px */
+
+            text-transform: capitalize;
+
+            /* Fonts / Dark */
+
+            color: #11343f;
+          }
+          .date {
+            color: #8aaab4;
+            margin-top: 4px;
+          }
+          .cryptoInfo {
+            display: inline-block;
+            .cryptoIcon {
+              width: 21.04px;
+              height: 21.04px;
+              margin-right: 10px;
+            }
+          }
+          .status {
+            font-size: 12px;
+            line-height: 109.3%;
+            /* or 13px */
+
+            text-transform: capitalize;
+
+            /* Fonts / Gray 2 */
+
+            color: #8aaab4;
+            margin-top: 6px;
+
+            svg {
+              margin-right: 5px;
+            }
+          }
+          .amount {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 15px */
+
+            text-align: right;
+            text-transform: capitalize;
+
+            /* Fonts / Dark */
+
+            color: #11343f;
+          }
+          .equivalent {
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 15px */
+
+            text-align: right;
+            text-transform: capitalize;
+            display: block;
+            margin-top: 4px;
+            color: #8aaab4;
+          }
+        }
+      }
+    }
+    .pagination {
+      margin-top: 47px;
+      margin-bottom: 50px;
+      .prevBtn,
+      .nextBtn {
+        margin-right: 15px;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 39px;
+        padding-left: 21px;
+        padding-right: 21px;
+        min-width: 140px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: -0.02em;
+
+        .icon {
+          margin-right: 7px;
+        }
+        &:hover {
+          svg path {
+            fill: $white !important;
+          }
+        }
+      }
+      .prevBtn:focus {
+        background: #1599aa !important;
+        color: white !important;
+
+        svg path {
+          fill: $white !important;
+        }
+      }
+      .nextBtn {
+        .icon {
+          margin-left: 17px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .noAssetsHolder {
+    position: absolute;
+    left: calc(50% - 100px);
+    width: 200px;
+    min-height: 241px;
+
+    border-radius: 3px;
+    .Icon {
+      background: #eaf1f5;
+      border-radius: 20.614px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+    }
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 109.3%;
+      /* identical to box height, or 20px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #678086;
+      font-family: $Asul;
+      margin-bottom: 4px;
+    }
+    .descr {
+      font-size: 14px;
+      line-height: 143.8%;
+      /* or 20px */
+
+      text-align: center;
+
+      color: #678086;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .Wallet {
+    .pageTitle {
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 109.3%;
+      /* or 28px */
+      margin-bottom: 23px;
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #11343f;
+    }
+    .topBlock {
+      flex-direction: column;
+      align-items: flex-start !important;
+
+      .balance {
+        .Icon {
+          width: 45px;
+          height: 45px;
+          background: #8aaab4;
+          border-radius: 17.3077px;
+          margin-right: 15px;
+        }
+        .info {
+          span {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 17px;
+            /* identical to box height */
+
+            letter-spacing: -0.02em;
+
+            /* Fonts / Dark */
+
+            color: #11343f;
+          }
+        }
+        .balaneAmount {
+          font-size: 32px;
+          line-height: 109.3%;
+          /* identical to box height, or 35px */
+
+          letter-spacing: -0.03em;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+        }
+      }
+      .actionButtons {
+        margin-top: 25px;
+        margin-left: unset !important;
+        flex-wrap: wrap;
+        width: 100%;
+        .withdrawBtn,
+        .depositBtn {
+          padding: 13px 25px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wallet {
+    .topBlock {
+      padding: 21px;
+      .actionButtons {
+        .withdrawBtn,
+        .depositBtn {
+          margin: 0;
+          flex-basis: 100%;
+        }
+        .depositBtn {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

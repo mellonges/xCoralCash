@@ -1,0 +1,102 @@
+@import "../../variables.scss";
+.chartInner {
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border: 0.931035px solid #dde3eb;
+  box-sizing: border-box;
+  box-shadow: 0px 2.7931px 6.51724px rgba(0, 0, 0, 0.03);
+  border-radius: 3.72414px;
+
+  &.noData {
+    background: #f7fafc;
+  }
+}
+
+.chartDelayInfo {
+  font-size: 10px;
+}
+
+.graphInner {
+  position: relative;
+}
+.tokenGraphPrice {
+  padding: 26px 0 0 35px;
+
+  strong {
+    font-weight: normal;
+    font-size: 31.03px;
+    line-height: 109.3%;
+    /* or 34px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: #11343f;
+  }
+  span {
+    font-size: 18.6207px;
+    line-height: 109.3%;
+    /* identical to box height, or 20px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    margin-left: 15px;
+  }
+  .positive {
+    color: $bgGreenDark;
+  }
+  .negative {
+    color: $redLight;
+  }
+  .neutral {
+    color: $grey2;
+  }
+}
+.periodSelectWrapper {
+  margin-bottom: 15px;
+}
+.graphPeriods {
+  right: 7px;
+  margin-top: 10px;
+
+  .btn {
+    border: none !important;
+    padding: 0;
+    background: transparent !important;
+    font-weight: 500;
+    font-size: 13.0345px;
+    line-height: 109.3%;
+    margin: 0 10px;
+    /* or 14px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: #c9d1d6;
+    border-radius: 0;
+
+    &:hover {
+      color: $bgGreenDark !important;
+    }
+    &.active,
+    &:focus {
+      color: $bgGreenDark !important;
+      border-bottom: 1px solid $bgGreenDark !important;
+      background-color: transparent !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .periodSelectWrapper {
+    border-top: 1px solid #ecf2f4 !important;
+    padding-top: 15px;
+  }
+  .tokenGraphPrice {
+    margin-top: 10px;
+    padding: 5px;
+  }
+}

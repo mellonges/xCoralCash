@@ -1,0 +1,112 @@
+@import "../../variables.scss";
+.portfolioCards {
+  margin-top: 22px;
+
+  .item {
+    text-align: center;
+
+    .image {
+      background: #cde4ef;
+      border: 13.1036px solid #fafdff;
+      width: 165.98px;
+      height: 165.98px;
+      display: block;
+      border-radius: 50%;
+      margin: 0 -21px;
+      margin-bottom: 10px;
+    }
+    .ticker {
+      text-transform: uppercase;
+      max-width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 20.2532px;
+      line-height: 109.3%;
+      /* or 28px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      /* BG / Dark */
+
+      color: #003d56;
+      font-family: $Asul;
+    }
+    .price {
+      font-weight: bold;
+      font-size: 22.1468px;
+      line-height: 28px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+
+      /* BG / Dark */
+
+      color: #003d56;
+      margin-top: 9.5px;
+    }
+    .changePercent {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      margin-top: 13.3px;
+      line-height: 109.3%;
+      text-transform: capitalize;
+
+      &.positive {
+        color: $bgGreenDark;
+      }
+      &.negative {
+        color: $redLight;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .portfolioCards {
+    .item {
+      .image {
+        width: 142px !important;
+        height: 142px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolioCards {
+    margin-top: 34px;
+    padding: 0 10px;
+    display: block !important;
+    width: auto;
+    white-space: nowrap;
+
+    .item {
+      display: inline-block !important;
+
+      .image {
+        width: 111px !important;
+        height: 111px !important;
+        border: 9px solid #fafdff;
+        border-radius: 42.6923px;
+        margin: 0 -7px;
+        margin-bottom: 12px;
+      }
+      .ticker {
+        font-size: 15.5625px;
+        line-height: 109.3%;
+      }
+      .price,
+      .changePercent {
+        font-size: 13px;
+        line-height: 17px;
+      }
+      .changePercent {
+        display: block;
+        margin-top: 14px;
+      }
+    }
+  }
+}

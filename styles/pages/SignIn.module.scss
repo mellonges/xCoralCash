@@ -1,0 +1,493 @@
+@import "../variables.scss";
+
+.acceptLicense {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+
+  width: 396px;
+  text-align: center;
+  margin: 31px auto 0;
+  color: $white;
+
+  opacity: 0.6;
+  a {
+    color: $white;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.passwordTooltipContainer {
+  .passwordTooltipWrapper {
+    padding: 12px 14px 37px 14px;
+    background: rgba(14, 25, 40, 0.98);
+    border-radius: 3.58793px;
+    .passwordTooltip {
+      text-align: left;
+      font-weight: 500;
+      font-size: 11.6608px;
+      line-height: 15px;
+
+      color: $white;
+      ul {
+        padding: 0;
+        margin: 10px 0 0 0;
+        list-style: none;
+
+        li {
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+
+          svg {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+  }
+  .passwordTooltipArrow {
+    margin-left: auto;
+    left: 50% !important;
+    margin-left: -6px;
+  }
+}
+
+.signInWrapper,
+.resetPasswordWrapper {
+  background: #003d56 url("/images/Vector 4 (2).svg") no-repeat;
+  background-position: top 20% right;
+  min-height: 100vh;
+
+  .signInInner,
+  .resetPasswordInner {
+    padding: 74px 0;
+  }
+
+  .blockTitle {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 96.3%;
+    /* or 39px */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $white;
+    margin-bottom: 37px;
+    font-family: $Asul;
+  }
+  .loginForm,
+  .forgotPasswordForm,
+  .resetPasswordForm {
+    max-width: 447px;
+    margin: 0 auto;
+
+    background: $white;
+    box-shadow: 0px 27px 44px rgba(0, 47, 67, 0.21);
+    border-radius: 9px;
+    padding: 51px 49px 40px;
+
+    .Input {
+      background: $white;
+      border: 1px solid #d4dada;
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-size: 16px !important;
+      height: auto;
+      line-height: 20px;
+      /* identical to box height */
+
+      color: #2d5569;
+      padding: 14px 15px;
+      height: auto;
+
+      &.invalid {
+        border: 1px solid #ff3838;
+      }
+
+      input {
+        background: transparent;
+        padding: 0;
+        border: none !important;
+      }
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+    .validationError {
+      color: #ff3838;
+      font-size: 11.6608px;
+      line-height: 15px;
+      margin-top: 4px;
+
+      svg {
+        margin-right: 6px;
+      }
+    }
+    .InputGroupActive {
+      border: 1px solid $bgGreenDark;
+    }
+    .passwordIcon {
+      background: transparent;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+    }
+    .forgotPassword {
+      margin-top: 11px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+      color: $linkBtnGreen;
+    }
+    .submitBtn {
+      padding: 20px;
+      height: 60px;
+
+      .loadingCircleIcon {
+        width: 24px;
+        height: 24px;
+
+        circle {
+          stroke: #fff !important;
+        }
+      }
+    }
+    .rememberMe {
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+      user-select: none;
+      color: #2d5569;
+
+      opacity: 0.6;
+
+      input {
+        margin-right: 10px;
+      }
+    }
+  }
+  .forgotPasswordForm {
+    padding-top: 34px;
+  }
+  .verificationForm {
+    max-width: 513px;
+    margin: 0 auto;
+
+    background: $white;
+    box-shadow: 0px 27px 44px rgba(0, 47, 67, 0.21);
+    border-radius: 9px;
+    padding: 51px 49px 40px;
+
+    .inlineInputRow {
+      margin-left: -8.8px;
+      margin-right: -8.8px;
+
+      .Col {
+        padding-left: 8.8px;
+        padding-right: 8.8px;
+      }
+    }
+
+    .Input {
+      background: $white;
+
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-size: 16px;
+      height: auto;
+      line-height: 20px;
+      /* identical to box height */
+
+      color: #2d5569;
+      padding: 14px 15px;
+      height: auto;
+      border: 1px solid #d4dada;
+
+      &.invalid {
+        border: 1px solid #ff3838;
+      }
+
+      input {
+        background: transparent;
+        padding: 0;
+        border: none !important;
+      }
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+    .validationError {
+      color: #ff3838;
+      font-size: 11.6608px;
+      line-height: 15px;
+      margin-top: 4px;
+
+      svg {
+        margin-right: 6px;
+      }
+    }
+    .InputGroupActive {
+      border: 1px solid $bgGreenDark;
+    }
+    .passwordIcon {
+      background: transparent;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+    }
+    .forgotPassword {
+      margin-top: 11px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+      color: $linkBtnGreen;
+    }
+    .submitBtn {
+      padding: 20px;
+      .loadingCircleIcon {
+        width: 24px;
+        height: 24px;
+
+        circle {
+          stroke: #fff !important;
+        }
+      }
+    }
+    .confirmTerms {
+      margin-bottom: 34px;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+      user-select: none;
+      color: #2d5569;
+
+      opacity: 0.6;
+
+      input {
+        margin-right: 10px;
+
+        &.invalid + span {
+          color: #ff3838;
+
+          a {
+            color: #ff3838;
+          }
+        }
+      }
+      a {
+        color: #2d5569;
+        display: inline-block;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .verificationForm {
+    .icon {
+      background: #eaf0f1;
+      border-radius: 30.4828px;
+      width: 78px;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 19px;
+    }
+    .pageTitle {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .pageDescr {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: none;
+      color: #2d5569;
+
+      opacity: 0.75;
+    }
+    .verificationFormInner {
+      width: 100%;
+    }
+    .descrBottom {
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+
+      color: #2d5569;
+
+      opacity: 0.75;
+
+      max-width: 264px;
+      margin: 43px auto 0;
+    }
+    .resendEmail {
+      margin-top: 19px;
+      display: inline-block;
+    }
+  }
+  .resetPasswordForm {
+    padding-top: 83px;
+    padding-bottom: 83px;
+    .pageTitle {
+      margin-bottom: 47px;
+    }
+    .submitBtn {
+      margin-top: 23px;
+      .loadingCircleIcon {
+        width: 24px;
+        height: 24px;
+
+        circle {
+          stroke: #fff !important;
+        }
+      }
+    }
+  }
+  .pageTitle {
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 96.3%;
+    /* identical to box height, or 28px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: $darkBlue;
+
+    font-family: $Asul;
+    margin-bottom: 15px;
+  }
+  .pageDescr {
+    font-size: 15px;
+    line-height: 126.3%;
+    /* or 14px */
+
+    text-transform: capitalize;
+    margin-bottom: 29px;
+    color: #5a7983;
+  }
+  .goBack {
+    margin-bottom: 36px;
+    font-size: 15px;
+    line-height: 96.3%;
+    /* or 14px */
+
+    text-transform: capitalize;
+
+    color: #5a7983;
+
+    span {
+      margin-left: 9px;
+    }
+  }
+  .dontHaveAccount {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    margin-top: 37px;
+    /* identical to box height */
+
+    color: $darkBlue;
+
+    a {
+      color: $linkBtnGreen;
+    }
+  }
+
+  .passwordChanged {
+    max-width: 513px;
+    margin: 0 auto;
+
+    background: $white;
+    box-shadow: 0px 27px 44px rgba(0, 47, 67, 0.21);
+    border-radius: 9px;
+    padding: 71px 66px 88px;
+
+    .icon {
+      background: #c2f0ed;
+      border-radius: 30.4828px;
+      width: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 78px;
+      margin-bottom: 31px;
+    }
+    .pageTitle {
+      text-align: center;
+      margin-bottom: 19px;
+    }
+    .pageDescr {
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .acceptLicense {
+    width: auto;
+  }
+  .signInWrapper,
+  .resetPasswordWrapper {
+    .signInInner,
+    .resetPasswordInner {
+      padding-top: 23px;
+
+      .blockTitle {
+        font-size: 28px;
+        line-height: 96.3%;
+        margin-bottom: 29px;
+      }
+      .pageTitle {
+        text-align: center;
+        font-size: 24px;
+        line-height: 96.3%;
+      }
+      .pageDescr {
+        font-size: 15px;
+        line-height: 96.3%;
+        text-align: center;
+      }
+      .loginForm,
+      .forgotPasswordForm,
+      .resetPasswordForm,
+      .passwordChanged,
+      .verificationForm {
+        padding: 32px 18px;
+
+        .pageTitle {
+          margin-bottom: 29px;
+        }
+        .icon {
+          height: 65px;
+          width: 65px;
+          svg {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+
+        .Input {
+          font-size: 15px;
+          padding: 16px 12px;
+        }
+      }
+    }
+  }
+}

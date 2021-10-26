@@ -1,0 +1,50 @@
+@import ".../../../../variables.scss";
+.TrackInvitesBlock {
+  background: #f2f6f9;
+  border-radius: 4px;
+  padding: 40px 31px 24px;
+
+  .title {
+    font-weight: bold;
+    font-size: 22px;
+
+    line-height: 109.3%;
+    /* or 24px */
+
+    letter-spacing: -0.03em;
+
+    color: #11343f;
+    font-family: $Asul;
+    padding-bottom: 21.2px;
+    border-bottom: 1px solid #e0e6eb;
+    margin-bottom: 24px;
+  }
+  .label {
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 109.3%;
+    /* or 15px */
+
+    letter-spacing: -0.03em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+  }
+  .seeMore {
+    margin-top: 15px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: #ffffff;
+  }
+}
+@media screen and (max-width: 768px) {
+  .TrackInvitesBlock {
+    padding: 25px 17px;
+  }
+}

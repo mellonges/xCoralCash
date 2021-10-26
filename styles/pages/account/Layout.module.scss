@@ -1,0 +1,292 @@
+@import "../../variables.scss";
+
+.AccountWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 70px);
+  padding-left: 200px;
+  padding-top: 52px;
+  .leftSide {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    left: 0px;
+    top: 0;
+    color: $white;
+    background: #03212e;
+    color: #9fc2cb;
+    padding: 15px 0 15px 18px;
+
+    .leftSideNav {
+      .top {
+        padding-right: 20px;
+        padding-bottom: 8px;
+        .logotype {
+          font-family: "Asul", sans-serif;
+          font-size: 23.4759px;
+          line-height: 96.3%;
+          font-weight: bold;
+          letter-spacing: -0.07em;
+          color: $white;
+
+          span {
+            color: $bgGreenLight;
+          }
+        }
+      }
+      .navTitle {
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 96.3%;
+        /* identical to box height, or 11px */
+
+        text-transform: uppercase;
+
+        color: #9fc2cb;
+
+        opacity: 0.4;
+        margin-top: 28px;
+      }
+      .listNavigation {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 17px;
+
+        .listItem {
+          margin-bottom: 7px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 96.3%;
+
+          .navLink {
+            display: flex;
+            align-items: center;
+            color: #9fc2cb;
+            padding: 5px 0;
+
+            &.active {
+              border-right: 3px solid $bgGreenLight;
+            }
+
+            &.active,
+            &:hover {
+              color: $white;
+
+              .navIcon {
+                svg:not(.priceIcon) path {
+                  fill: $white !important;
+                }
+                .priceIcon path {
+                  stroke: $white !important;
+                }
+              }
+            }
+
+            .navIcon {
+              margin-right: 15px;
+              width: 21px;
+              display: flex;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .TopPanel {
+    height: 52px;
+    left: 200px;
+    width: calc(100% - 200px);
+    min-width: 320px;
+    padding: 8px 34px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 0px 0px 24px rgba(139, 151, 157, 0.16);
+    .displayAddressPlace {
+      background: #F7FAFC;
+      border: 10px solid #F7FAFC;
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 12px;
+    }
+    .showAddress {
+      color: #1AB0C4;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .searchFormWrapper {
+      width: 100%;
+
+      .searchForm {
+        .InputGroup {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+
+          .Input {
+            border: none;
+            font-size: 16px;
+            line-height: 18px;
+
+            /* Fonts / Gray 1 */
+
+            color: #678086;
+
+            &:focus {
+              outline: none;
+              box-shadow: none;
+              border: none !important;
+            }
+          }
+          .InputIcon {
+            border: none;
+            background-color: transparent;
+            width: 14px;
+            height: 14px;
+            padding: 0;
+            margin-right: 11px;
+          }
+        }
+      }
+      .searchResults {
+        width: calc(100% - 200px);
+        background: #ffffff;
+        border: 1px solid #edefef;
+        box-sizing: border-box;
+        box-shadow: 0px 24px 30px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        margin-top: 6px;
+
+        .noResults {
+          padding: 32px;
+
+          .btnAllTokens {
+            margin: 19px 0;
+            display: block;
+          }
+        }
+      }
+    }
+    .tradeBtn {
+      padding: 8px 38px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      margin-left: 15px;
+    }
+  }
+  .contentInner {
+    padding: 37px 54px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .AccountWrapper {
+    padding-left: 0;
+    padding-bottom: 74px;
+
+    .TopPanel {
+      width: 100%;
+      left: 0;
+
+      .topPanelMobile {
+        padding: 10px 0;
+
+        .tradeBtnMobile {
+          font-weight: 500;
+          width: 65px;
+          display: block;
+          padding: 0;
+          height: 28px;
+          font-size: 13px;
+          line-height: 28px;
+          /* identical to box height */
+
+          text-align: center;
+          letter-spacing: -0.02em;
+          margin-left: 15px;
+        }
+        .leftNavBtn {
+          padding: 5px;
+          border: none;
+
+          &:focus,
+          &:hover {
+            background: transparent !important;
+            border: none !important;
+
+            svg path {
+              fill: $bgGreenDark !important;
+            }
+          }
+        }
+        .logotype {
+          font-family: $Asul;
+          letter-spacing: -0.07em;
+          font-size: 23.8732px;
+          line-height: 96.3%;
+          margin-left: 14px;
+          color: $darkBlue;
+          span {
+            color: $bgGreenDark;
+          }
+          &:after {
+            content: "";
+            height: 16px;
+            width: 0px;
+            border-right: 1px solid #fff;
+            display: inline-block;
+            padding-left: 19px;
+          }
+        }
+
+        .searchForm {
+          width: 100%;
+        }
+        .searchFormWrapperMobile {
+          left: 0;
+          padding: 8px 34px;
+          top: 0;
+          background-color: $white;
+
+          .searchResults {
+            width: 100%;
+            left: 0;
+          }
+          .closeSearchBtn {
+            &:hover {
+              svg path {
+                fill: $bgGreenDark !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .contentInner {
+      padding: 25px 34px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .AccountWrapper {
+    .contentInner {
+      padding: 24px 18px;
+    }
+    .TopPanel {
+      padding: 0 18px;
+      height: 48px;
+    }
+  }
+}

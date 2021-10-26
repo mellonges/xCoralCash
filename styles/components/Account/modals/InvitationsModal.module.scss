@@ -1,0 +1,140 @@
+@import "../../../variables.scss";
+.InvitationsModal {
+  .InvitationsList {
+    th {
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 14px;
+      /* identical to box height */
+
+      text-transform: uppercase;
+
+      /* Fonts / Gray 2 */
+
+      color: #8aaab4;
+      border-bottom: 0.862401px solid #ecf2f4;
+      padding: 11px;
+      vertical-align: middle;
+      border: none;
+      border-bottom: 1px solid #ecf2f4;
+      .hide {
+        opacity: 0;
+      }
+      .desc,
+      .asc {
+        margin-left: 10px;
+      }
+
+      &.active {
+        color: #003d56;
+
+        .show {
+          opacity: 1;
+        }
+
+        .asc {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    .item {
+      border-bottom: 1px solid #ecf2f4;
+      .status {
+        color: #8aaab4;
+        &.active {
+          color: $bgGreenDark;
+        }
+      }
+      .email {
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+      }
+      td {
+        padding-top: 20px;
+        padding-bottom: 25px;
+        font-size: 14px;
+        line-height: 109.3%;
+        vertical-align: middle;
+      }
+      .rewardBlock {
+        .Image {
+          width: 34px;
+          height: 34px;
+          background: #c4c4c4;
+          border-radius: 13.0769px;
+          margin-right: 11px;
+        }
+        .quantity {
+          font-size: 14px;
+          line-height: 109.3%;
+          /* or 15px */
+
+          text-transform: uppercase;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+        }
+      }
+    }
+  }
+  .header {
+    margin-bottom: 20px;
+  }
+}
+.noNotificationsHolder {
+  min-height: 241px;
+  margin-top: -40px;
+
+  .Icon {
+    background: #eaf1f5;
+    border-radius: 20.614px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 17px;
+  }
+  .name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 109.3%;
+    /* identical to box height, or 20px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: #678086;
+    font-family: $Asul;
+    margin-bottom: 4px;
+  }
+  .descr {
+    font-size: 14px;
+    line-height: 143.8%;
+    /* or 20px */
+
+    text-align: center;
+
+    color: #678086;
+  }
+}
+@media screen and (max-width: 768px) {
+  .InvitationsList {
+    border-top: 1px solid #ecf2f4;
+    .item {
+      padding: 11px 0 15px;
+      width: 100%;
+      .column {
+        .status {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

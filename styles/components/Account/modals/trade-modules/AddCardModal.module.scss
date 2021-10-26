@@ -1,0 +1,67 @@
+body .addCardModal {
+  max-width: 463px !important;
+
+  .addCardForm {
+    padding-top: 24px;
+    .label {
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+      color: #2d5569;
+    }
+    .formGroup {
+      margin-bottom: 28px;
+
+      &.formGroupInline {
+        .Input {
+          width: auto;
+        }
+      }
+    }
+    .Input {
+      font-size: 14.3517px;
+      line-height: 18px;
+      display: block;
+      width: 100%;
+      color: #2d5569;
+      padding: 17px 14px;
+      background: #ffffff;
+      border: 0.896983px solid #d4dada;
+      box-sizing: border-box;
+      border-radius: 3.58793px;
+
+      &.cardDate,
+      &.cvv {
+        width: 94px !important;
+        margin-right: 14px;
+      }
+    }
+    .submitBtn {
+      background: #00aac0;
+      border-radius: 4.14664px;
+      height: 60px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      color: #ffffff;
+      width: 100%;
+    }
+  }
+  .footer {
+    margin-top: 45px;
+    min-height: 70px;
+    background: #f8f9fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height */
+
+    color: #2d5569;
+  }
+}

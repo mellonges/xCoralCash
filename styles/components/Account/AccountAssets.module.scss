@@ -1,0 +1,139 @@
+@import '../../variables.scss';
+.assetsWrapper {
+  margin-top: 19px;
+
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+    font-family: $Asul;
+  }
+  .top {
+    margin-bottom: 17px;
+  }
+  .holdings {
+    .noAssetsHolder {
+      min-height: 241px;
+      background: #f7fafc;
+      border-radius: 3px;
+      .Icon {
+        background: #eaf1f5;
+        border-radius: 20.614px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 17px;
+      }
+      .name {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 109.3%;
+        /* identical to box height, or 20px */
+
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        color: #678086;
+        font-family: $Asul;
+        margin-bottom: 4px;
+      }
+      .descr {
+        font-size: 14px;
+        line-height: 143.8%;
+        /* or 20px */
+
+        text-align: center;
+
+        color: #678086;
+      }
+    }
+    .token {
+      margin-bottom: 16px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .info {
+        width: 100%;
+      }
+      .Image {
+        background: #c4c4c4;
+        border-radius: 17.3077px;
+        width: 45px;
+        height: 45px;
+        flex: 0 0 auto;
+        margin-right: 12px;
+      }
+      .name {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 109.3%;
+        /* or 14px */
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+      }
+      .quantity {
+        font-size: 13px;
+        line-height: 109.3%;
+        /* or 14px */
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+
+        .totalPrice {
+          color: #94aab0;
+
+          display: inline-block;
+        }
+      }
+      .percent {
+        margin-left: 0px;
+
+        .percentValue {
+          margin-left: 10px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 109.3%;
+          margin-top: 10px;
+          /* or 15px */
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+          width: 35px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .assetsWrapper {
+    .holdings {
+      .name {
+        font-size: 13px;
+        font-weight: bold;
+        font-family: $Asul;
+      }
+      .quantity {
+      }
+      .totalPrice {
+        display: block !important;
+        margin-top: 5px;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

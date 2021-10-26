@@ -1,0 +1,164 @@
+@import '../../variables.scss';
+
+.AccountPortfolio {
+  .pageTitle {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+    margin-bottom: 21px;
+    font-family: $Asul;
+  }
+  .secondaryTitle {
+    font-family: $Asul;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+    margin-bottom: 18px;
+  }
+  .assetsWrapper {
+    flex-wrap: wrap;
+
+    .Table {
+      flex-grow: 1;
+      padding-right: 44px;
+    }
+    .rightCol {
+      flex: 0 0 auto;
+      width: 397px;
+    }
+  }
+  .portfolioGraph {
+    flex: auto;
+    margin-bottom: 31px;
+    height: 300px;
+
+    .noDataHolder {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .Icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        background: #678086;
+        margin-bottom: 16px;
+      }
+      .main {
+        font-size: 18px;
+        line-height: 109.3%;
+        /* identical to box height, or 20px */
+
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        color: #678086;
+        margin-bottom: 5px;
+      }
+      .descr {
+        font-size: 14px;
+        line-height: 143.8%;
+        /* or 20px */
+
+        text-align: center;
+
+        color: #678086;
+        margin-bottom: 18px;
+      }
+      .pricesBtn {
+        padding: 8px 38px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height */
+
+        text-align: center;
+        letter-spacing: -0.02em;
+
+        color: #ffffff;
+      }
+    }
+    .grapMaininfo {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 109.3%;
+      /* or 15px */
+
+      text-transform: capitalize;
+
+      color: #4d666f;
+      .heading {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-transform: capitalize;
+
+        color: #11343f;
+
+        opacity: 0.5;
+        margin-bottom: 5px;
+      }
+    }
+    .totalPrice {
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 109.3%;
+      /* or 28px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+      margin-top: 5px;
+      color: #11343f;
+    }
+  }
+}
+@media screen and (max-width: 1276px) {
+  .AccountPortfolio {
+    .assetsWrapper {
+      .Table {
+        padding-right: 0;
+      }
+      .rightCol {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .recentTransactionsMobile {
+    margin-top: 50px;
+    padding-bottom: 27px;
+    border-bottom: 1px solid #ecf2f4;
+    margin-bottom: 31px;
+    .secondaryTitle {
+      margin-bottom: 0;
+    }
+  }
+  .AccountPortfolio {
+    .portfolioGraph {
+      margin-bottom: 100px;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@import "../../variables.scss";
+
+.AccountInvite {
+  .wrapper {
+    .leftCol {
+      flex: 1;
+      padding-right: 178px;
+      .colTitle {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        /* identical to box height */
+
+        letter-spacing: -0.02em;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+
+        font-family: $Asul;
+        margin: 11px 0 24px 0;
+      }
+      .text {
+        font-size: 14px;
+        line-height: 144.3%;
+        /* or 20px */
+
+        color: #11343f;
+
+        strong {
+          color: $bgGreenDark;
+        }
+      }
+      .inviteFormContainer {
+        margin-top: 41px;
+
+        .label {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 155.3%;
+          /* identical to box height, or 22px */
+
+          color: #11343f;
+        }
+        .inviteFormWrapper {
+          margin-top: 13px;
+
+          .emailField {
+            padding: 12px 16px;
+            font-size: 16px;
+            line-height: 155.3%;
+            /* identical to box height, or 22px */
+
+            /* Fonts / Gray 1 */
+
+            color: #678086;
+
+            flex: 1;
+            border: 1px solid #d8e1e1;
+            box-sizing: border-box;
+            border-radius: 4px 0 0 4px;
+            &.invalid {
+              border: 1px solid $redLight;
+            }
+          }
+          .sendBtn {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            /* identical to box height */
+
+            letter-spacing: -0.02em;
+
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 0 4px 4px 0;
+            .loadingCircleIcon {
+              width: 18px;
+              height: 18px;
+
+              circle {
+                stroke: #fff !important;
+              }
+            }
+          }
+          .validationError,
+          .successText {
+            display: block;
+            margin-top: 6px;
+            color: $redLight;
+          }
+          .successText {
+            color: $bgGreenDark;
+          }
+        }
+      }
+    }
+
+    .rightCol {
+      width: 396px;
+    }
+  }
+}
+@media screen and (max-width: 1250px) {
+  .AccountInvite {
+    .wrapper {
+      .leftCol {
+        padding-right: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .AccountInvite {
+    .wrapper {
+      .rightCol {
+        width: 340px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .AccountInvite {
+    .wrapper {
+      .rightCol,
+      .leftCol {
+        padding: 0;
+        width: 100%;
+      }
+      .leftCol {
+        margin-bottom: 30px;
+
+        .Icon {
+          text-align: center;
+        }
+
+        .colTitle {
+          font-size: 26px;
+          margin-bottom: 17px;
+        }
+        .inviteFormContainer {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}

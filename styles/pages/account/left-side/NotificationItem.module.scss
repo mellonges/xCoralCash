@@ -1,0 +1,36 @@
+.NotificationItem {
+  padding: 12px 0;
+  border-bottom: 1px solid #ecf2f4;
+
+  &:last-child {
+    border: none;
+  }
+
+  .icon {
+    width: 34px;
+    height: 34px;
+    background-color: #e1f0f6;
+    border-radius: 14.2308px;
+    margin-right: 16px;
+    flex: 0 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 112.1%;
+    /* or 16px */
+  }
+  .date {
+    font-size: 13px;
+    line-height: 121.1%;
+    /* identical to box height, or 16px */
+
+    /* Fonts / Gray 1 */
+
+    color: #678086;
+    font-weight: normal;
+    margin-top: 9px;
+  }
+}

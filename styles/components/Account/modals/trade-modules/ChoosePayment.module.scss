@@ -1,0 +1,135 @@
+@import "../../../../variables.scss";
+
+.ChoosePayment {
+  .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+
+    color: #11343f;
+  }
+  .top {
+    border-bottom: 1px solid #f0f6fa;
+    padding-bottom: 14px;
+
+    .searchForm {
+      margin-top: 16px;
+
+      .searchFormGroup {
+        padding: 12px 14px;
+        background: #edf3f7;
+        border-radius: 3px;
+      }
+
+      .searchInput {
+        background-color: transparent;
+        font-size: 16px;
+        border: none;
+        line-height: 18px;
+
+        /* Fonts / Gray 1 */
+        padding: 0;
+
+        color: #678086;
+
+        &:focus {
+          outline: none;
+          border: none !important;
+        }
+      }
+      .inputText {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+  .paymentWay {
+    padding: 12px 29px;
+    border-bottom: 1px solid #f0f6fa;
+    cursor: pointer;
+    margin: 0 -29px;
+
+    &:hover {
+      background-color: $grey3;
+    }
+    .Image {
+      width: 48px;
+      height: 48px;
+      border-radius: 19.2308px;
+      margin-right: 13px;
+      overflow: hidden;
+    }
+    .methodName {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 109.3%;
+      /* or 15px */
+
+      text-transform: capitalize;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+
+      .bottomText {
+        font-size: 13px;
+        line-height: 109.3%;
+        /* or 14px */
+
+        text-transform: capitalize;
+
+        color: #8aaab4;
+        font-weight: normal;
+        margin-top: 6px;
+      }
+    }
+
+    .price {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 109.3%;
+      /* or 15px */
+
+      text-align: right;
+      text-transform: capitalize;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+    }
+    .radioBtn {
+      width: 36px;
+      height: 36px;
+      background: #dce2eb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        background: #00aac0;
+      }
+    }
+  }
+  .addCardLink {
+    margin-top: 80px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 109.3%;
+    /* or 15px */
+
+    /* Fonts / Dark */
+
+    color: $dark;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    svg {
+      margin-right: 15px;
+    }
+  }
+}

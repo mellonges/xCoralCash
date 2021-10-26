@@ -1,0 +1,141 @@
+@import "../../variables.scss";
+.tasksWrapper {
+  width: 100%;
+
+  border-radius: 6px;
+
+  background: #f4f8fa url("/images/bgTexture.svg") no-repeat center right;
+  padding: 16px 24px 26px 40px;
+  margin-top: 22px;
+  background-size: auto 100%;
+
+  .Icon {
+    background: $bgGreenDark;
+    border-radius: 20.7692px;
+    height: 54px;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    flex: 0 0 auto;
+  }
+  .tasksProgress {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 21px;
+    flex-grow: 1;
+
+    .taskProgress {
+      height: 5px;
+      background: #6f909c;
+      border-radius: 4px;
+      margin-right: 5px;
+      opacity: 0.28;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        opacity: 1;
+        background: $bgGreenDark;
+      }
+    }
+  }
+  .taskInfo {
+    .taskTitle {
+      padding-top: 4px;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 109.3%;
+      /* identical to box height, or 20px */
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+    }
+    .taskDescription {
+      font-size: 15px;
+      line-height: 109.3%;
+      /* or 16px */
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+
+      opacity: 0.68;
+      margin-top: 8px;
+    }
+  }
+  .actionBtn {
+    margin-right: 46px;
+    width: 219px;
+    .btn {
+      width: 100%;
+      background-color: $bgGreenDark;
+      padding: 15px 30px;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 19px;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .tasksWrapper {
+    background-image: none;
+    position: relative;
+    flex-wrap: wrap;
+
+    padding: 20px 20px 20px 13px;
+
+    .taskInfo {
+      width: auto;
+      flex: 1;
+      padding-right: 40px;
+
+      .taskTitle {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 109.3%;
+      }
+      .taskDescription {
+        font-size: 13px;
+        line-height: 115.3%;
+      }
+    }
+
+    .Icon {
+      width: 39px;
+      height: 39px;
+      margin-right: 18px;
+      border-radius: 15px;
+
+      svg {
+        max-width: 21px;
+      }
+    }
+    .actionBtn {
+      margin-right: auto;
+      width: auto;
+    }
+    .tasksProgress {
+      flex-basis: 100%;
+      max-width: unset;
+    }
+    .actionBtnMobile {
+      margin-top: 15px;
+      .btn {
+        padding: 8px 20px;
+        font-size: 13px;
+        line-height: 17px;
+        width: auto;
+      }
+    }
+    .close {
+      margin-left: auto;
+      position: absolute;
+      right: 20px;
+      top: 18px;
+    }
+  }
+}

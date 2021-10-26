@@ -1,0 +1,503 @@
+@import "../../../variables.scss";
+/* This .scss file contains styling for both: Deposit and Withdraw modals */
+
+body .depositModal,
+body .withdrawModal {
+  max-width: 403px !important;
+  width: auto !important;
+  min-width: unset !important;
+  padding-bottom: 31px;
+
+  /* Modals Common */
+  input,
+  input:focus {
+    border: none !important;
+    outline: none !important;
+  }
+
+  .modalHeadline {
+    width: 100%;
+    margin: 25px 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .modalInner {
+    position: relative;
+    margin-top: 20px;
+    min-height: 280px;
+  }
+
+  .back {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+  }
+
+  .errorMessage {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #ff4d4d;
+  }
+
+  .errorDeposit {
+    transform: translateY(-100%);
+  }
+
+  .previewBtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: 42px;
+    background: #00aac0;
+    border-radius: 4.14664px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+    margin-top: 19px;
+    margin-top: 33px;
+  }
+
+  /* Default Modal View */
+  .defaultModalView {
+    width: calc(100% - 58px);
+    margin: auto;
+    .SelectSum {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #8aaab4;
+
+      .dollarSymbol {
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: -0.02em;
+
+        /* Fonts / Gray 2 */
+
+        color: #757575;
+        margin-right: 8px;
+
+        &.active {
+          color: #11343f;
+        }
+      }
+
+      .sumInput {
+        flex: 0 0 auto;
+        letter-spacing: -0.02em;
+
+        input {
+          background-color: transparent;
+          border: none !important;
+          font-family: "Google Sans", sans-serif;
+          color: #11343f;
+          font-size: 50px;
+          line-height: 74px;
+          padding: 0 !important;
+
+          max-width: 300px;
+
+          &:focus {
+            outline: none !important;
+          }
+        }
+      }
+
+      input {
+        border: none;
+        font-size: 58px;
+        line-height: 1;
+        color: #8aaab4;
+      }
+
+      input:focus {
+        outline: none;
+      }
+    }
+
+    .PayWithInput {
+      cursor: pointer;
+      width: 100%;
+      height: 60px;
+      margin-top: 20px;
+      padding: 0 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #e4e5e5;
+      border-radius: 4.14664px;
+      color: #8199a5;
+      font-size: 14px;
+
+      & input {
+        font-size: 12px;
+      }
+
+      & input::placeholder {
+        font-size: 14px;
+        color: #8199a5;
+      }
+
+      &.errorInput {
+        border-color: red;
+      }
+
+      .title {
+        width: 27%;
+      }
+
+      .method {
+        width: 73%;
+      }
+
+      svg {
+        margin-left: auto;
+      }
+
+      .payWithMethodCard {
+        display: flex;
+        align-items: center;
+        height: 25px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #11343f;
+
+        .text {
+          margin-left: 7px;
+        }
+
+        img {
+          max-height: 25px;
+        }
+      }
+    }
+  }
+
+  /* Pay With View */
+  .payWithView {
+    .payWithSearch {
+      width: calc(100% - 58px);
+      margin: auto;
+      height: 44px;
+      border-radius: 3px;
+      background: #edf3f6;
+
+      input {
+        height: 44px;
+        background: transparent;
+        border: none;
+      }
+      input:focus {
+        border: none !important;
+      }
+      .inputText {
+        background: transparent;
+        border: none;
+      }
+    }
+
+    .cryptoList {
+      position: relative;
+      overflow: scroll;
+      width: 100%;
+      min-height: 300px;
+      margin-top: 10px;
+
+      .cryptoItem {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        margin: 0;
+        padding: 0 29px;
+
+        &:first-child {
+          margin-top: 10px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #f0f6fa;
+        }
+
+        &:hover {
+          background: #f0f6fa;
+        }
+      }
+
+      .cryptoItemImage {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .cryptoItemTitle {
+        width: 60%;
+      }
+
+      .cryptoItemTitle div:nth-child(1) {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .cryptoItemTitle div:nth-child(2) {
+        font-size: 13px;
+        font-weight: 400;
+        color: #8aaab4;
+      }
+
+      .cryptoItemCheckbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #dce2eb;
+        transition: all 0.3s ease;
+
+        &.checked {
+          background: #00aac0;
+
+          svg {
+            transform: scale(1);
+          }
+        }
+
+        svg {
+          transition: all 0.3s ease;
+          transform: scale(0);
+        }
+      }
+
+      .methodsNotFoundMessage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        padding: 39px;
+      }
+    }
+  }
+
+  /* Preview View */
+  .previewModalView {
+    width: calc(100% - 58px);
+    margin: auto;
+
+    .cryptoAmount {
+      width: 100%;
+      text-align: center;
+      font-size: 38px;
+      line-height: 48px;
+      color: #00aac0;
+    }
+    .cryptoAmount span:nth-child(2) {
+      text-transform: uppercase;
+    }
+    .sendToWalletMessage {
+      font-size: 14px;
+      text-align: center;
+      color: #697f8a;
+    }
+
+    .cryptoAmountInfo {
+      margin: 30px 0;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 14px;
+
+        svg {
+          margin-left: 5px;
+        }
+
+        & > div:nth-child(1) {
+          color: #697f8a;
+        }
+        & > div:nth-child(2) {
+          color: #11343f;
+        }
+      }
+      img {
+        height: 22px;
+      }
+    }
+
+    .cryptoAddress {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 55px;
+      padding: 0 10px;
+      border-radius: 4px;
+      border: 1px solid #e4e5e5;
+      font-size: 14px;
+
+      & > div:nth-child(1) {
+        width: 25%;
+        color: #8199a5;
+      }
+      & > div:nth-child(2) {
+        width: 65%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        line-height: 1.1;
+      }
+    }
+
+    .cryptoWarningMessage {
+      margin-top: 25px;
+      font-size: 13px;
+      line-height: 1.1;
+      color: #697f8a;
+    }
+
+    .copiedMessage {
+      position: absolute;
+      color: black;
+      font-size: 13px;
+    }
+
+    .successDepositCrypto {
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 47px;
+        height: 47px;
+        margin: 30px auto;
+        border-radius: 18px;
+        background: #c2f0ed;
+      }
+
+      .successTitle {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        color: #00aac0;
+      }
+
+      .successMessage {
+        padding: 0 10px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: #11343f;
+      }
+    }
+
+    .cryptoAddressCard {
+      font-size: 14px;
+
+      .headline {
+        line-height: 2;
+        color: #697f8a;
+      }
+      .address {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+        padding: 5px;
+        height: 60px;
+        border: 1px solid #e4e5e5;
+        border-radius: 4px;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        color: #11343f;
+      }
+    }
+  }
+
+  .tokenAddress {
+  }
+}
+
+/* Loading animation */
+.loadingWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ldsRing {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .ldsRing div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 6px;
+    border: 6px solid #00aac0;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #00aac0 transparent transparent transparent;
+  }
+  .ldsRing div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .ldsRing div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .ldsRing div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingCircleIcon {
+  width: 24px;
+  height: 24px;
+
+  circle {
+    stroke: #fff !important;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .tokenAddress {
+    font-size: 16px !important;
+  }
+
+  body .depositModal {
+    max-width: 100% !important;
+  }
+}

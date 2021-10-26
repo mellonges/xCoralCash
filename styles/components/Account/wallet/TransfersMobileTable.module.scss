@@ -1,0 +1,185 @@
+@import "../../../variables.scss";
+
+.transfersMobile {
+  .Items {
+    .operationItem {
+      position: relative;
+      padding: 21px 0 19px;
+      border-bottom: 0.862401px solid #ecf2f4;
+      .operationIconWrapper {
+        margin-right: 22px;
+        width: 45px;
+        .operationIcon {
+          background: #8aaab4;
+          width: 35px;
+          height: 35px;
+
+          /* Fonts / Gray 2 */
+
+          background: #8aaab4;
+
+          border-radius: 50%;
+          &.failed {
+            background: #f67169;
+            border: 2.78261px solid #ffffff;
+          }
+        }
+        .orderId {
+          font-size: 12px;
+          line-height: 109.3%;
+          /* or 13px */
+
+          text-transform: capitalize;
+
+          color: #8aaab4;
+          margin-top: 22px;
+        }
+      }
+      .amountHolder {
+        position: absolute;
+        top: 23px;
+        right: 0;
+      }
+      .info {
+        .top {
+          .operationType {
+            width: 150px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 15px */
+
+            text-transform: capitalize;
+
+            /* Fonts / Dark */
+
+            color: #11343f;
+          }
+          .date {
+            color: #8aaab4;
+          }
+        }
+        .bottom {
+          margin-top: 8px;
+          font-size: 12px;
+          line-height: 109.3%;
+          flex-wrap: wrap;
+          display: flex;
+          /* or 13px */
+
+          text-transform: capitalize;
+
+          color: #8aaab4;
+
+          .cryptoInfo {
+            .address {
+              max-width: 200px;
+              word-break: break-all;
+              font-size: 11px;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+          }
+          .cryptoIcon {
+            width: 19.21px;
+            height: 19.21px;
+            margin-right: 5px;
+          }
+          .status {
+            font-size: 12px;
+            line-height: 109.3%;
+            /* or 13px */
+
+            text-transform: capitalize;
+
+            flex-basis: 100%;
+            /* Fonts / Gray 2 */
+
+            color: #8aaab4;
+            margin-top: 10px;
+
+            svg {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+      .amount {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-align: right;
+        text-transform: capitalize;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+      }
+      .equivalent {
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-align: right;
+        text-transform: capitalize;
+        display: block;
+        margin-top: 4px;
+        color: #8aaab4;
+      }
+    }
+  }
+
+  .noAssetsHolder {
+    margin: 10px auto;
+    margin-top: 50px;
+    width: 200px;
+    min-height: 140px;
+    border-radius: 3px;
+
+    .Icon {
+      background: #eaf1f5;
+      border-radius: 20.614px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+    }
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 109.3%;
+      /* identical to box height, or 20px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #678086;
+      font-family: $Asul;
+      margin-bottom: 4px;
+    }
+    .descr {
+      font-size: 14px;
+      line-height: 143.8%;
+      /* or 20px */
+
+      text-align: center;
+
+      color: #678086;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .transfersMobile {
+    .Items {
+      .operationItem {
+        .amount {
+          display: block;
+        }
+      }
+    }
+  }
+}

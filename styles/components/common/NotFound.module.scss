@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+.pageNotFound {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  color: $darkBlue;
+
+  h1 {
+    font-family: $Asul;
+    margin-bottom: 30px;
+  }
+}

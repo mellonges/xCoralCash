@@ -1,0 +1,112 @@
+@import "../../variables.scss";
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: calc(100% - 200px);
+  margin-left: auto;
+  height: 70px;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #153f59;
+  color: white;
+
+  .inner {
+    min-height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 120px;
+  }
+
+  a,
+  span {
+    opacity: 0.7;
+  }
+
+  a {
+    vertical-align: top;
+    padding: 0 20px;
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .chatBtn {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    background: $bgGreenLight;
+    border-radius: 4px;
+    padding: 5px 19px;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #003146;
+    background-color: $bgGreenDark;
+    color: $white;
+
+    &:focus {
+      background-color: $linkBtnGreen !important;
+      color: $white;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .inner a {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    bottom: 62px;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    font-size: 14px;
+
+    .inner {
+      min-height: unset;
+      padding: 5px 0 5px 0;
+      margin-right: 0;
+      flex-wrap: wrap;
+
+      .copyright {
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      & > a {
+        flex-basis: 50%;
+        margin: 2px 0;
+        padding: 0;
+      }
+    }
+    .chatBtn {
+      position: relative;
+      bottom: unset;
+      right: unset;
+      width: 100%;
+      margin: 5px 0 17px 0;
+      padding: 8px 19px;
+      transform: none;
+    }
+  }
+}

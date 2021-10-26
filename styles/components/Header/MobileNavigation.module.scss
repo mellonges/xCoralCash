@@ -1,0 +1,94 @@
+@import "../../variables.scss";
+.mobileNavigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+
+  background-color: $white;
+
+  .top {
+    width: 100%;
+    border-bottom: 1px solid #ecf2f4;
+    padding-bottom: 19px;
+    padding: 15px 20px 20px;
+
+    .logotype {
+      font-weight: bold;
+      font-size: 24.6559px;
+      line-height: 96.3%;
+      /* identical to box height, or 24px */
+
+      letter-spacing: -0.07em;
+
+      /* BG / Dark */
+
+      color: $darkBlue;
+      font-family: $Asul;
+      span {
+        color: $bgGreenDark;
+      }
+    }
+  }
+  .registerButtons {
+    max-width: 570px;
+    padding: 0 15px;
+    margin: 38px auto 0px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ecf2f4;
+
+    .getStarted {
+      width: 100%;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      /* identical to box height */
+
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      color: $white;
+      padding: 18px 20px;
+    }
+    .logIn {
+      color: $bgGreenDark;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      /* identical to box height */
+
+      text-align: center;
+      letter-spacing: -0.02em;
+      text-align: center;
+      display: block;
+      padding: 20px 0;
+    }
+  }
+  .navigation {
+    margin-top: 28px;
+    padding: 0 20px;
+
+    .navItem {
+      display: block;
+      max-width: 540px;
+      margin: 0 auto 6px;
+      font-size: 18px;
+      line-height: 23px;
+      /* identical to box height */
+
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      /* Fonts / Dark */
+
+      color: #11343f;
+      padding: 18px 20px;
+      background: #ffffff;
+      border: 1px solid #c0d7df;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+  }
+}

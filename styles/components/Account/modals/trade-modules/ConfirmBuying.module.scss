@@ -1,0 +1,120 @@
+@import "../../../../variables.scss";
+.ConfirmBuying {
+  .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+
+    color: #11343f;
+  }
+  .top {
+    border-bottom: 1px solid #f0f6fa;
+    padding-bottom: 14px;
+
+    .searchForm {
+      margin-top: 16px;
+
+      .searchFormGroup {
+        padding: 12px 14px;
+        background: #edf3f7;
+        border-radius: 3px;
+      }
+
+      .searchInput {
+        background-color: transparent;
+        font-size: 16px;
+        border: none;
+        line-height: 18px;
+
+        /* Fonts / Gray 1 */
+        padding: 0;
+
+        color: #678086;
+
+        &:focus {
+          outline: none;
+          border: none !important;
+        }
+      }
+      .inputText {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+  .confirmInfo {
+    .price {
+      font-size: 42px;
+      line-height: 53px;
+      text-align: center;
+      letter-spacing: -0.01em;
+
+      color: #00aac0;
+
+      padding: 22px 0 33px;
+      text-align: center;
+    }
+    .row {
+      margin-top: 15px;
+      .label {
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height */
+
+        color: #697f8a;
+
+        span {
+          margin-left: 10px;
+        }
+      }
+      .value {
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height */
+
+        text-align: right;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+        display: flex;
+        align-items: center;
+      }
+      .cardLogo {
+        margin-right: 14px;
+      }
+    }
+  }
+  .previewBtn {
+    width: 100%;
+    min-height: 60px;
+    background: #00aac0;
+    border-radius: 4.14664px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: unset;
+
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+    margin-top: 19px;
+    margin-top: 33px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    span {
+      display: inline-block;
+    }
+    .loadingCircleIcon {
+      width: 24px;
+      height: 24px;
+
+      circle {
+        stroke: #fff !important;
+      }
+    }
+  }
+}

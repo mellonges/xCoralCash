@@ -1,0 +1,98 @@
+@import '../../variables.scss';
+.transactionsModal {
+  .noAssetsHolder {
+    min-height: 241px;
+
+    border-radius: 3px;
+    .Icon {
+      background: #eaf1f5;
+      border-radius: 20.614px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+    }
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 109.3%;
+      /* identical to box height, or 20px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #678086;
+      font-family: $Asul;
+      margin-bottom: 4px;
+    }
+    .descr {
+      font-size: 14px;
+      line-height: 143.8%;
+      /* or 20px */
+
+      text-align: center;
+
+      color: #678086;
+    }
+  }
+  .pagination {
+    margin-top: 47px;
+    margin-bottom: 50px;
+    .prevBtn,
+    .nextBtn {
+      margin-right: 15px;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 39px;
+      padding-left: 21px;
+      padding-right: 21px;
+      min-width: 140px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      .icon {
+        margin-right: 7px;
+      }
+      &:hover {
+        svg path {
+          fill: $white !important;
+        }
+      }
+    }
+    .nextBtn {
+      .icon {
+        margin-left: 17px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .transactionsModal {
+    .pagination {
+      flex-direction: column;
+      margin-top: 22px;
+      margin-bottom: 25px;
+
+      .prevBtn,
+      .nextBtn {
+        width: 100%;
+        max-width: 320px;
+        margin: 0;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,427 @@
+@import "../../variables.scss";
+
+.AccountCategory {
+  .pagination {
+    margin-bottom: 60px;
+  }
+  .topBlock {
+    background: url("/images/categorytopbg.png") no-repeat;
+    background-size: cover;
+    min-height: 287px;
+    color: $white;
+    position: relative;
+    top: -37px;
+    left: -54px;
+    width: calc(100vw - 197px);
+
+    .inner {
+      padding: 24px 56px;
+    }
+
+    .backBtn {
+      border: 0.921053px solid #ffffff;
+      box-sizing: border-box;
+      border-radius: 46.0526px;
+      background-color: transparent;
+      font-size: 14.7368px;
+      line-height: 157.8%;
+      display: flex;
+
+      align-items: center;
+      padding: 11px 22px;
+      /* identical to box height, or 23px */
+
+      color: #ffffff;
+      svg {
+        margin-right: 9px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $white !important;
+
+        color: $darkBlue !important;
+
+        svg path {
+          fill: $darkBlue !important;
+        }
+      }
+    }
+
+    .heading {
+      font-family: $Asul;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 49px;
+      /* or 44px */
+      margin-top: 44px;
+
+      letter-spacing: -0.03em;
+      margin-bottom: 2px;
+      text-transform: capitalize;
+    }
+    .description {
+      font-size: 15px;
+      margin-top: 10px;
+      line-height: 157.8%;
+      /* identical to box height, or 24px */
+
+      color: #ffffff;
+    }
+  }
+  .tokensTableWrapper {
+    margin-top: -82px;
+    position: relative;
+
+    .tokensListTable {
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+      background-color: $white;
+      overflow: hidden;
+    }
+    .notFoundText {
+      margin-top: 74px;
+      margin-bottom: 10rem;
+      .Icon {
+        width: 80.88px;
+        height: 80.88px;
+
+        background: #eaf1f5;
+        border-radius: 33.3457px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title {
+        font-family: $Asul;
+
+        font-weight: bold;
+        font-size: 30.4391px;
+        line-height: 109.3%;
+        /* identical to box height, or 33px */
+
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        color: #678086;
+        margin-top: 30px;
+        margin-bottom: 18px;
+      }
+      .descr {
+        font-size: 17.3938px;
+        line-height: 143.8%;
+        /* or 25px */
+
+        max-width: 442.67px;
+        text-align: center;
+
+        color: #678086;
+        margin-bottom: 37px;
+      }
+      .requestBtn {
+        padding: 15.5px 45px;
+      }
+    }
+    .tokensListTable {
+      width: 100%;
+
+      .divTableRow {
+        width: 100%;
+
+        &:hover {
+          background-color: $grey3;
+        }
+      }
+      .divTableCol {
+        padding: 22px 2px;
+        vertical-align: middle;
+      }
+      .heading {
+        border-radius: 5px;
+
+        .headingText {
+          font-weight: 500;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          /* identical to box height */
+
+          text-transform: uppercase;
+          vertical-align: middle;
+          /* Fonts / Gray 1 */
+
+          padding: 14px 23px;
+          border: none;
+
+          .sortArrow {
+            margin-left: 10px;
+            &.arrowAsc {
+              transform: rotateX(180deg);
+            }
+          }
+        }
+      }
+      .tableBody {
+        width: 100%;
+      }
+      .tokenItem {
+        border-bottom: 1px solid #ecf2f4;
+        cursor: pointer;
+        .divTableCol {
+          padding: 17px 23px;
+          vertical-align: middle;
+        }
+        .tokenName {
+          .tokenNameInner {
+            display: flex;
+            align-items: center;
+            .Image {
+              width: 56px;
+              height: 56px;
+              margin-right: 16px;
+              background: #c4c4c4;
+              border-radius: 21.56px;
+            }
+            .tokenTitle {
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 109.3%;
+              /* or 15px */
+
+              text-transform: capitalize;
+
+              /* Fonts / Dark */
+
+              color: #11343f;
+              /* or 17px */
+
+              text-transform: capitalize;
+
+              /* Fonts / Dark */
+
+              margin-right: 21px;
+            }
+            .tokenTicker {
+              font-size: 14px;
+              line-height: 109.3%;
+              /* or 15px */
+
+              text-transform: capitalize;
+
+              /* Fonts / Gray 2 */
+
+              color: #8aaab4;
+            }
+          }
+        }
+        .Price {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 109.3%;
+          /* or 15px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+        }
+        .PercentChange {
+          .percent {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 109.3%;
+            /* or 17px */
+
+            text-transform: capitalize;
+            &.positive {
+              color: $bgGreenDark;
+            }
+            &.negative {
+              color: $redLight;
+            }
+            &.neutral {
+              color: $grey2;
+            }
+          }
+        }
+        .tokenChart {
+          .chart {
+            width: 100px;
+            height: 40px;
+          }
+        }
+        .tradeBtn {
+          .tradeButton {
+            padding: 8.5px 22px;
+            font-weight: 500;
+            font-size: 13.7984px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .sortSelectWrapper {
+    position: sticky !important;
+    top: 68px;
+    background: #fdfdfd;
+    width: 100%;
+    padding: 18px 15px;
+    border-bottom: 1px solid #ecf2f4;
+
+    .sortSelect {
+      width: 140px;
+      max-width: 50%;
+    }
+  }
+
+  .AccountCategory {
+    .topBlock {
+      width: 100vw;
+      left: -34px;
+    }
+  }
+
+  .tokensListMobile {
+    background-color: $white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+
+    .tokenItem {
+      padding: 22px 15px;
+
+      border-bottom: 1px solid #ecf2f4;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .titleColumn {
+        width: 60%;
+      }
+      .Image {
+        width: 63px;
+        height: 63px;
+        margin-right: 20px;
+        background: #c4c4c4;
+        border-radius: 25px;
+        margin-right: 20px;
+      }
+      .tokenTitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 109.3%;
+        /* or 17px */
+
+        font-family: $Asul;
+        text-transform: capitalize;
+
+        /* Fonts / Dark */
+
+        color: #11343f;
+        margin-right: 26px;
+      }
+      .tokenTicker {
+        font-size: 16px;
+        line-height: 109.3%;
+        /* or 17px */
+
+        text-transform: capitalize;
+
+        /* Fonts / Gray 2 */
+
+        color: $grey2;
+        margin-top: 8px;
+      }
+
+      .tokenChart {
+        margin-left: auto;
+        .chart {
+          width: 76px;
+          height: 25px;
+        }
+      }
+      .priceContainer {
+        margin-left: auto;
+
+        .Price {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 109.3%;
+          /* or 17px */
+
+          text-transform: capitalize;
+
+          /* Fonts / Dark */
+
+          color: #11343f;
+        }
+        .percent {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 109.3%;
+
+          text-transform: capitalize;
+          &.positive {
+            color: $bgGreenDark;
+          }
+          &.negative {
+            color: $redLight;
+          }
+          &.neutral {
+            color: $grey2;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .tokensListMobile {
+    .tokenItem {
+      padding: 13px 15px;
+
+      .Image {
+        width: 47px;
+        height: 47px;
+        border-radius: 18.0769px;
+        margin-right: 12px;
+      }
+    }
+  }
+  .AccountCategory {
+    .topBlock {
+      width: 100vw;
+      left: -18px;
+      top: -29px;
+
+      .inner {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .heading {
+        margin-top: 29px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .AccountCategory .tokensTableWrapper {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+
+  .tokensListMobile {
+    .tokenItem {
+      .priceContainer {
+        .percent {
+          max-width: 66px;
+        }
+      }
+    }
+  }
+}

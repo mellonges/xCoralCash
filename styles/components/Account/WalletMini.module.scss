@@ -1,0 +1,65 @@
+@import "../../variables.scss";
+.walletWrapper {
+  padding-bottom: 21px;
+  border-bottom: 1px solid #ecf2f4;
+
+  .walletInner {
+    &:hover {
+      .descr,
+      .total {
+        color: $bgGreenDark;
+      }
+
+      .icon {
+        path {
+          fill: $bgGreenDark !important;
+        }
+      }
+    }
+  }
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 109.3%;
+    /* or 20px */
+
+    letter-spacing: -0.03em;
+
+    /* Fonts / Dark */
+
+    color: $dark;
+    font-family: $Asul;
+    margin-bottom: 11.2px;
+  }
+  .walletIcon {
+    background: $bgGrey2;
+    border-radius: 14.9014px;
+    width: 46px;
+    height: 46px;
+    margin-right: 19px;
+  }
+  .descr {
+    font-weight: 500;
+    font-size: 13px;
+
+    /* or 14px */
+
+    text-transform: capitalize;
+
+    /* Fonts / Gray 2 */
+
+    color: $grey2;
+  }
+  .total {
+    display: block;
+    font-weight: 500;
+    font-size: 22px;
+
+    /* or 24px */
+
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+
+    color: #11343f;
+  }
+}

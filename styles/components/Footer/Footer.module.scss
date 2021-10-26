@@ -1,0 +1,208 @@
+@import "../../variables.scss";
+.footerWrapper {
+  background: #00405b;
+  padding: 60px 0 29px;
+  width: 100%;
+
+  .leftText {
+    max-width: 356.85px;
+    font-weight: 500;
+    font-size: 29.3848px;
+    line-height: 119.8%;
+
+    /* or 39px */
+
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+
+    span {
+      font-family: $Asul;
+      color: $bgGreenLight;
+    }
+  }
+  .footerNav {
+    a {
+      display: block;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 119.8%;
+      /* or 20px */
+
+      color: #ffffff;
+      margin-bottom: 14px;
+
+      &:hover {
+        color: $bgGreenLight;
+      }
+    }
+  }
+  .loginButtons {
+    width: 224px;
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+      font-weight: bold;
+      font-size: 15.25px;
+      line-height: 19px;
+      /* identical to box height */
+
+      letter-spacing: -0.02em;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+
+      &.signUpBtn {
+        background: #ffffff;
+        color: #00405b;
+
+        &:hover {
+          background-color: $bgGrey;
+        }
+      }
+      &.logIn {
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        background-color: transparent;
+
+        &:hover {
+          background-color: $bgDark;
+        }
+      }
+    }
+  }
+  .footerLine {
+    height: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    width: 100%;
+    margin: 44px 0 34px 0;
+  }
+  .footerLogo {
+    font-weight: bold;
+    font-size: 30.3307px;
+    line-height: 96.3%;
+    /* or 29px */
+
+    letter-spacing: -0.07em;
+
+    color: #ffffff;
+    font-family: $Asul;
+
+    span {
+      color: $bgGreenLight;
+    }
+  }
+  .copyright {
+    position: relative;
+    font-size: 14px;
+    line-height: 136.3%;
+    /* identical to box height, or 19px */
+
+    color: #ffffff;
+    margin-top: 64px;
+
+    & > .Link,
+    & > span {
+      opacity: 0.7;
+    }
+    .Link {
+      color: #ffffff;
+      margin-left: 30px;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .chatBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background: $bgGreenLight;
+    border-radius: 4px;
+    padding: 8px 19px;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #003146;
+    background-color: $bgGreenDark;
+    color: $white;
+
+    &:focus,
+    &:active {
+      background-color: $linkBtnGreen !important;
+      color: $white;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .footerWrapper {
+    .leftText {
+      max-width: 30%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .footerWrapper {
+    padding: 60px 0 17px 0;
+
+    .wrapper {
+      flex-direction: column;
+
+      .leftText {
+        width: 100%;
+        max-width: unset;
+        font-weight: 500;
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      .footerNav {
+        margin-bottom: 57px;
+        width: 100%;
+        a {
+        }
+      }
+      .loginButtons {
+        width: 100%;
+      }
+    }
+    .footerLine {
+      margin-top: 26px;
+    }
+    .copyright {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      & > span {
+        flex-basis: 100%;
+        margin-bottom: 5px;
+      }
+
+      .chatBtn {
+        position: relative;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .Link {
+        flex-basis: 50%;
+        margin: 2px 0;
+      }
+    }
+  }
+}

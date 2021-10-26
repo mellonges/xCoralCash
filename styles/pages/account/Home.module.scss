@@ -1,0 +1,193 @@
+@import '../../variables.scss';
+
+.AccountHome {
+  .pageTitle {
+    font-family: Asul;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+
+    /* Fonts / Dark */
+
+    color: #11343f;
+  }
+  .assetsWrapper {
+    width: 100%;
+    margin-top: 34px;
+    position: relative;
+
+    .graph {
+      height: 402px;
+      flex: auto;
+
+      .noDataHolder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .Icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+
+          background: #678086;
+          margin-bottom: 16px;
+        }
+        .main {
+          font-size: 18px;
+          line-height: 109.3%;
+          /* identical to box height, or 20px */
+
+          letter-spacing: -0.03em;
+          text-transform: capitalize;
+
+          color: #678086;
+          margin-bottom: 5px;
+        }
+        .descr {
+          font-size: 14px;
+          line-height: 143.8%;
+          /* or 20px */
+
+          text-align: center;
+
+          color: #678086;
+          margin-bottom: 18px;
+        }
+        .pricesBtn {
+          padding: 8px 38px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          /* identical to box height */
+
+          text-align: center;
+          letter-spacing: -0.02em;
+
+          color: #ffffff;
+        }
+      }
+      .grapMaininfo {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109.3%;
+        /* or 15px */
+
+        text-transform: capitalize;
+
+        color: #4d666f;
+        .heading {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 109.3%;
+          /* or 15px */
+
+          text-transform: capitalize;
+
+          color: #11343f;
+
+          opacity: 0.5;
+          margin-bottom: 5px;
+        }
+      }
+      .totalPrice {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 109.3%;
+        /* or 28px */
+
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+        margin-top: 5px;
+        color: #11343f;
+      }
+    }
+    .rightSide {
+      margin-left: 45px;
+      width: 335.81px;
+      flex: 0 0 auto;
+    }
+  }
+  .featuredPeople {
+    margin-top: 47px;
+
+    .pageTitle {
+      font-size: 22px;
+      line-height: 27px;
+      margin-bottom: 26px;
+    }
+    .seePricesBtn {
+      font-weight: 500;
+      font-size: 16.5866px;
+      line-height: 21px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      padding: 14.5px 17px;
+      width: 252px;
+      margin-top: 49px;
+      margin-bottom: 9px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+@media screen and (max-width: 1180px) {
+  .AccountHome {
+    .assetsWrapper {
+      .rightSide {
+        width: 300px;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .AccountHome {
+    .assetsWrapper {
+      flex-direction: column;
+      margin-top: 14px;
+      .graph {
+        height: 400px;
+        margin-bottom: 70px;
+      }
+      .rightSide {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 25px;
+      }
+    }
+
+    .grapMaininfo {
+      padding: 10px;
+      padding-top: 0;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .AccountHome {
+    .featuredPeople {
+      .seePricesBtn {
+        font-weight: 500;
+        font-size: 14.5866px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        padding: 11.5px 13px;
+        width: 198px;
+        margin-top: 16px;
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

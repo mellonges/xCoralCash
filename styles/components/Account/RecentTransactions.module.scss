@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+.RecentTransactionsWrapper {
+  margin-top: 20px;
+  .transactions {
+    .allTransactionsLink {
+      margin-top: 30px;
+
+      font-size: 14px;
+      line-height: 109.3%;
+      /* or 15px */
+
+      /* BG / Green Dark */
+
+      color: #1ab0c4;
+      display: block;
+
+      &:hover {
+        color: $bgDark;
+      }
+    }
+  }
+  .noTransactions {
+    height: 417px;
+    width: 100%;
+    background: #f7fafc;
+    border-radius: 3px;
+
+    .Icon {
+      background: #eaf1f5;
+      border-radius: 20.614px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+    }
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 109.3%;
+      /* identical to box height, or 20px */
+
+      letter-spacing: -0.03em;
+      text-transform: capitalize;
+
+      color: #678086;
+      font-family: $Asul;
+      margin-bottom: 4px;
+    }
+    .descr {
+      font-size: 14px;
+      line-height: 143.8%;
+      /* or 20px */
+
+      text-align: center;
+
+      color: #678086;
+    }
+  }
+}
