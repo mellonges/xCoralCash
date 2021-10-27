@@ -3,8 +3,8 @@ import {
   ChangeAccountWithdrawModalState,
 } from "@/functions/observers";
 import { Button } from "reactstrap";
-import { formatPrice } from "../../../functions/helpers";
-import styles from "../../../styles/pages/account/Wallet.module.scss";
+import { formatPrice } from "@/functions/helpers";
+import styles from "@/styles/pages/account/Wallet.module.scss";
 import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 

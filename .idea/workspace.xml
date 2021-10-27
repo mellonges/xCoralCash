@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
+      <change afterPath="$PROJECT_DIR$/components/NewToolTip.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/TooltipComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/futures/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/futures/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Graph/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Graph/Graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/account/WalletMini.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/WalletMini.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/account/WalletTopBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/WalletTopBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -21,16 +34,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/functions/getNetworkName.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pages/_app.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/redux/Store.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pages/dashboard/index.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/redux/reducers/rootReducer.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/redux/reducers/asyncActions/repairConnect.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Navbar/Navbar.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/functions/getNetworkName.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pages/dashboard/index.jsx" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="aukm3i2q" />
   </component>
   <component name="ProjectId" id="1zx7jxcfeSI1k1sk3dpQJ89sEdw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,20 +58,29 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components" />
       <recent name="$PROJECT_DIR$/redux/reducers/asyncActions" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -108,6 +133,13 @@
       <workItem from="1635270727662" duration="6742000" />
       <workItem from="1635281165047" duration="766000" />
       <workItem from="1635281993838" duration="366000" />
+      <workItem from="1635341648478" duration="376000" />
+      <workItem from="1635342145912" duration="190000" />
+      <workItem from="1635342442781" duration="194000" />
+      <workItem from="1635342992871" duration="110000" />
+      <workItem from="1635343136799" duration="36000" />
+      <workItem from="1635343187094" duration="4660000" />
+      <workItem from="1635361174172" duration="4773000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>
@@ -137,5 +169,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="crazy days" />
     <option name="LAST_COMMIT_MESSAGE" value="crazy days" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-import styles from "../../../styles/pages/graph/Graph.module.scss";
+import styles from "../../styles/pages/graph/Graph.module.scss";
 
 import {
   actualizeGraphData,
   formatPrice,
   calcPriceChange,
-} from "../../../functions/helpers";
+} from "@/functions/helpers";
 import { Button } from "reactstrap";
 import Select from "react-select";
-import PriceChangePercent from "../common/PriceChangePercent";
+// import PriceChangePercent from "../../common/PriceChangePercent";
 import moment from "moment";
 
 const Graph = ({
@@ -306,3 +306,5 @@ const Graph = ({
 };
 
 export default Graph;
+
+
