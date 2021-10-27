@@ -42,8 +42,10 @@ const connectFunctionForButton = () => {
                     {/*  <SearchForm classes={styles} />*/}
                     {/*</div>*/}
                     <div>
-                        {isConnected && <div className={styles.displayAddressPlace}> {getNetworkName(network)} network <b
-                            className={styles.showAddress}>{walletAddress}</b></div>}
+                        {isConnected && <div className={styles.displayAddressPlace}> 
+                        {/* {getNetworkName(network)} */}
+                         Main network <b
+                        className={styles.showAddress}>{walletAddress}</b></div>}
                     </div>
                     <button onClick={() => connectFunctionForButton()}
 
