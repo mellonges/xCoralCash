@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "@/styles/components/Account/WalletMini.module.scss";
 import { formatPrice } from "@/functions/helpers";
-import NewToolTip from "./NewToolTip";
+import TooltipComponent from "@/components/common/Tooltip";
 
 const WalletMini = ({ walletInfo }) => {
 
   return  (
-    <div className={styles.walletWrapper}>
+    <div style={{border: "3px solid white", boxShadow: "12px 12px 2px 1px rgba(0, 0, 0, .2);"}} className={styles.walletWrapper}>
       <h2 className={styles.title}>{walletInfo.title}</h2>
       <div
         className={`d-flex align-items-center cursor-pointer ${styles.walletInner}`}
@@ -34,11 +34,13 @@ const WalletMini = ({ walletInfo }) => {
         </div>
         <div className={styles.info}>
           <span className={styles.descr}>{walletInfo.header}</span>
+          <TooltipComponent id={"text"} tooltTipContent={"price info"} />
           <strong className={styles.total}>
             {formatPrice(walletInfo.amount)}
+
           </strong>
         </div>
-          {/*<NewToolTip />*/}
+
       </div>
 
     </div>

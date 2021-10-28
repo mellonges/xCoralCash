@@ -8,7 +8,7 @@ const rootStore = createSlice({
         onboard: null,
         web3ForUser: null,
         isConnected: false,
-        address: "-x----------",
+        address: "0x0000000000000000000000",
         balance: null,
         network: null,
     }, reducers: {

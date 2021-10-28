@@ -162,7 +162,7 @@ const LeftSidePanel = () => {
 </svg>
 
       ),
-      title: "DOCS",
+      title: "Docs",
     },
     { MISC: true,
       link: "/",

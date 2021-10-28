@@ -52,13 +52,17 @@ function MyApp({Component, pageProps}) {
                             toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Mainnet`, {
                                 position: "bottom-right",
                                 autoClose: 3000,
-                                hideProgressBar: false,
+                                hideProgressBar: true,
                                 closeOnClick: true,
                                 pauseOnHover: true,
                                 draggable: true,
                                 progress: undefined,
                             });
-                            // dispatch(disconnectWallet())
+                        toast.warn("disconnect in 5 seconds", {autoClose: 5000})
+                        setTimeout(() => {
+                                dispatch(disconnectWallet())
+                            }, 5000)
+
                     }
                     if (networkId === undefined) {
                         toast.info("Disconnect", {autoClose: 1000, position: "bottom-center"})

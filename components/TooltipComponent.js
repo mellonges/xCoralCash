@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { Tooltip } from "reactstrap";
 
-const TooltipComponent = () => {
+const TooltipComponent = ({id, t}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    id = id ? "Tooltip" + id : "Tooltip";
+
     return (
         <>
       <span  className="tooltip-trigger">
-        {/*{tooltipTrigger}*/}
-          test
+         text
       </span>
             <Tooltip
                 placement="top-start"
                 isOpen={isOpen}
+                target={id}
                 toggle={toggle}
             >
-                text
+                {tooltTipContent}
             </Tooltip>
         </>
     );
