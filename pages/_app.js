@@ -55,19 +55,19 @@ function MyApp({Component, pageProps}) {
                                 autoClose: 3000,
                                 hideProgressBar: true,
                                 closeOnClick: true,
-                                pauseOnHover: true,
+                                pauseOnHover: false,
                                 draggable: true,
                                 progress: undefined,
                             });
-                        toast.warn("disconnect in 5 seconds", {autoClose: 5000})
+                        toast.warn("disconnect in 10 seconds", {autoClose: 5000, pauseOnHover: false})
                        setTimeOudDisconnectId =  setTimeout(() => {
                                 dispatch(disconnectWallet())
-                            }, 5000)
+                            }, 10000)
                     } else if (networkId === undefined) {
-                        toast.info("Disconnect", {autoClose: 1000, position: "bottom-center"})
+                        toast.info("Disconnect", {autoClose: 1000, position: "bottom-center", pauseOnHover: false})
                     } else {
                         clearTimeout(setTimeOudDisconnectId)
-                        toast.success("Returned to Ethereum Mainnet")
+                        toast.success("Returned to Ethereum Mainnet",{pauseOnHover: false})
                     }
 
 
