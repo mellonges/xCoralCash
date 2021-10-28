@@ -60,7 +60,7 @@ function MyApp({Component, pageProps}) {
                                 progress: undefined,
                                 pauseOnFocusLoss: false,
                             });
-                        toast.warn("disconnect in 15 seconds", {autoClose: 5000, pauseOnHover: false, pauseOnFocusLoss: false})
+                        toast.warn("disconnect in 15 seconds", {autoClose: 15000, pauseOnHover: false, pauseOnFocusLoss: false})
                        setTimeOudDisconnectId =  setTimeout(() => {
                                 dispatch(disconnectWallet())
                             }, 15000)

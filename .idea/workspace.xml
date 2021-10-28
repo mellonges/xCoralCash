@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days" />
+    <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +135,7 @@
       <workItem from="1635343187094" duration="4660000" />
       <workItem from="1635361174172" duration="5429000" />
       <workItem from="1635402780711" duration="10375000" />
-      <workItem from="1635415592347" duration="933000" />
+      <workItem from="1635415592347" duration="1265000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>
