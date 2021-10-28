@@ -59,10 +59,10 @@ function MyApp({Component, pageProps}) {
                                 draggable: true,
                                 progress: undefined,
                             });
-                        toast.warn("disconnect in 10 seconds", {autoClose: 5000, pauseOnHover: false})
+                        toast.warn("disconnect in 15 seconds", {autoClose: 5000, pauseOnHover: false})
                        setTimeOudDisconnectId =  setTimeout(() => {
                                 dispatch(disconnectWallet())
-                            }, 10000)
+                            }, 15000)
                     } else if (networkId === undefined) {
                         toast.info("Disconnect", {autoClose: 1000, position: "bottom-center", pauseOnHover: false})
                     } else {
