@@ -8,13 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TooltipComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/TooltipComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WalletMini.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/WalletMini.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/account/LeftSidePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/account/LeftSidePanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/common/Tooltip.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/common/Tooltip.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/reducers/rootReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +135,7 @@
       <workItem from="1635343136799" duration="36000" />
       <workItem from="1635343187094" duration="4660000" />
       <workItem from="1635361174172" duration="5429000" />
-      <workItem from="1635402780711" duration="8397000" />
+      <workItem from="1635402780711" duration="9971000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>

@@ -32,6 +32,7 @@ import {repairConnect} from "../redux/reducers/asyncActions/repairConnect";
 const dappId = process.env.API_KEY
 const networkId = 1
 function MyApp({Component, pageProps}) {
+     let setTimeOudDisconnectId
     const dispatch = useDispatch()
     const isConnected = useSelector(({store}) => store.isConnected)
     const currentWalletAddress = useSelector(({store}) => store.address)
@@ -59,14 +60,16 @@ function MyApp({Component, pageProps}) {
                                 progress: undefined,
                             });
                         toast.warn("disconnect in 5 seconds", {autoClose: 5000})
-                        setTimeout(() => {
+                       setTimeOudDisconnectId =  setTimeout(() => {
                                 dispatch(disconnectWallet())
                             }, 5000)
-
-                    }
-                    if (networkId === undefined) {
+                    } else if (networkId === undefined) {
                         toast.info("Disconnect", {autoClose: 1000, position: "bottom-center"})
+                    } else {
+                        clearTimeout(setTimeOudDisconnectId)
+                        toast.success("Returned to Ethereum Mainnet")
                     }
+
 
                 },
                 address: address => {
