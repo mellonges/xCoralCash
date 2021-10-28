@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LeftSidePanel from "../pages/components/account/LeftSidePanel";
+import LeftSidePanel from "../components/LeftSidePanel";
 import styles from "../styles/pages/account/Layout.module.scss";
 import React, { useEffect } from "react";
 import { useState } from "react";

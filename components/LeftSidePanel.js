@@ -2,10 +2,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import Scrollbar from "react-scrollbars-custom";
-import styles from "../../../styles/pages/account/Layout.module.scss";
-import LeftNavigationMobile from "./LeftNavigationMobile";
-import LeftSideUser from "./LeftSideUser";
-import Notifications from "./Notifications";
+import styles from "@/styles/pages/account/Layout.module.scss";
+import LeftNavigationMobile from "@/components/account/LeftNavigationMobile";
+import LeftSideUser from "@/components/account/LeftSideUser";
+import Notifications from "@/components/account/Notifications";
 
 const LeftSidePanel = () => {
   const router = useRouter();
@@ -293,6 +293,10 @@ const LeftSidePanel = () => {
                 </ul>
               </>
             ) : null}
+          </div>
+          <div style={{backgroundColor: "#0A3345", padding: "1px", textAlign: "center", marginRight: "20px"}}>
+          <p style={{color: "white"}}>xCORAL</p>
+            <p style={{color: "#45FFDE"}}>$NAN</p>
           </div>
         </Scrollbar>
         {/*<LeftSideUser user={user} />*/}

@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/MaintLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/MaintLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/account/LeftSidePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/LeftSidePanel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +137,8 @@
       <workItem from="1635343187094" duration="4660000" />
       <workItem from="1635361174172" duration="5429000" />
       <workItem from="1635402780711" duration="10375000" />
-      <workItem from="1635415592347" duration="1265000" />
+      <workItem from="1635415592347" duration="1777000" />
+      <workItem from="1635424686874" duration="626000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>
