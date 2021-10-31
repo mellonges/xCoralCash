@@ -4,7 +4,9 @@ import styles from "@/styles/pages/account/Wallet.module.scss";
 
 const BonusBlock = () => {
     return (
-        <div style={{backgroundColor: "#01405C"}} className={`${styles.topBlock} d-flex align-items-center`}>
+        <div
+            // style={{backgroundColor: "#01405C"}}
+            className={`${styles.topBlock} d-flex align-items-center`}>
             <div className={`${styles.balance}  d-flex align-items-center`}>
                 <div className={styles.Icon}>
                     <svg
@@ -21,7 +23,9 @@ const BonusBlock = () => {
                     </svg>
                 </div>
                 <div className={styles.info}>
-                    <strong style={{color: "white"}} className={styles.balaneAmount}>
+                    <strong
+                        // style={{color: "white"}}
+                        className={styles.balaneAmount}>
                         Buy DAI futures to obtain xCORAL at nice rates + bonus
                     </strong>
                     <span>Deposit your DAI or DAI-xCORAL LP tokens to Coral Treasury to earn a bonus of up to 10%</span>

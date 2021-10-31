@@ -8,7 +8,7 @@ const TooltipComponent = ({ tooltTipContent, id }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   id = id ? "Tooltip" + id : "Tooltip";
-    console.log(id)
+    // console.log(id)
 
   return (
     <>

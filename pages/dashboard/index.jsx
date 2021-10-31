@@ -18,7 +18,9 @@ const Index = () => {
                     <BonusBlock />
 
                     <div className={styles.contentInner}>
-                    <div style={{display: "flex", justifyContent: "space-around"}} >
+                    <div
+                        // style={{display: "flex", justifyContent: "space-around"}}
+                    >
                         <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",

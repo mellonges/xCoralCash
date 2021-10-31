@@ -2,7 +2,7 @@ import moment from "moment";
 import styles from "../../../styles/pages/account/left-side/NotificationItem.module.scss";
 
 const NotificationItem = ({ notification }) => {
-  console.log(notification);
+  // console.log(notification);
 
   return notification ? (
     <div className={`${styles.NotificationItem} d-flex align-items-center`}>

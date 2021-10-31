@@ -294,9 +294,16 @@ const LeftSidePanel = () => {
               </>
             ) : null}
           </div>
-          <div style={{backgroundColor: "#0A3345", padding: "1px", textAlign: "center", marginRight: "20px"}}>
-          <p style={{color: "white"}}>xCORAL</p>
-            <p style={{color: "#45FFDE"}}>$NAN</p>
+          <div
+              // style={{backgroundColor: "#0A3345", padding: "1px", textAlign: "center", marginRight: "20px"}}
+          >
+          <p
+              // style={{color: "white"}}
+          >
+            xCORAL</p>
+            <p
+                // style={{color: "#45FFDE"}}
+            >$NAN</p>
           </div>
         </Scrollbar>
         {/*<LeftSideUser user={user} />*/}

@@ -37,7 +37,7 @@ function MyApp({Component, pageProps}) {
     const isConnected = useSelector(({store}) => store.isConnected)
     const currentWalletAddress = useSelector(({store}) => store.address)
     useEffect(() => {
-        console.log("render");
+        // console.log("render");
         const onboard = Onboard({
             dappId,
             hideBranding: true,
@@ -74,7 +74,7 @@ function MyApp({Component, pageProps}) {
 
                 },
                 address: address => {
-                    console.log(address)
+                    // console.log(address)
                     if (address != currentWalletAddress) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))

@@ -19,7 +19,7 @@ const rootStore = createSlice({
             state.web3ForUser = action.payload
         },
         changeWalletAddress(state, action) {
-            console.log(action.payload)
+            // console.log(action.payload)
             state.address = action.payload
         }
     },

@@ -33,11 +33,13 @@ const connectFunctionForButton = () => {
 }
 
     return (
-        <div className={styles.AccountWrapper}>
+        // <div className={styles.AccountWrapper}>
             <div className={styles.TopPanel}>
 
 
-                <div style={{justifyContent: "end"}} className="d-none d-lg-flex align-items-center w-100">
+                <div
+                    style={{justifyContent: "end"}}
+                    className="d-none d-lg-flex align-items-center w-100">
                     {/*<div className={styles.searchFormWrapper}>*/}
                     {/*  <SearchForm classes={styles} />*/}
                     {/*</div>*/}
@@ -67,18 +69,25 @@ const connectFunctionForButton = () => {
 
 
                     <div className={styles.leftSideNav}>
-                        <div className={styles.top} style={{justifyContent: "end"}}>
+                        <div className={styles.top}
+                             style={{justifyContent: "end"}}
+                        >
                              {isConnected ? <div className={styles.displayAddressPlace}> {getNetworkName(network)} network <b
                              className={styles.showAddress}>{walletAddress.slice(0, 4) + '.'.repeat(3) + walletAddress.slice(-4)}</b></div> : <Link href="/account/">
-                               <a style={{
+                               <a
+                                   style={{
                                     fontFamily: "Asul",
                                    fontSize: "23.4759px",
                                    lineHeight: "96.3%",
                                    fontWeight: "bold",
                                    letterSpacing: "-0.07em",
                                    color: "#003D56",
-                               }} className={styles.logotype}>
-                                   xcoral<span style={{color: "#1ab0c4"}}>.cash</span>
+                               }}
+                                   className={styles.logotype}>
+                                   xcoral<span
+                                   style={{color: "#1ab0c4"}}
+                               >
+                                   .cash</span>
                                </a>
                             </Link>}
                         </div>
@@ -116,7 +125,7 @@ const connectFunctionForButton = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
 
     )
 }
