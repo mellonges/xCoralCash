@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "variables";
 @import url("https://fonts.googleapis.com/css2?family=Asul:wght@700&display=swap");
 
 * {
@@ -162,6 +162,7 @@ input[type="number"] {
   font-size: 15px;
   line-height: 19px;
   /* identical to box height */
+  padding: 23px 40px;
 
   text-align: center;
   letter-spacing: -0.02em;
@@ -169,14 +170,14 @@ input[type="number"] {
   /* BG / Green Dark */
 
   transition: background-color ease-in-out 0.1s;
-  color: $bgGreenDark;
-  background: $white;
-  border: 1px solid $bgGreenDark;
-  padding: 11px 19px;
+  color: $white;
+  background: $bgGreenDark;
+  border: 0 !important;
 
   &:hover {
-    color: $white;
-    background: $bgGreenDark;
+    border: 1px solid $bgGreenDark !important;
+    color: $bgGreenDark;
+    background: $white;
   }
 
   &:focus,

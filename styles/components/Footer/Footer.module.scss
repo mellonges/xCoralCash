@@ -1,7 +1,7 @@
-@import "../../variables.scss";
+@import "../../variables";
 .footerWrapper {
   background: #00405b;
-  padding: 60px 0 29px;
+  padding: 94px 47px 70px 47px;
   width: 100%;
 
   .leftText {
@@ -24,6 +24,7 @@
   .footerNav {
     a {
       display: block;
+      transition: .3s;
       font-weight: 500;
       font-size: 15px;
       line-height: 119.8%;
@@ -158,10 +159,19 @@
 @media screen and (max-width: 768px) {
   .footerWrapper {
     padding: 60px 0 17px 0;
-
+    display: grid;
+    flex-direction: column;
+    .footerLogo {
+      border-top: 1px solid #ffffff;
+      width: 100%;
+      margin-top: 0;
+      display: block;
+      margin-right: auto;
+      margin-top: 28px;
+      padding: 29px 0 14.5px 0;
+    }
     .wrapper {
-      flex-direction: column;
-
+      flex-direction: column-reverse;
       .leftText {
         width: 100%;
         max-width: unset;
@@ -171,11 +181,13 @@
       }
 
       .footerNav {
-        margin-bottom: 57px;
         width: 100%;
+        &:last-child {margin-bottom: 57px;}
         a {
+          width: max-content;
         }
       }
+      
       .loginButtons {
         width: 100%;
       }
