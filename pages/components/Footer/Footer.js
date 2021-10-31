@@ -104,14 +104,14 @@ const Footer = () => {
           {/*    Help Center*/}
           {/*  </a>*/}
           {/*</Link>*/}
-          <Button
+          {/* <Button
             className={`${styles.chatBtn}`}
             onClick={() => {
               window?.Tawk_API?.toggle();
             }}
           >
             Chat with support
-          </Button>
+          </Button> */}
         </div>
       </Container>
     </footer>

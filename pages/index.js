@@ -141,7 +141,7 @@ const HomePage = () => {
                                                 />
                                             </svg>
                                         </div>
-                                        <div className={styles.info}>
+                                        <div  className={styles.info}>
                                             <span>Protocol Controlled Value</span>
                                             We aim to own at least 90% of liquidity pool & treasury funds, eliminating mercenary capital
                                         </div>
