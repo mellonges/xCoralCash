@@ -130,7 +130,7 @@ const HomePage = () => {
                                         <div className={styles.Icon}>
                                             <svg
                                                 width="29"
-                                                height="30"
+                                                height="29"
                                                 viewBox="0 0 29 30"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +149,8 @@ const HomePage = () => {
                                     <div className={`${styles.iconItem} d-flex `}>
                                         <div className={styles.Icon}>
                                             <svg
-                                                width="33"
-                                                height="34"
+                                                width="29"
+                                                height="29"
                                                 viewBox="0 0 33 34"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
