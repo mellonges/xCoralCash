@@ -13,7 +13,7 @@ const Index = () => {
             <MainLayout pageTitle={"Dashboard"}>
                 <div className={styles.Wallet}>
                     <h1 className={styles.pageTitle}>Wallet</h1>
-
+{/*test*/}
                     <WalletTopBlock  />
                     <BonusBlock />
 
