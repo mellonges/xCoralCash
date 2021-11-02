@@ -8,16 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af96a05d-fc37-42bf-ade3-29b7d273ac47" name="Changes" comment="crazy days">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BonusBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BonusBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/LeftSidePanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/LeftSidePanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WalletMini.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/WalletMini.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/account/NotificationItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/account/NotificationItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/common/Tooltip.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/common/Tooltip.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/pages/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/pages/Home.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +138,8 @@
       <workItem from="1635415592347" duration="1777000" />
       <workItem from="1635424686874" duration="837000" />
       <workItem from="1635446344979" duration="151000" />
-      <workItem from="1635714645780" duration="2335000" />
+      <workItem from="1635714645780" duration="2616000" />
+      <workItem from="1635864915488" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="crazy days">
       <created>1635271739120</created>
