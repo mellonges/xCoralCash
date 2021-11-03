@@ -9,7 +9,7 @@ import BonusBlock from "../../components/BonusBlock";
 
 const Index = () => {
     return (
-        <div className="dashboard-main-div">
+
             <MainLayout pageTitle={"Dashboard"}>
                 <div className={styles.Wallet}>
                     <h1 className={styles.pageTitle}>Wallet</h1>
@@ -58,7 +58,7 @@ const Index = () => {
                                 </div>
                             </div>
             </MainLayout>
-        </div>
+
     );
 };
 

@@ -20,6 +20,7 @@
     padding: 21px 39px;
     background-position: center;
     background-size: auto 100%;
+    margin-bottom: 26px;
 
     width: 100%;
     background-color: #f4f8fa;
@@ -67,14 +68,21 @@
     .actionButtons {
       .depositBtn,
       .withdrawBtn {
-        width: 176px;
         background-color: $bgGreenDark;
-        padding: 13px 23px;
+        max-width: 196px;
+        max-height: 50px;
+        width: 196px;
+        height: 50px;
         font-size: 15px;
         line-height: 18px;
         border-radius: 4px;
+        display: flex !important;
+        align-items: center;
+        white-space: nowrap;
+        justify-content: center;
+        text-align: center;
         svg {
-          margin-right: 32px;
+          margin: 0 12px 0 6px;
         }
       }
       .withdrawBtn {

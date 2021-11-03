@@ -33,7 +33,7 @@ const Footer = () => {
         <div
           className={`d-flex justify-content-between align-items-center ${styles.wrapper}`}
         >
-          <div className={styles.footerLogo}>
+
             xcoral.<span>cash</span>
           </div>
           <div className="footer-nav-block">
@@ -51,7 +51,7 @@ const Footer = () => {
                 </Link>
             ))}
           </nav>
-          </div>
+
 
           {/*<div className={styles.loginButtons}>*/}
           {/*  {!currentUser ? (*/}

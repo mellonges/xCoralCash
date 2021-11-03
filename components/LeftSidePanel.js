@@ -294,7 +294,7 @@ const LeftSidePanel = () => {
               </>
             ) : null}
           </div>
-          <div
+          <div className="balance-left-side-panel"
               // style={{backgroundColor: "#0A3345", padding: "1px", textAlign: "center", marginRight: "20px"}}
           >
           <p
