@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 .footerWrapper {
   background: #00405b;
   padding: 94px 47px 70px 47px;
@@ -24,13 +24,13 @@
   .footerNav {
     a {
       display: block;
-      transition: .3s;
+      transition: 0.3s;
       font-weight: 500;
       font-size: 15px;
       line-height: 119.8%;
       /* or 20px */
 
-      color: #ffffff;
+      color: red !important; //это изменил
       margin-bottom: 14px;
 
       &:hover {
@@ -182,12 +182,14 @@
 
       .footerNav {
         width: 100%;
-        &:last-child {margin-bottom: 57px;}
+        &:last-child {
+          margin-bottom: 57px;
+        }
         a {
           width: max-content;
         }
       }
-      
+
       .loginButtons {
         width: 100%;
       }
