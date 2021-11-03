@@ -102,6 +102,10 @@
   }
   .contentInner {
     margin-top: 48px;
+    .Wallet_Block {
+      display: flex;
+      align-items: center;
+    }
     .title {
       font-weight: bold;
       font-size: 22px;

@@ -1,7 +1,11 @@
 @import "../../variables";
 .walletWrapper {
-  padding-bottom: 21px;
-  border-bottom: 1px solid #ecf2f4;
+  padding: 16px;
+  margin: 0 30px 0 auto;
+  &:last-child {margin: 0 auto;}
+  border: 1px solid #ECF2F4;
+  border-radius: 10px;
+  transition: .3s;
 
   .walletInner {
     &:hover {
@@ -54,6 +58,7 @@
     display: block;
     font-weight: 500;
     font-size: 22px;
+    transition: .3s;
 
     /* or 24px */
 

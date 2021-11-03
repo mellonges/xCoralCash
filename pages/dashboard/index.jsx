@@ -17,13 +17,12 @@ const Index = () => {
                     <BonusBlock />
 
                     <div className={styles.contentInner}>
-                    <div
+                    <div className={styles.Wallet_Block}
                         // style={{display: "flex", justifyContent: "space-around"}}
                     >
                         <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
-                                "title": "test text",
                                 "quantity": 42,
                                 "amount": 42,
                                 "header": "Current Price",
@@ -31,7 +30,6 @@ const Index = () => {
                         <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
-                                "title": "test text",
                                 "quantity": 42,
                                 "amount": 42,
                                 "header": "Target Price"
@@ -39,7 +37,6 @@ const Index = () => {
                         <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
-                                "title": "test text",
                                 "quantity": 42,
                                 "amount": 42,
                                 "header": "Current APY",
@@ -47,7 +44,6 @@ const Index = () => {
                         <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
-                                "title": "test text",
                                 "quantity": 42,
                                 "amount": 42,
                                 "header": "Next Rebase In",

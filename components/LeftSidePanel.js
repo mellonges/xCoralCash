@@ -6,6 +6,7 @@ import styles from "@/styles/pages/account/Layout.module.scss";
 import LeftNavigationMobile from "@/components/account/LeftNavigationMobile";
 import LeftSideUser from "@/components/account/LeftSideUser";
 import Notifications from "@/components/account/Notifications";
+import StylesBalance from "../styles/pages/account/left-side/LeftSideBalance.module.scss";
 
 const LeftSidePanel = () => {
   const router = useRouter();
@@ -294,14 +295,14 @@ const LeftSidePanel = () => {
               </>
             ) : null}
           </div>
-          <div className="balance-left-side-panel"
+          <div className={StylesBalance.balanceleftsidepanel}
               // style={{backgroundColor: "#0A3345", padding: "1px", textAlign: "center", marginRight: "20px"}}
           >
-          <p
+          <p className={StylesBalance.NameValLeftSidePanel}
               // style={{color: "white"}}
           >
             xCORAL</p>
-            <p
+            <p className={StylesBalance.ValLeftSidePanel}
                 // style={{color: "#45FFDE"}}
             >$NAN</p>
           </div>
