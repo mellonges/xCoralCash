@@ -9,11 +9,10 @@ import BonusBlock from "../../components/BonusBlock";
 
 const Index = () => {
     return (
-        <div>
+        <div className="dashboard-main-div">
             <MainLayout pageTitle={"Dashboard"}>
                 <div className={styles.Wallet}>
                     <h1 className={styles.pageTitle}>Wallet</h1>
-{/*test*/}
                     <WalletTopBlock  />
                     <BonusBlock />
 
