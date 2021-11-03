@@ -15,6 +15,22 @@
     font-family: $Asul;
     margin-bottom: 21px;
   }
+  .BonusesMobile {
+    background-color: #F4F8FA;
+    border-radius: 6px;
+    display: none;
+    .topBlock {
+      height: auto;
+      background: none;
+      padding: 22px;
+      display: block;
+      .info {
+        .span {
+          display: block;
+        }
+      }
+    }
+  }
   .BonusMobile {
     .topBlock {
       background-color: #01405C;
@@ -360,6 +376,7 @@
 }
 @media screen and (max-width: 991px) {
   .Wallet {
+    .BonusesMobile {display: block;}
     .BonusMobile {display: none;}
     .WalletMobile {
       display: block;
