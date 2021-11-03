@@ -5,6 +5,7 @@ import styles from "@/styles/pages/account/Wallet.module.scss";
 import Graph from "../../components/Graph/Graph";
 import WalletMini from "../../components/WalletMini";
 import BonusBlock from "../../components/BonusBlock";
+import BonusBlockMobile from "../../components/BonusBlockMobile";
 
 
 const Index = () => {
@@ -14,10 +15,13 @@ const Index = () => {
                 <div className={styles.Wallet}>
                     <h1 className={styles.pageTitle}>Wallet</h1>
                     <div className={styles.WalletMobile}>
-                        <WalletTopBlock  />
+                        <WalletTopBlock />
                     </div>
                     <div className={styles.BonusMobile}>
                         <BonusBlock />
+                    </div>
+                    <div className={styles.BonusesMobile}>
+                        <BonusBlockMobile />
                     </div>
 
                     <div className={styles.contentInner}>
