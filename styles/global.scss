@@ -83,9 +83,7 @@ input::-ms-clear {
 body {
   background: $bgWhite;
   font-family: "Google Sans", sans-serif;
-}
-
-body {
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 .modal-open {

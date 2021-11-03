@@ -1,8 +1,8 @@
 @import "../../variables";
 .walletWrapper {
   padding: 16px;
-  margin: 0 30px 0 auto;
-  &:last-child {margin: 0 auto;}
+  margin-right: auto;
+  &:last-child {margin-right: 0;}
   border: 1px solid #ECF2F4;
   border-radius: 10px;
   transition: .3s;
@@ -66,5 +66,13 @@
     text-transform: capitalize;
 
     color: #11343f;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .walletWrapper {
+    margin-bottom: 19px;
+    border: 0;
+    border-bottom: 1px solid #ECF2F4;
+    &:last-child {margin-bottom: 0;}
   }
 }

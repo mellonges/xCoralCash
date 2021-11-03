@@ -13,8 +13,12 @@ const Index = () => {
             <MainLayout pageTitle={"Dashboard"}>
                 <div className={styles.Wallet}>
                     <h1 className={styles.pageTitle}>Wallet</h1>
-                    <WalletTopBlock  />
-                    <BonusBlock />
+                    <div className={styles.WalletMobile}>
+                        <WalletTopBlock  />
+                    </div>
+                    <div className={styles.BonusMobile}>
+                        <BonusBlock />
+                    </div>
 
                     <div className={styles.contentInner}>
                     <div className={styles.Wallet_Block}
