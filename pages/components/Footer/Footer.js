@@ -36,7 +36,7 @@ const Footer = () => {
 
             xcoral.<span>cash</span>
           </div>
-          <div className="footer-nav-block">
+
           <nav className={styles.footerNav}>
             {footerNavCol1.map((navItem, i) => (
               <Link key={i} href={navItem.url}>
@@ -70,7 +70,7 @@ const Footer = () => {
 
           {/*  )}*/}
           {/*</div>*/}
-        </div>
+
         {/*<hr className={styles.footerLine} />*/}
 
         <div className={styles.copyright}>
