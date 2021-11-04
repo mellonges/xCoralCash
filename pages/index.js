@@ -7,7 +7,7 @@ import styles from "../styles/pages/Home.module.scss";
 import {getHomePageTokens} from "../functions/getBackendData";
 import ThousandsOFPeopleCards from "./components/Home/ThousandsOfPeopleCards";
 import BuildPortfolioCards from "./components/Home/BuildPortfolioCards";
-import Footer from "./components/Footer/Footer";
+import Footer from "../components/Footer/Footer";
 import {shuffle} from "../functions/helpers";
 
 const HomePage = () => {

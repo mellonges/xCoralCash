@@ -17,7 +17,7 @@
   color: #fff;
   background: #03212e;
   color: #9fc2cb;
-  padding: 15px 0 15px 18px;
+  padding: 15px 0 15px 15px;
 }
 .AccountWrapper .leftSide .leftSideNav .top {
   padding-right: 20px;
@@ -238,6 +238,7 @@
   }
   .AccountWrapper .contentInner {
     padding: 25px 34px;
+    transition: 0.3s;
   }
 }
 @media screen and (max-width: 768px) {
