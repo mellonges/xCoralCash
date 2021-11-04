@@ -1,0 +1,23 @@
+.balanceleftsidepanel {
+  background: #0A3345;
+  border-radius: 3px;
+  user-select: none;
+  margin-right: 10px;
+  padding: 13px;
+}
+
+.NameValLeftSidePanel {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ValLeftSidePanel {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 176.3%;
+  color: #45FFDE;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=LeftSideBalance.module.css.map */

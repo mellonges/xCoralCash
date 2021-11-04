@@ -1,0 +1,438 @@
+/** Colors **/
+/** Fonts **/
+.Wallet .pageTitle {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  letter-spacing: -0.02em;
+  /* Fonts / Dark */
+  color: #11343f;
+  font-family: "Asul", sans-serif;
+  margin-bottom: 21px;
+}
+.Wallet .BonusesMobile {
+  background-color: #F4F8FA;
+  border-radius: 6px;
+  display: none;
+}
+.Wallet .BonusesMobile .topBlock {
+  height: auto;
+  background: none;
+  padding: 22px;
+  display: block;
+}
+.Wallet .BonusesMobile .topBlock .info .span {
+  display: block;
+}
+.Wallet .BonusMobile .topBlock {
+  background-color: #01405C;
+}
+.Wallet .BonusMobile .topBlock .actionButtons button {
+  background: #45ffde;
+  color: #000;
+}
+.Wallet .BonusMobile .topBlock .balance .info .balaneAmount {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 16px;
+}
+.Wallet .BonusMobile .topBlock .balance .info span {
+  font-weight: 400;
+  color: #fff;
+  font-size: 12px;
+}
+.Wallet .topBlock {
+  background: url("/images/wallet-top-bg.png") no-repeat;
+  padding: 21px 39px;
+  background-position: center;
+  background-size: auto 100%;
+  margin-bottom: 26px;
+  width: 100%;
+  background-color: #f4f8fa;
+  border-radius: 6px;
+  height: 88px;
+}
+.Wallet .topBlock .balance .Icon {
+  background: #c4c4c4;
+  border-radius: 18.4615px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  margin-right: 26px;
+  align-items: center;
+  justify-content: center;
+}
+.Wallet .topBlock .balance .info span {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 17px;
+  /* identical to box height */
+  letter-spacing: -0.02em;
+  /* Fonts / Gray 2 */
+  color: #8aaab4;
+}
+.Wallet .topBlock .balance .info .balaneAmount {
+  font-weight: 500;
+  font-size: 31px;
+  line-height: 109.3%;
+  /* identical to box height, or 34px */
+  letter-spacing: -0.03em;
+  /* Fonts / Dark */
+  display: block;
+  color: #11343f;
+}
+.Wallet .topBlock .actionButtons .depositBtn,
+.Wallet .topBlock .actionButtons .withdrawBtn {
+  background-color: #1ab0c4;
+  max-width: 196px;
+  max-height: 45px;
+  width: 196px;
+  height: 45px;
+  font-size: 15px;
+  line-height: 18px;
+  border-radius: 4px;
+  display: flex !important;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+.Wallet .topBlock .actionButtons .depositBtn svg,
+.Wallet .topBlock .actionButtons .withdrawBtn svg {
+  margin: 0 12px 0 6px;
+}
+.Wallet .topBlock .actionButtons .withdrawBtn {
+  margin-left: 11px;
+  font-weight: 500;
+  /* identical to box height */
+  color: #ffffff;
+  background: #165169;
+}
+.Wallet .topBlock .actionButtons .withdrawBtn:hover, .Wallet .topBlock .actionButtons .withdrawBtn:focus {
+  background: #0f3e50 !important;
+}
+.Wallet .contentInner {
+  width: 100%;
+  margin-top: 48px;
+}
+.Wallet .contentInner .Wallet_Block {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.Wallet .contentInner .title {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+  letter-spacing: -0.02em;
+  /* Fonts / Dark */
+  color: #11343f;
+  font-family: "Asul", sans-serif;
+}
+.Wallet .contentInner .transfersTable {
+  margin-top: 25px;
+}
+.Wallet .contentInner .transfersTable thead {
+  background: #f7fafc;
+  border-radius: 4.31201px;
+}
+.Wallet .contentInner .transfersTable thead th {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 14px;
+  /* identical to box height */
+  text-transform: uppercase;
+  /* Fonts / Gray 2 */
+  color: #8aaab4;
+}
+.Wallet .contentInner .transfersTable tbody td {
+  padding: 19px 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 109.3%;
+}
+.Wallet .contentInner .transfersTable tbody td.id {
+  font-size: 13px;
+  line-height: 109.3%;
+  /* or 14px */
+  text-transform: capitalize;
+  color: #8aaab4;
+}
+.Wallet .contentInner .transfersTable tbody td .operationIcon {
+  background: #8aaab4;
+  border: 2.78261px solid #ffffff;
+  width: 32px;
+  height: 32px;
+  margin-right: 19px;
+  border-radius: 50%;
+}
+.Wallet .contentInner .transfersTable tbody td .operationIcon.failed {
+  background: #f67169;
+  border: 2.78261px solid #ffffff;
+}
+.Wallet .contentInner .transfersTable tbody td .operationType {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 109.3%;
+  /* or 15px */
+  text-transform: capitalize;
+  /* Fonts / Dark */
+  color: #11343f;
+}
+.Wallet .contentInner .transfersTable tbody td .date {
+  color: #8aaab4;
+  margin-top: 4px;
+}
+.Wallet .contentInner .transfersTable tbody td .cryptoInfo {
+  display: inline-block;
+}
+.Wallet .contentInner .transfersTable tbody td .cryptoInfo .cryptoIcon {
+  width: 21.04px;
+  height: 21.04px;
+  margin-right: 10px;
+}
+.Wallet .contentInner .transfersTable tbody td .status {
+  font-size: 12px;
+  line-height: 109.3%;
+  /* or 13px */
+  text-transform: capitalize;
+  /* Fonts / Gray 2 */
+  color: #8aaab4;
+  margin-top: 6px;
+}
+.Wallet .contentInner .transfersTable tbody td .status svg {
+  margin-right: 5px;
+}
+.Wallet .contentInner .transfersTable tbody td .amount {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 109.3%;
+  /* or 15px */
+  text-align: right;
+  text-transform: capitalize;
+  /* Fonts / Dark */
+  color: #11343f;
+}
+.Wallet .contentInner .transfersTable tbody td .equivalent {
+  font-size: 14px;
+  line-height: 109.3%;
+  /* or 15px */
+  text-align: right;
+  text-transform: capitalize;
+  display: block;
+  margin-top: 4px;
+  color: #8aaab4;
+}
+.Wallet .contentInner .pagination {
+  margin-top: 47px;
+  margin-bottom: 50px;
+}
+.Wallet .contentInner .pagination .prevBtn,
+.Wallet .contentInner .pagination .nextBtn {
+  margin-right: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 39px;
+  padding-left: 21px;
+  padding-right: 21px;
+  min-width: 140px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+.Wallet .contentInner .pagination .prevBtn .icon,
+.Wallet .contentInner .pagination .nextBtn .icon {
+  margin-right: 7px;
+}
+.Wallet .contentInner .pagination .prevBtn:hover svg path,
+.Wallet .contentInner .pagination .nextBtn:hover svg path {
+  fill: #fff !important;
+}
+.Wallet .contentInner .pagination .prevBtn:focus {
+  background: #1599aa !important;
+  color: white !important;
+}
+.Wallet .contentInner .pagination .prevBtn:focus svg path {
+  fill: #fff !important;
+}
+.Wallet .contentInner .pagination .nextBtn .icon {
+  margin-left: 17px;
+  margin-right: 0;
+}
+.Wallet .noAssetsHolder {
+  position: absolute;
+  left: calc(50% - 100px);
+  width: 200px;
+  min-height: 241px;
+  border-radius: 3px;
+}
+.Wallet .noAssetsHolder .Icon {
+  background: #eaf1f5;
+  border-radius: 20.614px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+.Wallet .noAssetsHolder .name {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 109.3%;
+  /* identical to box height, or 20px */
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+  color: #678086;
+  font-family: "Asul", sans-serif;
+  margin-bottom: 4px;
+}
+.Wallet .noAssetsHolder .descr {
+  font-size: 14px;
+  line-height: 143.8%;
+  /* or 20px */
+  text-align: center;
+  color: #678086;
+}
+
+@media screen and (max-width: 1200px) {
+  .Wallet .contentInner .Wallet_Block {
+    display: block;
+  }
+}
+@media screen and (max-width: 991px) {
+  .Wallet .BonusesMobile {
+    display: block;
+  }
+  .Wallet .BonusMobile {
+    display: none;
+  }
+  .Wallet .WalletMobile {
+    display: block;
+  }
+  .Wallet .WalletMobile .topBlock {
+    height: max-content;
+    background-position: left;
+    display: block !important;
+  }
+  .Wallet .WalletMobile .topBlock .actionButtons {
+    display: block !important;
+    width: 100% !important;
+  }
+  .Wallet .WalletMobile .topBlock .actionButtons button {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 auto;
+    align-items: center;
+    max-width: unset;
+    margin-top: 30px;
+  }
+  .Wallet .WalletMobile .topBlock .actionButtons button svg {
+    justify-content: start;
+    display: flex;
+    align-items: center;
+  }
+  .Wallet .WalletMobile .topBlock .balance {
+    display: flex;
+    align-items: center;
+  }
+  .Wallet .WalletMobile .topBlock .balance .Icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-left: 0;
+    width: 45px;
+    height: 45px;
+    background: #8aaab4;
+    border-radius: 17.3077px;
+    margin-right: 15px;
+  }
+  .Wallet .WalletMobile .topBlock .balance .info {
+    display: block !important;
+  }
+  .Wallet .WalletMobile .topBlock .balance .info span {
+    display: block !important;
+    margin-left: auto;
+    color: #11343f;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    justify-content: start;
+  }
+  .Wallet .WalletMobile .topBlock .balance .info .balaneAmount {
+    display: flex !important;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Wallet .pageTitle {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 109.3%;
+    /* or 28px */
+    margin-bottom: 23px;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+    color: #11343f;
+  }
+  .Wallet .topBlock {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .Wallet .topBlock .balance .Icon {
+    width: 45px;
+    height: 45px;
+    background: #8aaab4;
+    border-radius: 17.3077px;
+    margin-right: 15px;
+  }
+  .Wallet .topBlock .balance .info span {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: -0.02em;
+    /* Fonts / Dark */
+    color: #11343f;
+  }
+  .Wallet .topBlock .balance .balaneAmount {
+    font-size: 32px;
+    line-height: 109.3%;
+    /* identical to box height, or 35px */
+    letter-spacing: -0.03em;
+    /* Fonts / Dark */
+    color: #11343f;
+  }
+  .Wallet .topBlock .actionButtons {
+    margin-top: 25px;
+    margin-left: unset !important;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .Wallet .topBlock .actionButtons .withdrawBtn,
+.Wallet .topBlock .actionButtons .depositBtn {
+    padding: 13px 25px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Wallet .topBlock {
+    padding: 21px;
+  }
+  .Wallet .topBlock .actionButtons .withdrawBtn,
+.Wallet .topBlock .actionButtons .depositBtn {
+    margin: 0;
+    flex-basis: 100%;
+  }
+  .Wallet .topBlock .actionButtons .depositBtn {
+    margin-bottom: 10px;
+  }
+}
+
+/*# sourceMappingURL=Wallet.module.css.map */

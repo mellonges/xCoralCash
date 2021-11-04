@@ -1,0 +1,195 @@
+/** Colors **/
+/** Fonts **/
+.footerWrapper {
+  background: #00405b;
+  padding: 94px 47px 70px 47px;
+  width: 100%;
+}
+.footerWrapper .leftText {
+  max-width: 356.85px;
+  font-weight: 500;
+  font-size: 29.3848px;
+  line-height: 119.8%;
+  /* or 39px */
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+.footerWrapper .leftText span {
+  font-family: "Asul", sans-serif;
+  color: #45ffde;
+}
+.footerWrapper .footerNav a {
+  display: block;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 119.8%;
+  /* or 20px */
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+.footerWrapper .footerNav a:hover {
+  color: #45ffde;
+}
+.footerWrapper .loginButtons {
+  width: 224px;
+}
+.footerWrapper .loginButtons .btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 15.25px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: -0.02em;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.footerWrapper .loginButtons .btn.signUpBtn {
+  background: #ffffff;
+  color: #00405b;
+}
+.footerWrapper .loginButtons .btn.signUpBtn:hover {
+  background-color: #f0f6fa;
+}
+.footerWrapper .loginButtons .btn.logIn {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+}
+.footerWrapper .loginButtons .btn.logIn:hover {
+  background-color: #003d56;
+}
+.footerWrapper .footerLine {
+  height: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+  margin: 44px 0 34px 0;
+}
+.footerWrapper .footerLogo {
+  font-weight: bold;
+  font-size: 30.3307px;
+  line-height: 96.3%;
+  /* or 29px */
+  letter-spacing: -0.07em;
+  color: #ffffff;
+  font-family: "Asul", sans-serif;
+}
+.footerWrapper .footerLogo span {
+  color: #45ffde;
+}
+.footerWrapper .copyright {
+  position: relative;
+  font-size: 14px;
+  line-height: 136.3%;
+  /* identical to box height, or 19px */
+  color: #ffffff;
+  margin-top: 64px;
+}
+.footerWrapper .copyright > .Link, .footerWrapper .copyright > span {
+  opacity: 0.7;
+}
+.footerWrapper .copyright .Link {
+  color: #ffffff;
+  margin-left: 30px;
+  text-decoration: underline;
+}
+.footerWrapper .copyright .Link:hover {
+  text-decoration: none;
+}
+.footerWrapper .chatBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background: #45ffde;
+  border-radius: 4px;
+  padding: 8px 19px;
+  font-weight: 500;
+  font-size: 12px;
+  border: none;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #003146;
+  background-color: #1ab0c4;
+  color: #fff;
+}
+.footerWrapper .chatBtn:focus, .footerWrapper .chatBtn:active {
+  background-color: #009fb5 !important;
+  color: #fff;
+}
+.footerWrapper .chatBtn:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 992px) {
+  .footerWrapper .leftText {
+    max-width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footerWrapper {
+    padding: 60px 0 17px 0;
+    display: grid;
+    flex-direction: column;
+  }
+  .footerWrapper .footerLogo {
+    border-top: 1px solid #ffffff;
+    width: 100%;
+    margin-top: 0;
+    display: block;
+    margin-right: auto;
+    margin-top: 28px;
+    padding: 29px 0 14.5px 0;
+  }
+  .footerWrapper .wrapper {
+    flex-direction: column-reverse;
+  }
+  .footerWrapper .wrapper .leftText {
+    width: 100%;
+    max-width: unset;
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  .footerWrapper .wrapper .footerNav {
+    width: 100%;
+  }
+  .footerWrapper .wrapper .footerNav:last-child {
+    margin-bottom: 57px;
+  }
+  .footerWrapper .wrapper .footerNav a {
+    width: max-content;
+  }
+  .footerWrapper .wrapper .loginButtons {
+    width: 100%;
+  }
+  .footerWrapper .footerLine {
+    margin-top: 26px;
+  }
+  .footerWrapper .copyright {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .footerWrapper .copyright > span {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+  }
+  .footerWrapper .copyright .chatBtn {
+    position: relative;
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .footerWrapper .copyright .Link {
+    flex-basis: 50%;
+    margin: 2px 0;
+  }
+}
+
+/*# sourceMappingURL=Footer.module.css.map */
