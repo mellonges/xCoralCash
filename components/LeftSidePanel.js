@@ -304,7 +304,7 @@ const LeftSidePanel = () => {
             xCORAL</p>
             <p className={StylesBalance.ValLeftSidePanel}
                 // style={{color: "#45FFDE"}}
-            >$NAN</p>
+            >15,314.31</p>
           </div>
         </Scrollbar>
         {/*<LeftSideUser user={user} />*/}

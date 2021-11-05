@@ -30,9 +30,9 @@ const Index = () => {
                         <th>MANAGE</th>
                     </tr>
                     </thead>
-                        <TableBody nameCoin={"Bitcoin"} />
-                        <TableBody  nameCoin={"Ethereum"}/>
-                        <TableBody  nameCoin={"Solana"} />
+                        <TableBody disabled={false} nameCoin={"Bitcoin"} />
+                        <TableBody disabled={false}  nameCoin={"Ethereum"}/>
+                        <TableBody disabled={true}  nameCoin={"Solana"} />
                 </Table>
             </MainLayout>
         </div>

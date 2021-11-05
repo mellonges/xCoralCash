@@ -4,7 +4,7 @@ import {Button} from "reactstrap";
 import styles from "@/styles/pages/account/Wallet.module.scss";
 import stylesFuturesColor from "@/styles/pages/account/Futures/Futures.module.scss";
 
-const TableBody = ({nameCoin}) => {
+const TableBody = ({nameCoin, disabled}) => {
     return (
         <>
             <tbody>
@@ -74,6 +74,7 @@ const TableBody = ({nameCoin}) => {
                             // disabled={true} по макету серая кнопка
                             // className=Redeem - тёмно-синяя кнопка по макету
                             className={`d-flex ${styles.depositBtn} ${stylesFuturesColor.RedeemActive}`}
+                            disabled={disabled}
                         >
                             <svg
                                 width="10"
