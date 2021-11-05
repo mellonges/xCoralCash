@@ -1,3 +1,5 @@
+@import '../Layout.module.scss';
+
 .HeaderTitle {
     margin-bottom: 18px;
     color: #11343F;
@@ -11,5 +13,104 @@
 .HeaderHrefBTN {
     font-size: 14px;
     font-weight: 500;
+    width: max-content;
+    display: block;
+    margin-right: auto;
     margin-bottom: 25px;
+    transition: .3s;
+}
+.TableFutures {
+    .HeadTable {
+        background: #eef1f3;
+    }
+    tbody {
+        border-bottom: 1px solid #ECF2F4;
+    }
+    tr {
+        td {
+            padding: 19px 10px;
+            vertical-align: middle;
+            .OthTDTitle {
+                font-size: 14px;
+                font-weight: 500;
+                color: #11343F;
+                .OthTDSubTitle {
+                    font-weight: 400;
+                    color: #8AAAB4;
+                }
+            }
+        }
+        .TDContentExp {
+            display: table-cell;
+            vertical-align: middle;
+            .TDContentExpCont {
+                display: flex;
+                align-items: center;
+                .TDImg {
+                    width: 40px;
+                    height: 40px;
+                    max-width: 40px;
+                    max-height: 40px;
+                    min-height: 40px;
+                    min-width: 40px;
+                    margin: 0 20px 0 0;
+                }
+                .OthTDImg {
+                    width: 22px;
+                    height: 22px;
+                    max-width: 22px;
+                    max-height: 22px;
+                    min-height: 22px;
+                    min-width: 22px;
+                    margin: 0 15px 0 0;
+                }
+                .TDTitle {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #11343F;
+                    .TDSubTitle {
+                        font-weight: 400;
+                        color: #8AAAB4;
+                    }
+                }
+                .OthTDTitle {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #007585;
+                    .OthTDSubTitle {
+                        font-weight: 400;
+                        color: #007585;
+                    }
+                }
+                button {
+                    padding: 10px 30px;
+                    margin: 0 15px 0 0;
+                    &:last-child {margin: 0;}
+                    svg {
+                        margin: 0 20px 0 0;
+                    }
+                }
+            }
+        }
+        th {
+            color: #8AAAB4;
+            font-weight: 500;
+            font-size: 11px;
+        }
+    }
+}   
+@media (max-width: 991px) {
+    .HeaderSubTitle {
+        max-width: unset;
+        width: 100% !important;
+    }
+    .TableFutures {
+        .HeadTable {
+            tr {
+                th {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
 }

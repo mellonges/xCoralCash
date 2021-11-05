@@ -60,12 +60,14 @@
           font-weight: 500;
           font-size: 14px;
           line-height: 96.3%;
+          transition: .3s;
 
           .navLink {
             display: flex;
             align-items: center;
             color: #9fc2cb;
             padding: 5px 0;
+            transition: .3s;
 
             &.active {
               border-right: 3px solid $bgGreenLight;
@@ -74,7 +76,7 @@
             &.active,
             &:hover {
               color: $white;
-
+              
               .navIcon {
                 svg:not(.priceIcon) path {
                   fill: $white !important;
@@ -86,6 +88,7 @@
             }
 
             .navIcon {
+              transition: .3s;
               margin-right: 15px;
               width: 21px;
               display: flex;
