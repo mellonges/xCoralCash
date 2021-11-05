@@ -2,6 +2,7 @@ import React from 'react';
 import stylesFutures from "@/styles/pages/account/Futures/Futures.module.scss";
 import {Button} from "reactstrap";
 import styles from "@/styles/pages/account/Wallet.module.scss";
+import stylesFuturesColor from "@/styles/pages/account/Futures/Futures.module.scss";
 
 const TableBody = ({nameCoin}) => {
     return (
@@ -69,9 +70,10 @@ const TableBody = ({nameCoin}) => {
                             </svg>
                             <span className="ml-auto mr-auto">Bond</span>
                         </Button>
-                        <Button disabled={true}
-                            color="primary"
-                            className={`d-flex ${styles.depositBtn}`}
+                        <Button
+                            // disabled={true} по макету серая кнопка
+                            // className=Redeem - тёмно-синяя кнопка по макету
+                            className={`d-flex ${styles.depositBtn} ${stylesFuturesColor.RedeemActive}`}
                         >
                             <svg
                                 width="10"
