@@ -1,3 +1,258 @@
+/** Colors **/
+/** Fonts **/
+.AccountWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 70px);
+  padding-left: 200px;
+  padding-top: 52px;
+}
+.AccountWrapper .leftSide {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  left: 0px;
+  top: 0;
+  color: #fff;
+  background: #03212e;
+  color: #9fc2cb;
+  padding: 15px 0 15px 15px;
+}
+.AccountWrapper .leftSide .leftSideNav .top {
+  padding-right: 20px;
+  padding-bottom: 8px;
+}
+.AccountWrapper .leftSide .leftSideNav .top .logotype {
+  font-family: "Asul", sans-serif;
+  font-size: 23.4759px;
+  line-height: 96.3%;
+  font-weight: bold;
+  letter-spacing: -0.07em;
+  color: #fff;
+}
+.AccountWrapper .leftSide .leftSideNav .top .logotype span {
+  color: #45ffde;
+}
+.AccountWrapper .leftSide .leftSideNav .navTitle {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 96.3%;
+  /* identical to box height, or 11px */
+  text-transform: uppercase;
+  color: #9fc2cb;
+  opacity: 0.4;
+  margin-top: 28px;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 17px;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem {
+  margin-bottom: 7px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 96.3%;
+  transition: 0.3s;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink {
+  display: flex;
+  align-items: center;
+  color: #9fc2cb;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink.active {
+  border-right: 3px solid #45ffde;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink.active, .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink:hover {
+  color: #fff;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink.active .navIcon svg:not(.priceIcon) path, .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink:hover .navIcon svg:not(.priceIcon) path {
+  fill: #fff !important;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink.active .navIcon .priceIcon path, .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink:hover .navIcon .priceIcon path {
+  stroke: #fff !important;
+}
+.AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink .navIcon {
+  transition: 0.3s;
+  margin-right: 15px;
+  width: 21px;
+  display: flex;
+  justify-content: center;
+}
+.AccountWrapper .TopPanel {
+  height: 52px;
+  left: 200px;
+  width: calc(100% - 200px);
+  min-width: 320px;
+  padding: 8px 34px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 0px 0px 24px rgba(139, 151, 157, 0.16);
+}
+.AccountWrapper .TopPanel .displayAddressPlace {
+  background: #F7FAFC;
+  border: 10px solid #F7FAFC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.AccountWrapper .TopPanel .showAddress {
+  color: #1AB0C4;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+.AccountWrapper .TopPanel .searchFormWrapper {
+  width: 100%;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchForm .InputGroup {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchForm .InputGroup .Input {
+  border: none;
+  font-size: 16px;
+  line-height: 18px;
+  /* Fonts / Gray 1 */
+  color: #678086;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchForm .InputGroup .Input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none !important;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchForm .InputGroup .InputIcon {
+  border: none;
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  margin-right: 11px;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchResults {
+  width: calc(100% - 200px);
+  background: #ffffff;
+  border: 1px solid #edefef;
+  box-sizing: border-box;
+  box-shadow: 0px 24px 30px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  margin-top: 6px;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchResults .noResults {
+  padding: 32px;
+}
+.AccountWrapper .TopPanel .searchFormWrapper .searchResults .noResults .btnAllTokens {
+  margin: 19px 0;
+  display: block;
+}
+.AccountWrapper .TopPanel .tradeBtn {
+  padding: 8px 38px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 15px;
+}
+.AccountWrapper .contentInner {
+  padding: 37px 54px;
+}
+
+@media screen and (max-width: 991px) {
+  .AccountWrapper {
+    padding-left: 0;
+    padding-bottom: 74px;
+  }
+  .AccountWrapper .TopPanel {
+    width: 100%;
+    left: 0;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile {
+    padding: 10px 0;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .tradeBtnMobile {
+    font-weight: 500;
+    width: 65px;
+    display: block;
+    padding: 0;
+    height: 28px;
+    font-size: 13px;
+    line-height: 28px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: -0.02em;
+    margin-left: 15px;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .leftNavBtn {
+    padding: 5px;
+    border: none;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .leftNavBtn:focus, .AccountWrapper .TopPanel .topPanelMobile .leftNavBtn:hover {
+    background: transparent !important;
+    border: none !important;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .leftNavBtn:focus svg path, .AccountWrapper .TopPanel .topPanelMobile .leftNavBtn:hover svg path {
+    fill: #1ab0c4 !important;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .logotype {
+    font-family: "Asul", sans-serif;
+    letter-spacing: -0.07em;
+    font-size: 23.8732px;
+    line-height: 96.3%;
+    margin-left: 14px;
+    color: #11343f;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .logotype span {
+    color: #1ab0c4;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .logotype:after {
+    content: "";
+    height: 16px;
+    width: 0px;
+    border-right: 1px solid #fff;
+    display: inline-block;
+    padding-left: 19px;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .searchForm {
+    width: 100%;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .searchFormWrapperMobile {
+    left: 0;
+    padding: 8px 34px;
+    top: 0;
+    background-color: #fff;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .searchFormWrapperMobile .searchResults {
+    width: 100%;
+    left: 0;
+  }
+  .AccountWrapper .TopPanel .topPanelMobile .searchFormWrapperMobile .closeSearchBtn:hover svg path {
+    fill: #1ab0c4 !important;
+  }
+  .AccountWrapper .contentInner {
+    padding: 25px 34px;
+    transition: 0.3s;
+  }
+}
+@media screen and (max-width: 768px) {
+  .AccountWrapper .contentInner {
+    padding: 24px 18px;
+  }
+  .AccountWrapper .TopPanel {
+    padding: 0 18px;
+    height: 48px;
+  }
+}
 .HeaderTitle {
   margin-bottom: 18px;
   color: #11343F;
@@ -5,17 +260,109 @@
 }
 
 .HeaderSubTitle {
-  margin-bottom: 18px;
   max-width: 1130px;
   font-size: 14px;
-  height: 60px;
   line-height: 18px;
 }
 
 .HeaderHrefBTN {
   font-size: 14px;
   font-weight: 500;
+  width: max-content;
+  display: block;
+  margin-right: auto;
   margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.TableFutures .HeadTable {
+  background: #eef1f3;
+}
+.TableFutures tbody {
+  border-bottom: 1px solid #ECF2F4;
+}
+.TableFutures tr td {
+  padding: 19px 10px;
+  vertical-align: middle;
+}
+.TableFutures tr td .OthTDTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #11343F;
+}
+.TableFutures tr td .OthTDTitle .OthTDSubTitle {
+  font-weight: 400;
+  color: #8AAAB4;
+}
+.TableFutures tr .TDContentExp {
+  display: table-cell;
+  vertical-align: middle;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont {
+  display: flex;
+  align-items: center;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont .TDImg {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  margin: 0 20px 0 0;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont .OthTDImg {
+  width: 22px;
+  height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  min-height: 22px;
+  min-width: 22px;
+  margin: 0 15px 0 0;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont .TDTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #11343F;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont .TDTitle .TDSubTitle {
+  font-weight: 400;
+  color: #8AAAB4;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont .OthTDTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #007585;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont .OthTDTitle .OthTDSubTitle {
+  font-weight: 400;
+  color: #007585;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont button {
+  padding: 10px 30px;
+  margin: 0 15px 0 0;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont button:last-child {
+  margin: 0;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont button svg {
+  margin: 0 20px 0 0;
+}
+.TableFutures tr th {
+  color: #8AAAB4;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+@media (max-width: 991px) {
+  .HeaderSubTitle {
+    max-width: unset;
+    width: 100% !important;
+  }
+
+  .TableFutures .HeadTable tr th {
+    white-space: nowrap;
+  }
 }
 
 /*# sourceMappingURL=Futures.module.css.map */
