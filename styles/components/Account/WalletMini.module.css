@@ -37,7 +37,7 @@
 }
 .walletWrapper .descr {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 12px;
   /* or 14px */
   text-transform: capitalize;
   /* Fonts / Gray 2 */
@@ -46,7 +46,7 @@
 .walletWrapper .total {
   display: block;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 19px;
   transition: 0.3s;
   /* or 24px */
   letter-spacing: -0.03em;

@@ -36,6 +36,7 @@
   color: #fff !important;
   font-weight: 700;
   font-size: 16px;
+  padding-bottom: 4px;
 }
 .Wallet .BonusMobile .topBlock .balance .info span {
   font-weight: 400;
@@ -81,6 +82,14 @@
   /* Fonts / Dark */
   display: block;
   color: #11343f;
+}
+.Wallet .topBlock .balance .info .balaneAmount .requestConnectWalletBar {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: -0.02em;
 }
 .Wallet .topBlock .actionButtons .depositBtn,
 .Wallet .topBlock .actionButtons .withdrawBtn {

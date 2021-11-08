@@ -46,6 +46,7 @@
             color: #fff !important;
             font-weight: 700;
             font-size: 16px;
+            padding-bottom: 4px;
           }
           span {
             font-weight: 400;
@@ -104,6 +105,15 @@
 
           display: block;
           color: #11343f;
+          .requestConnectWalletBar {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 19px;
+
+            /* identical to box height */
+            letter-spacing: -0.02em;
+          }
         }
       }
     }

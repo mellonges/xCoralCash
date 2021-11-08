@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Scrollbar from "react-scrollbars-custom";
 import styles from "@/styles/pages/account/Layout.module.scss";
 import LeftNavigationMobile from "@/components/account/LeftNavigationMobile";
 import LeftSideUser from "@/components/account/LeftSideUser";
 import Notifications from "@/components/account/Notifications";
 import StylesBalance from "../styles/pages/account/left-side/LeftSideBalance.module.scss";
+import {useSelector} from "react-redux";
+import CountUp from "react-countup";
 
 const LeftSidePanel = () => {
   const router = useRouter();
-
+  const xCoralBalance = useSelector(({store}) => store.xCoralBalance)
   const isActive = (link) => {
     return router.pathname.match(new RegExp(`^${link}$`, "gm"));
   };
@@ -295,17 +297,12 @@ const LeftSidePanel = () => {
               </>
             ) : null}
           </div>
-          <div className={StylesBalance.balanceleftsidepanel}
-              // style={{backgroundColor: "#0A3345", padding: "1px", textAlign: "center", marginRight: "20px"}}
-          >
-          <p className={StylesBalance.NameValLeftSidePanel}
-              // style={{color: "white"}}
-          >
-            xCORAL</p>
-            <p className={StylesBalance.ValLeftSidePanel}
-                // style={{color: "#45FFDE"}}
-            >15,314.31</p>
-          </div>
+          {xCoralBalance === null ? null : <div className={StylesBalance.balanceleftsidepanel}>
+            <p className={StylesBalance.NameValLeftSidePanel}>xCORAL</p>
+            <p className={StylesBalance.ValLeftSidePanel}>
+              <CountUp end={xCoralBalance} duration={1} separator={"."} />
+            </p>
+          </div> }
         </Scrollbar>
         {/*<LeftSideUser user={user} />*/}
       </div>

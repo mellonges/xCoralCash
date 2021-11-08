@@ -1,0 +1,897 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_xCORAL",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_treasury",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_monetary_policy",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "initialBCV",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newBCV",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "adjustment",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "addition",
+				"type": "bool"
+			}
+		],
+		"name": "ControlVariableAdjustment",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "deposit",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "asset",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "payoutPrincipal",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "payoutRewards",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesContractCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "asset",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "payoutRewards",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "payoutPrincipal",
+				"type": "uint256"
+			}
+		],
+		"name": "FuturesRedeemedPartially",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipRenounced",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_controlVariable",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_vestingPrincipleTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_vestingRewardsTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_minimumYield",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maximumYield",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maxPayout",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address[]",
+				"name": "_assetsSupported",
+				"type": "address[]"
+			}
+		],
+		"name": "addFuturesTerms",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "adjustments",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "add",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "rate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "target",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "buffer",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "lastBlock",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "assetList",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "assetType",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "debtData",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_asset",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_depositor",
+				"type": "address"
+			}
+		],
+		"name": "deposit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "futuresData",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "payoutPrincipal",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "payoutRewards",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "issued",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "lastInteraction",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deposited",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "asset",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "isOwner",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address[]",
+				"name": "_assetsSupported",
+				"type": "address[]"
+			}
+		],
+		"name": "matchTermsToAssets",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			}
+		],
+		"name": "maxPayout",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "monetaryPolicy",
+		"outputs": [
+			{
+				"internalType": "contract ICoralMonetaryPolicy",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_depositor",
+				"type": "address"
+			}
+		],
+		"name": "pendingPayoutFor",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "payoutPrincipal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "payoutRewards",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "termsId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "issued",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastInteraction",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deposited",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"internalType": "struct CoralFutures.Futures[]",
+				"name": "",
+				"type": "tuple[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_recipient",
+				"type": "address"
+			}
+		],
+		"name": "redeemAllAssets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_asset",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			}
+		],
+		"name": "redeemAsset",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_addition",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_increment",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_target",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_buffer",
+				"type": "uint256"
+			}
+		],
+		"name": "setAdjustment",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "_assets",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint8[]",
+				"name": "_types",
+				"type": "uint8[]"
+			}
+		],
+		"name": "setAssets",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_monetary_policy",
+				"type": "address"
+			}
+		],
+		"name": "setMonetaryPolicy",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_treasury",
+				"type": "address"
+			}
+		],
+		"name": "setTreasury",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "supportedAssets",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "termsId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "controlVariable",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vestingPrincipleTerm",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vestingRewardsTerm",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minimumYield",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maximumYield",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxPayout",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CoralFutures.Terms[]",
+				"name": "",
+				"type": "tuple[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "termsData",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "termsList",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "controlVariable",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "vestingPrincipleTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "vestingRewardsTerm",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "minimumYield",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maximumYield",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxPayout",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalValueLocked",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "treasury",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_termsId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_controlVariable",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_minimumYield",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maximumYield",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maxPayout",
+				"type": "uint256"
+			}
+		],
+		"name": "updateFuturesTerms",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "xCORAL",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

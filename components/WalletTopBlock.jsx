@@ -6,11 +6,11 @@ import { Button } from "reactstrap";
 import { formatPrice } from "@/functions/helpers";
 import styles from "@/styles/pages/account/Wallet.module.scss";
 import {useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import CountUp from "react-countup";
 
-const WalletTopBlock = () => {
-  const balance = useSelector(({store}) => store.balance)
-
+const WalletTopBlock = ({ xCoralBalance }) => {
+  console.log(xCoralBalance)
   return (
     <div className={`${styles.topBlock} d-flex align-items-center`}>
       <div className={`${styles.balance}  d-flex align-items-center`}>
@@ -31,7 +31,7 @@ const WalletTopBlock = () => {
         <div className={styles.info}>
           <span>My xCORAL Balance</span>
           <strong className={styles.balaneAmount}>
-            {balance ? balance : 0} ETH
+            { xCoralBalance  ? xCoralBalance : <p className={styles.requestConnectWalletBar}>Connect wallet to see your xCORAL Balance</p> }
             {/*{paymentMethods &&*/}
             {/*  formatPrice(*/}
             {/*    paymentMethods.find(*/}

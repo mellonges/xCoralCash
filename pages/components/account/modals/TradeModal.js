@@ -90,7 +90,7 @@ const TradeModal = () => {
           }`}
           onClick={() => setActiveOperation(1)}
         >
-          Buy
+          Bond
         </div>
         <div
           className={`${styles.tabItem} ${
@@ -98,16 +98,16 @@ const TradeModal = () => {
           } `}
           onClick={() => setActiveOperation(2)}
         >
-          Sell
+          Redeem
         </div>
-        <div
-          className={`${styles.tabItem} ${
-            activeOperation === 3 ? styles.active : ""
-          }`}
-          onClick={() => setActiveOperation(3)}
-        >
-          Convert
-        </div>
+        {/*<div*/}
+        {/*  className={`${styles.tabItem} ${*/}
+        {/*    activeOperation === 3 ? styles.active : ""*/}
+        {/*  }`}*/}
+        {/*  onClick={() => setActiveOperation(3)}*/}
+        {/*>*/}
+        {/*  Convert*/}
+        {/*</div>*/}
       </section>
       <ModalBody>
         <TradeModalContext.Provider

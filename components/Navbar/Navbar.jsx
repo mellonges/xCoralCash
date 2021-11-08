@@ -18,6 +18,7 @@ import {disconnectWallet} from "../../redux/reducers/asyncActions/disconnectWall
 import {repairConnect} from "../../redux/reducers/asyncActions/repairConnect";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
+import {getWalletInfo} from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
 
 
 const Navbar = () => {
@@ -49,9 +50,8 @@ const connectFunctionForButton = () => {
                          Main network <b
                         className={styles.showAddress}>{walletAddress}</b></div>}
                     </div>
-                    <button onClick={() => connectFunctionForButton()}
-
-
+                     <button onClick={() => connectFunctionForButton()}
+                        style={{backgroundColor: "#1ab0c4"}}
                         // onClick={(e) => {
                         //   e.preventDefault()
                         //   ChangeAccountTradeModalState({
@@ -106,6 +106,7 @@ const connectFunctionForButton = () => {
                             // }}
                             className={`btn btn-primary`}
                             style={{
+                                backgroundColor: "#1ab0c4",
                                 fontWeight: 500,
                                 width: "100px",
                                 display: "block",

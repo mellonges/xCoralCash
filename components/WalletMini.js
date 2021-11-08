@@ -36,9 +36,9 @@ const WalletMini = ({ walletInfo }) => {
         </div>
         <div className={styles.info}>
           <span className={styles.descr}>{walletInfo.header}</span>
-          <TooltipComponent id={"text"} tooltTipContent={"price info"} />
+          <TooltipComponent id={"text"} tooltTipContent={walletInfo.tooltipContent} />
           <strong className={styles.total}>
-            {formatPrice(walletInfo.amount)}
+            ${walletInfo.amount}
 
           </strong>
         </div>

@@ -30,7 +30,7 @@ import {disconnectWallet} from "../redux/reducers/asyncActions/disconnectWallet"
 import {repairConnect} from "../redux/reducers/asyncActions/repairConnect";
 
 const dappId = process.env.API_KEY
-const networkId = 1
+const networkId = 3
 function MyApp({Component, pageProps}) {
      let setTimeOudDisconnectId
     const dispatch = useDispatch()
@@ -49,8 +49,8 @@ function MyApp({Component, pageProps}) {
                         dispatch(dispatchWeb3forUser(web3))
                 },
                 network: networkId => {
-                    if (networkId !== 1 && networkId !== undefined) {
-                            toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Mainnet`, {
+                    if (networkId !== 3 && networkId !== undefined) {
+                            toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Ropsten`, {
                                 position: "bottom-right",
                                 autoClose: 3000,
                                 hideProgressBar: true,
@@ -68,6 +68,7 @@ function MyApp({Component, pageProps}) {
                         toast.info("Disconnect", {autoClose: 1000, position: "bottom-center", pauseOnHover: false, pauseOnFocusLoss: false,})
                     } else {
                         clearTimeout(setTimeOudDisconnectId)
+                        toast.dismiss()
                         toast.success("Returned to Ethereum Mainnet",{pauseOnHover: false, pauseOnFocusLoss: false,})
                     }
 
@@ -159,7 +160,7 @@ function MyApp({Component, pageProps}) {
                 draggable
                 pauseOnHover
             />
-            <TradeModal/>
+            <TradeModal />
             <DepositModal/>
             <WithdrawModal/>
         </>
