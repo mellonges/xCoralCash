@@ -41,36 +41,36 @@ const dispatch = useDispatch()
                     <div className={styles.Wallet_Block}
                         // style={{display: "flex", justifyContent: "space-around"}}
                     >
-                        <WalletMini walletInfo={{
+                        { currentPrice ? <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
                                 "amount": currentPrice,
                                 "header": "Current Price",
                                 "tooltipContent": "Average price of xCORAL as seen in the liquidity pools. Will be brought to the target price during the next rebase",
-                        }} />
-                        <WalletMini walletInfo={{
+                        }} /> : <LoadingWalletInfo /> }
+                        { targetPrice ? <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
                                 "amount": targetPrice,
                                 "header": "Target Price",
                                 "tooltipContent": "The price that xCORAL should be worth at the moment. The target price keeps growing as time goes by. xCORAL real price will be brought to target during the next rebase",
 
-                        }} />
-                        <WalletMini walletInfo={{
+                        }} /> : <LoadingWalletInfo /> }
+                        { true ? <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
                                 "amount": -1,
                                 "header": "Current APY",
                                 "tooltipContent": "Current Annual Percentage Yield — in other words, how much your position will grow in a year. The APY represents the appreciation in xCORAL price. The value is changing constantly based on the protocol dynamics and external variables, but always stays positive — meaning that xCORAL price never goes down.",
 
-                        }} />
-                        <WalletMini walletInfo={{
+                        }} /> : <LoadingWalletInfo /> }
+                        { true ? <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
                                 "amount": -1,
                                 "header": "Next Rebase In",
                                 "tooltipContent": "How soon the liquidity pool of xCORAL will be rebased, which will cause the price to reach its target level. Frequent rebases ensure that xCORAL continues to appreciate in value at a certain pace",
-                        }} />
+                        }} />: <LoadingWalletInfo /> }
                         {/*<LoadingWalletInfo />*/}
                     </div>
 

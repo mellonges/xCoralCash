@@ -30,10 +30,10 @@ const rootStore = createSlice({
         network: null,
         xCoralBalance: null,
         walletMiniInfo: {
-            currentPrice: 0,
-            targetPrice: 0,
-            currentAPY: 0,
-            nextRebaseIn: 0,
+            currentPrice: null,
+            targetPrice: null,
+            currentAPY: null,
+            nextRebaseIn: null,
 
         },
 
