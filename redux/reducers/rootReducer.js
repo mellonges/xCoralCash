@@ -18,7 +18,6 @@ const contracts = {
     treasury: new web3.eth.Contract(TREASURY_ABI, process.env.treasury),
 }
 
-console.log(XCORAL_ABI)
 const rootStore = createSlice({
     name: "rootStore",
     initialState: {
