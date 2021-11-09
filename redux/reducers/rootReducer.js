@@ -77,10 +77,14 @@ const rootStore = createSlice({
         },
 
         [getWalletInfo.fulfilled]: (state, action) => {
-            state.walletMiniInfo.currentPrice = (action.payload[0] / 10 ** 18).toFixed(2)
-            state.walletMiniInfo.targetPrice = (action.payload[1] / 10 ** 18).toFixed(2)
-            // state.walletMiniInfo.currentAPY = action.payload[2]
-            // state.walletMiniInfo.nextRebaseIn = action.payload[3]
+            state.walletMiniInfo.currentPrice = "$" + (action.payload[0] / 10 ** 18).toFixed(2)
+            state.walletMiniInfo.targetPrice = "$" + (action.payload[1] / 10 ** 18).toFixed(2)
+            state.walletMiniInfo.currentAPY =  ((((action.payload[2] / 10 ** 5) ** (8760 / (action.payload[3] / 3600))) - 1) * 100).toFixed(2) + "%"
+            let nextRebaseIn
+            if (+action.payload[4] <= 0) {
+                nextRebaseIn = "Happening now"
+            } else nextRebaseIn = action.payload[4] + "ms"
+            state.walletMiniInfo.nextRebaseIn = nextRebaseIn
         },
     }
 

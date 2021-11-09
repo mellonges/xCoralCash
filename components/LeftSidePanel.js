@@ -300,7 +300,7 @@ const LeftSidePanel = () => {
           {xCoralBalance === null ? null : <div className={StylesBalance.balanceleftsidepanel}>
             <p className={StylesBalance.NameValLeftSidePanel}>xCORAL</p>
             <p className={StylesBalance.ValLeftSidePanel}>
-              <CountUp end={xCoralBalance} duration={1} separator={"."} />
+              <CountUp end={xCoralBalance} duration={1} separator={","} />
             </p>
           </div> }
         </Scrollbar>

@@ -38,7 +38,7 @@ const WalletMini = ({ walletInfo }) => {
           <span className={styles.descr}>{walletInfo.header}</span>
           <TooltipComponent id={"text"} tooltTipContent={walletInfo.tooltipContent} />
           <strong className={styles.total}>
-            ${walletInfo.amount}
+            {walletInfo.amount}
 
           </strong>
         </div>
