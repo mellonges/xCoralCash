@@ -1,10 +1,10 @@
 @import "../../variables";
 .walletWrapper {
   padding: 16px;
-  margin-right: auto;
   &:last-child {margin-right: 0;}
   border: 1px solid #ECF2F4;
   border-radius: 10px;
+  margin-right: 50px;
   transition: .3s;
 
   .walletInner {
