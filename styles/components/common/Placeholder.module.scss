@@ -1,33 +1,44 @@
-.placeholder {
-  position: static;
-  overflow: hidden;
-  // -webkit-animation: placeholderShimmer 2s linear;
-  // animation: placeholderShimmer 2s linear;
-  // -webkit-animation-iteration-count: infinite;
-  // animation-iteration-count: infinite;
-  background-color: #fff !important;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(0, 0, 0, 0.08)),
-    color-stop(15%, rgba(0, 0, 0, 0.15)),
-    color-stop(30%, rgba(0, 0, 0, 0.08))
-  ) !important;
-  background-image: -webkit-linear-gradient(
-    left,
-    rgba(0, 0, 0, 0.08) 0,
-    rgba(0, 0, 0, 0.15) 15%,
-    rgba(0, 0, 0, 0.08) 30%
-  ) !important;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.08) 0,
-    rgba(0, 0, 0, 0.15) 15%,
-    rgba(0, 0, 0, 0.08) 30%
-  ) !important;
-  background-size: 1200px 100% !important;
-}
+.placeholderWrapper {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  cursor: auto;
+  &:last-child {margin-right: 0;}
+  .placeholder {
+    position: static;
+    overflow: hidden;
+    -webkit-animation: placeholderShimmer 2s linear;
+    animation: placeholderShimmer 2s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-color: #fff !important;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(0, 0, 0, 0.08)),
+      color-stop(15%, rgba(0, 0, 0, 0.15)),
+      color-stop(30%, rgba(0, 0, 0, 0.08))
+    ) !important;
+    background-image: -webkit-linear-gradient(
+      left,
+      rgba(0, 0, 0, 0.08) 0,
+      rgba(0, 0, 0, 0.15) 15%,
+      rgba(0, 0, 0, 0.08) 30%
+    ) !important;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.08) 0,
+      rgba(0, 0, 0, 0.15) 15%,
+      rgba(0, 0, 0, 0.08) 30%
+    ) !important;
+    background-size: 1200px 100% !important;
+    width: 200px;
+    height: 86px;
+    border-radius: 10px;
+    border: 1px solid #ECF2F4;
+  }
+} 
 @-webkit-keyframes placeholderShimmer {
   0% {
     background-position: -1200px 0;
@@ -42,5 +53,14 @@
   }
   100% {
     background-position: 1200px 0;
+  }
+}
+@media (max-width: 991px) {
+  .placeholderWrapper {
+    margin-bottom: 19px;
+    margin-right: 0;
+    .placeholder {
+      width: 100%;
+    }  
   }
 }
