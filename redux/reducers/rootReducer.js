@@ -8,6 +8,7 @@ import FUTURES_ABI from "../../ABI/futures.json"
 import TREASURY_ABI from "../../ABI/treasury.json"
 import Web3 from "web3"
 import {getWalletInfo} from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
+import {msToTime} from "@/functions/msToTime";
 
 const web3 = new Web3(process.env.INFURA_NET)
 
@@ -80,11 +81,10 @@ const rootStore = createSlice({
             state.walletMiniInfo.currentPrice = "$" + (action.payload[0] / 10 ** 18).toFixed(2)
             state.walletMiniInfo.targetPrice = "$" + (action.payload[1] / 10 ** 18).toFixed(2)
             state.walletMiniInfo.currentAPY =  ((((action.payload[2] / 10 ** 5) ** (8760 / (action.payload[3] / 3600))) - 1) * 100).toFixed(2) + "%"
-            let nextRebaseIn
-            if (+action.payload[4] <= 0) {
-                nextRebaseIn = "Happening now"
-            } else nextRebaseIn = action.payload[4] + "ms"
-            state.walletMiniInfo.nextRebaseIn = nextRebaseIn
+            const nextRebaseIn = action.payload[4] - Number(Date.now().toString().slice(0, 10))
+            if (nextRebaseIn <= 0) {
+                state.walletMiniInfo.nextRebaseIn = "Happening now"
+            } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
     }
 

@@ -4,6 +4,7 @@ import { formatPrice } from "@/functions/helpers";
 import TooltipComponent from "@/components/common/Tooltip";
 
 const WalletMini = ({ walletInfo }) => {
+  console.log(walletInfo.amount)
 
   return  (
     <div
