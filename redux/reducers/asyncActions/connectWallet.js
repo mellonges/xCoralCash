@@ -11,7 +11,6 @@ export const connectWallet = createAsyncThunk(
                 if (isConnectedOnboard) {
                     const currentUserState = await onboard.getState()
                     const {address} = currentUserState
-                    console.log(address)
                     const xCoralBalanceContract = getState().store.contracts.xCORAL
                     const xCoralBalance = await xCoralBalanceContract.methods.balanceOf(address).call()
                     return [currentUserState, xCoralBalance]

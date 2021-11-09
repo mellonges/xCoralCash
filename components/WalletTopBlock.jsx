@@ -10,7 +10,6 @@ import React, {useEffect, useState} from "react";
 import CountUp from "react-countup";
 
 const WalletTopBlock = ({ xCoralBalance }) => {
-  console.log(xCoralBalance)
   return (
     <div className={`${styles.topBlock} d-flex align-items-center`}>
       <div className={`${styles.balance}  d-flex align-items-center`}>

@@ -40,7 +40,7 @@ const dispatch = useDispatch()
                     <div className={styles.contentInner}>
                     <div className={styles.Wallet_Block}>
 
-                        { false ? <>
+                        {  currentPrice && targetPrice &&  currentPrice && nextRebaseIn ? <>
                          <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
