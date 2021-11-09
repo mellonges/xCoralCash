@@ -38,10 +38,9 @@ const dispatch = useDispatch()
                     </div>
 
                     <div className={styles.contentInner}>
-                    <div className={styles.Wallet_Block}
-                        // style={{display: "flex", justifyContent: "space-around"}}
-                    >
-                        { true ? <>
+                    <div className={styles.Wallet_Block}>
+
+                        { false ? <>
                          <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
@@ -79,6 +78,7 @@ const dispatch = useDispatch()
                             <LoadingWalletInfo />
                             <LoadingWalletInfo />
                         </> }
+
                     </div>
 
                 {/*<Graph />*/}

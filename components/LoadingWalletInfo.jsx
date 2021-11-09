@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from "@/styles/pages/account/Wallet.module.scss";
-import Placeholder from "@/components/common/Placeholder";
+import styles from "../styles/components/common/Placeholder.module.scss";
 
 export const LoadingWalletInfo = () => {
     return (
         <>
             <div className={styles.walletWrapper}>
                 <div className={`d-flex align-items-center cursor-pointer ${styles.walletInner}`}>
-                    <Placeholder height="52px" width="165px" />
+                    <div className={styles.placeholder}>
+                    </div>
                 </div>
             </div>
         </>
