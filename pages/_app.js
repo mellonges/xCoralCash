@@ -69,7 +69,7 @@ function MyApp({Component, pageProps}) {
                     } else {
                         clearTimeout(setTimeOudDisconnectId)
                         toast.dismiss()
-                        toast.success("Returned to Ethereum Mainnet",{pauseOnHover: false, pauseOnFocusLoss: false,})
+                        // toast.success("Returned to Ethereum Mainnet",{pauseOnHover: false, pauseOnFocusLoss: false,})
                     }
 
 
