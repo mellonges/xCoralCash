@@ -9,6 +9,7 @@ import TREASURY_ABI from "../../ABI/treasury.json"
 import Web3 from "web3"
 import {getWalletInfo} from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
 import {msToTime} from "@/functions/msToTime";
+import {formatBalance} from "@/functions/formatBalance";
 
 const web3 = new Web3(process.env.INFURA_NET)
 
@@ -70,7 +71,7 @@ const rootStore = createSlice({
             state.address = action.payload[2]
             state.network = action.payload[0].network
             state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
-            state.xCoralBalance = (action.payload[1] / 10 ** 9)
+            state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
 
         },
         [repairConnect.rejected]: () => {
