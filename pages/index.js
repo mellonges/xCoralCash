@@ -9,8 +9,7 @@ import ThousandsOFPeopleCards from "./components/Home/ThousandsOfPeopleCards";
 import BuildPortfolioCards from "./components/Home/BuildPortfolioCards";
 import Footer from "../components/Footer/Footer";
 import {shuffle} from "../functions/helpers";
-import persona from "../SVG/Persona.png"
-
+// import {ReactComponent as SvgMain} from "../SVG/stock-market.svg"
 const HomePage = () => {
     const pageTitle = "Home page";
 
@@ -188,6 +187,7 @@ const HomePage = () => {
                                         alt="xCoin"
                                         className={styles.image}
                                     />
+                                    {/*<SvgMain />*/}
                                 </div>
                             </Col>
                         </Row>
