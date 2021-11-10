@@ -30,6 +30,10 @@ const rootStore = createSlice({
         balance: null,
         network: null,
         xCoralBalance: null,
+        modalWindow: {
+            isOpen: false,
+            activeOperation: 1
+        },
         walletMiniInfo: {
             currentPrice: null,
             targetPrice: null,
@@ -48,6 +52,12 @@ const rootStore = createSlice({
         },
         changeWalletAddress(state, action) {
             state.address = action.payload
+        },
+        openAndCloseModalWindow(state) {
+            state.modalWindow.isOpen = !state.modalWindow.isOpen
+        },
+        setActiveOperation(state, action) {
+            state.modalWindow.activeOperation = action.payload
         }
     },
     extraReducers: {
@@ -93,4 +103,4 @@ const rootStore = createSlice({
 
 
 export default rootStore.reducer
-export const {dispatchOnboard, dispatchWeb3forUser, changeWalletAddress} = rootStore.actions
+export const {dispatchOnboard, dispatchWeb3forUser, changeWalletAddress, openAndCloseModalWindow, setActiveOperation} = rootStore.actions

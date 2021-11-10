@@ -3,15 +3,26 @@ import stylesFutures from "@/styles/pages/account/Futures/Futures.module.scss";
 import {Button} from "reactstrap";
 import styles from "@/styles/pages/account/Wallet.module.scss";
 import stylesFuturesColor from "@/styles/pages/account/Futures/Futures.module.scss";
+import {useDispatch} from "react-redux";
+import {openAndCloseModalWindow, setActiveOperation} from "../../redux/reducers/rootReducer";
 
 const TableBody = ({nameCoin, disabled}) => {
+    const dispatch = useDispatch()
     return (
         <>
             <tbody>
             <tr>
                 <td className={stylesFutures.TDContentExp}>
                     <div className={stylesFutures.TDContentExpCont}>
-                        <svg className={stylesFutures.TDImg} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L1 6.5L12 12L23 6.5L12 1Z" stroke="#658796" stroke-width="1.936" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 17.5L12 23L23 17.5" stroke="#658796" stroke-width="1.936" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 12L12 17.5L23 12" stroke="#658796" stroke-width="1.936" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <svg className={stylesFutures.TDImg} width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L1 6.5L12 12L23 6.5L12 1Z" stroke="#658796" stroke-width="1.936"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M1 17.5L12 23L23 17.5" stroke="#658796" stroke-width="1.936" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M1 12L12 17.5L23 12" stroke="#658796" stroke-width="1.936" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </svg>
                         <div className={stylesFutures.TDTitle}>
                             {nameCoin}
                             <div className={stylesFutures.TDSubTitle}>
@@ -33,7 +44,15 @@ const TableBody = ({nameCoin, disabled}) => {
                 </td>
                 <td className={stylesFutures.TDContentExp}>
                     <div className={stylesFutures.TDContentExpCont}>
-                        <svg className={stylesFutures.OthTDImg} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L1 6.5L12 12L23 6.5L12 1Z" stroke="#658796" stroke-width="1.936" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 17.5L12 23L23 17.5" stroke="#658796" stroke-width="1.936" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 12L12 17.5L23 12" stroke="#658796" stroke-width="1.936" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <svg className={stylesFutures.OthTDImg} width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L1 6.5L12 12L23 6.5L12 1Z" stroke="#658796" stroke-width="1.936"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M1 17.5L12 23L23 17.5" stroke="#658796" stroke-width="1.936" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M1 12L12 17.5L23 12" stroke="#658796" stroke-width="1.936" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </svg>
                         <div className={stylesFutures.OthTDTitle}>
                             921.55
                             <div className={stylesFutures.OthTDSubTitle}>
@@ -45,6 +64,10 @@ const TableBody = ({nameCoin, disabled}) => {
                 <td className={stylesFutures.TDContentExp}>
                     <div className={stylesFutures.TDContentExpCont}>
                         <Button
+                            onClick={() => {
+                                dispatch(setActiveOperation(1))
+                                dispatch(openAndCloseModalWindow())
+                            }}
                             color="primary"
                             className={`d-flex ${styles.depositBtn}`}
                         >
@@ -71,8 +94,10 @@ const TableBody = ({nameCoin, disabled}) => {
                             <span className="ml-auto mr-auto">Bond</span>
                         </Button>
                         <Button
-                            // disabled={true} по макету серая кнопка
-                            // className=Redeem - тёмно-синяя кнопка по макету
+                            onClick={() => {
+                                dispatch(setActiveOperation(2))
+                                dispatch(openAndCloseModalWindow())
+                            }}
                             className={`d-flex ${styles.depositBtn} ${stylesFuturesColor.RedeemActive}`}
                             disabled={disabled}
                         >

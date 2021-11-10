@@ -8,39 +8,45 @@ import TradeSellStep from "./TradeSellStep";
 import Router from "next/router";
 import { TradeModalContext } from "../../../../functions/contexts";
 import { getTokensList } from "../../../../functions/getBackendData";
+import {useDispatch, useSelector} from "react-redux";
+import {openAndCloseModalWindow, setActiveOperation} from "../../../../redux/reducers/rootReducer";
 
 const TradeModal = () => {
-  const [activeOperation, setActiveOperation] = useState(1);
+  const dispatch = useDispatch()
+  const isOpen = useSelector(({store}) => store.modalWindow.isOpen)
+  const activeOperation = useSelector(({store}) => store.modalWindow.activeOperation)
+  // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [selectedToken, setSelectedToken] = useState();
   const [tokensList, setTokensList] = useState();
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => dispatch(openAndCloseModalWindow())
 
   const [operationCompleted, setOperationCompleted] = useState(false);
 
-  useEffect(() => {
-    const subscription = AccountTradeModalObserver.subscribe((data) => {
-      setIsOpen(data.isOpen);
-      setSelectedToken(data.token);
-    });
-
-    getTokensList({
-      page: 1,
-      sort: "price_desc",
-    })
-      .then((res) => res.data.payload)
-      .then((data) => {
-        setTokensList(data.results);
-      })
-      .catch((error) => {
-        console.error(error);
-        setTokensList(false);
-      });
-
-    return () => subscription.unsubscribe();
-  }, []);
+  // useEffect(() => {
+  //   const subscription = AccountTradeModalObserver.subscribe((data) => {
+  //     setIsOpen(isOpenStore);
+  //     setSelectedToken(data.token);
+  //   });
+  //
+  //   //   getTokensList({
+  //   //     page: 1,
+  //   //     sort: "price_desc",
+  //   //   })
+  //   //     .then((res) => res.data.payload)
+  //   //     .then((data) => {
+  //   //       setTokensList(data.results);
+  //   //     })
+  //   //     .catch((error) => {
+  //   //       console.error(error);
+  //   //       setTokensList(false);
+  //   //     });
+  //   //
+  //   //   return () => subscription.unsubscribe();
+  //   // }, []);
+  // }, [])
 
   return (
     <Modal
@@ -53,9 +59,9 @@ const TradeModal = () => {
       }}
       toggle={() => {
         toggle();
-        if (operationCompleted) Router.reload();
+        if (operationCompleted) /* Router.reload() */ console.log("reload()");
       }}
-      onClosed={() => setActiveOperation(1)}
+      // onClosed={() => dispatch(setActiveOperation(1))}
       centered={true}
       className={styles.tradeModal}
     >
@@ -63,7 +69,7 @@ const TradeModal = () => {
         className={`closeBtn curspor-pointer`}
         onClick={() => {
           toggle();
-          if (operationCompleted) Router.reload();
+          if (operationCompleted) /* Router.reload() */ console.log("reload()");
         }}
       >
         <svg
@@ -88,7 +94,7 @@ const TradeModal = () => {
           className={`${styles.tabItem} ${
             activeOperation === 1 ? styles.active : ""
           }`}
-          onClick={() => setActiveOperation(1)}
+          onClick={() => dispatch(setActiveOperation(1))}
         >
           Bond
         </div>
@@ -96,7 +102,7 @@ const TradeModal = () => {
           className={`${styles.tabItem} ${
             activeOperation === 2 ? styles.active : ""
           } `}
-          onClick={() => setActiveOperation(2)}
+          onClick={() => dispatch(setActiveOperation(2))}
         >
           Redeem
         </div>
@@ -110,34 +116,35 @@ const TradeModal = () => {
         {/*</div>*/}
       </section>
       <ModalBody>
-        <TradeModalContext.Provider
-          value={{
-            setOperationCompleted,
-          }}
-        >
-          {activeOperation === 1 ? (
-            <TradeBuyStep
-              setSwitchOffTabs={setSwitchOffTabs}
-              toggle={toggle}
-              selectedToken={selectedToken}
-              tokensList={tokensList}
-            />
-          ) : activeOperation === 2 ? (
-            <TradeSellStep
-              setSwitchOffTabs={setSwitchOffTabs}
-              toggle={toggle}
-              selectedToken={selectedToken}
-              tokensList={tokensList}
-            />
-          ) : activeOperation === 3 ? (
-            <TradeConvertStep
-              setSwitchOffTabs={setSwitchOffTabs}
-              toggle={toggle}
-              selectedToken={selectedToken}
-              tokensList={tokensList}
-            />
-          ) : null}
-        </TradeModalContext.Provider>
+        {/*<TradeModalContext.Provider*/}
+        {/*  value={{*/}
+        {/*    setOperationCompleted,*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  {activeOperation === 1 ? (*/}
+        {/*    <TradeBuyStep*/}
+        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
+        {/*      toggle={toggle}*/}
+        {/*      selectedToken={selectedToken}*/}
+        {/*      tokensList={tokensList}*/}
+        {/*    />*/}
+        {/*  ) : activeOperation === 2 ? (*/}
+        {/*    <TradeSellStep*/}
+        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
+        {/*      toggle={toggle}*/}
+        {/*      selectedToken={selectedToken}*/}
+        {/*      tokensList={tokensList}*/}
+        {/*    />*/}
+        {/*  ) : activeOperation === 3 ? (*/}
+        {/*    <TradeConvertStep*/}
+        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
+        {/*      toggle={toggle}*/}
+        {/*      selectedToken={selectedToken}*/}
+        {/*      tokensList={tokensList}*/}
+        {/*    />*/}
+        {/*  ) : null}*/}
+        {/*</TradeModalContext.Provider>*/}
+        Modal Content
       </ModalBody>
     </Modal>
   );
