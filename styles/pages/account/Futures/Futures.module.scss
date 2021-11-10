@@ -104,8 +104,34 @@
         width: 100% !important;
     }
     .TableFutures {
+        border-top: 1px solid #ddd;
+        tbody {
+            border: 0;
+            tr {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                margin-bottom: 15px;
+                .TDContentExp {
+                    display: block;
+                    text-align: left;
+                    width: 100%;
+                }
+                td {
+                    display: block;
+                    text-align: left;
+                    padding: 10px 0;
+                    &:last-child {padding: 10px 0 20px 0;}
+                    .OthTDTitle {
+                        display: flex;
+                        align-items: center;
+                        .OthTDSubTitle {margin-left: 10px;}
+                    }
+                }
+            }
+        }
         .HeadTable {
             tr {
+                display: none;
                 th {
                     white-space: nowrap;
                 }

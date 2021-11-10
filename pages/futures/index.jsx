@@ -34,10 +34,10 @@ const Index = () => {
                         <th>MANAGE</th>
                     </tr>
                     </thead>
-                        {/*<TableBody disabled={!isConnected} nameCoin={"Bitcoin"} />*/}
-                        {/*<TableBody disabled={!isConnected}  nameCoin={"Ethereum"}/>*/}
-                        {/*<TableBody disabled={!isConnected}  nameCoin={"Solana"} />*/}
-                    {[...Array(12)].map((v, i) => (
+                        <TableBody disabled={!isConnected} nameCoin={"Bitcoin"} />
+                        <TableBody disabled={!isConnected}  nameCoin={"Ethereum"}/>
+                        <TableBody disabled={!isConnected}  nameCoin={"Solana"} />
+                    {/* {[...Array(12)].map((v, i) => (
                         <tbody>
                     <tr key={i}>
                         <td>
@@ -79,7 +79,7 @@ const Index = () => {
                         </td>
                     </tr>
                         </tbody>
-                    ))}
+                    ))} */}
                 </Table>
             </MainLayout>
         </div>
