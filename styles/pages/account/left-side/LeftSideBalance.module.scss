@@ -1,11 +1,14 @@
 .balanceleftsidepanel {
     background: #0A3345;
-    border-radius: 3px;
+    border-radius: 6px;
     user-select: none;
     margin-right: 10px;
     padding: 13px;
-    display: -webkit-box;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
+    svg {
+        margin-right: 6px;
+    }
 }   
 .NameValLeftSidePanel {
     margin-bottom: 0;
