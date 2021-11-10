@@ -182,11 +182,11 @@ const HomePage = () => {
                             </Col>
                             <Col lg="7">
                                 <div className={styles.imageWrapper}>
-                                    <img
-                                        src="/images/screen-main.svg"
-                                        alt="xCoin"
-                                        className={styles.image}
-                                    />
+                                    {/*<img*/}
+                                    {/*    src="/images/screen-main.svg"*/}
+                                    {/*    alt="xCoin"*/}
+                                    {/*    className={styles.image}*/}
+                                    {/*/>*/}
                                     {/*<SvgMain />*/}
                                 </div>
                             </Col>

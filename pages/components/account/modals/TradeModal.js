@@ -116,34 +116,34 @@ const TradeModal = () => {
         {/*</div>*/}
       </section>
       <ModalBody>
-        {/*<TradeModalContext.Provider*/}
-        {/*  value={{*/}
-        {/*    setOperationCompleted,*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  {activeOperation === 1 ? (*/}
-        {/*    <TradeBuyStep*/}
-        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
-        {/*      toggle={toggle}*/}
-        {/*      selectedToken={selectedToken}*/}
-        {/*      tokensList={tokensList}*/}
-        {/*    />*/}
-        {/*  ) : activeOperation === 2 ? (*/}
-        {/*    <TradeSellStep*/}
-        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
-        {/*      toggle={toggle}*/}
-        {/*      selectedToken={selectedToken}*/}
-        {/*      tokensList={tokensList}*/}
-        {/*    />*/}
-        {/*  ) : activeOperation === 3 ? (*/}
-        {/*    <TradeConvertStep*/}
-        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
-        {/*      toggle={toggle}*/}
-        {/*      selectedToken={selectedToken}*/}
-        {/*      tokensList={tokensList}*/}
-        {/*    />*/}
-        {/*  ) : null}*/}
-        {/*</TradeModalContext.Provider>*/}
+        <TradeModalContext.Provider
+          value={{
+            setOperationCompleted,
+          }}
+        >
+          {activeOperation === 1 ? (
+            <TradeBuyStep
+              setSwitchOffTabs={setSwitchOffTabs}
+              toggle={toggle}
+              selectedToken={selectedToken}
+              tokensList={tokensList}
+            />
+          ) : activeOperation === 2 ? (
+            <TradeSellStep
+              setSwitchOffTabs={setSwitchOffTabs}
+              toggle={toggle}
+              selectedToken={selectedToken}
+              tokensList={tokensList}
+            />
+          ) : activeOperation === 3 ? (
+            <TradeConvertStep
+              setSwitchOffTabs={setSwitchOffTabs}
+              toggle={toggle}
+              selectedToken={selectedToken}
+              tokensList={tokensList}
+            />
+          ) : null}
+        </TradeModalContext.Provider>
         Modal Content
       </ModalBody>
     </Modal>

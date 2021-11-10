@@ -161,8 +161,8 @@ function MyApp({Component, pageProps}) {
                 pauseOnHover
             />
             <TradeModal />
-            <DepositModal/>
-            <WithdrawModal/>
+            {/*<DepositModal/>*/}
+            {/*<WithdrawModal/>*/}
         </>
     );
 }
