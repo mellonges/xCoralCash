@@ -4,7 +4,7 @@ import { submitTrade } from "../../../../../functions/getBackendData";
 import { formatPrice } from "../../../../../functions/helpers";
 
 import styles from "../../../../../styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
-import TooltipComponent from "../../../common/Tooltip";
+import TooltipComponent from "../../../../../components/Tooltip";
 import TokenBalance from "./TokenBalance";
 const ConfirmBuying = ({
   setActiveStep,

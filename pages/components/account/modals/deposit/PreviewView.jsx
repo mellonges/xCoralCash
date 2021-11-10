@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Router from "next/router";
 import { Button } from "reactstrap";
-import TooltipComponent from "@/components/common/Tooltip";
+import TooltipComponent from "../../../../../components/Tooltip";
 import {
   previewCryptoDeposit,
   generateCryptoDeposit,

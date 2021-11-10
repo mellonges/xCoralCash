@@ -5,7 +5,7 @@ import { formatPrice } from "../../../../../functions/helpers";
 import styles from "../../../../../styles/components/Account/modals/trade-modules/OperationsStatus.module.scss";
 import Router from "next/router";
 import { TradeModalContext } from "../../../../../functions/contexts";
-import TooltipComponent from "../../../common/Tooltip";
+import TooltipComponent from "../../../../../components/Tooltip";
 
 const OperationStatus = ({
   info,

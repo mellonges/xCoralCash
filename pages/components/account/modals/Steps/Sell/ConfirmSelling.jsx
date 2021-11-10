@@ -9,7 +9,7 @@ import { formatPrice } from "../../../../../../functions/helpers";
 import styles from "../../../../../../styles/components/Account/modals/trade-modules/Sell/ConfirmSelling.module.scss";
 import TokenBalance from "../TokenBalance";
 
-import TooltipComponent from "../../../../common/Tooltip";
+import TooltipComponent from "../../../../../../components/Tooltip";
 const ConfirmSelling = ({
   setActiveStep,
   setSwitchOffTabs,

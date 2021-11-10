@@ -8,7 +8,7 @@ import {
 import { formatPrice } from "../../../../../../functions/helpers";
 
 import styles from "../../../../../../styles/components/Account/modals/trade-modules/Sell/ConfirmSelling.module.scss";
-import TooltipComponent from "../../../../common/Tooltip";
+import TooltipComponent from "../../../../../../components/Tooltip";
 import TokenBalance from "../TokenBalance";
 
 const ConfirmConvert = ({

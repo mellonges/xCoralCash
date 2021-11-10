@@ -2,7 +2,7 @@ import moment from "moment";
 import shortid from "shortid";
 import { formatPrice, getTokenIconUrl } from "../../../../functions/helpers";
 import styles from "../../../../styles/components/Account/wallet/TransfersMobileTable.module.scss";
-import TooltipComponent from "../../common/Tooltip";
+import TooltipComponent from "../../../../components/Tooltip";
 
 const TransfersMobileTable = ({ transfers }) => {
   return (

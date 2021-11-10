@@ -2,9 +2,9 @@
 /** Fonts **/
 .walletWrapper {
   padding: 16px;
-  margin-right: auto;
   border: 1px solid #ECF2F4;
   border-radius: 10px;
+  margin-right: 50px;
   transition: 0.3s;
 }
 .walletWrapper:last-child {

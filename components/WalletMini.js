@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "@/styles/components/Account/WalletMini.module.scss";
 import { formatPrice } from "@/functions/helpers";
-import TooltipComponent from "@/components/common/Tooltip";
+import TooltipComponent from "./Tooltip";
 
 const WalletMini = ({ walletInfo }) => {
-  console.log(walletInfo.amount)
 
   return  (
     <div
@@ -37,7 +36,7 @@ const WalletMini = ({ walletInfo }) => {
         </div>
         <div className={styles.info}>
           <span className={styles.descr}>{walletInfo.header}</span>
-          <TooltipComponent id={"text"} tooltTipContent={walletInfo.tooltipContent} />
+          <TooltipComponent id={walletInfo.id} tooltTipContent={walletInfo.tooltipContent} />
           <strong className={styles.total}>
             {walletInfo.amount}
 

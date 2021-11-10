@@ -47,7 +47,7 @@ const connectFunctionForButton = () => {
                     <div>
                         {isConnected && <div className={styles.displayAddressPlace}> 
                         {/* {getNetworkName(network)} */}
-                         Main network <b
+                            {getNetworkName(network)} network <b
                         className={styles.showAddress}>{walletAddress}</b></div>}
                     </div>
                      <button onClick={() => connectFunctionForButton()}
