@@ -9,7 +9,8 @@ import ThousandsOFPeopleCards from "./components/Home/ThousandsOfPeopleCards";
 import BuildPortfolioCards from "./components/Home/BuildPortfolioCards";
 import Footer from "../components/Footer/Footer";
 import {shuffle} from "../functions/helpers";
-// import {ReactComponent as SvgMain} from "../SVG/stock-market.svg"
+// import MoneyBagSVG from "../SVG/money-bag.svg"
+import LaunchRocketSVG from "../SVG/launch-rocket.svg"
 const HomePage = () => {
     const pageTitle = "Home page";
 
@@ -128,18 +129,7 @@ const HomePage = () => {
                                     </div>
                                     <div className={`${styles.iconItem} d-flex `}>
                                         <div className={styles.Icon}>
-                                            <svg
-                                                width="29"
-                                                height="29"
-                                                viewBox="0 0 29 30"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M14.5 0.998779C6.50438 0.998779 0 7.50316 0 15.4988C0 23.4944 6.50438 29.9988 14.5 29.9988C22.4956 29.9988 29 23.4944 29 15.4988C29 7.50316 22.4956 0.998779 14.5 0.998779ZM21.396 22.9988C21.1604 23.2344 20.8511 23.353 20.5417 23.353C20.2324 23.353 19.9229 23.2344 19.6875 22.9988L13.6457 16.9573C13.4185 16.7314 13.2917 16.4243 13.2917 16.103V8.24878C13.2917 7.5806 13.8329 7.04052 14.5 7.04052C15.1671 7.04052 15.7083 7.5806 15.7083 8.24878V15.6028L21.396 21.2903C21.8684 21.7629 21.8684 22.5264 21.396 22.9988V22.9988Z"
-                                                    fill="#FAFDFF"
-                                                />
-                                            </svg>
+                                            {/*<MoneyBagSVG />*/}
                                         </div>
                                         <div  className={styles.info}>
                                             <span>Protocol Controlled Value</span>
@@ -148,30 +138,8 @@ const HomePage = () => {
                                     </div>
                                     <div className={`${styles.iconItem} d-flex `}>
                                         <div className={styles.Icon}>
-                                            {/*<svg*/}
-                                            {/*    width="29"*/}
-                                            {/*    height="29"*/}
-                                            {/*    viewBox="0 0 33 34"*/}
-                                            {/*    fill="none"*/}
-                                            {/*    xmlns="http://www.w3.org/2000/svg"*/}
-                                            {/*>*/}
-                                            {/*    <path*/}
-                                            {/*        d="M32.3658 20.4792C32.3658 20.9052 32.0862 21.2716 31.6995 21.3973L22.7093 24.3422L19.7644 33.3325C19.6366 33.7192 19.2703 33.9988 18.8463 33.9988C18.4318 33.9988 18.0837 33.7378 17.9488 33.3806L10.2228 13.1016C10.1729 12.9941 10.1543 12.8792 10.1543 12.7535C10.1543 12.2221 10.5891 11.7872 11.1206 11.7872C11.2463 11.7872 11.3612 11.8059 11.4686 11.8557L31.7493 19.5817C32.1049 19.7149 32.3658 20.063 32.3658 20.4792Z"*/}
-                                            {/*        fill="#FAFDFF"*/}
-                                            {/*    />*/}
-                                            {/*    <path*/}
-                                            {/*        d="M11.8205 6.61714L12.1143 2.88377C12.1737 2.10563 12.8621 1.5223 13.6403 1.58168C14.4184 1.64107 15.0017 2.3295 14.9424 3.10765L14.6486 6.84102C14.4949 8.04475 13.5094 8.17015 13.1226 8.14311C12.3445 8.08372 11.7611 7.39528 11.8205 6.61714Z"*/}
-                                            {/*        fill="#FAFDFF"*/}
-                                            {/*    />*/}
-                                            {/*    <path*/}
-                                            {/*        d="M6.41312 9.30699L3.67002 6.75753C3.09714 6.22759 3.06769 5.32573 3.59762 4.75284C4.12756 4.17996 5.02942 4.15051 5.60231 4.68045L8.34541 7.22991C9.19324 8.09811 8.6793 8.94827 8.4178 9.2346C7.88787 9.80748 6.98601 9.83693 6.41312 9.30699Z"*/}
-                                            {/*        fill="#FAFDFF"*/}
-                                            {/*    />*/}
-                                            {/*    <path*/}
-                                            {/*        d="M5.87379 16.0669L2.38407 17.4256C1.65751 17.7105 0.83287 17.3442 0.548007 16.6176C0.263144 15.8911 0.629462 15.0664 1.35602 14.7815L4.84574 13.4228C5.99654 13.0378 6.53796 13.8707 6.6818 14.2308C6.96666 14.9574 6.60035 15.782 5.87379 16.0669Z"*/}
-                                            {/*        fill="#FAFDFF"*/}
-                                            {/*    />*/}
-                                            {/*</svg>*/}
+
+                                           {/*<LaunchRocketSVG />*/}
                                         </div>
                                         <div className={styles.info}>
                                             <span>Bringing Next Trillion Dollars</span>
