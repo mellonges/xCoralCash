@@ -108,6 +108,40 @@
     width: 100% !important;
   }
 
+  .TableFutures {
+    border-top: 1px solid #ddd;
+  }
+  .TableFutures tbody {
+    border: 0;
+  }
+  .TableFutures tbody tr {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .TableFutures tbody tr .TDContentExp {
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+  .TableFutures tbody tr td {
+    display: block;
+    text-align: left;
+    padding: 10px 0;
+  }
+  .TableFutures tbody tr td:last-child {
+    padding: 10px 0 20px 0;
+  }
+  .TableFutures tbody tr td .OthTDTitle {
+    display: flex;
+    align-items: center;
+  }
+  .TableFutures tbody tr td .OthTDTitle .OthTDSubTitle {
+    margin-left: 10px;
+  }
+  .TableFutures .HeadTable tr {
+    display: none;
+  }
   .TableFutures .HeadTable tr th {
     white-space: nowrap;
   }

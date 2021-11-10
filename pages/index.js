@@ -9,8 +9,6 @@ import ThousandsOFPeopleCards from "./components/Home/ThousandsOfPeopleCards";
 import BuildPortfolioCards from "./components/Home/BuildPortfolioCards";
 import Footer from "../components/Footer/Footer";
 import {shuffle} from "../functions/helpers";
-// import MoneyBagSVG from "../SVG/money-bag.svg"
-import LaunchRocketSVG from "../SVG/launch-rocket.svg"
 const HomePage = () => {
     const pageTitle = "Home page";
 
