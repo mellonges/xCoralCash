@@ -79,7 +79,8 @@ const TradeSellStep = ({
 
   const [activeStep, setActiveStep] = useState("selectSumm");
 
-  const sendPreview = () => {
+  const
+      sendPreview = () => {
     setLoading(true);
     getTradeInfo("sell", selectedWays.token.ticker, undefined, +summ)
       .then((res) => res.data.payload)

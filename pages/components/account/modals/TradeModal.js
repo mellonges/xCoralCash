@@ -4,7 +4,7 @@ import { AccountTradeModalObserver } from "../../../../functions/observers";
 import styles from "../../../../styles/components/Account/modals/TradeModal.module.scss";
 import TradeBuyStep from "./TradeBuyStep";
 import TradeConvertStep from "./TradeConvertStep";
-import TradeSellStep from "./TradeSellStep";
+// import TradeSellStep from "./TradeSellStep";
 import Router from "next/router";
 import { TradeModalContext } from "../../../../functions/contexts";
 import { getTokensList } from "../../../../functions/getBackendData";

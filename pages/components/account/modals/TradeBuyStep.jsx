@@ -77,30 +77,30 @@ const TradeBuyStep = ({
   // }, [paymentMethods])
   //
   const [activeStep, setActiveStep] = useState('selectSumm')
-  //
-  // useEffect(() => {
-  //   if (activeStep === 'selectSumm' && summ.length) {
-  //     setSumm('')
-  //   }
-  // }, [activeStep])
-  //
-  // const sendPreview = () => {
-  //   setLoading(true)
-  //   getTradeInfo(
-  //     'buy',
-  //     selectedWays.token.ticker,
-  //     direction === 1 ? +summ : undefined,
-  //     direction === 2 ? +summ : undefined,
-  //   )
-  //     .then((res) => res.data.payload)
-  //     .then((data) => {
-  //       setBuyingInformation(data)
-  //       setActiveStep('confirmBuying')
-  //       setSwitchOffTabs(true)
-  //     })
-  //     .catch((err) => console.error(err))
-  //     .finally(() => setLoading(false))
-  // }
+
+  useEffect(() => {
+    if (activeStep === 'selectSumm' && summ.length) {
+      setSumm('')
+    }
+  }, [activeStep])
+
+  const sendPreview = () => {
+    setLoading(true)
+    getTradeInfo(
+      'buy',
+      selectedWays.token.ticker,
+      direction === 1 ? +summ : undefined,
+      direction === 2 ? +summ : undefined,
+    )
+      .then((res) => res.data.payload)
+      .then((data) => {
+        setBuyingInformation(data)
+        setActiveStep('confirmBuying')
+        setSwitchOffTabs(true)
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false))
+  }
 
   return (
     <div className={`${styles.buying} position-relative`}>
