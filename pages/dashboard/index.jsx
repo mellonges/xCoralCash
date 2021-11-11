@@ -8,7 +8,9 @@ import BonusBlockMobile from "../../components/BonusBlockMobile";
 import {useDispatch, useSelector} from "react-redux";
 import {getWalletInfo} from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
 import LoadingWalletInfo from "../../components/LoadingWalletInfo";
-
+import CurrentPriceSvg from "../../SVG/CurrentPriceSVG";
+import TargetPriceSvg from "../../SVG/TargetPriceSVG";
+import NextRebaseInSvg from "../../SVG/NextRebaseInSVG";
 
 const Index = () => {
 const dispatch = useDispatch()
@@ -48,7 +50,7 @@ const dispatch = useDispatch()
                                 "id": 1,
                                 "header": "Current Price",
                                 "tooltipContent": "Average price of xCORAL as seen in the liquidity pools. Will be brought to the target price during the next rebase",
-                        }} />
+                        }} icon={<CurrentPriceSvg />} />
                          <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
@@ -57,7 +59,7 @@ const dispatch = useDispatch()
                                 "header": "Target Price",
                                 "tooltipContent": "The price that xCORAL should be worth at the moment. The target price keeps growing as time goes by. xCORAL real price will be brought to target during the next rebase",
 
-                        }} />
+                        }} icon={<TargetPriceSvg />} />
                       <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
@@ -66,7 +68,7 @@ const dispatch = useDispatch()
                                 "header": "Current APY",
                                 "tooltipContent": "Current Annual Percentage Yield — in other words, how much your position will grow in a year. The APY represents the appreciation in xCORAL price. The value is changing constantly based on the protocol dynamics and external variables, but always stays positive — meaning that xCORAL price never goes down.",
 
-                        }} />
+                        }} icon={<CurrentPriceSvg />}/>
                         <WalletMini walletInfo={{
                                 "paymentMethodID": "USD",
                                 "type": "wallet",
@@ -74,7 +76,7 @@ const dispatch = useDispatch()
                                 "amount": nextRebaseIn,
                                 "header": "Next Rebase In",
                                 "tooltipContent": "How soon the liquidity pool of xCORAL will be rebased, which will cause the price to reach its target level. Frequent rebases ensure that xCORAL continues to appreciate in value at a certain pace",
-                        }} />
+                        }} icon={<NextRebaseInSvg />} />
                             </> :
                         <>
                             <LoadingWalletInfo />

@@ -34,7 +34,7 @@ const Index = () => {
                         <th>MANAGE</th>
                     </tr>
                     </thead>
-                        <TableBody disabled={!isConnected} nameCoin={"Bitcoin"} />
+                        <TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />
                         <TableBody disabled={!isConnected}  nameCoin={"Ethereum"}/>
                         <TableBody disabled={!isConnected}  nameCoin={"Solana"} />
                     {/* {[...Array(12)].map((v, i) => (
