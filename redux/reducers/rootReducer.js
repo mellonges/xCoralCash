@@ -116,6 +116,7 @@ const rootStore = createSlice({
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
             state.futuresTableInfo.data = action.payload[0]
+            console.log(action.payload[0])
             state.futuresTableInfo.userData = action.payload[1]
             state.futuresTableInfo.init = true
 
