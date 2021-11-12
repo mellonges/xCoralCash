@@ -15,6 +15,6 @@
         case 'localhost':
             return 'localhost'
         default:
-            return 'local'
+            return 'unsupported network'
     }
 }

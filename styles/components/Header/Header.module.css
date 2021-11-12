@@ -1,0 +1,237 @@
+/** Colors **/
+/** Fonts **/
+.header {
+  padding: 13px 0;
+}
+.header .navbar .logotype {
+  font-family: "Asul", sans-serif;
+  letter-spacing: -0.07em;
+  font-size: 25.4593px;
+}
+.header .navbar .logotype span {
+  color: #45ffde;
+}
+.header .navbar .logotype:after {
+  content: "";
+  height: 16px;
+  width: 0px;
+  border-right: 1px solid #fff;
+  display: inline-block;
+  padding-left: 19px;
+}
+.header .navbar .description {
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height */
+  letter-spacing: -0.01em;
+  padding-left: 16px;
+  opacity: 0.78;
+}
+.header .navbar .headerNavigation {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.header .navbar .headerNavigation li {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  padding-left: 24px;
+}
+.header .navbar .headerNavigation li a {
+  text-decoration: none;
+}
+.header .navbar .getStartedBtn {
+  margin-left: 32px;
+  background: #45ffde;
+  border-radius: 4px;
+  padding: 8px 19px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 16px;
+  border: none;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #003146;
+}
+.header .navbar .getStartedBtn:active, .header .navbar .getStartedBtn:focus {
+  background: #26e6c4 !important;
+  opacity: 1 !important;
+  color: #003146;
+}
+.header .navbar .getStartedBtn:hover {
+  opacity: 0.9;
+}
+.header .searchIcon {
+  margin-right: 16px;
+}
+.header .searchIcon:hover {
+  opacity: 0.7;
+}
+
+.headerDark .navbar {
+  color: #fff;
+}
+.headerDark .navbar .logotype {
+  color: #fff;
+}
+.headerDark .navbar .headerNavigation a {
+  color: #fff;
+}
+.headerDark .navbar .headerNavigation a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.headerLight {
+  border: 1px solid #eaf1f5;
+  padding: 15px 0;
+  background: #fff;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+.headerLight .headerSearchFormWrapper {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  width: 420px;
+  animation: animateSearch 0.05s linear;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm {
+  background: #f0f6fa;
+  border-radius: 3px;
+  border: 1.5px solid transparent;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm:hover {
+  box-shadow: none;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm.active {
+  border: 1.5px solid #1ab0c4;
+  box-sizing: border-box;
+  box-shadow: 0px 28px 60px rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm .Input {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 19px;
+  /* Fonts / Gray 1 */
+  color: #678086;
+  padding: 10px 20px;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm .Input:focus, .headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm .Input:active {
+  box-shadow: none !important;
+  border: none !important;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm .InputIcon {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin-right: 16px;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm .InputIcon svg {
+  width: 15px;
+  height: 15px;
+}
+.headerLight .headerSearchFormWrapper .searchFormWrapper .searchForm .InputGroup {
+  height: 100%;
+}
+.headerLight .headerSearchFormWrapper .searchResults {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #edefef;
+  box-sizing: border-box;
+  box-shadow: 0px 24px 30px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  margin-top: 6px;
+}
+.headerLight .headerSearchFormWrapper .searchResults .noResults {
+  padding: 32px;
+}
+.headerLight .headerSearchFormWrapper .searchResults .noResults .btnAllTokens {
+  margin: 19px 0;
+  display: block;
+}
+.headerLight .headerSearchFormWrapper .searchResults .noResults .btnAllTokens:hover {
+  color: #fff;
+}
+.headerLight .navbar {
+  color: #11343f;
+  position: relative;
+}
+.headerLight .navbar .logotype {
+  color: #11343f;
+}
+.headerLight .navbar .logotype span {
+  color: #1ab0c4;
+}
+.headerLight .navbar .headerNavigation {
+  position: relative;
+}
+.headerLight .navbar .headerNavigation a {
+  color: #11343f;
+}
+.headerLight .navbar .headerNavigation a:hover {
+  border-bottom: 1px solid #11343f;
+}
+.headerLight .navbar .getStartedBtn {
+  background-color: #1ab0c4;
+  color: #fff;
+}
+.headerLight .navbar .getStartedBtn:focus {
+  background-color: #009fb5 !important;
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .header .getStartedBtn {
+    margin-left: auto !important;
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 13px 0 17px;
+  }
+  .header .logotype:after {
+    content: none !important;
+  }
+  .header .description {
+    display: none;
+  }
+
+  .mobileNavToggler:hover svg path {
+    fill: #45ffde !important;
+  }
+}
+@media screen and (max-width: 340px) {
+  .header .navbar {
+    flex-wrap: wrap;
+  }
+  .header .navbar .logotype {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .header .navbar .getStartedBtn {
+    margin-left: unset !important;
+    margin-right: auto;
+  }
+}
+@keyframes animateSearch {
+  from {
+    width: 0;
+  }
+  to {
+    width: 420px;
+  }
+}
+
+/*# sourceMappingURL=Header.module.css.map */

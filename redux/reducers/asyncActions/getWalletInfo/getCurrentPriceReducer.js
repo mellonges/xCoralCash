@@ -14,6 +14,7 @@ export const getWalletInfo = createAsyncThunk(
             return [currentPrice, targetPrice, currentMultiplier, rebaseInterval, nextRebaseIn]
         } catch (e) {
             console.log("error нахуй ")
+            console.error(e.message)
         }
     }
 

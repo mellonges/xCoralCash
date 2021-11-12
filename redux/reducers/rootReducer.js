@@ -10,6 +10,8 @@ import Web3 from "web3"
 import {getWalletInfo} from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
 import {msToTime} from "@/functions/msToTime";
 import {formatBalance} from "@/functions/formatBalance";
+import {getFuturesTableInfo} from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
+import {changeWalletAddress} from "./asyncActions/changeWalletAddress";
 
 const web3 = new Web3(process.env.INFURA_NET)
 
@@ -42,6 +44,8 @@ const rootStore = createSlice({
 
         },
 
+        futuresTable: {},
+
         contracts,
     }, reducers: {
         dispatchOnboard(state, action) {
@@ -50,14 +54,15 @@ const rootStore = createSlice({
         dispatchWeb3forUser(state, action) {
             state.web3ForUser = action.payload
         },
-        changeWalletAddress(state, action) {
-            state.address = action.payload
-        },
         openAndCloseModalWindow(state) {
             state.modalWindow.isOpen = !state.modalWindow.isOpen
         },
         setActiveOperation(state, action) {
-            state.modalWindow.activeOperation = action.payload
+            if (state.isConnected && action.payload === 2 || action.payload === 1) {
+                state.modalWindow.activeOperation = action.payload
+            } else {
+                return
+            }
         }
     },
     extraReducers: {
@@ -66,13 +71,17 @@ const rootStore = createSlice({
             state.address = action.payload[0].address
             state.network = action.payload[0].network
             state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
-            state.xCoralBalance = (action.payload[1] / 10 ** 9)
+            state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
             localStorage.setItem("selectedWallet", action.payload[0].wallet.name)
             localStorage.setItem("lastWalletAddress", action.payload[0].address)
 
         },
         [disconnectWallet.fulfilled]: (state) => {
             state.isConnected = false
+            state.address = null
+            state.network = null
+            state.balance = null
+            state.xCoralBalance = null
             localStorage.clear()
         },
 
@@ -87,6 +96,10 @@ const rootStore = createSlice({
         [repairConnect.rejected]: () => {
             console.log("repairConnect error")
         },
+        [changeWalletAddress.fulfilled]: (state, action) => {
+          state.address = action.payload[0]
+          state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
+        },
 
         [getWalletInfo.fulfilled]: (state, action) => {
             state.walletMiniInfo.currentPrice = "$" + (action.payload[0] / 10 ** 18).toFixed(2)
@@ -97,10 +110,13 @@ const rootStore = createSlice({
                 state.walletMiniInfo.nextRebaseIn = "Happening now"
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
+        [getFuturesTableInfo.fulfilled]: (state, action) => {
+            state.futuresTable.testData = action.payload
+        }
     }
 
 })
 
 
 export default rootStore.reducer
-export const {dispatchOnboard, dispatchWeb3forUser, changeWalletAddress, openAndCloseModalWindow, setActiveOperation} = rootStore.actions
+export const {dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation} = rootStore.actions

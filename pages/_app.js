@@ -24,10 +24,11 @@ import {wrapper} from "../redux/Store";
 import {useDispatch, useSelector} from "react-redux";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
-import {changeWalletAddress, dispatchOnboard, dispatchWeb3forUser} from "../redux/reducers/rootReducer";
+import {dispatchOnboard, dispatchWeb3forUser} from "../redux/reducers/rootReducer";
 import getNetworkName from "../functions/getNetworkName"
 import {disconnectWallet} from "../redux/reducers/asyncActions/disconnectWallet";
 import {repairConnect} from "../redux/reducers/asyncActions/repairConnect";
+import {changeWalletAddress} from "../redux/reducers/asyncActions/changeWalletAddress";
 
 const dappId = process.env.API_KEY
 const networkId = 3

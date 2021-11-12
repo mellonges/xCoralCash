@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import MobileNavigation from "./MobileNavigation";
 import SearchForm from "../Home/SearchForm";
-import { getCurrentUser } from "../../../functions/getBackendData";
+import { getCurrentUser } from "@/functions/getBackendData";
 
 const Header = ({ color }) => {
   const router = useRouter();
@@ -59,7 +59,7 @@ const Header = ({ color }) => {
     //   title: "Prices",
     // },
     {
-      link: "/docs",
+      link: "docs.xcoral.cash",
       title: "Docs",
     },
   ];

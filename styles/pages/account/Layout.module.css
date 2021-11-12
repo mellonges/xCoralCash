@@ -14,7 +14,7 @@
   height: 100%;
   left: 0px;
   top: 0;
-  color: #fff;
+  color: #fff !important;
   background: #03212e;
   color: #9fc2cb;
   padding: 15px 0 15px 15px;
@@ -56,12 +56,14 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 96.3%;
+  transition: 0.3s;
 }
 .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink {
   display: flex;
   align-items: center;
   color: #9fc2cb;
   padding: 5px 0;
+  transition: 0.3s;
 }
 .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink.active {
   border-right: 3px solid #45ffde;
@@ -76,6 +78,7 @@
   stroke: #fff !important;
 }
 .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink .navIcon {
+  transition: 0.3s;
   margin-right: 15px;
   width: 21px;
   display: flex;
