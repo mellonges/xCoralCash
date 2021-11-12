@@ -12,11 +12,13 @@ import {getFuturesTableInfo} from "../../redux/reducers/asyncActions/getFuturesT
 
 const Index = () => {
     const dispatch = useDispatch()
+
     const isConnected = useSelector(({store}) => store.isConnected)
-    const headlineRef = useRef({});
+    const futuresTableInfo = useSelector(({store}) => store.futuresTableInfo)
     useEffect(() => {
         dispatch(getFuturesTableInfo())
     }, [])
+    const headlineRef = useRef({});
     return (
         <div>
             <MainLayout pageTitle={"Futures"}>
@@ -40,52 +42,50 @@ const Index = () => {
                         <th>MANAGE</th>
                     </tr>
                     </thead>
-                        <TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />
-                        <TableBody disabled={!isConnected}  nameCoin={"Ethereum"}/>
-                        <TableBody disabled={!isConnected}  nameCoin={"Solana"} />
-                    {/* {[...Array(12)].map((v, i) => (
+                    { futuresTableInfo.init ? futuresTableInfo.data["0"].map(i =>  <TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  /> )
+                        : [...Array(12)].map((v, i) => (
                         <tbody>
-                    <tr key={i}>
+                        <tr key={i}>
                         <td>
-                            <TableVoid width="39px" height="14px" />
+                        <TableVoid width="39px" height="14px" />
                         </td>
                         <td>
-                            <div className="d-flex">
-                                <TableVoid
-                                    width="32px"
-                                    className={`rounded-circle ${styles.operationIcon}`}
-                                    height="32px"
-                                />
-                                <div>
-                          <span className={styles.operationType}>
-                            <TableVoid width="92px" height="15px" />
-                          </span>
-                                    <span className={`${styles.date} d-block`}>
-                            <TableVoid width="119px" height="15px" />
-                          </span>
-                                </div>
-                            </div>
+                        <div className="d-flex">
+                        <TableVoid
+                        width="32px"
+                        className={`rounded-circle ${styles.operationIcon}`}
+                        height="32px"
+                        />
+                        <div>
+                        <span className={styles.operationType}>
+                        <TableVoid width="92px" height="15px" />
+                        </span>
+                        <span className={`${styles.date} d-block`}>
+                        <TableVoid width="119px" height="15px" />
+                        </span>
+                        </div>
+                        </div>
                         </td>
                         <td>
-                            <TableVoid height="40px" width="150px" />
+                        <TableVoid height="40px" width="150px" />
                         </td>
                         <td className="text-right">
-                            <TableVoid
-                                width="92px"
-                                className="ml-auto"
-                                height="15px"
-                            />
-                            <span className={styles.equivalent}>
                         <TableVoid
-                            width="119px"
-                            className="ml-auto"
-                            height="15px"
+                        width="92px"
+                        className="ml-auto"
+                        height="15px"
                         />
-                      </span>
+                        <span className={styles.equivalent}>
+                        <TableVoid
+                        width="119px"
+                        className="ml-auto"
+                        height="15px"
+                        />
+                        </span>
                         </td>
-                    </tr>
+                        </tr>
                         </tbody>
-                    ))} */}
+                        ))}
                 </Table>
             </MainLayout>
         </div>

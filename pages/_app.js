@@ -29,11 +29,13 @@ import getNetworkName from "../functions/getNetworkName"
 import {disconnectWallet} from "../redux/reducers/asyncActions/disconnectWallet";
 import {repairConnect} from "../redux/reducers/asyncActions/repairConnect";
 import {changeWalletAddress} from "../redux/reducers/asyncActions/changeWalletAddress";
+import {getFuturesTableInfo} from "../redux/reducers/asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 
 const dappId = process.env.API_KEY
 const networkId = 3
+
 function MyApp({Component, pageProps}) {
-     let setTimeOudDisconnectId
+    let setTimeOudDisconnectId
     const dispatch = useDispatch()
     const isConnected = useSelector(({store}) => store.isConnected)
     const currentWalletAddress = useSelector(({store}) => store.address)
@@ -46,27 +48,36 @@ function MyApp({Component, pageProps}) {
             subscriptions: {
                 wallet: wallet => {
                     if (!wallet) return
-                        const web3 = new Web3(wallet.provider)
-                        dispatch(dispatchWeb3forUser(web3))
+                    const web3 = new Web3(wallet.provider)
+                    dispatch(dispatchWeb3forUser(web3))
                 },
                 network: networkId => {
                     if (networkId !== 3 && networkId !== undefined) {
-                            toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Ropsten`, {
-                                position: "bottom-right",
-                                autoClose: 3000,
-                                hideProgressBar: true,
-                                closeOnClick: true,
-                                pauseOnHover: false,
-                                draggable: true,
-                                progress: undefined,
-                                pauseOnFocusLoss: false,
-                            });
-                        toast.warn("disconnect in 15 seconds", {autoClose: 15000, pauseOnHover: false, pauseOnFocusLoss: false})
-                       setTimeOudDisconnectId =  setTimeout(() => {
-                                dispatch(disconnectWallet())
-                            }, 15000)
+                        toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Ropsten`, {
+                            position: "bottom-right",
+                            autoClose: 3000,
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: false,
+                            draggable: true,
+                            progress: undefined,
+                            pauseOnFocusLoss: false,
+                        });
+                        toast.warn("disconnect in 15 seconds", {
+                            autoClose: 15000,
+                            pauseOnHover: false,
+                            pauseOnFocusLoss: false
+                        })
+                        setTimeOudDisconnectId = setTimeout(() => {
+                            dispatch(disconnectWallet())
+                        }, 15000)
                     } else if (networkId === undefined) {
-                        toast.info("Disconnect", {autoClose: 1000, position: "bottom-center", pauseOnHover: false, pauseOnFocusLoss: false,})
+                        toast.info("Disconnect", {
+                            autoClose: 1000,
+                            position: "bottom-center",
+                            pauseOnHover: false,
+                            pauseOnFocusLoss: false,
+                        })
                     } else {
                         clearTimeout(setTimeOudDisconnectId)
                         toast.dismiss()
@@ -80,6 +91,7 @@ function MyApp({Component, pageProps}) {
                     if (address != currentWalletAddress) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))
+                        dispatch(getFuturesTableInfo())
                         toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, {pauseOnFocusLoss: false})
                     }
 
@@ -115,6 +127,7 @@ function MyApp({Component, pageProps}) {
         })
         dispatch(dispatchOnboard(onboard))
         dispatch(repairConnect())
+
     }, [])
     let loading;
     axios.defaults.onDownloadProgress = (e) => {
@@ -161,7 +174,7 @@ function MyApp({Component, pageProps}) {
                 draggable
                 pauseOnHover
             />
-            <TradeModal />
+            <TradeModal/>
             {/*<DepositModal/>*/}
             {/*<WithdrawModal/>*/}
         </>

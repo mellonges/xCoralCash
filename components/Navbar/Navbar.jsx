@@ -15,10 +15,10 @@ import { toast } from 'react-toastify'
 import {connectWallet} from "../../redux/reducers/asyncActions/connectWallet";
 import {dispatchOnboard, dispatchWeb3forUser} from "../../redux/reducers/rootReducer";
 import {disconnectWallet} from "../../redux/reducers/asyncActions/disconnectWallet";
-import {repairConnect} from "../../redux/reducers/asyncActions/repairConnect";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
 import {getWalletInfo} from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
+import {getFuturesTableInfo} from "../../redux/reducers/asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 
 
 const Navbar = () => {
@@ -30,7 +30,9 @@ const Navbar = () => {
 const connectFunctionForButton = () => {
         if (isConnected) {
             dispatch(disconnectWallet())
-        } else dispatch(connectWallet())
+        } else {
+            dispatch(connectWallet())
+        }
 }
 
     return (

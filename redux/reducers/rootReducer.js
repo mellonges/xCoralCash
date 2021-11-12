@@ -44,7 +44,10 @@ const rootStore = createSlice({
 
         },
 
-        futuresTable: {},
+        futuresTableInfo: {
+            init: false,
+            data: null,
+        },
 
         contracts,
     }, reducers: {
@@ -97,21 +100,25 @@ const rootStore = createSlice({
             console.log("repairConnect error")
         },
         [changeWalletAddress.fulfilled]: (state, action) => {
-          state.address = action.payload[0]
-          state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
+            state.address = action.payload[0]
+            state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
+            localStorage.setItem("lastWalletAddress", action.payload[0])
         },
 
         [getWalletInfo.fulfilled]: (state, action) => {
             state.walletMiniInfo.currentPrice = "$" + (action.payload[0] / 10 ** 18).toFixed(2)
             state.walletMiniInfo.targetPrice = "$" + (action.payload[1] / 10 ** 18).toFixed(2)
-            state.walletMiniInfo.currentAPY =  ((((action.payload[2] / 10 ** 5) ** (8760 / (action.payload[3] / 3600))) - 1) * 100).toFixed(2) + "%"
+            state.walletMiniInfo.currentAPY = ((((action.payload[2] / 10 ** 5) ** (8760 / (action.payload[3] / 3600))) - 1) * 100).toFixed(2) + "%"
             const nextRebaseIn = action.payload[4] - Date.now()
             if (nextRebaseIn <= 0) {
                 state.walletMiniInfo.nextRebaseIn = "Happening now"
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
-            state.futuresTable.testData = action.payload
+            state.futuresTableInfo.data = action.payload[0]
+            state.futuresTableInfo.userData = action.payload[1]
+            state.futuresTableInfo.init = true
+
         }
     }
 
