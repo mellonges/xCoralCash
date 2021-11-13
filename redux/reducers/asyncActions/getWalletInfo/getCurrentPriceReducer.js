@@ -1,8 +1,8 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getWalletInfo = createAsyncThunk(
     "rootStore/getCurrentPrice",
-    async function(_, {getState}) {
+    async function (_, { getState }) {
         try {
             const contract = getState().store.contracts.monetaryPolicy
             const currentPrice = await contract.methods.currentPrice().call()
@@ -10,7 +10,7 @@ export const getWalletInfo = createAsyncThunk(
             const rebaseInterval = await contract.methods.rebaseCooldown().call()
             const currentMultiplier = await contract.methods.currentAppreciationMultiplier().call()
             const nextRebaseIn = await contract.methods.cooldownExpiryTimestamp().call()
-            console.log(nextRebaseIn)
+            console.log(nextRebaseIn + "  for primise")
             return [currentPrice, targetPrice, currentMultiplier, rebaseInterval, nextRebaseIn]
         } catch (e) {
             console.log("error нахуй ")

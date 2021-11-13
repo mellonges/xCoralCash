@@ -42,7 +42,8 @@ const Index = () => {
                         <th>MANAGE</th>
                     </tr>
                     </thead>
-                    { futuresTableInfo.init ? futuresTableInfo.data["0"].map(i =>  <TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  /> )
+                    <TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />
+                    {/* { futuresTableInfo.init ? futuresTableInfo.data["0"].map(i =>  <TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  /> )
                         : [...Array(12)].map((v, i) => (
                         <tbody>
                         <tr key={i}>
@@ -85,7 +86,7 @@ const Index = () => {
                         </td>
                         </tr>
                         </tbody>
-                        ))}
+                        ))} */}
                 </Table>
             </MainLayout>
         </div>

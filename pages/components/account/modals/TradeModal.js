@@ -4,7 +4,7 @@ import { AccountTradeModalObserver } from "../../../../functions/observers";
 import styles from "../../../../styles/components/Account/modals/TradeModal.module.scss";
 import TradeBuyStep from "./TradeBuyStep";
 import TradeConvertStep from "./TradeConvertStep";
-// import TradeSellStep from "./TradeSellStep";
+import TradeSellStep from "./TradeSellStep";
 import Router from "next/router";
 import { TradeModalContext } from "../../../../functions/contexts";
 import { getTokensList } from "../../../../functions/getBackendData";
@@ -116,34 +116,22 @@ const TradeModal = () => {
         {/*</div>*/}
       </section>
       <ModalBody>
-        {/*<TradeModalContext.Provider*/}
-        {/*  value={{*/}
-        {/*    setOperationCompleted,*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  {activeOperation === 1 ? (*/}
-        {/*    <TradeBuyStep*/}
-        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
-        {/*      toggle={toggle}*/}
-        {/*      selectedToken={selectedToken}*/}
-        {/*      tokensList={tokensList}*/}
-        {/*    />*/}
-        {/*  ) : activeOperation === 2 ? (*/}
-        {/*    <TradeSellStep*/}
-        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
-        {/*      toggle={toggle}*/}
-        {/*      selectedToken={selectedToken}*/}
-        {/*      tokensList={tokensList}*/}
-        {/*    />*/}
-        {/*  ) : activeOperation === 3 ? (*/}
-        {/*    <TradeConvertStep*/}
-        {/*      setSwitchOffTabs={setSwitchOffTabs}*/}
-        {/*      toggle={toggle}*/}
-        {/*      selectedToken={selectedToken}*/}
-        {/*      tokensList={tokensList}*/}
-        {/*    />*/}
-        {/*  ) : null}*/}
-        {/*</TradeModalContext.Provider>*/}
+         {activeOperation === 1 ? (
+            <TradeBuyStep
+              setSwitchOffTabs={setSwitchOffTabs}
+              toggle={toggle}
+              selectedToken={selectedToken}
+              tokensList={tokensList}
+            />
+          ) : activeOperation === 2 ? (
+            <TradeSellStep
+              setSwitchOffTabs={setSwitchOffTabs}
+              toggle={toggle}
+              selectedToken={selectedToken}
+              tokensList={tokensList}
+            />
+          ) : null}
+
         Modal Content
       </ModalBody>
     </Modal>

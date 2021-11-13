@@ -1,20 +1,21 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {connectWallet} from "./asyncActions/connectWallet";
-import {disconnectWallet} from "./asyncActions/disconnectWallet";
-import {repairConnect} from "./asyncActions/repairConnect";
+import { createSlice } from "@reduxjs/toolkit";
+import { connectWallet } from "./asyncActions/connectWallet";
+import { disconnectWallet } from "./asyncActions/disconnectWallet";
+import { repairConnect } from "./asyncActions/repairConnect";
 import XCORAL_ABI from "../../ABI/xcoral.json"
 import MONETARY_ABI from "../../ABI/monetary.json"
 import FUTURES_ABI from "../../ABI/futures.json"
 import TREASURY_ABI from "../../ABI/treasury.json"
 import Web3 from "web3"
-import {getWalletInfo} from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
-import {msToTime} from "@/functions/msToTime";
-import {formatBalance} from "@/functions/formatBalance";
-import {getFuturesTableInfo} from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
-import {changeWalletAddress} from "./asyncActions/changeWalletAddress";
+import { getWalletInfo } from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
+import { msToTime } from "@/functions/msToTime";
+import { formatBalance } from "@/functions/formatBalance";
+import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
+import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
+import { combineTableInfo } from "@/functions/combine";
 
 const web3 = new Web3(process.env.INFURA_NET)
-
+const secondsInYear = 31536000
 const contracts = {
     xCORAL: new web3.eth.Contract(XCORAL_ABI, process.env.xCORAL),
     monetaryPolicy: new web3.eth.Contract(MONETARY_ABI, process.env.monetaryPolicy),
@@ -34,7 +35,8 @@ const rootStore = createSlice({
         xCoralBalance: null,
         modalWindow: {
             isOpen: false,
-            activeOperation: 1
+            activeOperation: 1,
+            data: {},
         },
         walletMiniInfo: {
             currentPrice: null,
@@ -108,14 +110,23 @@ const rootStore = createSlice({
         [getWalletInfo.fulfilled]: (state, action) => {
             state.walletMiniInfo.currentPrice = "$" + (action.payload[0] / 10 ** 18).toFixed(2)
             state.walletMiniInfo.targetPrice = "$" + (action.payload[1] / 10 ** 18).toFixed(2)
-            state.walletMiniInfo.currentAPY = ((((action.payload[2] / 10 ** 5) ** (8760 / (action.payload[3] / 3600))) - 1) * 100).toFixed(2) + "%"
-            const nextRebaseIn = action.payload[4] - Date.now()
+            state.walletMiniInfo.currentAPY = (formatBalance(((((action.payload[2] / 10 ** 5) ** (8760 / (action.payload[3] / 3600))) - 1) * 100).toFixed(2)) + "%").slice(1)
+            const nextRebaseIn = action.payload[4] - (Date.now() / 1000).toFixed(0)
             if (nextRebaseIn <= 0) {
                 state.walletMiniInfo.nextRebaseIn = "Happening now"
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
-            state.futuresTableInfo.data = action.payload[0]
+            state.futuresTableInfo.data = combineTableInfo(action.payload[0]).map(i => {
+                    const vestingRewardsTerm = i["1"][4] * 13
+                        console.log(i['2'])
+                    return {
+                        expiration: msToTime(vestingRewardsTerm),
+                        // yield: ((+i["2"] / (10 ** 5) + 1) ** (secondsInYear / vestingRewardsTerm) - 1) * 100
+                    }
+
+            
+            })
             state.futuresTableInfo.userData = action.payload[1]
             state.futuresTableInfo.init = true
 
@@ -126,4 +137,4 @@ const rootStore = createSlice({
 
 
 export default rootStore.reducer
-export const {dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation} = rootStore.actions
+export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation } = rootStore.actions

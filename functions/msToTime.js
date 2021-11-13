@@ -1,8 +1,12 @@
-export function msToTime(duration) {
-    let minutes = parseInt((duration / (1000 * 60)) % 60),
-        hours = parseInt((duration / (1000 * 60 * 60)) % 24);
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
+export function msToTime(time) {
+    let v = 1
+    const object = {
+        m: ((time * (v /= 60)) | 0) % 60,
+        h: ((time * (v /= 60)) | 0) % 24,
+        D: ((time * (v /= 24)) | 0) % 30,
+        M: ((time * (v /= 30)) | 0) % 12,
+        Y: ((time * (v /= 12)) | 0) 
+    }
 
-    return hours + " hrs " + minutes + " mins ";
+    return Object.keys(object).reverse().map(e => ({key: e, value: object[e]})).filter(e => e.value).map(e => `${e.value}${e.key}`).join(' ')
 }
