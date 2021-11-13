@@ -25,7 +25,7 @@ const Index = () => {
                 <h2 className={stylesFutures.HeaderTitle}>xCORAL Futures</h2>
                 <p className={stylesFutures.HeaderSubTitle}>Purchasing Coral futures enables you to maximize your gains. Instead of purchasing xCORAL tokens from SushiSwap or Uniswap, just deposit your assets directly into the Coral Treasury — this will yield you an equivalent amount of xCORAL tokens (principal) plus some bonus. The resulting rewards xCORAL tokens will be redeemable progressively as the future contract vests, up until it fully expires. Principal xCORAL tokens though will only become redeemable all at one tranche according to the principal term set by the contract.</p>
 
-                <a className={stylesFutures.HeaderHrefBTN} href="#">How Futures works?</a>
+                     <a className={stylesFutures.HeaderHrefBTN} href="#">  How Futures works?</a>
                 <h2 ref={headlineRef} className={styles.title}>
                     Assets
                 </h2>

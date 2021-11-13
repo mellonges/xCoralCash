@@ -30,23 +30,23 @@ const TradeModal = () => {
   //     setIsOpen(isOpenStore);
   //     setSelectedToken(data.token);
   //   });
-  //
-  //   //   getTokensList({
-  //   //     page: 1,
-  //   //     sort: "price_desc",
-  //   //   })
-  //   //     .then((res) => res.data.payload)
-  //   //     .then((data) => {
-  //   //       setTokensList(data.results);
-  //   //     })
-  //   //     .catch((error) => {
-  //   //       console.error(error);
-  //   //       setTokensList(false);
-  //   //     });
-  //   //
-  //   //   return () => subscription.unsubscribe();
-  //   // }, []);
-  // }, [])
+  
+  //     getTokensList({
+  //       page: 1,
+  //       sort: "price_desc",
+  //     })
+  //       .then((res) => res.data.payload)
+  //       .then((data) => {
+  //         setTokensList(data.results);
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         setTokensList(false);
+  //       });
+    
+  //     return () => subscription.unsubscribe();
+  //   }, []);
+  // }
 
   return (
     <Modal
@@ -96,7 +96,7 @@ const TradeModal = () => {
           }`}
           onClick={() => dispatch(setActiveOperation(1))}
         >
-          Bond
+          Deposit
         </div>
         <div
           className={`${styles.tabItem} ${
