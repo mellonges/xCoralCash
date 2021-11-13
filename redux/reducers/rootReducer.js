@@ -49,6 +49,7 @@ const rootStore = createSlice({
         futuresTableInfo: {
             init: false,
             data: null,
+            systemInfo: null,
         },
 
         contracts,
@@ -117,16 +118,17 @@ const rootStore = createSlice({
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
+            console.log(action.payload)
            const userArr = combineTableInfo(action.payload[1])
             state.futuresTableInfo.data = combineTableInfo(action.payload[0]).map(i => {
                     const vestingRewardsTerm = i["1"][4] * 13
-                console.log(i)
+                    console.log(`i[2]: ${i['2']} | seconds in Year: ${secondsInYear} | vestingRewards: ${vestingRewardsTerm} | payload2: ${action.payload[2]} | payload3: ${action.payload[3]}`)
                     return {
                         termsID: i['1'][0],
                         expiration: msToTime(vestingRewardsTerm),
-                        testDataUser: userArr.filter(item => item['0'][2] == i[1][0])
-
-                        // yield: ((+i["2"] / (10 ** 5) + 1) ** (secondsInYear / vestingRewardsTerm) - 1) * 100
+                        testDataUser: userArr.filter(item => item['0'][2] == i[1][0]),
+                        // yield: i['2'] / 10 ** 5 + 1
+                        yield: ((+i["2"] / 10 ** 5 + 1) ** (secondsInYear / vestingRewardsTerm) * (action.payload[2] / 10 ** 5) * (8760 / (action.payload[3] / 3600)) - 1) * 100
                     }
 
             

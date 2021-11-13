@@ -6,7 +6,7 @@ import stylesFuturesColor from "@/styles/pages/account/Futures/Futures.module.sc
 import {useDispatch} from "react-redux";
 import {openAndCloseModalWindow, setActiveOperation} from "../../redux/reducers/rootReducer";
 
-const TableBody = ({nameCoin, disabled, expiration}) => {
+const TableBody = ({nameCoin, disabled, expiration, APY}) => {
     const imgLink = `https://d24va9fw68seps.cloudfront.net/coin_${nameCoin}.png`
     const dispatch = useDispatch()
     return (
@@ -27,7 +27,7 @@ const TableBody = ({nameCoin, disabled, expiration}) => {
                     </div>
                 </td>
                 <td>
-                    40% APY
+                    {APY.toFixed(2)}% APY
                 </td>
                 <td>
                     <div className={stylesFutures.OthTDTitle}>
