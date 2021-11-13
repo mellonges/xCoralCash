@@ -22,7 +22,7 @@ const dispatch = useDispatch()
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         dispatch(getWalletInfo())
-    }, [currentPrice, targetPrice])
+    }, [])
 
     return (
 

@@ -11,7 +11,7 @@ const WalletMini = ({ walletInfo, icon }) => {
         className={styles.walletWrapper}>
       {/* <h2 className={styles.title}>{walletInfo.title}</h2> */}
       <div
-        className={`d-flex align-items-center cursor-pointer ${styles.walletInner}`}
+        className={`d-flex align-items-center ${styles.walletInner}`}
         // onClick={() => router.push("/account/wallet")}
       >
         <div

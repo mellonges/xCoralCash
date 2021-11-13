@@ -88,7 +88,7 @@ const TableBody = ({nameCoin, disabled, expiration, APY}) => {
                             </svg>
                             <span className="ml-auto mr-auto">Deposit</span>
                         </Button>
-                        <Button
+                        <Button 
                             onClick={() => {
                                 dispatch(setActiveOperation(2))
                                 dispatch(openAndCloseModalWindow())

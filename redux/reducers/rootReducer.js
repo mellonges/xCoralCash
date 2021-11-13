@@ -32,6 +32,7 @@ const rootStore = createSlice({
         address: "0x0000000000000000000000",
         balance: null,
         network: null,
+        web3ForERC20: web3,
         xCoralBalance: null,
         modalWindow: {
             isOpen: false,
@@ -126,10 +127,20 @@ const rootStore = createSlice({
                     return {
                         termsID: i['1'][0],
                         expiration: msToTime(vestingRewardsTerm),
-                        testDataUser: userArr.filter(item => item['0'][2] == i[1][0]),
-                        // yield: i['2'] / 10 ** 5 + 1
-                        yield: ((+i["2"] / 10 ** 5 + 1) ** (secondsInYear / vestingRewardsTerm) * (action.payload[2] / 10 ** 5) * (8760 / (action.payload[3] / 3600)) - 1) * 100
-                    }
+                        DEPOSITED_AND_REDEEMABLE: userArr.filter(item => item['0'][2] == i[1][0]),
+                        yield: (
+                            (+i["2"] / 10 ** 5 + 1)
+                            **
+                            (secondsInYear / vestingRewardsTerm)
+                            *
+                            (
+                                (action.payload[2] / 10 ** 5)
+                                **
+                                (8760 / (action.payload[3] / 3600))
+                            )
+                            -1
+                        ) * 100
+                    }       
 
             
             })

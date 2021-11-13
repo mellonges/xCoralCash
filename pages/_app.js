@@ -104,15 +104,11 @@ function MyApp({Component, pageProps}) {
             walletSelect: {
                 wallets: [
                     {walletName: 'metamask'},
-                    {walletName: 'coinbase', preferred: true},
                     {walletName: 'binance'},
                     {
-                        walletName: 'portis',
-                        apiKey: 'b2b7586f-2b1e-4c30-a7fb-c2d1533b153b'
-                    },
-                    {
                         walletName: 'walletConnect',
-                        infuraKey: '9f1757927fcf4dea9977f8b3b8748df9'
+                        infuraKey: '9f1757927fcf4dea9977f8b3b8748df9',
+                        preferred: true,
                     },
 
                 ]
