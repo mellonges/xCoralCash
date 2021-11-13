@@ -117,6 +117,7 @@ const rootStore = createSlice({
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
+
             state.futuresTableInfo.data = combineTableInfo(action.payload[0]).map(i => {
                     const vestingRewardsTerm = i["1"][4] * 13
                         console.log(i['2'])
@@ -127,8 +128,7 @@ const rootStore = createSlice({
 
             
             })
-            state.futuresTableInfo.userData = action.payload[1]
-            state.futuresTableInfo.init = true
+
 
         }
     }
