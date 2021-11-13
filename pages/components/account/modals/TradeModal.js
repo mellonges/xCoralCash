@@ -61,7 +61,7 @@ const TradeModal = () => {
         toggle();
         if (operationCompleted) /* Router.reload() */ console.log("reload()");
       }}
-      // onClosed={() => dispatch(setActiveOperation(1))}
+      onClosed={() => dispatch(setActiveOperation(1))}
       centered={true}
       className={styles.tradeModal}
     >
@@ -121,7 +121,6 @@ const TradeModal = () => {
               setSwitchOffTabs={setSwitchOffTabs}
               toggle={toggle}
               selectedToken={selectedToken}
-              tokensList={tokensList}
             />
           ) : activeOperation === 2 ? (
             <TradeSellStep

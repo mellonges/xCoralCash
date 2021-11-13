@@ -6,7 +6,7 @@ import stylesFuturesColor from "@/styles/pages/account/Futures/Futures.module.sc
 import {useDispatch} from "react-redux";
 import {openAndCloseModalWindow, setActiveOperation} from "../../redux/reducers/rootReducer";
 
-const TableBody = ({nameCoin, disabled}) => {
+const TableBody = ({nameCoin, disabled, expiration}) => {
     const imgLink = `https://d24va9fw68seps.cloudfront.net/coin_${nameCoin}.png`
     const dispatch = useDispatch()
     return (
@@ -21,7 +21,7 @@ const TableBody = ({nameCoin, disabled}) => {
                         <div className={stylesFutures.TDTitle}>
                             {nameCoin}
                             <div className={stylesFutures.TDSubTitle}>
-                                expiration: 10 days
+                                expiration: {expiration}
                             </div>
                         </div>
                     </div>

@@ -7,10 +7,11 @@ export const getFuturesTableInfo = createAsyncThunk(
             const contract = getState().store.contracts.futures
             let userTableData
             let address = localStorage.getItem("lastWalletAddress")
-            if (!address) { 
+            if (address) {
                 userTableData = await contract.methods.pendingPayoutFor("0xbe9cFBf33f987A3B0a9E0616F98E34f0B9D8F819").call()
             }
             const assetsData = await contract.methods.supportedAssets().call()
+            console.log(assetsData)
             return [assetsData, userTableData]
         } catch (e) {
             console.log("error нахуй ")
@@ -18,3 +19,5 @@ export const getFuturesTableInfo = createAsyncThunk(
         }
     }
 )
+
+

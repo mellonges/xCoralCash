@@ -117,18 +117,22 @@ const rootStore = createSlice({
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
-
+           const userArr = combineTableInfo(action.payload[1])
             state.futuresTableInfo.data = combineTableInfo(action.payload[0]).map(i => {
                     const vestingRewardsTerm = i["1"][4] * 13
-                        console.log(i['2'])
+                console.log(i)
                     return {
+                        termsID: i['1'][0],
                         expiration: msToTime(vestingRewardsTerm),
+                        testDataUser: userArr.filter(item => item['0'][2] == i[1][0])
+
                         // yield: ((+i["2"] / (10 ** 5) + 1) ** (secondsInYear / vestingRewardsTerm) - 1) * 100
                     }
 
             
             })
-
+            state.futuresTableInfo.userTableTest = action.payload[1]
+            state.futuresTableInfo.init = true
 
         }
     }

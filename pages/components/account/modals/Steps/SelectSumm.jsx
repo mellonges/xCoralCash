@@ -252,8 +252,8 @@ const SelectSumm = ({
               {!isSell && !isConvert
                 ? direction === 2
                   ? "Enter token quantity"
-                  : "Enter dollar amount"
-                : "Enter token quantity"}
+                  : "Must be greater than 0"
+                : "Nothing to redeem"}
             </div>
           </div>
         ) : null}

@@ -68,8 +68,11 @@ const ConfirmSelling = ({
 
   return buyingInformation && selectedWays ? (
     <div className={`${styles.ConfirmSelling}`}>
+      1
       <div className={`${styles.top}`}>
+        2
         <div className="d-flex align-items-center">
+          3
           <a
             href="#"
             onClick={(e) => {
@@ -78,6 +81,7 @@ const ConfirmSelling = ({
               setSwitchOffTabs(false);
             }}
           >
+            4
             <svg
               width="18"
               height="13"
@@ -91,8 +95,10 @@ const ConfirmSelling = ({
               />
             </svg>
           </a>
+          5
           <div className={`${styles.title} ml-auto mr-auto`}>{title}</div>
         </div>
+        6
       </div>
       <div className={styles.confirmInfo}>
         <div className={styles.price}>
@@ -102,6 +108,7 @@ const ConfirmSelling = ({
         <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
+          7
           <div className={styles.label}>Sell token</div>
           <div className={styles.value}>
             <div className={styles.cardLogo}>
@@ -112,12 +119,14 @@ const ConfirmSelling = ({
                 />
               ) : null}
             </div>
+            8
             {selectedWays.token.ticker}
           </div>
         </div>
         <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
+          9
           <div className={styles.label}>Average Price</div>
           <div className={styles.value}>
             {formatPrice(buyingInformation.avgPrice)}
@@ -134,6 +143,7 @@ const ConfirmSelling = ({
         <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
+          10
           <div className={styles.label}>
             HumanBace Fee{" "}
             <TooltipComponent
@@ -159,6 +169,7 @@ const ConfirmSelling = ({
             {formatPrice(buyingInformation.fee)}
           </div>
         </div>
+        11
         <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
@@ -168,6 +179,7 @@ const ConfirmSelling = ({
           </div>
         </div>
       </div>
+      12
       <Button
         color="primary"
         className={styles.previewBtn}
@@ -209,7 +221,7 @@ const ConfirmSelling = ({
           "Sell now"
         )}
       </Button>
-
+13
       {tokenBalance || (selectedWays && selectedWays.token) ? (
         <TokenBalance
           quantity={tokenBalance ? tokenBalance.quantity : 0}
