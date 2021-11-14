@@ -1,4 +1,4 @@
- export default function networkName(id) {
+export default function networkName(id) {
     switch (Number(id)) {
         case 1:
             return 'Main'
@@ -15,6 +15,6 @@
         case 'localhost':
             return 'localhost'
         default:
-            return 'unsupported network'
+            return 'unsupported'
     }
 }

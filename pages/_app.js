@@ -88,10 +88,13 @@ function MyApp({ Component, pageProps }) {
 
                 },
                 address: address => {
+                    console.info("dispatch table info")
                     if (address != currentWalletAddress) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))
+                        console.info("changed walletAddress: " + address)
                         dispatch(getFuturesTableInfo())
+
 
                         toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, { pauseOnFocusLoss: false })
                     }
@@ -104,7 +107,7 @@ function MyApp({ Component, pageProps }) {
             },
             walletSelect: {
                 wallets: [
-                    { walletName: 'metamask' },
+                    { walletName: 'metamask', preferred: true, },
                     { walletName: 'binance' },
                     {
                         walletName: 'walletConnect',
@@ -129,7 +132,7 @@ function MyApp({ Component, pageProps }) {
     let loading;
     axios.defaults.onDownloadProgress = (e) => {
         const percentage = calculatePercentage(e.loaded, e.total);
-        NProgress.set(percentage);
+        NProgress.set(percentage);z2
     };
     const calculatePercentage = (loaded, total) =>
         Math.floor(loaded * 1.0) / total;
