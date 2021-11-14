@@ -12,7 +12,7 @@ import { msToTime } from "@/functions/msToTime";
 import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
-import { combineTableInfo } from "@/functions/combine";
+
 
 const web3 = new Web3(process.env.INFURA_NET)
 const secondsInYear = 31536000
@@ -119,32 +119,8 @@ const rootStore = createSlice({
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
-            console.log(action.payload)
-           const userArr = combineTableInfo(action.payload[1])
-            state.futuresTableInfo.data = combineTableInfo(action.payload[0]).map(i => {
-                    const vestingRewardsTerm = i["1"][4] * 13
-                    console.log(`i[2]: ${i['2']} | seconds in Year: ${secondsInYear} | vestingRewards: ${vestingRewardsTerm} | payload2: ${action.payload[2]} | payload3: ${action.payload[3]}`)
-                    return {
-                        termsID: i['1'][0],
-                        expiration: msToTime(vestingRewardsTerm),
-                        DEPOSITED_AND_REDEEMABLE: userArr.filter(item => item['0'][2] == i[1][0]),
-                        yield: (
-                            (+i["2"] / 10 ** 5 + 1)
-                            **
-                            (secondsInYear / vestingRewardsTerm)
-                            *
-                            (
-                                (action.payload[2] / 10 ** 5)
-                                **
-                                (8760 / (action.payload[3] / 3600))
-                            )
-                            -1
-                        ) * 100
-                    }       
 
-            
-            })
-            state.futuresTableInfo.userTableTest = action.payload[1]
+            state.futuresTableInfo.data = action.payload
             state.futuresTableInfo.init = true
 
         }
