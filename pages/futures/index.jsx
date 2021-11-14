@@ -17,6 +17,7 @@ const Index = () => {
     const futuresTableInfo = useSelector(({ store }) => store.futuresTableInfo)
     useEffect(() => {
         dispatch(getFuturesTableInfo())
+        console.log("table render")
     }, [isConnected])
     const headlineRef = useRef({});
     return (

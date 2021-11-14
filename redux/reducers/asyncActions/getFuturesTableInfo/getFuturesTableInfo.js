@@ -71,7 +71,7 @@ export const getFuturesTableInfo = createAsyncThunk(
 
             const futuresTableData = combineTableInfo(assetsData).map(i => {
                 const vestingRewardsTerm = i["1"][4] * 13
-                console.log(i)
+
                 return {
                     coinName: i[0],
                     termsID: i['1'][0],
@@ -79,8 +79,8 @@ export const getFuturesTableInfo = createAsyncThunk(
                     DEPOSITED_AND_REDEEMABLE: (function () {
 
                         if (isConnected) {
-                            console.log(isConnected)
-                            console.log("if")
+
+
                             return (userArr?.filter(item => item['0'][2] == i[1][0])
                                 .reduce((sum, current) => {
                                     return {
@@ -91,7 +91,7 @@ export const getFuturesTableInfo = createAsyncThunk(
                                     }
                                 }, { deposited: 0, asset: null, redeemable_xcoral: null }))
                         } else {
-                            console.log("else")
+
                             return {
                                 deposited: null,
                                 asset: null,

@@ -13,7 +13,6 @@ import getNetworkName from "@/functions/getNetworkName";
 // import { connect } from 'rxjs/operators'
 import { toast } from 'react-toastify'
 import { connectWallet } from "../../redux/reducers/asyncActions/connectWallet";
-import { dispatchOnboard, dispatchWeb3forUser } from "../../redux/reducers/rootReducer";
 import { disconnectWallet } from "../../redux/reducers/asyncActions/disconnectWallet";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";

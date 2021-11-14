@@ -47,7 +47,8 @@ function MyApp({ Component, pageProps }) {
             networkId,
             subscriptions: {
                 wallet: wallet => {
-                    if (!wallet) return
+                    if (!wallet.name) return
+                    console.log(wallet)
                     const web3 = new Web3(wallet.provider)
                     dispatch(dispatchWeb3forUser(web3))
                 },

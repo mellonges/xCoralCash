@@ -6,10 +6,10 @@ import { useState } from "react";
 import BottomNavigationMobile from "../pages/components/account/BottomNavigationMobile";
 import TagManager from "react-gtm-module";
 import Navbar from "../components/Navbar/Navbar";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
-import {dispatchOnboard, dispatchWeb3forUser} from "../redux/reducers/rootReducer";
+
 
 const tagManagerArgs = {
   gtmId: "GTM-56RM2D3",
@@ -31,10 +31,10 @@ const MainLayout = ({ children, pageTitle = "Dashboard" }) => {
         <div className={styles.contentInner}>{children}</div>
         <Navbar toggle={toggle} />
         <LeftSidePanel
-          // user={user}
-          // isOpen={showMobileNav}
-          // toggle={toggle}
-          // setShowMobileNav={setShowMobileNav}
+        // user={user}
+        // isOpen={showMobileNav}
+        // toggle={toggle}
+        // setShowMobileNav={setShowMobileNav}
         />
         <BottomNavigationMobile />
       </div>

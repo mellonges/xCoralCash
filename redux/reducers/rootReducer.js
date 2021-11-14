@@ -93,12 +93,15 @@ const rootStore = createSlice({
             localStorage.setItem("lastWalletAddress", action.payload[0].address)
 
         },
+        [connectWallet.rejected]: () => {
+            console.error("закрыл окно уебок")
+        },
         [disconnectWallet.fulfilled]: (state) => {
-            state.isConnected = false
             state.address = null
             state.network = null
             state.balance = null
             state.xCoralBalance = null
+            state.isConnected = false
             localStorage.clear()
         },
 
@@ -129,7 +132,7 @@ const rootStore = createSlice({
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.pending]: (state) => {
-            state.futuresTableInfo.init = false
+            // state.futuresTableInfo.init = false
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
             state.futuresTableInfo.data = action.payload
