@@ -128,6 +128,9 @@ const rootStore = createSlice({
                 state.walletMiniInfo.nextRebaseIn = "Happening now"
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
+        [getFuturesTableInfo.pending]: (state) => {
+            state.futuresTableInfo.init = false
+        },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
             state.futuresTableInfo.data = action.payload
             state.futuresTableInfo.init = true

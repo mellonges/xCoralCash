@@ -87,10 +87,11 @@ function MyApp({ Component, pageProps }) {
 
                 },
                 address: address => {
-                    dispatch(getFuturesTableInfo())
                     if (address != currentWalletAddress) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))
+                        dispatch(getFuturesTableInfo())
+
                         toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, { pauseOnFocusLoss: false })
                     }
 
