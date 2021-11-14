@@ -1,11 +1,13 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
-import {combineTableInfo} from "@/functions/combine";
-import {msToTime} from "@/functions/msToTime";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { combineTableInfo } from "@/functions/combine";
+import { msToTime } from "@/functions/msToTime";
 
 export const getFuturesTableInfo = createAsyncThunk(
     "rootStore/getFuturesTableInfo",
-    async function (_, {getState}) {
+    async function (_, { getState }) {
         try {
+            const isConnected = getState().store.isConnected
+            let userArr
             let dai
             let xCoral
             let XCORAL_DAI_UNI_LP_VALUE
@@ -14,15 +16,16 @@ export const getFuturesTableInfo = createAsyncThunk(
             let weth
             let getDecimals
             const secondsInYear = 31536000
-            const {futures, monetaryPolicy} = getState().store.contracts
+            const { futures, monetaryPolicy } = getState().store.contracts
             let userTableData
             let address = localStorage.getItem("lastWalletAddress")
-            if (!address) {
-                userTableData = await futures.methods.pendingPayoutFor("0xbe9cFBf33f987A3B0a9E0616F98E34f0B9D8F819").call()
-                console.log(userTableData)
+            if (address && isConnected) {
+                if ("if")
+                    userTableData = await futures.methods.pendingPayoutFor(address).call()
+                userArr = combineTableInfo(userTableData)
 
                 ///erc20 calc
-                const {xCORAL, DAI, SUIKO, USDC, WETH, XCORAL_DAI_UNI_LP} = getState().store.ERC20
+                const { xCORAL, DAI, SUIKO, USDC, WETH, XCORAL_DAI_UNI_LP } = getState().store.ERC20
                 let daiPromise = DAI.methods.decimals().call()
                 let xCoralPromise = xCORAL.methods.decimals().call()
                 let XCORAL_DAI_UNI_LP_Promise = XCORAL_DAI_UNI_LP.methods.decimals().call()
@@ -64,22 +67,39 @@ export const getFuturesTableInfo = createAsyncThunk(
             const rebaseInterval = await monetaryPolicy.methods.rebaseCooldown().call()
 
 
-            const userArr = combineTableInfo(userTableData)
+
 
             const futuresTableData = combineTableInfo(assetsData).map(i => {
                 const vestingRewardsTerm = i["1"][4] * 13
+                console.log(i)
                 return {
+                    coinName: i[0],
                     termsID: i['1'][0],
                     expiration: msToTime(vestingRewardsTerm),
-                    DEPOSITED_AND_REDEEMABLE: userArr.filter(item => item['0'][2] == i[1][0])
-                        .reduce((sum, current) => {
+                    DEPOSITED_AND_REDEEMABLE: (function () {
+
+                        if (isConnected) {
+                            console.log(isConnected)
+                            console.log("if")
+                            return (userArr?.filter(item => item['0'][2] == i[1][0])
+                                .reduce((sum, current) => {
+                                    return {
+                                        deposited: (+sum.deposited + +current['0'][5]) / 10 ** getDecimals(current['0'][6]),
+                                        asset: current['0'][6],
+                                        redeemable_xcoral: current['1'] / 10 ** 9,
+                                        upcoming_xcoral: current['2'] / 10 ** 9,
+                                    }
+                                }, { deposited: 0, asset: null, redeemable_xcoral: null }))
+                        } else {
+                            console.log("else")
                             return {
-                                deposited: (+sum.deposited + +current['0'][5]) / 10 ** getDecimals(current['0'][6]),
-                                asset: current['0'][6],
-                                redeemable_xcoral: current['1'] / 10 ** 9,
-                                upcoming_xcoral: current['2'] / 10 ** 9,
+                                deposited: null,
+                                asset: null,
+                                redeemable_xcoral: null,
+                                upcoming_xcoral: null,
                             }
-                        }, {deposited: 0, asset: null, redeemable_xcoral: null}),
+                        }
+                    })(),
                     yield: (
                         (+i["2"] / 10 ** 5 + 1)
                         **

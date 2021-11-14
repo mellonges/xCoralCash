@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/global.scss";
 import 'react-toastify/dist/ReactToastify.css';
-import {toast, ToastContainer} from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import NextNprogress from "nextjs-progressbar";
 import axios from "axios";
 import NProgress from "nprogress";
 import Amplify from "aws-amplify";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 
 Amplify.configure({
     Auth: {
@@ -20,25 +20,25 @@ Amplify.configure({
 import TradeModal from "./components/account/modals/TradeModal";
 import DepositModal from "./components/account/modals/deposit/DepositModal";
 import WithdrawModal from "./components/account/modals/withdraw/WithdrawModal";
-import {wrapper} from "../redux/Store";
-import {useDispatch, useSelector} from "react-redux";
+import { wrapper } from "../redux/Store";
+import { useDispatch, useSelector } from "react-redux";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
-import {dispatchOnboard, dispatchWeb3forUser} from "../redux/reducers/rootReducer";
+import { dispatchOnboard, dispatchWeb3forUser } from "../redux/reducers/rootReducer";
 import getNetworkName from "../functions/getNetworkName"
-import {disconnectWallet} from "../redux/reducers/asyncActions/disconnectWallet";
-import {repairConnect} from "../redux/reducers/asyncActions/repairConnect";
-import {changeWalletAddress} from "../redux/reducers/asyncActions/changeWalletAddress";
-import {getFuturesTableInfo} from "../redux/reducers/asyncActions/getFuturesTableInfo/getFuturesTableInfo";
+import { disconnectWallet } from "../redux/reducers/asyncActions/disconnectWallet";
+import { repairConnect } from "../redux/reducers/asyncActions/repairConnect";
+import { changeWalletAddress } from "../redux/reducers/asyncActions/changeWalletAddress";
+import { getFuturesTableInfo } from "../redux/reducers/asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 
 const dappId = process.env.API_KEY
 const networkId = 3
 
-function MyApp({Component, pageProps}) {
+function MyApp({ Component, pageProps }) {
     let setTimeOudDisconnectId
     const dispatch = useDispatch()
-    const isConnected = useSelector(({store}) => store.isConnected)
-    const currentWalletAddress = useSelector(({store}) => store.address)
+    const isConnected = useSelector(({ store }) => store.isConnected)
+    const currentWalletAddress = useSelector(({ store }) => store.address)
     useEffect(() => {
         // console.log("render");
         const onboard = Onboard({
@@ -69,7 +69,7 @@ function MyApp({Component, pageProps}) {
                             pauseOnFocusLoss: false
                         })
                         setTimeOudDisconnectId = setTimeout(() => {
-                            dispatch(disconnectWallet())
+
                         }, 15000)
                     } else if (networkId === undefined) {
                         toast.info("Disconnect", {
@@ -87,12 +87,11 @@ function MyApp({Component, pageProps}) {
 
                 },
                 address: address => {
-                    // console.log(address)
+                    dispatch(getFuturesTableInfo())
                     if (address != currentWalletAddress) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))
-                        dispatch(getFuturesTableInfo())
-                        toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, {pauseOnFocusLoss: false})
+                        toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, { pauseOnFocusLoss: false })
                     }
 
 
@@ -103,8 +102,8 @@ function MyApp({Component, pageProps}) {
             },
             walletSelect: {
                 wallets: [
-                    {walletName: 'metamask'},
-                    {walletName: 'binance'},
+                    { walletName: 'metamask' },
+                    { walletName: 'binance' },
                     {
                         walletName: 'walletConnect',
                         infuraKey: '9f1757927fcf4dea9977f8b3b8748df9',
@@ -114,10 +113,10 @@ function MyApp({Component, pageProps}) {
                 ]
             },
             walletCheck: [
-                {checkName: 'derivationPath'},
-                {checkName: 'connect'},
-                {checkName: 'accounts'},
-                {checkName: 'network'},
+                { checkName: 'derivationPath' },
+                { checkName: 'connect' },
+                { checkName: 'accounts' },
+                { checkName: 'network' },
                 // {checkName: 'balance', minimumBalance: '100000'}
             ]
         })
@@ -170,7 +169,7 @@ function MyApp({Component, pageProps}) {
                 draggable
                 pauseOnHover
             />
-            <TradeModal/>
+            <TradeModal />
             {/*<DepositModal/>*/}
             {/*<WithdrawModal/>*/}
         </>

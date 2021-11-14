@@ -16,9 +16,9 @@ export default function getCoinName(address) {
             return "wETH"
         }
         case process.env.NEXT_PUBLIC_XCORAL: {
-            return "xCOral"
+            return "xCoral"
         }
         default:
-            return "coin_name";
+            return "void";
     }
 }
