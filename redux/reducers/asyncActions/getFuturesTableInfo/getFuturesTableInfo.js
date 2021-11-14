@@ -18,7 +18,9 @@ export const getFuturesTableInfo = createAsyncThunk(
             const secondsInYear = 31536000
             const { futures, monetaryPolicy } = getState().store.contracts
             let userTableData
-            let address = localStorage.getItem("lastWalletAddress")
+            // let address = localStorage.getItem("lastWalletAddress")
+            let address = getState().store.address
+            console.log(address)
             if (address && isConnected) {
                 if ("if")
                     userTableData = await futures.methods.pendingPayoutFor(address).call()

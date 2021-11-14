@@ -93,6 +93,7 @@ function MyApp({ Component, pageProps }) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))
                         console.info("changed walletAddress: " + address)
+                        console.info("getFuturesDispatch from _app")
                         dispatch(getFuturesTableInfo())
 
 
@@ -132,7 +133,7 @@ function MyApp({ Component, pageProps }) {
     let loading;
     axios.defaults.onDownloadProgress = (e) => {
         const percentage = calculatePercentage(e.loaded, e.total);
-        NProgress.set(percentage);z2
+        NProgress.set(percentage);
     };
     const calculatePercentage = (loaded, total) =>
         Math.floor(loaded * 1.0) / total;
