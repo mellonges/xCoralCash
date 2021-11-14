@@ -23,6 +23,15 @@ const contracts = {
     treasury: new web3.eth.Contract(TREASURY_ABI, process.env.treasury),
 }
 
+const ERC20 = {
+    DAI: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_DAI),
+    USDC: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_USDC),
+    XCORAL_DAI_UNI_LP: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_XCORAL_DAI_UNI_LP),
+    SUIKO: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_SUIKO),
+    WETH: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_WETH),
+    xCORAL: contracts.xCORAL
+}
+
 const rootStore = createSlice({
     name: "rootStore",
     initialState: {
@@ -54,6 +63,7 @@ const rootStore = createSlice({
         },
 
         contracts,
+        ERC20,
     }, reducers: {
         dispatchOnboard(state, action) {
             state.onboard = action.payload
@@ -119,7 +129,6 @@ const rootStore = createSlice({
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
-
             state.futuresTableInfo.data = action.payload
             state.futuresTableInfo.init = true
 

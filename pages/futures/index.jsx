@@ -43,7 +43,7 @@ const Index = () => {
                     </tr>
                     </thead>
                     {/*<TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />*/}
-                     { futuresTableInfo.init ? futuresTableInfo.data.map(i =>  <TableBody disabled={!isConnected} nameCoin={"Bitcoin"} expiration={i.expiration} APY={i.yield} key={i.termsID} /> )
+                     { futuresTableInfo.init ? futuresTableInfo.data.map(i => <TableBody disabled={!isConnected} nameCoin={i.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} deposited={i.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral}  /> )
                         : [...Array(12)].map((v, i) => (
                         <tbody>
                         <tr key={i}>
