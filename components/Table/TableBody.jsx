@@ -34,8 +34,8 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
 
 
 
-                            <img width="40px" height="40px" src={`https://d24va9fw68seps.cloudfront.net/coin_${getIconAsset(coinName)}.png`} />
-                            {/* <img width="100px" height="100px" src={`/public/coins_icons/coin_${getIconAsset(coinName)}.png`} /> */}
+                            {/*<img width="40px" height="40px" src={`https://d24va9fw68seps.cloudfront.net/coin_${getIconAsset(coinName)}.png`} />*/}
+                             <img width="40px" height="40px" src={`/coins_icons/coin_${getIconAsset(coinName)}.png`} />
 
 
                             {/* <img src alt="" /> */}
