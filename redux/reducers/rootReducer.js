@@ -12,6 +12,7 @@ import { msToTime } from "@/functions/msToTime";
 import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
+import { toast } from "react-toastify";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -75,6 +76,10 @@ const rootStore = createSlice({
             state.modalWindow.isOpen = !state.modalWindow.isOpen
         },
         setActiveOperation(state, action) {
+            if (!state.isConnected) {
+                toast.error("you must connect wallet", {position: "top-center", autoClose: false})
+                return
+            } 
             if (state.isConnected && action.payload === 2 || action.payload === 1) {
                 state.modalWindow.activeOperation = action.payload
             } else {

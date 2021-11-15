@@ -7,7 +7,7 @@ export default function getCoinName(address) {
             return "USDC"
         }
         case process.env.NEXT_PUBLIC_XCORAL_DAI_UNI_LP: {
-            return "xCORAL-DAI SLP"
+            return "xCORAL-DAI LP"
         }
         case process.env.NEXT_PUBLIC_SUIKO: {
             return "SUIKO"
@@ -16,7 +16,7 @@ export default function getCoinName(address) {
             return "wETH"
         }
         case process.env.NEXT_PUBLIC_XCORAL: {
-            return "xCoral"
+            return "xCORAL"
         }
         default:
             return "void";

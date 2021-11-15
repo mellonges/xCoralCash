@@ -7,9 +7,11 @@ import { useDispatch } from "react-redux";
 import { openAndCloseModalWindow, setActiveOperation } from "../../redux/reducers/rootReducer";
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
+import { useSelector } from 'react-redux';
 
 const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited = 0, redeemable_xcoral = 0, upcoming_xcoral = 0 }) => {
     const imgLink = `https://d24va9fw68seps.cloudfront.net/coin_${coinName}.png`
+    const isConnected = useSelector(({store}) => store.isConnected)
     const dispatch = useDispatch()
     return (
         <>
@@ -33,9 +35,9 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                     </td>
                     <td>
                         <div className={stylesFutures.OthTDTitle}>
-                            {formatPrice(deposited).slice(1)}
+                            { isConnected && deposited ? formatPrice(deposited).slice(1) :  !deposited && isConnected ? 0 : "—"}
                             <div className={stylesFutures.OthTDSubTitle}>
-                                {getCoinName(asset)}
+                                {getCoinName(coinName)}
                             </div>
                         </div>
                     </td>
@@ -49,7 +51,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
 
                             <div className={stylesFutures.OthTDTitle}>
                                 {formatPrice(redeemable_xcoral).slice(1)}
-                                <div className={stylesFutures.OthTDSubTitle}>
+                                <div style={{opacity: 0.5}} className={stylesFutures.OthTDSubTitle}> /* inline stlye */
                                     Upcoming {upcoming_xcoral}
                                 </div>
                             </div>
@@ -63,7 +65,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                             </svg>
 
                             <div className={stylesFutures.OthTDTitle}>
-                                0
+                            {isConnected ? 0 : "—"}
                                 <div className={stylesFutures.OthTDSubTitle}>
                                 </div>
                             </div>

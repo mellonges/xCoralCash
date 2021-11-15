@@ -18,12 +18,13 @@ export const getFuturesTableInfo = createAsyncThunk(
             const secondsInYear = 31536000
             const { futures, monetaryPolicy } = getState().store.contracts
             let userTableData
-            // let address = localStorage.getItem("lastWalletAddress")
-            let address = getState().store.address
+            let address = localStorage.getItem("lastWalletAddress")
+            // let address = getState().store.address
             console.log(address)
             if (address && isConnected) {
                 if ("if")
                     userTableData = await futures.methods.pendingPayoutFor(address).call()
+                    console.log(userTableData)
                 userArr = combineTableInfo(userTableData)
 
                 ///erc20 calc
@@ -83,15 +84,16 @@ export const getFuturesTableInfo = createAsyncThunk(
                         if (isConnected) {
 
 
-                            return (userArr?.filter(item => item['0'][2] == i[1][0])
+                            return (userArr.filter(item => item['0'][2] == i[1][0])
                                 .reduce((sum, current) => {
+                                    console.log(current)
                                     return {
-                                        deposited: (+sum.deposited + +current['0'][5]) / 10 ** getDecimals(current['0'][6]),
+                                        deposited: +sum.deposited + (+current['0'][5] / 10 ** getDecimals(current['0'][6])),
                                         asset: current['0'][6],
-                                        redeemable_xcoral: current['1'] / 10 ** 9,
-                                        upcoming_xcoral: current['2'] / 10 ** 9,
+                                        redeemable_xcoral: +sum.redeemable_xcoral + (current['1'] / 10 ** 9),
+                                        upcoming_xcoral: +sum.upcoming_xcoral  + (current['2'] / 10 ** 9),
                                     }
-                                }, { deposited: 0, asset: null, redeemable_xcoral: null }))
+                                }, { deposited: 0, asset: null, redeemable_xcoral: null, upcoming_xcoral: null }))
                         } else {
 
                             return {
