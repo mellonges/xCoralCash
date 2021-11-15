@@ -8,6 +8,7 @@ import { openAndCloseModalWindow, setActiveOperation } from "../../redux/reducer
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
 import { useSelector } from 'react-redux';
+import Image from 'next/image'
 import getIconAsset from "@/functions/getIconAsset";
 
 const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited = 0, redeemable_xcoral = 0, upcoming_xcoral = 0 }) => {
@@ -24,7 +25,9 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                     <td className={stylesFutures.TDContentExp}>
                         <div className={stylesFutures.TDContentExpCont}>
 
-                            <Image />
+                            {/*<Image width={100} height={100} src={`/public/coins_icons/coin_${getIconAsset(coinName)}.png`} />*/}
+                            <img width="100px" height="100px" src={`https://d24va9fw68seps.cloudfront.net/coin_${getIconAsset(coinName)}.png`} />
+
                             {/* <img src alt="" /> */}
 
                             <div className={stylesFutures.TDTitle}>
