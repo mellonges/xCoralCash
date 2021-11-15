@@ -8,6 +8,7 @@ import { openAndCloseModalWindow, setActiveOperation } from "../../redux/reducer
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
 import { useSelector } from 'react-redux';
+import TooltipComponent from "../../components/TooltipComponent"
 import Image from 'next/image'
 import getIconAsset from "@/functions/getIconAsset";
 
@@ -25,8 +26,18 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                     <td className={stylesFutures.TDContentExp}>
                         <div className={stylesFutures.TDContentExpCont}>
 
-                            {/*<Image width={100} height={100} src={`/public/coins_icons/coin_${getIconAsset(coinName)}.png`} />*/}
-                            <img width="100px" height="100px" src={`https://d24va9fw68seps.cloudfront.net/coin_${getIconAsset(coinName)}.png`} />
+
+
+
+                            {/* <Image width={100} height={100} src={`/public/coins_icons/coin_${getIconAsset(coinName)}.png`} /> */}
+
+
+
+
+
+                            <img width="40px" height="40px" src={`https://d24va9fw68seps.cloudfront.net/coin_${getIconAsset(coinName)}.png`} />
+                            {/* <img width="100px" height="100px" src={`/public/coins_icons/coin_${getIconAsset(coinName)}.png`} /> */}
+
 
                             {/* <img src alt="" /> */}
 
@@ -39,6 +50,9 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                         </div>
                     </td>
                     <td>
+                        <div className={styles.tooltipMobile}>
+                            <TooltipComponent id={1} tooltTipContent={"ROI (Return on Investment) indicates the yield you’ll make after 15 days of bonding the asset of your choice. APY is calculated assuming you would reinvest bonding proceeds each 15 days (current ROI is assumed to not change during the year)"} />
+                        </div>
                         {APY.toFixed(2)}% APY
                     </td>
                     <td>
