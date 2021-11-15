@@ -43,60 +43,60 @@ const BottomNavigationMobile = () => {
       text: "Futures",
       link: "/futures",
     },
-    {
-      icon: (
-          <svg
-              width="11"
-              height="22"
-              viewBox="0 0 11 22"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-                d="M5.5 9.71429C3.71591 9.71429 2.27273 8.46305 2.27273 6.91626C2.27273 5.37931 3.71591 4.11823 5.5 4.11823C7.28409 4.11823 8.72727 5.36946 8.72727 6.91626C8.72727 7.45813 9.23864 7.90148 9.86364 7.90148C10.4886 7.90148 11 7.45813 11 6.91626C11 4.6601 9.18182 2.71921 6.63636 2.2463V0.985222C6.63636 0.44335 6.125 0 5.5 0C4.875 0 4.36364 0.44335 4.36364 0.985222V2.2463C1.39773 2.78818 -0.511365 5.3202 0.124999 7.90148C0.65909 10.1084 2.90909 11.6749 5.5 11.6847C7.28409 11.6847 8.72727 12.936 8.72727 14.4828C8.72727 16.0296 7.28409 17.2808 5.5 17.2808C3.71591 17.2808 2.27273 16.0296 2.27273 14.4828C2.27273 13.9409 1.76136 13.4975 1.13636 13.4975C0.511364 13.4975 0 13.9409 0 14.4828C0 16.7291 1.81818 18.6798 4.36364 19.1429V21.0148C4.36364 21.5567 4.875 22 5.5 22C6.125 22 6.63636 21.5567 6.63636 21.0148V19.1429C9.60227 18.5911 11.5 16.0591 10.875 13.4877C10.3409 11.2906 8.10227 9.71429 5.5 9.71429Z"
-                fill="#658796"
-            />
-          </svg>
-      ),
-      text: "Add token",
-      link: "/",
-    },
-    {
-      icon: (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          className={styles.strokeIcon}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 1L1 6.5L12 12L23 6.5L12 1Z"
-            stroke="#658796"
-            strokeWidth="1.936"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M1 17.5L12 23L23 17.5"
-            stroke="#658796"
-            strokeWidth="1.936"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M1 12L12 17.5L23 12"
-            stroke="#658796"
-            strokeWidth="1.936"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      ),
-      text: "Docs",
-      link: "/docs",
-    },
+    // {
+    //   icon: (
+    //       <svg
+    //           width="11"
+    //           height="22"
+    //           viewBox="0 0 11 22"
+    //           fill="none"
+    //           xmlns="http://www.w3.org/2000/svg"
+    //       >
+    //         <path
+    //             d="M5.5 9.71429C3.71591 9.71429 2.27273 8.46305 2.27273 6.91626C2.27273 5.37931 3.71591 4.11823 5.5 4.11823C7.28409 4.11823 8.72727 5.36946 8.72727 6.91626C8.72727 7.45813 9.23864 7.90148 9.86364 7.90148C10.4886 7.90148 11 7.45813 11 6.91626C11 4.6601 9.18182 2.71921 6.63636 2.2463V0.985222C6.63636 0.44335 6.125 0 5.5 0C4.875 0 4.36364 0.44335 4.36364 0.985222V2.2463C1.39773 2.78818 -0.511365 5.3202 0.124999 7.90148C0.65909 10.1084 2.90909 11.6749 5.5 11.6847C7.28409 11.6847 8.72727 12.936 8.72727 14.4828C8.72727 16.0296 7.28409 17.2808 5.5 17.2808C3.71591 17.2808 2.27273 16.0296 2.27273 14.4828C2.27273 13.9409 1.76136 13.4975 1.13636 13.4975C0.511364 13.4975 0 13.9409 0 14.4828C0 16.7291 1.81818 18.6798 4.36364 19.1429V21.0148C4.36364 21.5567 4.875 22 5.5 22C6.125 22 6.63636 21.5567 6.63636 21.0148V19.1429C9.60227 18.5911 11.5 16.0591 10.875 13.4877C10.3409 11.2906 8.10227 9.71429 5.5 9.71429Z"
+    //             fill="#658796"
+    //         />
+    //       </svg>
+    //   ),
+    //   text: "Add token",
+    //   link: "/",
+    // },
+    // {
+    //   icon: (
+    //     <svg
+    //       width="24"
+    //       height="24"
+    //       viewBox="0 0 24 24"
+    //       fill="none"
+    //       className={styles.strokeIcon}
+    //       xmlns="http://www.w3.org/2000/svg"
+    //     >
+    //       <path
+    //         d="M12 1L1 6.5L12 12L23 6.5L12 1Z"
+    //         stroke="#658796"
+    //         strokeWidth="1.936"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //       <path
+    //         d="M1 17.5L12 23L23 17.5"
+    //         stroke="#658796"
+    //         strokeWidth="1.936"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //       <path
+    //         d="M1 12L12 17.5L23 12"
+    //         stroke="#658796"
+    //         strokeWidth="1.936"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //     </svg>
+    //   ),
+    //   text: "Docs",
+    //   link: "/docs",
+    // },
     // {
     //   icon: (
     //     <svg
@@ -162,7 +162,43 @@ const BottomNavigationMobile = () => {
           <span className={styles.linkText}>{navItem.text}</span>
         </div>
       ))}
-    </div>
+
+        <a className={`${styles.navItem} 
+           cursor-pointer d-flex flex-column align-items-center justify-content-center`} target="_blank" href="https://docs.xcoral.cash/">
+
+        <div className={styles.icon}><svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className={styles.strokeIcon}
+            xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+              d="M12 1L1 6.5L12 12L23 6.5L12 1Z"
+              stroke="#658796"
+              strokeWidth="1.936"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+          />
+          <path
+              d="M1 17.5L12 23L23 17.5"
+              stroke="#658796"
+              strokeWidth="1.936"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+          />
+          <path
+              d="M1 12L12 17.5L23 12"
+              stroke="#658796"
+              strokeWidth="1.936"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+          />
+        </svg></div>
+        <span className={styles.linkText}>Docs</span>
+        </a>
+      </div>
   );
 };
 export default BottomNavigationMobile;
