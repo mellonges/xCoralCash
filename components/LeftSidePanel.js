@@ -293,8 +293,8 @@ const LeftSidePanel = () => {
                     </a>
                     {/*</Link>*/}
                   </li>
-                  <li onClick={() => addTokenForMetaMask()} className={styles.listItem}>
-                    <a className={styles.navLink}>
+                  <li className={styles.listItem}>
+                    <a href="#" onClick={() => addTokenForMetaMask()} className={styles.navLink}>
                       <span className={styles.navIcon}>
                         {/* ебаное svg */}
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsHlink="http://www.w3.org/1999/xlink">

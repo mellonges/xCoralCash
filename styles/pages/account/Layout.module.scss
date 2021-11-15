@@ -63,6 +63,7 @@
           transition: .3s;
 
           .navLink {
+            cursor: pointer;
             display: flex;
             align-items: center;
             color: #9fc2cb;
@@ -76,7 +77,7 @@
             &.active,
             &:hover {
               color: $white;
-              
+
               .navIcon {
                 svg:not(.priceIcon) path {
                   fill: $white !important;
@@ -88,6 +89,11 @@
             }
 
             .navIcon {
+              &:hover {
+                svg {
+                  stroke: $white !important;
+                }
+              }
               transition: .3s;
               margin-right: 15px;
               width: 21px;

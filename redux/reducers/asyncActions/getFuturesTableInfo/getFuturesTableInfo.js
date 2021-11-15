@@ -24,7 +24,7 @@ export const getFuturesTableInfo = createAsyncThunk(
             if (address && isConnected) {
                 if ("if")
                     userTableData = await futures.methods.pendingPayoutFor(address).call()
-                    console.log(userTableData)
+                console.log(userTableData)
                 userArr = combineTableInfo(userTableData)
 
                 ///erc20 calc
@@ -91,7 +91,7 @@ export const getFuturesTableInfo = createAsyncThunk(
                                         deposited: +sum.deposited + (+current['0'][5] / 10 ** getDecimals(current['0'][6])),
                                         asset: current['0'][6],
                                         redeemable_xcoral: +sum.redeemable_xcoral + (current['1'] / 10 ** 9),
-                                        upcoming_xcoral: +sum.upcoming_xcoral  + (current['2'] / 10 ** 9),
+                                        upcoming_xcoral: +sum.upcoming_xcoral + (current['2'] / 10 ** 9),
                                     }
                                 }, { deposited: 0, asset: null, redeemable_xcoral: null, upcoming_xcoral: null }))
                         } else {
@@ -130,7 +130,7 @@ export const getFuturesTableInfo = createAsyncThunk(
 
             return futuresTableData
         } catch (e) {
-            console.log("error нахуй ")
+            console.log("error нахуй")
             console.info(e.message)
         }
     }
