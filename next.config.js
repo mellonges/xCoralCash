@@ -17,12 +17,12 @@ module.exports = withFonts(
                             limit: 100000,
                         },
                     },
-                    {
-                        loader: '@svgr/webpack',
-                        options: {
-                            native: true,
-                        },
-                    },
+                    // {
+                    //     loader: '@svgr/webpack',
+                    //     options: {
+                    //         native: true,
+                    //     },
+                    // },
                 ]
             });
 

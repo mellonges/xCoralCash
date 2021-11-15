@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import stylesFutures from "@/styles/pages/account/Futures/Futures.module.scss";
 import { Button } from "reactstrap";
 import styles from "@/styles/pages/account/Wallet.module.scss";
@@ -8,14 +8,14 @@ import { openAndCloseModalWindow, setActiveOperation } from "../../redux/reducer
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
 import { useSelector } from 'react-redux';
-import getIconAsset from "../../functions/getIconAsset"
-import iconAsset from "../../coins_icons/"
-
-
+import getIconAsset from "@/functions/getIconAsset";
+import icon from "../../coins_icons/coin_xcoral.png"
 const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited = 0, redeemable_xcoral = 0, upcoming_xcoral = 0 }) => {
-    const imgLink = `https://d24va9fw68seps.cloudfront.net/coin_${coinName}.png`
     const isConnected = useSelector(({ store }) => store.isConnected)
-    console.log(iconAsset)
+    // let coinIcon
+    // useEffect(async () => {
+    //     coinIcon = await import(`../../coins_icons/coin_${getIconAsset(coinName)}.png`)
+    //     }, [])
     const dispatch = useDispatch()
     return (
         <>
@@ -25,7 +25,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                         <div className={stylesFutures.TDContentExpCont}>
 
 
-                            {/* <img src={iconAsset} alt="" /> */}
+                             <img src={icon} alt="" />
 
                             <div className={stylesFutures.TDTitle}>
                                 {getCoinName(coinName)}
