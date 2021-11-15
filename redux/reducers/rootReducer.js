@@ -73,7 +73,7 @@ const rootStore = createSlice({
             state.web3ForUser = action.payload
         },
         openAndCloseModalWindow(state) {
-            if(state.isConnected) {
+            if(!state.isConnected) {
                 toast.error("you must connect wallet", {position: "top-center", autoClose: false})
             } else {
                 state.modalWindow.isOpen = !state.modalWindow.isOpen

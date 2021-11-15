@@ -35,7 +35,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
 
 
                             {/*<img width="40px" height="40px" src={`https://d24va9fw68seps.cloudfront.net/coin_${getIconAsset(coinName)}.png`} />*/}
-                             <img width="40px" height="40px" src={`/coins_icons/coin_${getIconAsset(coinName)}.png`} />
+                             <img className={stylesFutures.IconTableBody} width="40px" height="40px" src={`/coins_icons/coin_${getIconAsset(coinName)}.png`} />
 
 
                             {/* <img src alt="" /> */}

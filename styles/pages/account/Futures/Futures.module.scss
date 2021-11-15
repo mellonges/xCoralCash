@@ -44,6 +44,12 @@
             .TDContentExpCont {
                 img {
                     margin: 0 10px 0 0;
+                    max-width: 40px;
+                    min-width: 40px;
+                    max-height: 40px;
+                    min-height: 40px;
+                    width: 40px;
+                    height: 40px;
                 }
                 svg {
                 margin: 0 10px 0 0;
