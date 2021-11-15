@@ -91,11 +91,6 @@ function MyApp({ Component, pageProps }) {
                     if (address != currentWalletAddress) {
                         if (!address) return
                         dispatch(changeWalletAddress(address))
-                        console.info("changed walletAddress: " + address)
-                        console.info("getFuturesDispatch from _app")
-                        dispatch(getFuturesTableInfo())
-
-
                         toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, { pauseOnFocusLoss: false })
                     }
 

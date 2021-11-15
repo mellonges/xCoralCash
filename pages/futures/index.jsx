@@ -14,11 +14,12 @@ const Index = () => {
     const dispatch = useDispatch()
 
     const isConnected = useSelector(({ store }) => store.isConnected)
+    const address = useSelector(({store}) => store.address)
     const futuresTableInfo = useSelector(({ store }) => store.futuresTableInfo)
     useEffect(() => {
         dispatch(getFuturesTableInfo())
         console.log("table render")
-    }, [isConnected])
+    }, [isConnected, address])
     const headlineRef = useRef({});
     return (
         <div>
@@ -45,7 +46,7 @@ const Index = () => {
 
                     </thead>
                     {/*<TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />*/}
-                    {futuresTableInfo.init ? futuresTableInfo?.data.map(i => <TableBody disabled={!isConnected} coinName={i?.coinName} asset={i?.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} deposited={i?.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i?.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i?.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral} />)
+                    {futuresTableInfo.init ? futuresTableInfo?.data.map(i => <TableBody disabled={isConnected && i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral ? false : true} coinName={i?.coinName} asset={i?.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} deposited={i?.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i?.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i?.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral} />)
                         : [...Array(12)].map((v, i) => (
                             <tbody>
                                 <tr key={i}>

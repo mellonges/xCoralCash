@@ -51,7 +51,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
 
                             <div className={stylesFutures.OthTDTitle}>
                                 {formatPrice(redeemable_xcoral).slice(1)}
-                                <div style={{opacity: 0.5}} className={stylesFutures.OthTDSubTitle}> /* inline stlye */
+                                <div className={stylesFutures.OthTDSubTitle}> 
                                     Upcoming {upcoming_xcoral}
                                 </div>
                             </div>
