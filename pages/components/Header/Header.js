@@ -121,11 +121,14 @@ const Header = ({ color }) => {
                 </div>
               </div>
             )}
-            {navItems.map((item, i) => (
-              <li key={i}>
-                <Link href={`${item.link}`}>{item.title}</Link>
-              </li>
-            ))}
+            {/*{navItems.map((item, i) => (*/}
+            {/*  <li key={i}>*/}
+            {/*    <Link href={`${item.link}`}>{item.title}</Link>*/}
+            {/*  </li>*/}
+            {/*))}*/}
+            <li>
+            <a target="_blank" href="https://docs.xcoral.cash/">Docs</a>
+            </li>
           </ul>
           {/*{!currentUser ? (*/}
           {/*  <Button*/}
