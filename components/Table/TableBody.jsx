@@ -8,10 +8,14 @@ import { openAndCloseModalWindow, setActiveOperation } from "../../redux/reducer
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
 import { useSelector } from 'react-redux';
+import getIconAsset from "../../functions/getIconAsset"
+import iconAsset from "../../coins_icons/"
+
 
 const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited = 0, redeemable_xcoral = 0, upcoming_xcoral = 0 }) => {
     const imgLink = `https://d24va9fw68seps.cloudfront.net/coin_${coinName}.png`
-    const isConnected = useSelector(({store}) => store.isConnected)
+    const isConnected = useSelector(({ store }) => store.isConnected)
+    console.log(iconAsset)
     const dispatch = useDispatch()
     return (
         <>
@@ -20,7 +24,8 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                     <td className={stylesFutures.TDContentExp}>
                         <div className={stylesFutures.TDContentExpCont}>
 
-                            {/*<img  src={imgLink} alt=""/>*/}
+
+                            {/* <img src={iconAsset} alt="" /> */}
 
                             <div className={stylesFutures.TDTitle}>
                                 {getCoinName(coinName)}
@@ -35,7 +40,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                     </td>
                     <td>
                         <div className={stylesFutures.OthTDTitle}>
-                            { isConnected && deposited ? formatPrice(deposited).slice(1) :  !deposited && isConnected ? 0 : "—"}
+                            {isConnected && deposited ? formatPrice(deposited).slice(1) : !deposited && isConnected ? 0 : "—"}
                             <div className={stylesFutures.OthTDSubTitle}>
                                 {getCoinName(coinName)}
                             </div>
@@ -51,7 +56,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
 
                             <div className={stylesFutures.OthTDTitle}>
                                 {formatPrice(redeemable_xcoral).slice(1)}
-                                <div className={stylesFutures.OthTDSubTitle}> 
+                                <div className={stylesFutures.OthTDSubTitle}>
                                     Upcoming {upcoming_xcoral}
                                 </div>
                             </div>
@@ -65,7 +70,7 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                             </svg>
 
                             <div className={stylesFutures.OthTDTitle}>
-                            {isConnected ? 0 : "—"}
+                                {isConnected ? 0 : "—"}
                                 <div className={stylesFutures.OthTDSubTitle}>
                                 </div>
                             </div>
