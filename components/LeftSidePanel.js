@@ -282,7 +282,7 @@ const LeftSidePanel = () => {
                   {/*<Link>*/}
                   <li className={styles.listItem}>
                     {/*<Link>*/}
-                    <a href="https://xcoral.cash" target="_blank" className={styles.navLink}>
+                    <a href="https://docs.xcoral.cash" target="_blank" className={styles.navLink}>
                       <span className={styles.navIcon}>
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M9.5 1L1 5.25L9.5 9.5L18 5.25L9.5 1Z" stroke="#658796" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />

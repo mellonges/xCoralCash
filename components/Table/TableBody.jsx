@@ -8,7 +8,6 @@ import { openAndCloseModalWindow, setActiveOperation } from "../../redux/reducer
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
 import { useSelector } from 'react-redux';
-import TooltipComponent from "../../components/TooltipComponent"
 import Image from 'next/image'
 import getIconAsset from "@/functions/getIconAsset";
 
@@ -51,7 +50,6 @@ const TableBody = ({ coinName, asset = 0, disabled, expiration, APY, deposited =
                     </td>
                     <td>
                         <div className={styles.tooltipMobile}>
-                            <TooltipComponent id={1} tooltTipContent={"ROI (Return on Investment) indicates the yield you’ll make after 15 days of bonding the asset of your choice. APY is calculated assuming you would reinvest bonding proceeds each 15 days (current ROI is assumed to not change during the year)"} />
                         </div>
                         {APY.toFixed(2)}% APY
                     </td>
