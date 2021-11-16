@@ -226,7 +226,7 @@ const LeftSidePanel = () => {
         >
           <div className={styles.leftSideNav}>
             <div
-              className={`${styles.top} d-flex justify-content-between align-items-center`}
+              className={`${styles.top}  tracking-in-expand  d-flex justify-content-between align-items-center`}
             >
               <Link href="/">
                 <a className={styles.logotype}>

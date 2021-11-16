@@ -27,7 +27,14 @@ const IntroSection = ({ twoCoins }) => {
             </Col>
             <Col md="6">
               <div className={`${styles.coinCards} d-none d-md-flex`}>
-                {/*<img src="../public/images/logo-main.png" alt=""/>*/}
+                <div className="slide-in-blurred-top">
+                <div className="vibrate-1">
+                <img
+                    // className="flicker-4"
+                    width="340px" height="346px" src="/images/xcoral_logo_trans.png" alt=""/>
+                </div>
+                </div>
+
               {/*  {twoCoins && twoCoins.length ? (*/}
               {/*    <>*/}
               {/*      <motion.div*/}

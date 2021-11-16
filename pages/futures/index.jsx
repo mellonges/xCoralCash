@@ -12,13 +12,11 @@ import { getFuturesTableInfo } from "../../redux/reducers/asyncActions/getFuture
 
 const Index = () => {
     const dispatch = useDispatch()
-
     const isConnected = useSelector(({ store }) => store.isConnected)
     const address = useSelector(({store}) => store.address)
     const futuresTableInfo = useSelector(({ store }) => store.futuresTableInfo)
     useEffect(() => {
         dispatch(getFuturesTableInfo())
-        console.log("table render")
     }, [isConnected, address])
     const headlineRef = useRef({});
     return (

@@ -70,15 +70,9 @@ const MobileNavigation = ({ items, showNav, setShowMobileNav, user }) => {
             {/*)}*/}
           </div>
           <div className={styles.navigation}>
-            {items
-              .filter((item) => item.link != "/signin")
-              .map((navItem, i) => (
-                <Link href={navItem.link} key={i}>
-                  <a className={`${styles.navItem} btn btn-secondary`}>
-                    {navItem.title}
+                  <a href="https://docs.xcoral.cash" target="_blank" className={`${styles.navItem} btn btn-secondary`}>
+                    Docs
                   </a>
-                </Link>
-              ))}
           </div>
         </motion.div>
       ) : null}

@@ -27,75 +27,75 @@ const TradeSellStep = ({
   const [loading, setLoading] = useState(false);
   const [firstLoading, setFirstLoading] = useState(false);
 
-  useEffect(() => {
-    setSelectedWays({
-      ...selectedWays,
-      token:
-        holdings && selectedToken
-          ? holdings.find((token) => token.ticker === selectedToken.ticker)
-          : selectedToken,
-    });
-  }, [selectedToken, holdings]);
+  // useEffect(() => {
+  //   setSelectedWays({
+  //     ...selectedWays,
+  //     token:
+  //       holdings && selectedToken
+  //         ? holdings.find((token) => token.ticker === selectedToken.ticker)
+  //         : selectedToken,
+  //   });
+  // }, [selectedToken, holdings]);
 
-  useEffect(() => {
-    setFirstLoading(true);
-    getUserData([
-      {
-        type: "payment_methods",
-      },
-      {
-        type: "holdings",
-      },
-    ])
-      .then((res) => res.data.payload.processedData)
-      .then((res) => {
-        res.map((data) => {
-          if (data.holdings) setHoldings(data.holdings);
-          else if (data.paymentMethods) setPaymentMethods(data.paymentMethods);
-        });
-      })
-      .catch((error) => console.error(error))
-      .finally(() => setFirstLoading(false));
-  }, []);
+  // useEffect(() => {
+  //   setFirstLoading(true);
+  //   getUserData([
+  //     {
+  //       type: "payment_methods",
+  //     },
+  //     {
+  //       type: "holdings",
+  //     },
+  //   ])
+  //     .then((res) => res.data.payload.processedData)
+  //     .then((res) => {
+  //       res.map((data) => {
+  //         if (data.holdings) setHoldings(data.holdings);
+  //         else if (data.paymentMethods) setPaymentMethods(data.paymentMethods);
+  //       });
+  //     })
+  //     .catch((error) => console.error(error))
+  //     .finally(() => setFirstLoading(false));
+  // }, []);
 
-  useEffect(() => {
-    if (paymentMethods && paymentMethods.length && !selectedWays.paywith) {
-      let paymentMethodsSorted = paymentMethods.sort((a, b) =>
-        a.dateLastUsed && b.dateLastUsed
-          ? a.dateLastUsed > b.dateLastUsed
-            ? -1
-            : 1
-          : 0
-      );
-      setSelectedWays({
-        ...selectedWays,
-        paywith:
-          paymentMethodsSorted.find(
-            (method) => method.type === "wallet" && method.quantity > 0
-          ) || paymentMethodsSorted.find((method) => method.type !== "wallet"),
-      });
-    }
-  }, [paymentMethods]);
+  // useEffect(() => {
+  //   if (paymentMethods && paymentMethods.length && !selectedWays.paywith) {
+  //     let paymentMethodsSorted = paymentMethods.sort((a, b) =>
+  //       a.dateLastUsed && b.dateLastUsed
+  //         ? a.dateLastUsed > b.dateLastUsed
+  //           ? -1
+  //           : 1
+  //         : 0
+  //     );
+  //     setSelectedWays({
+  //       ...selectedWays,
+  //       paywith:
+  //         paymentMethodsSorted.find(
+  //           (method) => method.type === "wallet" && method.quantity > 0
+  //         ) || paymentMethodsSorted.find((method) => method.type !== "wallet"),
+  //     });
+  //   }
+  // }, [paymentMethods]);
 
   const [activeStep, setActiveStep] = useState("selectSumm");
 
-  const
-      sendPreview = () => {
-    setLoading(true);
-    getTradeInfo("sell", selectedWays.token.ticker, undefined, +summ)
-      .then((res) => res.data.payload)
-      .then((data) => {
-        setBuyingInformation(data);
-        setActiveStep("confirmSell");
-        setSwitchOffTabs(true);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  };
+  // const
+  //     sendPreview = () => {
+  //   setLoading(true);
+  //   getTradeInfo("sell", selectedWays.token.ticker, undefined, +summ)
+  //     .then((res) => res.data.payload)
+  //     .then((data) => {
+  //       setBuyingInformation(data);
+  //       setActiveStep("confirmSell");
+  //       setSwitchOffTabs(true);
+  //     })
+  //     .catch((err) => console.error(err))
+  //     .finally(() => setLoading(false));
+  // };
 
   return (
     <div className={styles.buying}>
-      {firstLoading ? (
+      {!firstLoading ? (
         <div className={styles.loadingWrapper}>
           <div className={styles.ldsRing}>
             <div></div>
@@ -106,6 +106,7 @@ const TradeSellStep = ({
         </div>
       ) : (
         <>
+          <p>Trade sell step</p>
           {activeStep === "selectSumm" ? (
             <SelectSumm
               selectedWays={selectedWays}
@@ -122,6 +123,7 @@ const TradeSellStep = ({
             />
           ) : null}
           {activeStep === "confirmSell" ? (
+
             <ConfirmSelling
               setActiveStep={setActiveStep}
               setSwitchOffTabs={setSwitchOffTabs}

@@ -116,7 +116,7 @@ const TradeModal = () => {
         {/*</div>*/}
       </section>
       <ModalBody>
-         {/* {activeOperation === 1 ? (
+          {activeOperation === 1 ? (
             <TradeBuyStep
               setSwitchOffTabs={setSwitchOffTabs}
               toggle={toggle}
@@ -129,9 +129,8 @@ const TradeModal = () => {
               selectedToken={selectedToken}
               tokensList={tokensList}
             />
-          ) : null} */}
+          ) : null}
 
-        Modal Content
       </ModalBody>
     </Modal>
   );
