@@ -14,9 +14,10 @@ const TradeSellStep = ({
   toggle,
   selectedToken,
   tokensList,
-    assetName,
-    iconAddress,
-    deposited
+  assetName,
+  iconAddress,
+  deposited,
+  expiration,
 }) => {
   const [selectedWays, setSelectedWays] = useState({});
 
@@ -125,8 +126,9 @@ const TradeSellStep = ({
               deposited={deposited}
               iconAddress={iconAddress}
               assetName={assetName}
+              expiration={expiration}
 
-              // sendPreview={sendPreview}
+            // sendPreview={sendPreview}
             />
           ) : null}
           {activeStep === "confirmSell" ? (

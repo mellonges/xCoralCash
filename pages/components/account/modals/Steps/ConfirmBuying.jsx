@@ -17,9 +17,11 @@ const ConfirmBuying = ({
   setBuyingInformation,
   direction,
   paymentMethods,
-    assetName,
-    iconAddress,
-    deposited,
+  assetName,
+  iconAddress,
+  deposited,
+  expiration,
+  APY,
 
 }) => {
   let tokenBalance;
@@ -69,7 +71,7 @@ const ConfirmBuying = ({
   //     .finally(() => setLoading(false));
   // };
 
-  return  (
+  return (
     <div className={`${styles.ConfirmBuying}`}>
       <div className={`${styles.top}`}>
         <div className="d-flex align-items-center">
@@ -158,7 +160,7 @@ const ConfirmBuying = ({
               {/*    height="32"*/}
               {/*  />*/}
               {/*) : null}*/}
-              <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`}/>
+              <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`} />
               {assetName}
             </div>
             {/*{selectedWays.paywith.title}*/}
@@ -198,7 +200,7 @@ const ConfirmBuying = ({
             {/*/>*/}
           </div>
           <div className={styles.value}>
-            10%
+            {APY.toFixed(2)}%
             {/*{formatPrice(buyingInformation.fee)}*/}
           </div>
         </div>
@@ -208,11 +210,11 @@ const ConfirmBuying = ({
           <div className={styles.label}>Expiration term</div>
           <div className={styles.value}>
             {/*{formatPrice(buyingInformation.chargeAmount)}*/}
-            November 12 2021
+            {expiration}
           </div>
         </div>
         <div
-            className={`${styles.row} d-flex justify-content-between align-items-center`}
+          className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
           <div className={styles.label}>Total payout</div>
           <div className={styles.value}>
@@ -264,10 +266,10 @@ const ConfirmBuying = ({
       </Button>
 
       <TokenBalance
-          text={"Available"}
-          balance={formatPrice(deposited).slice(1)}
+        text={"Available"}
+        balance={formatPrice(deposited).slice(1)}
       />
-      <TokenBalance text={"Deposited Already"} balance={"Хуй бля"} />
+      <TokenBalance text={"Deposited Already"} balance={"Null"} />
     </div>
   )
 };

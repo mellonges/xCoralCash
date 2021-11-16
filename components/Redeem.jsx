@@ -9,27 +9,28 @@ import { formatPrice } from "functions/helpers";
 import TokenBalance from "@/components/account/modals/Steps/TokenBalance";
 
 const Redeem = ({
-                        selectedWays,
-                        summ,
-                        direction,
-                        setDirection,
-                        setSelectedWays,
-                        setSumm,
-                        setSwitchOffTabs,
-                        paymentMethods,
-                        holdings,
-                        sendPreview,
-                        selectedToken,
-                        isSell = false,
-                        isConvert = false,
-                        loading,
-                        tokensList,
-                        deposited,
-                        assetName,
-                        iconAddress,
+    selectedWays,
+    summ,
+    direction,
+    setDirection,
+    setSelectedWays,
+    setSumm,
+    setSwitchOffTabs,
+    paymentMethods,
+    holdings,
+    sendPreview,
+    selectedToken,
+    isSell = false,
+    isConvert = false,
+    loading,
+    tokensList,
+    deposited,
+    assetName,
+    iconAddress,
+    expiration
 
 
-                    }) => {
+}) => {
     const [focused, setSummFocused] = useState(false);
     const [showTokensList, setShowTokensList] = useState(false);
     const [showPaymentMethods, setShowPaymentMethods] = useState(false);
@@ -67,11 +68,10 @@ const Redeem = ({
     return (
         <>
             <div
-                className={`${
-                    showTokensList || showPaymentMethods || showChooseTokenInfo
-                        ? "d-none"
-                        : "d-block"
-                }`}
+                className={`${showTokensList || showPaymentMethods || showChooseTokenInfo
+                    ? "d-none"
+                    : "d-block"
+                    }`}
             >
                 {selectedWays && selectedWays.token && !isSell && !isConvert ? (
                     <div
@@ -113,6 +113,7 @@ const Redeem = ({
                             setSummFocused(false);
                         }}
                         onChange={(e) => {
+
                             if (
                                 e.target.value != "" &&
                                 /^\d{0,8}(\.?)(\d{1,2})?$/.test(e.target.value)
@@ -152,19 +153,17 @@ const Redeem = ({
                     />
                     {direction === 1 ? (
                         <sup
-                            className={`${styles.dollarSymbol} ${
-                                focused || (summ.length && summ !== "0") ? styles.active : ""
-                            } `}
+                            className={`${styles.dollarSymbol} ${focused || (summ.length && summ !== "0") ? styles.active : ""
+                                } `}
                         >
                             {assetName}
                         </sup>
                     ) : null}
                     {(selectedWays && selectedWays.token && direction === 2) ||
-                    ((isSell || isConvert) && selectedWays.token) ? (
+                        ((isSell || isConvert) && selectedWays.token) ? (
                         <sub
-                            className={`${styles.tokenSummName} ${
-                                focused || (summ.length && summ !== "0") ? styles.active : ""
-                            } `}
+                            className={`${styles.tokenSummName} ${focused || (summ.length && summ !== "0") ? styles.active : ""
+                                } `}
                         >
                             {selectedWays.token && selectedWays.token.ticker}
                         </sub>
@@ -191,7 +190,7 @@ const Redeem = ({
                             <div className={styles2.value}>
                                 <div className={styles2.cardLogo}>
 
-                                    <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`}/>
+                                    <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`} />
                                     {assetName}
                                 </div>
                                 {/*{selectedWays.paywith.title}*/}
@@ -203,7 +202,7 @@ const Redeem = ({
                             <div className={styles2.label}>Expiration term</div>
                             <div className={styles2.value}>
                                 {/*{formatPrice(buyingInformation.avgPrice)}*/}
-                                22.22.222
+                                {expiration}
                             </div>
                         </div>
                         {/* <div
@@ -234,7 +233,7 @@ const Redeem = ({
                             color="primary"
                             className={styles.previewBtn}
                             disabled={loading}
-                            // onClick={() => generateBuyPreview()}
+                        // onClick={() => generateBuyPreview()}
                         >
                             <span className="ml-auto">Processing...</span>
                             <svg
@@ -270,7 +269,7 @@ const Redeem = ({
                         text={"Available"}
                         balance={formatPrice(deposited).slice(1)}
                     />
-                    <TokenBalance text={"Deposited Already"} balance={"Хуй бля"} />
+                    <TokenBalance text={"Deposited Already"} balance={"null"} />
                 </div>
             </div>
         </>

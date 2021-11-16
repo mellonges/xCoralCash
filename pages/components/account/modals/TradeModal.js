@@ -8,17 +8,19 @@ import TradeSellStep from "./TradeSellStep";
 import Router from "next/router";
 import { TradeModalContext } from "../../../../functions/contexts";
 import { getTokensList } from "../../../../functions/getBackendData";
-import {useDispatch, useSelector} from "react-redux";
-import {openAndCloseModalWindow, setActiveOperation} from "../../../../redux/reducers/rootReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { openAndCloseModalWindow, setActiveOperation } from "../../../../redux/reducers/rootReducer";
 
 const TradeModal = () => {
   const dispatch = useDispatch()
-  const isOpen = useSelector(({store}) => store.modalWindow.isOpen)
-  const activeOperation = useSelector(({store}) => store.modalWindow.activeOperation)
-  const iconAddress = useSelector(({store}) => store.modalWindow.data.iconAddress)
-  const assetName = useSelector(({store}) => store.modalWindow.data.assetName)
-  const deposited = useSelector(({store}) => store.modalWindow.data.deposited)
-  const firstLoading = useSelector(({store}) => store.modalWindow.data.firstLoading)
+  const isOpen = useSelector(({ store }) => store.modalWindow.isOpen)
+  const activeOperation = useSelector(({ store }) => store.modalWindow.activeOperation)
+  const iconAddress = useSelector(({ store }) => store.modalWindow.data.iconAddress)
+  const assetName = useSelector(({ store }) => store.modalWindow.data.assetName)
+  const deposited = useSelector(({ store }) => store.modalWindow.data.deposited)
+  const firstLoading = useSelector(({ store }) => store.modalWindow.data.firstLoading)
+  const expiration = useSelector(({ store }) => store.modalWindow.data.expiration)
+  const APY = useSelector(({ store }) => store.modalWindow.data.APY)
 
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
@@ -35,7 +37,7 @@ const TradeModal = () => {
   //     setIsOpen(isOpenStore);
   //     setSelectedToken(data.token);
   //   });
-  
+
   //     getTokensList({
   //       page: 1,
   //       sort: "price_desc",
@@ -48,7 +50,7 @@ const TradeModal = () => {
   //         console.error(error);
   //         setTokensList(false);
   //       });
-    
+
   //     return () => subscription.unsubscribe();
   //   }, []);
   // }
@@ -91,22 +93,19 @@ const TradeModal = () => {
         </svg>
       </a>
       <section
-        className={`${styles.operationTabs} ${
-          switchOffTabs ? "d-none" : "d-flex"
-        } flex-wrap`}
+        className={`${styles.operationTabs} ${switchOffTabs ? "d-none" : "d-flex"
+          } flex-wrap`}
       >
         <div
-          className={`${styles.tabItem} ${
-            activeOperation === 1 ? styles.active : ""
-          }`}
+          className={`${styles.tabItem} ${activeOperation === 1 ? styles.active : ""
+            }`}
           onClick={() => dispatch(setActiveOperation(1))}
         >
           Deposit
         </div>
         <div
-          className={`${styles.tabItem} ${
-            activeOperation === 2 ? styles.active : ""
-          } `}
+          className={`${styles.tabItem} ${activeOperation === 2 ? styles.active : ""
+            } `}
           onClick={() => dispatch(setActiveOperation(2))}
         >
           Redeem
@@ -121,30 +120,33 @@ const TradeModal = () => {
         {/*</div>*/}
       </section>
       <ModalBody>
-          {activeOperation === 1 ? (
-            <TradeBuyStep
-              setSwitchOffTabs={setSwitchOffTabs}
-              toggle={toggle}
-              assetName={assetName}
-              iconAddress={iconAddress}
-              firstLoading={firstLoading}
-              deposited={deposited}
+        {activeOperation === 1 ? (
+          <TradeBuyStep
+            setSwitchOffTabs={setSwitchOffTabs}
+            toggle={toggle}
+            assetName={assetName}
+            iconAddress={iconAddress}
+            firstLoading={firstLoading}
+            deposited={deposited}
+            expiration={expiration}
+            APY={APY}
 
 
-              // selectedToken={selectedToken}
-            />
-          ) : activeOperation === 2 ? (
-            <TradeSellStep
-              setSwitchOffTabs={setSwitchOffTabs}
-              toggle={toggle}
-              selectedToken={selectedToken}
-              tokensList={tokensList}
-              assetName={assetName}
-              iconAddress={iconAddress}
-              firstLoading={firstLoading}
-              deposited={deposited}
-            />
-          ) : null}
+          // selectedToken={selectedToken}
+          />
+        ) : activeOperation === 2 ? (
+          <TradeSellStep
+            setSwitchOffTabs={setSwitchOffTabs}
+            toggle={toggle}
+            selectedToken={selectedToken}
+            tokensList={tokensList}
+            assetName={assetName}
+            iconAddress={iconAddress}
+            firstLoading={firstLoading}
+            deposited={deposited}
+            expiration={expiration}
+          />
+        ) : null}
 
       </ModalBody>
     </Modal>

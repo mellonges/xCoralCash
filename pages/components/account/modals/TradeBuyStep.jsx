@@ -1,21 +1,23 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from '../../../../styles/components/Account/modals/Buying.module.scss'
 
 import SelectSumm from './Steps/SelectSumm'
-import {getTradeInfo, getUserData} from '../../../../functions/getBackendData'
+import { getTradeInfo, getUserData } from '../../../../functions/getBackendData'
 import ConfirmBuying from './Steps/ConfirmBuying'
 import OperationStatus from './Steps/OperationStatus'
 
 const TradeBuyStep = ({
-                          setSwitchOffTabs,
-                          iconAddress,
-                          assetName,
-                          firstLoading,
-    deposited
+    setSwitchOffTabs,
+    iconAddress,
+    assetName,
+    firstLoading,
+    deposited,
+    expiration,
+    APY,
 
 
-                      }) => {
+}) => {
     const [direction, setDirection] = useState(1)
 
     const [selectedWays, setSelectedWays] = useState({})
@@ -122,7 +124,8 @@ const TradeBuyStep = ({
                             iconAddress={iconAddress}
                             assetName={assetName}
                             deposited={deposited}
-                            // tokensList={tokensList}
+                            expiration={expiration}
+                        // tokensList={tokensList}
                         />
                     ) : null}
                     {activeStep === 'confirmBuying' ? (
@@ -139,6 +142,8 @@ const TradeBuyStep = ({
                             assetName={assetName}
                             deposited={deposited}
                             iconAddress={iconAddress}
+                            expiration={expiration}
+                            APY={APY}
                         />
                     ) : null}
                 </>

@@ -52,7 +52,9 @@ const rootStore = createSlice({
                 assetName: null,
                 deposited: null,
                 disabledRedeem: null,
-                redeemable_xcoral: null
+                redeemable_xcoral: null,
+                expiration: null,
+                APY: null,
 
             },
         },
@@ -80,8 +82,8 @@ const rootStore = createSlice({
             state.web3ForUser = action.payload
         },
         openAndCloseModalWindow(state) {
-            if(!state.isConnected) {
-                toast.error("you must connect wallet", {position: "top-center", autoClose: false})
+            if (!state.isConnected) {
+                toast.error("you must connect wallet", { position: "top-center", autoClose: false })
             } else {
                 state.modalWindow.isOpen = !state.modalWindow.isOpen
 
@@ -94,12 +96,16 @@ const rootStore = createSlice({
             state.modalWindow.data.assetName = action.payload.assetName
             state.modalWindow.data.deposited = action.payload.deposited
             state.modalWindow.data.redeemable_xcoral = action.payload.redeemable_xcoral
+            state.modalWindow.data.APY = action.payload.APY
+            const expiration = new Date(action.payload.expiration * 1000 + Date.now())
+            state.modalWindow.data.expiration = `${expiration.getMonth()} ${expiration.getDate()} ${expiration.getFullYear()}`
             state.modalWindow.data.firstLoading = false
         },
         setActiveOperation(state, action) {
-        if (state.isConnected && state.modalWindow.data.disabledRedeem  &&  action.payload === 2 || action.payload === 1) {
+            if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
+
                 state.modalWindow.activeOperation = action.payload
-            } 
+            }
         }
     },
     extraReducers: {
@@ -157,6 +163,7 @@ const rootStore = createSlice({
         [getFuturesTableInfo.fulfilled]: (state, action) => {
             state.futuresTableInfo.data = action.payload
             state.futuresTableInfo.init = true
+
 
         },
 
