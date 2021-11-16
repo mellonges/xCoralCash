@@ -30,6 +30,7 @@
 }
 .summWrapper {
   cursor: text;
+  align-items: flex-end !important;
   .tokenSummName {
     font-weight: 500;
     font-size: 14px;
@@ -44,6 +45,7 @@
   }
   .summInput {
     flex: 0 0 auto;
+    margin-right: 2.5px;
 
     /* identical to box height */
 
@@ -68,14 +70,15 @@
   }
 
   .dollarSymbol {
-    font-size: 30px;
+    font-size: 16px;
     line-height: 38px;
     letter-spacing: -0.02em;
+    font-weight: 500;
+    white-space: nowrap;
 
     /* Fonts / Gray 2 */
 
     color: #757575;
-    margin-right: 8px;
 
     &.active {
       color: #11343f;
