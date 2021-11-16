@@ -119,7 +119,7 @@ const TradeSellStep = ({
               paymentMethods={paymentMethods}
               setSwitchOffTabs={setSwitchOffTabs}
               holdings={holdings}
-              sendPreview={sendPreview}
+              // sendPreview={sendPreview}
             />
           ) : null}
           {activeStep === "confirmSell" ? (
@@ -134,15 +134,6 @@ const TradeSellStep = ({
               paymentMethods={paymentMethods}
               summ={summ}
               setBuyingInformation={setBuyingInformation}
-            />
-          ) : null}
-          {activeStep === "finishOrError" ? (
-            <OperationStatus
-              info={buyingInformation}
-              setActiveStep={setActiveStep}
-              selectedWays={selectedWays}
-              toggle={toggle}
-              isSell={true}
             />
           ) : null}
         </>

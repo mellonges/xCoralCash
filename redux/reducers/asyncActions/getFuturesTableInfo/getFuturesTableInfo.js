@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { combineTableInfo } from "@/functions/combine";
-import { msToTime } from "@/functions/msToTime";
 
 export const getFuturesTableInfo = createAsyncThunk(
     "rootStore/getFuturesTableInfo",
@@ -78,7 +77,7 @@ export const getFuturesTableInfo = createAsyncThunk(
                 return {
                     coinName: i[0],
                     termsID: i['1'][0],
-                    expiration: msToTime(vestingRewardsTerm),
+                    expiration: vestingRewardsTerm,
                     DEPOSITED_AND_REDEEMABLE: (function () {
 
                         if (isConnected) {

@@ -16,7 +16,6 @@ import { toast } from "react-toastify";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
-const secondsInYear = 31536000
 const contracts = {
     xCORAL: new web3.eth.Contract(XCORAL_ABI, process.env.xCORAL),
     monetaryPolicy: new web3.eth.Contract(MONETARY_ABI, process.env.monetaryPolicy),
@@ -47,7 +46,13 @@ const rootStore = createSlice({
         modalWindow: {
             isOpen: false,
             activeOperation: 1,
-            data: {},
+            data: {
+                firstLoading: false,
+                iconAddress: null,
+                assetName: null,
+                deposited: null,
+
+            },
         },
         walletMiniInfo: {
             currentPrice: null,
@@ -77,7 +82,15 @@ const rootStore = createSlice({
                 toast.error("you must connect wallet", {position: "top-center", autoClose: false})
             } else {
                 state.modalWindow.isOpen = !state.modalWindow.isOpen
+
             }
+        },
+        dispatchDataForModalWindow(state, action) {
+            state.modalWindow.data.firstLoading = true
+            state.modalWindow.data.iconAddress = action.payload.iconAddress
+            state.modalWindow.data.assetName = action.payload.assetName
+            state.modalWindow.data.deposited = action.payload.deposited
+            state.modalWindow.data.firstLoading = false
         },
         setActiveOperation(state, action) {
         if (state.isConnected && action.payload === 2 || action.payload === 1) {
@@ -141,11 +154,12 @@ const rootStore = createSlice({
             state.futuresTableInfo.data = action.payload
             state.futuresTableInfo.init = true
 
-        }
+        },
+
     }
 
 })
 
 
 export default rootStore.reducer
-export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation } = rootStore.actions
+export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation, dispatchDataForModalWindow } = rootStore.actions

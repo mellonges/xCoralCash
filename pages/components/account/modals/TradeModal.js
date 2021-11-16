@@ -15,6 +15,11 @@ const TradeModal = () => {
   const dispatch = useDispatch()
   const isOpen = useSelector(({store}) => store.modalWindow.isOpen)
   const activeOperation = useSelector(({store}) => store.modalWindow.activeOperation)
+  const iconAddress = useSelector(({store}) => store.modalWindow.data.iconAddress)
+  const assetName = useSelector(({store}) => store.modalWindow.data.assetName)
+  const deposited = useSelector(({store}) => store.modalWindow.data.deposited)
+  const firstLoading = useSelector(({store}) => store.modalWindow.data.firstLoading)
+
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
@@ -120,7 +125,13 @@ const TradeModal = () => {
             <TradeBuyStep
               setSwitchOffTabs={setSwitchOffTabs}
               toggle={toggle}
-              selectedToken={selectedToken}
+              assetName={assetName}
+              iconAddress={iconAddress}
+              firstLoading={firstLoading}
+              deposited={deposited}
+
+
+              // selectedToken={selectedToken}
             />
           ) : activeOperation === 2 ? (
             <TradeSellStep
