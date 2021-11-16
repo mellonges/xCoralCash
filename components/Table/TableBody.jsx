@@ -117,6 +117,8 @@ const TableBody = ({
                                     assetName,
                                     iconAddress,
                                     deposited,
+                                    disabledRedeem: disabled,
+                                    redeemable_xcoral
                                 }))
                             }}
                                 color="primary"
@@ -150,7 +152,7 @@ const TableBody = ({
                                 dispatch(openAndCloseModalWindow())
                             }}
                                 className={`d-flex ${styles.depositBtn} ${stylesFuturesColor.RedeemActive}`}
-                                disabled={disabled}
+                                disabled={!disabled}
                                 >
                                 <svg
                                 width="10"

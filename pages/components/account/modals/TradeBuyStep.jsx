@@ -136,6 +136,9 @@ const TradeBuyStep = ({
                             direction={direction}
                             paymentMethods={paymentMethods}
                             setBuyingInformation={setBuyingInformation}
+                            assetName={assetName}
+                            deposited={deposited}
+                            iconAddress={iconAddress}
                         />
                     ) : null}
                 </>

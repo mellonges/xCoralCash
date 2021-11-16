@@ -139,6 +139,10 @@ const TradeModal = () => {
               toggle={toggle}
               selectedToken={selectedToken}
               tokensList={tokensList}
+              assetName={assetName}
+              iconAddress={iconAddress}
+              firstLoading={firstLoading}
+              deposited={deposited}
             />
           ) : null}
 

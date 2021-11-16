@@ -6,6 +6,7 @@ import { formatPrice } from "../../../../../functions/helpers";
 import styles from "../../../../../styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
 import TooltipComponent from "../../../../../components/Tooltip";
 import TokenBalance from "./TokenBalance";
+import styles2 from "@/styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
 const ConfirmBuying = ({
   setActiveStep,
   setSwitchOffTabs,
@@ -16,6 +17,10 @@ const ConfirmBuying = ({
   setBuyingInformation,
   direction,
   paymentMethods,
+    assetName,
+    iconAddress,
+    deposited,
+
 }) => {
   let tokenBalance;
 
@@ -96,12 +101,12 @@ const ConfirmBuying = ({
         <div className={styles.price}>
           {/*{buyingInformation.quantity}{" "}*/}
           {/*{selectedWays && selectedWays.token.ticker}*/}
-          22
+          22 {assetName}
         </div>
         <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
-          <div className={styles.label}>Pay with</div>
+          <div className={styles.label}>Asset</div>
           <div className={styles.value}>
             <div className={styles.cardLogo}>
               {/*{selectedWays &&*/}
@@ -153,20 +158,13 @@ const ConfirmBuying = ({
               {/*    height="32"*/}
               {/*  />*/}
               {/*) : null}*/}
-              98
+              <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`}/>
+              {assetName}
             </div>
             {/*{selectedWays.paywith.title}*/}
           </div>
         </div>
-        <div
-          className={`${styles.row} d-flex justify-content-between align-items-center`}
-        >
-          <div className={styles.label}>Average Price</div>
-          <div className={styles.value}>
-            {/*{formatPrice(buyingInformation.avgPrice)}*/}
-            538
-          </div>
-        </div>
+
         {/* <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
@@ -179,7 +177,7 @@ const ConfirmBuying = ({
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
           <div className={styles.label}>
-            HumanBace Fee{" "}
+            APY
             {/*<TooltipComponent*/}
             {/*  tooltipTrigger={*/}
             {/*    <svg*/}
@@ -200,17 +198,26 @@ const ConfirmBuying = ({
             {/*/>*/}
           </div>
           <div className={styles.value}>
-            888
+            10%
             {/*{formatPrice(buyingInformation.fee)}*/}
           </div>
         </div>
         <div
           className={`${styles.row} d-flex justify-content-between align-items-center`}
         >
-          <div className={styles.label}>Total</div>
+          <div className={styles.label}>Expiration term</div>
           <div className={styles.value}>
             {/*{formatPrice(buyingInformation.chargeAmount)}*/}
-            37837
+            November 12 2021
+          </div>
+        </div>
+        <div
+            className={`${styles.row} d-flex justify-content-between align-items-center`}
+        >
+          <div className={styles.label}>Total payout</div>
+          <div className={styles.value}>
+            {/*{formatPrice(buyingInformation.chargeAmount)}*/}
+            2,430.21
           </div>
         </div>
       </div>
@@ -256,10 +263,11 @@ const ConfirmBuying = ({
         )}
       </Button>
 
-        <TokenBalance
-          balance={229}
-          text={"myAnal"}
-        />
+      <TokenBalance
+          text={"Available"}
+          balance={formatPrice(deposited).slice(1)}
+      />
+      <TokenBalance text={"Deposited Already"} balance={"Хуй бля"} />
     </div>
   )
 };

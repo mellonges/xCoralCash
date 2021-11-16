@@ -51,6 +51,8 @@ const rootStore = createSlice({
                 iconAddress: null,
                 assetName: null,
                 deposited: null,
+                disabledRedeem: null,
+                redeemable_xcoral: null
 
             },
         },
@@ -87,13 +89,15 @@ const rootStore = createSlice({
         },
         dispatchDataForModalWindow(state, action) {
             state.modalWindow.data.firstLoading = true
+            state.modalWindow.data.disabledRedeem = action.payload.disabledRedeem
             state.modalWindow.data.iconAddress = action.payload.iconAddress
             state.modalWindow.data.assetName = action.payload.assetName
             state.modalWindow.data.deposited = action.payload.deposited
+            state.modalWindow.data.redeemable_xcoral = action.payload.redeemable_xcoral
             state.modalWindow.data.firstLoading = false
         },
         setActiveOperation(state, action) {
-        if (state.isConnected && action.payload === 2 || action.payload === 1) {
+        if (state.isConnected && state.modalWindow.data.disabledRedeem  &&  action.payload === 2 || action.payload === 1) {
                 state.modalWindow.activeOperation = action.payload
             } 
         }

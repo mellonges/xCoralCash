@@ -31,6 +31,7 @@ const SelectSumm = ({
     assetName,
     iconAddress,
 
+
                     }) => {
   const [focused, setSummFocused] = useState(false);
   const [showTokensList, setShowTokensList] = useState(false);
@@ -192,55 +193,7 @@ const SelectSumm = ({
                         <div className={styles2.label}>Asset</div>
                         <div className={styles2.value}>
                             <div className={styles2.cardLogo}>
-                                {/*{selectedWays &&*/}
-                                {/*selectedWays.paywith.paymentMethodID === "USD" ? (*/}
-                                {/*  <svg*/}
-                                {/*    width="32"*/}
-                                {/*    height="32"*/}
-                                {/*    viewBox="0 0 32 32"*/}
-                                {/*    fill="none"*/}
-                                {/*    xmlns="http://www.w3.org/2000/svg"*/}
-                                {/*  >*/}
-                                {/*    <mask*/}
-                                {/*      id="mask0"*/}
-                                {/*      masktype="alpha"*/}
-                                {/*      maskUnits="userSpaceOnUse"*/}
-                                {/*      x="0"*/}
-                                {/*      y="0"*/}
-                                {/*      width="32"*/}
-                                {/*      height="32"*/}
-                                {/*    >*/}
-                                {/*      <rect width="32" height="32" rx="12.3077" fill="#C4C4C4" />*/}
-                                {/*    </mask>*/}
-                                {/*    <g mask="url(#mask0)">*/}
-                                {/*      <rect x="-3" y="-8" width="39" height="44" fill="#EDF4F5" />*/}
-                                {/*      <path*/}
-                                {/*        d="M14.7696 12.3437C15.8631 11.2503 17.7399 12.0344 17.7399 13.574C17.7399 14.1981 18.2458 14.7041 18.87 14.7041C19.4941 14.7041 20 14.1981 20 13.574C20 11.7608 18.7869 10.2266 17.13 9.73762V8.9821C17.13 8.35799 16.6241 7.85205 16 7.85205C15.3759 7.85205 14.8699 8.35799 14.8699 8.9821V9.73579C12.9453 10.2995 11.7034 12.2279 12.1423 14.2551C12.4125 15.503 13.2766 16.5391 14.4538 17.0267L16.6814 17.9494C17.7115 18.376 18.0203 19.6982 17.2743 20.4988C16.2082 21.6418 14.2601 20.8963 14.2601 19.3139C14.2601 18.6898 13.7542 18.1839 13.13 18.1839C12.5059 18.1839 12 18.6898 12 19.3139C12 21.0796 13.1669 22.6534 14.8699 23.1495V23.9059C14.8699 24.53 15.3759 25.036 16 25.036C16.6241 25.036 17.13 24.53 17.13 23.9059V23.148C17.7605 22.9642 18.3381 22.6278 18.8137 22.1571C20.777 20.215 20.0761 16.9092 17.5462 15.8613L15.3186 14.9386C14.2767 14.5071 13.9638 13.1511 14.7696 12.3437Z"*/}
-                                {/*        fill="#00AAC0"*/}
-                                {/*      />*/}
-                                {/*    </g>*/}
-                                {/*  </svg>*/}
-                                {/*) : selectedWays &&*/}
-                                {/*  selectedWays.paywith.brand &&*/}
-                                {/*  selectedWays &&*/}
-                                {/*  selectedWays.paywith.brand === "Visa" ? (*/}
-                                {/*  <img*/}
-                                {/*    src="/images/icons/Trade/Group 1528.png"*/}
-                                {/*    alt=""*/}
-                                {/*    width="32"*/}
-                                {/*    height="32"*/}
-                                {/*  />*/}
-                                {/*) : selectedWays &&*/}
-                                {/*  selectedWays.paywith.brand &&*/}
-                                {/*  selectedWays &&*/}
-                                {/*  selectedWays.paywith.brand === "MasterCard" ? (*/}
-                                {/*  <img*/}
-                                {/*    src="/images/icons/Trade/Group 1528-1.png"*/}
-                                {/*    alt=""*/}
-                                {/*    width="32"*/}
-                                {/*    height="32"*/}
-                                {/*  />*/}
-                                {/*) : null}*/}
+
                                 <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`}/>
                                 {assetName}
                             </div>
@@ -269,7 +222,7 @@ const SelectSumm = ({
               <Button
                   color="primary"
                   className={styles.previewBtn}
-                  onClick={() => sendPreview    ()}
+                  onClick={() => sendPreview()}
               >
                 {isSell
                     ? "Preview Sell"

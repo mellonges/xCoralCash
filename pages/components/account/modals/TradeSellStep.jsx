@@ -7,12 +7,16 @@ import styles from "../../../../styles/components/Account/modals/Buying.module.s
 import OperationStatus from "./Steps/OperationStatus";
 import SelectSumm from "./Steps/SelectSumm";
 import ConfirmSelling from "./Steps/Sell/ConfirmSelling";
+import Redeem from "../../../../components/Redeem";
 
 const TradeSellStep = ({
   setSwitchOffTabs,
   toggle,
   selectedToken,
   tokensList,
+    assetName,
+    iconAddress,
+    deposited
 }) => {
   const [selectedWays, setSelectedWays] = useState({});
 
@@ -95,7 +99,7 @@ const TradeSellStep = ({
 
   return (
     <div className={styles.buying}>
-      {!firstLoading ? (
+      {firstLoading ? (
         <div className={styles.loadingWrapper}>
           <div className={styles.ldsRing}>
             <div></div>
@@ -106,9 +110,8 @@ const TradeSellStep = ({
         </div>
       ) : (
         <>
-          <p>Trade sell step</p>
           {activeStep === "selectSumm" ? (
-            <SelectSumm
+            <Redeem
               selectedWays={selectedWays}
               summ={summ}
               isSell={true}
@@ -119,6 +122,10 @@ const TradeSellStep = ({
               paymentMethods={paymentMethods}
               setSwitchOffTabs={setSwitchOffTabs}
               holdings={holdings}
+              deposited={deposited}
+              iconAddress={iconAddress}
+              assetName={assetName}
+
               // sendPreview={sendPreview}
             />
           ) : null}
