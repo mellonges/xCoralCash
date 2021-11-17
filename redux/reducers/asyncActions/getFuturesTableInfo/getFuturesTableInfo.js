@@ -35,11 +35,18 @@ export const getFuturesTableInfo = createAsyncThunk(
                 let usdcPromise = USDC.methods.decimals().call()
                 let wethPromise = WETH.methods.decimals().call()
                 dai = await daiPromise
+                localStorage.setItem("daiDecimals", dai)
                 xCoral = await xCoralPromise
+                localStorage.setItem("xCoralDecimals", xCORAL)
                 suiko = await suikoPromise
+                localStorage.setItem("suikoDecimals", suiko)
                 usdc = await usdcPromise
+                localStorage.setItem("usdcDecimals", usdc)
                 XCORAL_DAI_UNI_LP_VALUE = await XCORAL_DAI_UNI_LP_Promise
+                localStorage.setItem("XCORAL_DAI_UNI_LP_VALUE_Decimals", XCORAL_DAI_UNI_LP)
                 weth = await wethPromise
+                localStorage.setItem("wethDecimals", weth)
+
                 getDecimals = (ERC20) => {
                     switch (ERC20) {
                         case process.env.NEXT_PUBLIC_DAI: {

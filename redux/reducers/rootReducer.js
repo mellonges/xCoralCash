@@ -13,6 +13,7 @@ import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
 import { toast } from "react-toastify";
+import {getAvailable} from "./asyncActions/getFuturesTableInfo/getAvailable";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -55,6 +56,9 @@ const rootStore = createSlice({
                 redeemable_xcoral: null,
                 expiration: null,
                 APY: null,
+                available: null,
+                decimals: null,
+
 
             },
         },
@@ -99,7 +103,6 @@ const rootStore = createSlice({
             state.modalWindow.data.APY = action.payload.APY
             const expiration = new Date(action.payload.expiration * 1000 + Date.now())
             state.modalWindow.data.expiration = `${expiration.getMonth()} ${expiration.getDate()} ${expiration.getFullYear()}`
-            state.modalWindow.data.firstLoading = false
         },
         setActiveOperation(state, action) {
             if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
@@ -166,7 +169,11 @@ const rootStore = createSlice({
 
 
         },
-
+        [getAvailable.fulfilled]: (state, action) => {
+            state.modalWindow.data.available = action.payload[0]
+            state.modalWindow.data.decimals = action.payload[1]
+            state.modalWindow.data.firstLoading = false
+        }
     }
 
 })

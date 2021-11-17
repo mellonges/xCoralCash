@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image'
 import getIconAsset from "@/functions/getIconAsset";
 import { msToTime } from "@/functions/msToTime";
+import {getAvailable} from "../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
 
 const TableBody = ({
     coinName,
@@ -63,7 +64,7 @@ const TableBody = ({
                     <td>
                         <div className={styles.tooltipMobile}>
                         </div>
-                        {APY.toFixed(2)}% APY
+                        {APY?.toFixed(2)}% APY
                     </td>
                     <td>
                         <div className={stylesFutures.OthTDTitle}>
@@ -123,6 +124,7 @@ const TableBody = ({
                                         expiration,
                                         APY
                                     }))
+                                    dispatch(getAvailable(assetName))
                                 }}
                                 color="primary"
                                 className={`d-flex ${styles.depositBtn}`}
