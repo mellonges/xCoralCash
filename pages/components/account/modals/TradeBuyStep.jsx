@@ -19,18 +19,16 @@ const TradeBuyStep = ({
     available,
     coinAddress,
     totalPayout,
-    inputValue
+    inputValue,
+    allowance,
+    loadingButton
 
 }) => {
     const [direction, setDirection] = useState(1)
 
-    const [selectedWays, setSelectedWays] = useState({})
 
-    const [paymentMethods, setPaymentMethods] = useState()
 
-    const [holdings, setHoldings] = useState()
 
-    const [summ, setSumm] = useState('')
 
     const [buyingInformation, setBuyingInformation] = useState()
     // const [loading, setLoading] = useState(false)
@@ -115,8 +113,6 @@ const TradeBuyStep = ({
                         <SelectSumm
                             direction={direction}
                             setDirection={setDirection}
-                            selectedWays={selectedWays}
-                            setSumm={setSumm}
                             // setSelectedWays={setSelectedWays}
                             // paymentMethods={paymentMethods}
                             setSwitchOffTabs={setSwitchOffTabs}
@@ -138,11 +134,9 @@ const TradeBuyStep = ({
                             setActiveStep={setActiveStep}
                             setSwitchOffTabs={setSwitchOffTabs}
                             title="Order preview"
-                            selectedWays={selectedWays}
                             buyingInformation={buyingInformation}
                             // holdings={holdings}
                             direction={direction}
-                            paymentMethods={paymentMethods}
                             setBuyingInformation={setBuyingInformation}
                             assetName={assetName}
                             deposited={deposited}
@@ -153,6 +147,9 @@ const TradeBuyStep = ({
                             APY={APY}
                             totalPayout={totalPayout}
                             inputValue={inputValue}
+                            allowance={allowance}
+                            coinAddress={coinAddress}
+                            loadingButton={loadingButton}
 
 
                         />

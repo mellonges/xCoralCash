@@ -63,6 +63,7 @@ const rootStore = createSlice({
                 coinAddress: null,
                 loadingButton: null,
                 inputValue: null,
+                allowance: null
 
 
             },
@@ -186,6 +187,7 @@ const rootStore = createSlice({
         [getTotalPayout.fulfilled]: (state, action) => {
             state.modalWindow.data.totalPayout = action.payload[0]
             state.modalWindow.data.inputValue = action.payload[1]
+            state.modalWindow.data.allowance = action.payload[2]
             state.modalWindow.data.Loading = false
         }
     }

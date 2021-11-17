@@ -26,7 +26,8 @@ const TradeModal = () => {
   const Loading = useSelector(({ store }) => store.modalWindow.data.Loading)
   const totalPayout = useSelector(({ store }) => store.modalWindow.data.totalPayout)
   const inputValue = useSelector(({ store }) => store.modalWindow.data.inputValue)
-
+  const allowance = useSelector(({store}) => store.modalWindow.data.allowance)
+const loadingButton = useSelector(({store}) => store.modalWindow.data.loadingButton)
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
@@ -140,6 +141,8 @@ const TradeModal = () => {
             coinAddress={coinAddress}
             totalPayout={totalPayout}
             inputValue={inputValue}
+            allowance={allowance}
+            loadingButton={loadingButton}
 
 
           // selectedToken={selectedToken}
@@ -152,7 +155,6 @@ const TradeModal = () => {
             tokensList={tokensList}
             assetName={assetName}
             iconAddress={iconAddress}
-            firstLoading={firstLoading}
             deposited={deposited}
             expiration={expiration}
             decimals={decimals}

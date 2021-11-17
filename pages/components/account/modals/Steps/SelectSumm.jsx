@@ -234,7 +234,7 @@ const SelectSumm = ({
                     <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
                     <TokenBalance
                         text={"Deposited Already"}
-                        balance={formatPrice(deposited).slice(1)}
+                        balance={formatPrice(deposited).slice(1) + " " + assetName}
                     />
                 </div>
             </div>
