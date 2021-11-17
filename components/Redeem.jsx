@@ -268,10 +268,10 @@ const Redeem = ({
                             </svg>
                         </Button>
                     )}
-                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
+                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1) + " " + assetName} />
                     <TokenBalance
                         text={"Deposited Already"}
-                        balance={formatPrice(deposited).slice(1)}
+                        balance={formatPrice(deposited).slice(1) + " " + assetName}
                     />
                 </div>
             </div>

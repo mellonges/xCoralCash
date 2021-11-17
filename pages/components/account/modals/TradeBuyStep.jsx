@@ -21,7 +21,8 @@ const TradeBuyStep = ({
     totalPayout,
     inputValue,
     allowance,
-    loadingButton
+    loadingButton,
+    termsID
 
 }) => {
     const [direction, setDirection] = useState(1)
@@ -125,6 +126,7 @@ const TradeBuyStep = ({
                             available={available}
                             decimals={decimals}
                             coinAddress={coinAddress}
+
                         // tokensList={tokensList}
                         //     Loading={Loading}
                         />
@@ -135,7 +137,6 @@ const TradeBuyStep = ({
                             setSwitchOffTabs={setSwitchOffTabs}
                             title="Order preview"
                             buyingInformation={buyingInformation}
-                            // holdings={holdings}
                             direction={direction}
                             setBuyingInformation={setBuyingInformation}
                             assetName={assetName}
@@ -150,6 +151,7 @@ const TradeBuyStep = ({
                             allowance={allowance}
                             coinAddress={coinAddress}
                             loadingButton={loadingButton}
+                            termsID={termsID}
 
 
                         />

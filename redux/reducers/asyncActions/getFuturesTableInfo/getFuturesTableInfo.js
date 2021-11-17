@@ -21,7 +21,7 @@ export const getFuturesTableInfo = createAsyncThunk(
             let address = getState().store.address
             console.log(address)
             if (address && isConnected) {
-                    userTableData = await futures.methods.pendingPayoutFor(address).call()
+                userTableData = await futures.methods.pendingPayoutFor(address).call()
                 console.log(userTableData)
                 userArr = combineTableInfo(userTableData)
 
@@ -42,7 +42,7 @@ export const getFuturesTableInfo = createAsyncThunk(
                 usdc = await usdcPromise
                 localStorage.setItem("usdcDecimals", usdc)
                 XCORAL_DAI_UNI_LP_VALUE = await XCORAL_DAI_UNI_LP_Promise
-                localStorage.setItem("XCORAL_DAI_UNI_LP_VALUE_Decimals", XCORAL_DAI_UNI_LP)
+                localStorage.setItem("XCORAL_DAI_UNI_LP_VALUE_Decimals", XCORAL_DAI_UNI_LP_VALUE)
                 weth = await wethPromise
                 localStorage.setItem("wethDecimals", weth)
 

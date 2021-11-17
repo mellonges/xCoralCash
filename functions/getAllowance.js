@@ -17,8 +17,8 @@ export async function getAllowance(userAddress, ERC20) {
             let result = await ERC20_CONTRACTS.DAI.methods.allowance(userAddress, process.env.NEXT_PUBLIC_FUTURES).call()
             return result
         }
-        case  process.env.NEXT_PUBLIC_USDC: {
-            let result = await ERC20_CONTRACTS.USDC.methods.allowance(userAddress, process.env.NEXT_PUBLIC_).call()
+        case process.env.NEXT_PUBLIC_USDC: {
+            let result = await ERC20_CONTRACTS.USDC.methods.allowance(userAddress, process.env.NEXT_PUBLIC_FUTURES).call()
             return result
         }
         case process.env.NEXT_PUBLIC_XCORAL_DAI_UNI_LP: {
@@ -30,7 +30,7 @@ export async function getAllowance(userAddress, ERC20) {
             return result
         }
         case process.env.NEXT_PUBLIC_WETH: {
-            let result = await  ERC20_CONTRACTS.WETH.methods.allowance(userAddress, process.env.NEXT_PUBLIC_FUTURES).call()
+            let result = await ERC20_CONTRACTS.WETH.methods.allowance(userAddress, process.env.NEXT_PUBLIC_FUTURES).call()
             return result
         }
         case process.env.NEXT_PUBLIC_XCORAL: {

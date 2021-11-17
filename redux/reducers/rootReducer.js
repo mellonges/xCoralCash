@@ -63,7 +63,8 @@ const rootStore = createSlice({
                 coinAddress: null,
                 loadingButton: null,
                 inputValue: null,
-                allowance: null
+                allowance: null,
+                termsID: null
 
 
             },
@@ -107,6 +108,7 @@ const rootStore = createSlice({
             state.modalWindow.data.deposited = action.payload.deposited
             state.modalWindow.data.redeemable_xcoral = action.payload.redeemable_xcoral
             state.modalWindow.data.APY = action.payload.APY
+            state.modalWindow.data.termsID = action.payload.termsID
             state.modalWindow.data.coinAddress = action.payload.coinAddress
             const expiration = new Date(action.payload.expiration * 1000 + Date.now())
             state.modalWindow.data.expiration = `${monthNames[expiration.getMonth()]} ${expiration.getDate()} ${expiration.getFullYear()}`
@@ -185,6 +187,7 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = true
         },
         [getTotalPayout.fulfilled]: (state, action) => {
+
             state.modalWindow.data.totalPayout = action.payload[0]
             state.modalWindow.data.inputValue = action.payload[1]
             state.modalWindow.data.allowance = action.payload[2]

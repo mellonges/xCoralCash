@@ -48,8 +48,8 @@ const SelectSumm = ({
 
 
     const availableFormat = available / 10 ** decimals
-
-
+    console.log(decimals + "its decimals")
+    console.log(available / 10 ** decimals + " its available")
     useEffect(() => {
         if (direction) setValidationErrors({});
     }, [direction]);
@@ -105,11 +105,13 @@ const SelectSumm = ({
                                 /^\d{0,9}(\.?)(\d{1,2})?$/.test(e.target.value)
                             ) {
                                 if (e.target.value > availableFormat) {
+                                    setSumm(e.target.value);
                                     setDirection(4)
                                     return
                                 }
                                 if (e.target.value == 0) {
                                     console.log(e.target.value)
+                                    setSumm(e.target.value);
                                     setDirection(2)
                                     return
                                 }
@@ -231,7 +233,7 @@ const SelectSumm = ({
                             </svg>
                         </Button>
                     )}
-                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
+                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1) + " " + assetName} />
                     <TokenBalance
                         text={"Deposited Already"}
                         balance={formatPrice(deposited).slice(1) + " " + assetName}

@@ -26,8 +26,9 @@ const TradeModal = () => {
   const Loading = useSelector(({ store }) => store.modalWindow.data.Loading)
   const totalPayout = useSelector(({ store }) => store.modalWindow.data.totalPayout)
   const inputValue = useSelector(({ store }) => store.modalWindow.data.inputValue)
-  const allowance = useSelector(({store}) => store.modalWindow.data.allowance)
-const loadingButton = useSelector(({store}) => store.modalWindow.data.loadingButton)
+  const allowance = useSelector(({ store }) => store.modalWindow.data.allowance)
+  const loadingButton = useSelector(({ store }) => store.modalWindow.data.loadingButton)
+  const termsID = useSelector(({ store }) => store.modalWindow.data.termsID)
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
@@ -143,6 +144,7 @@ const loadingButton = useSelector(({store}) => store.modalWindow.data.loadingBut
             inputValue={inputValue}
             allowance={allowance}
             loadingButton={loadingButton}
+            termsID={termsID}
 
 
           // selectedToken={selectedToken}

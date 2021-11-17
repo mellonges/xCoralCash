@@ -15,7 +15,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image'
 import getIconAsset from "@/functions/getIconAsset";
 import { msToTime } from "@/functions/msToTime";
-import {getAvailable} from "../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
+import { getAvailable } from "../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
 
 const TableBody = ({
     coinAddress,
@@ -25,7 +25,8 @@ const TableBody = ({
     APY,
     deposited = 0,
     redeemable_xcoral = 0,
-    upcoming_xcoral = 0
+    upcoming_xcoral = 0,
+    termsID,
 }) => {
     const isConnected = useSelector(({ store }) => store.isConnected)
     // let coinIcon
@@ -124,6 +125,7 @@ const TableBody = ({
                                         expiration,
                                         APY,
                                         coinAddress,
+                                        termsID,
                                     }))
                                     dispatch(getAvailable(assetName))
                                 }}
