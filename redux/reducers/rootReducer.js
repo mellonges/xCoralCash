@@ -15,6 +15,7 @@ import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
 import { toast } from "react-toastify";
 import { getAvailable } from "./asyncActions/getFuturesTableInfo/getAvailable";
 import { getTotalPayout } from "./asyncActions/getTotalPayout";
+import {sendTransactionReducer} from "./sendTransactionReducer";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -192,6 +193,13 @@ const rootStore = createSlice({
             state.modalWindow.data.inputValue = action.payload[1]
             state.modalWindow.data.allowance = action.payload[2]
             state.modalWindow.data.Loading = false
+        },
+        [sendTransactionReducer.pending]: (state) => {
+            state.modalWindow.data.loadingButton = true
+        },
+
+        [sendTransactionReducer.fulfilled]: (state) => {
+            state.modalWindow.data.loadingButton = false
         }
     }
 

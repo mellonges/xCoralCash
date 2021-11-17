@@ -9,22 +9,17 @@ import TokenBalance from "./TokenBalance";
 import styles2 from "@/styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
 import { useDispatch } from "react-redux";
 import { getApprove } from "../../../../../redux/reducers/asyncActions/getApprove";
+import {sendTransactionReducer} from "../../../../../redux/reducers/sendTransactionReducer";
 const ConfirmBuying = ({
   setActiveStep,
   setSwitchOffTabs,
   title,
-  selectedWays,
-  buyingInformation,
-  holdings,
-  setBuyingInformation,
-  direction,
-  paymentMethods,
   assetName,
   iconAddress,
   deposited,
   expiration,
   APY,
-  decimals,
+    decimals,
   available,
   totalPayout,
   inputValue,
@@ -32,6 +27,7 @@ const ConfirmBuying = ({
   coinAddress,
   loadingButton,
   termsID
+
 
 }) => {
   let tokenBalance;
@@ -284,9 +280,35 @@ const ConfirmBuying = ({
       ) : <Button
         color="primary"
         className={styles.previewBtn}
-        onClick={() => console.log("s2")}
-      >Deposit Now</Button>}
-
+        onClick={() => dispatch(sendTransactionReducer({inputValue, coinAddress, termsID, methods: "deposit", decimals}))}
+      >{loadingButton ? <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={`${styles.loadingCircleIcon} ml-auto`}
+          width="200px"
+          height="200px"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+      >
+        <circle
+            cx="50"
+            cy="50"
+            fill="none"
+            stroke="#003d56"
+            strokeWidth="10"
+            r="35"
+            strokeDasharray="164.93361431346415 56.97787143782138"
+        >
+          <animateTransform
+              attributeName="transform"
+              type="rotate"
+              repeatCount="indefinite"
+              dur="0.9345794392523364s"
+              values="0 50 50;360 50 50"
+              keyTimes="0;1"
+          ></animateTransform>
+        </circle>
+      </svg>
+       : "Deposit now"}</Button>}
 
       <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
       <TokenBalance
