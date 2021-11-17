@@ -6,7 +6,7 @@ import SelectSumm from './Steps/SelectSumm'
 import { getTradeInfo, getUserData } from '../../../../functions/getBackendData'
 import ConfirmBuying from './Steps/ConfirmBuying'
 import OperationStatus from './Steps/OperationStatus'
-
+import { useSelector } from "react-redux";
 const TradeBuyStep = ({
     setSwitchOffTabs,
     iconAddress,
@@ -15,6 +15,8 @@ const TradeBuyStep = ({
     deposited,
     expiration,
     APY,
+    decimals,
+    available
 
 
 }) => {
@@ -125,6 +127,8 @@ const TradeBuyStep = ({
                             assetName={assetName}
                             deposited={deposited}
                             expiration={expiration}
+                            available={available}
+                            decimals={decimals}
                         // tokensList={tokensList}
                         />
                     ) : null}
@@ -143,6 +147,8 @@ const TradeBuyStep = ({
                             deposited={deposited}
                             iconAddress={iconAddress}
                             expiration={expiration}
+                            available={available}
+                            decimals={decimals}
                             APY={APY}
                         />
                     ) : null}

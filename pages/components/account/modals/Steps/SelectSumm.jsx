@@ -10,7 +10,7 @@ import { Button } from "reactstrap";
 import TokenBalance from "./TokenBalance";
 import styles2 from "../../../../../styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
 import { formatPrice } from "../../../../../functions/helpers";
-import {useSelector} from "react-redux";
+
 
 const SelectSumm = ({
   selectedWays,
@@ -31,7 +31,10 @@ const SelectSumm = ({
   deposited,
   assetName,
   iconAddress,
-  expiration
+  expiration,
+  decimals,
+  available,
+
 
 
 }) => {
@@ -39,8 +42,7 @@ const SelectSumm = ({
   const [showTokensList, setShowTokensList] = useState(false);
   const [showPaymentMethods, setShowPaymentMethods] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
-  const available = useSelector(({store}) => store.modalWindow.data.available)
-  const decimals = useSelector(({store}) => store.modalWindow.data.decimals)
+
   const [showChooseTokenInfo, setShowChooseTokenInto] = useState(false);
   const selectSUmmRef = useRef();
 

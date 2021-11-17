@@ -7,6 +7,7 @@ import { Button } from "reactstrap";
 import styles2 from "../styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
 import { formatPrice } from "functions/helpers";
 import TokenBalance from "@/components/account/modals/Steps/TokenBalance";
+import { formatBalance } from "@/functions/formatBalance";
 
 const Redeem = ({
     selectedWays,
@@ -27,7 +28,9 @@ const Redeem = ({
     deposited,
     assetName,
     iconAddress,
-    expiration
+    expiration,
+    decimals,
+    available,
 
 
 }) => {
@@ -265,11 +268,11 @@ const Redeem = ({
                             </svg>
                         </Button>
                     )}
+                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
                     <TokenBalance
-                        text={"Available"}
+                        text={"Deposited Already"}
                         balance={formatPrice(deposited).slice(1)}
                     />
-                    <TokenBalance text={"Deposited Already"} balance={"null"} />
                 </div>
             </div>
         </>

@@ -22,6 +22,8 @@ const ConfirmBuying = ({
   deposited,
   expiration,
   APY,
+  decimals,
+  available
 
 }) => {
   let tokenBalance;
@@ -265,11 +267,11 @@ const ConfirmBuying = ({
         )}
       </Button>
 
+      <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
       <TokenBalance
-        text={"Available"}
+        text={"Deposited Already"}
         balance={formatPrice(deposited).slice(1)}
       />
-      <TokenBalance text={"Deposited Already"} balance={"Null"} />
     </div>
   )
 };
