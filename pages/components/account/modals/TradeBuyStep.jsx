@@ -32,8 +32,7 @@ const TradeBuyStep = ({
     const [summ, setSumm] = useState('')
 
     const [buyingInformation, setBuyingInformation] = useState()
-
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
     // const [firstLoading, setFirstLoading] = useState(false)
 
 
@@ -122,7 +121,6 @@ const TradeBuyStep = ({
                             setSwitchOffTabs={setSwitchOffTabs}
                             // holdings={holdings}
                             sendPreview={sendPreview}
-                            loading={loading}
                             iconAddress={iconAddress}
                             assetName={assetName}
                             deposited={deposited}
@@ -131,7 +129,7 @@ const TradeBuyStep = ({
                             decimals={decimals}
                             coinAddress={coinAddress}
                         // tokensList={tokensList}
-                            Loading={Loading}
+                        //     Loading={Loading}
                         />
                     ) : null}
                     {activeStep === 'confirmBuying' ? (

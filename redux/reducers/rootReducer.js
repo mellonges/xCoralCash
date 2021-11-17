@@ -49,7 +49,7 @@ const rootStore = createSlice({
             isOpen: false,
             activeOperation: 1,
             data: {
-                Loading: false,
+                Loading: true,
                 iconAddress: null,
                 assetName: null,
                 deposited: null,
@@ -180,7 +180,7 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         [getTotalPayout.pending]: (state) => {
-            state.modalWindow.data.loading = true
+            state.modalWindow.data.Loading = true
         },
         [getTotalPayout.fulfilled]: (state, action) => {
             state.modalWindow.data.totalPayout = action.payload
