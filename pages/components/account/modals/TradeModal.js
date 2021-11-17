@@ -137,7 +137,6 @@ const TradeModal = () => {
             decimals={decimals}
             available={available}
             coinAddress={coinAddress}
-            loadingButton={loadingButton}
             totalPayout={totalPayout}
 
 

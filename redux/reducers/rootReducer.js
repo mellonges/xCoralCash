@@ -180,7 +180,7 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         [getTotalPayout.pending]: (state) => {
-            state.modalWindow.data.loadingButton = true
+            state.modalWindow.data.loading = true
         },
         [getTotalPayout.fulfilled]: (state, action) => {
             state.modalWindow.data.totalPayout = action.payload

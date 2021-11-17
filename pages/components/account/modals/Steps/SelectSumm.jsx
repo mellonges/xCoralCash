@@ -24,8 +24,8 @@ const SelectSumm = ({
                         selectedToken,
                         isSell = false,
                         isConvert = false,
-                        loading,
                         tokensList,
+    Loading,
                         deposited,
                         assetName,
                         iconAddress,
@@ -33,7 +33,7 @@ const SelectSumm = ({
                         decimals,
                         available,
                         coinAddress,
-    loadingButton
+
 
 
                     }) => {
@@ -170,7 +170,7 @@ const SelectSumm = ({
           </div>
         </div> */}
                     </div>
-                    {!loading ? (
+                    {true ? (
                         <Button
                             color="primary"
                             className={styles.previewBtn}
@@ -193,7 +193,7 @@ const SelectSumm = ({
                         <Button
                             color="primary"
                             className={styles.previewBtn}
-                            disabled={loading}
+                            // disabled={loading}
                             // onClick={() => {
                             //     dispatch(getTotalPayout({assetAddress: coinAddress,amount: summ}))
                             //     console.log("сука юбюдя")
