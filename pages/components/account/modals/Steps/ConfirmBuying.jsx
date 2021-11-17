@@ -200,7 +200,7 @@ const ConfirmBuying = ({
             {/*/>*/}
           </div>
           <div className={styles.value}>
-            {APY.toFixed(2)}%
+            {APY?.toFixed(2)}%
             {/*{formatPrice(buyingInformation.fee)}*/}
           </div>
         </div>
