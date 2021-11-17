@@ -98,7 +98,7 @@ const TradeBuyStep = ({
 
     return (
         <div className={`${styles.buying} position-relative`}>
-            {Loading ? (
+            {!Loading ? (
                 <div className={styles.loadingWrapper}>
                     <div className={styles.ldsRing}>
                         <div></div>

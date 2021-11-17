@@ -32,7 +32,7 @@ import { changeWalletAddress } from "../redux/reducers/asyncActions/changeWallet
 import { getFuturesTableInfo } from "../redux/reducers/asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 
 const dappId = process.env.API_KEY
-const networkId = 3
+const networkId = +process.env.NEXT_PUBLIC_XCORAL_NETWORK_ID
 
 function MyApp({ Component, pageProps }) {
     let setTimeOudDisconnectId
