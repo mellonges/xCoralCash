@@ -1,43 +1,44 @@
 /* eslint-disable react/prop-types */
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AutosizeInput from "react-input-autosize";
 
 import ChooseToken from "./ChooseToken";
 import styles from "../../../../../styles/components/Account/modals/trade-modules/SelectSumm.module.scss";
 import ChoosePayment from "./ChoosePayment";
-import {getTokenImageUrl} from "../../../../../functions/getBackendData";
-import {Button} from "reactstrap";
+import { getTokenImageUrl } from "../../../../../functions/getBackendData";
+import { Button } from "reactstrap";
 import TokenBalance from "./TokenBalance";
 import styles2 from "../../../../../styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
-import {formatPrice} from "../../../../../functions/helpers";
-import {useDispatch} from "react-redux";
-import {getTotalPayout} from "../../../../../redux/reducers/asyncActions/getTotalPayout";
+import { formatPrice } from "../../../../../functions/helpers";
+import { useDispatch } from "react-redux";
+import { getTotalPayout } from "../../../../../redux/reducers/asyncActions/getTotalPayout";
+
 
 
 const SelectSumm = ({
-                        selectedWays,
-                        setSelectedWays,
-                        setSwitchOffTabs,
-                        paymentMethods,
-                        holdings,
-                        sendPreview,
-                        selectedToken,
-                        isSell = false,
-                        isConvert = false,
-                        tokensList,
+    selectedWays,
+    setSelectedWays,
+    setSwitchOffTabs,
+    paymentMethods,
+    holdings,
+    sendPreview,
+    selectedToken,
+    isSell = false,
+    isConvert = false,
+    tokensList,
     Loading,
-                        deposited,
-                        assetName,
-                        iconAddress,
-                        expiration,
-                        decimals,
-                        available,
-                        coinAddress,
+    deposited,
+    assetName,
+    iconAddress,
+    expiration,
+    decimals,
+    available,
+    coinAddress,
 
 
 
 
-                    }) => {
+}) => {
     const [focused, setSummFocused] = useState(false);
     const [validationErrors, setValidationErrors] = useState({});
     const dispatch = useDispatch()
@@ -123,7 +124,7 @@ const SelectSumm = ({
                     />
                     <sup
                         className={`${styles.dollarSymbol} ${focused || (summ.length && summ !== "0") ? styles.active : ""
-                        } `}
+                            } `}
                     >
                         {assetName}
                     </sup>
@@ -147,7 +148,7 @@ const SelectSumm = ({
                             <div className={styles2.value}>
                                 <div className={styles2.cardLogo}>
 
-                                    <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`}/>
+                                    <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`} />
                                     {assetName}
                                 </div>
                                 {/*{selectedWays.paywith.title}*/}
@@ -175,9 +176,9 @@ const SelectSumm = ({
                         <Button
                             color="primary"
                             className={styles.previewBtn}
-                            onClick={() =>  {
+                            onClick={() => {
                                 sendPreview();
-                                    dispatch(getTotalPayout({assetAddress: coinAddress, amount: summ, decimals: decimals}))
+                                dispatch(getTotalPayout({ assetAddress: coinAddress, amount: summ, decimals: decimals }))
 
                             }}
                             disabled={direction || summ === ""}
@@ -194,11 +195,11 @@ const SelectSumm = ({
                         <Button
                             color="primary"
                             className={styles.previewBtn}
-                            // disabled={loading}
-                            // onClick={() => {
-                            //     dispatch(getTotalPayout({assetAddress: coinAddress,amount: summ}))
-                            //     console.log("сука юбюдя")
-                            // }}
+                        // disabled={loading}
+                        // onClick={() => {
+                        //     dispatch(getTotalPayout({assetAddress: coinAddress,amount: summ}))
+                        //     console.log("сука юбюдя")
+                        // }}
                         >
                             <span className="ml-auto">Processing...</span>
                             <svg
@@ -230,7 +231,7 @@ const SelectSumm = ({
                             </svg>
                         </Button>
                     )}
-                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)}/>
+                    <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
                     <TokenBalance
                         text={"Deposited Already"}
                         balance={formatPrice(deposited).slice(1)}

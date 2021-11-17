@@ -13,8 +13,8 @@ import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
 import { toast } from "react-toastify";
-import {getAvailable} from "./asyncActions/getFuturesTableInfo/getAvailable";
-import {getTotalPayout} from "./asyncActions/getTotalPayout";
+import { getAvailable } from "./asyncActions/getFuturesTableInfo/getAvailable";
+import { getTotalPayout } from "./asyncActions/getTotalPayout";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -33,7 +33,7 @@ const ERC20 = {
     WETH: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_WETH),
     xCORAL: contracts.xCORAL
 }
- const monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const rootStore = createSlice({
     name: "rootStore",
     initialState: {
@@ -62,6 +62,7 @@ const rootStore = createSlice({
                 totalPayout: null,
                 coinAddress: null,
                 loadingButton: null,
+                inputValue: null,
 
 
             },
@@ -114,7 +115,7 @@ const rootStore = createSlice({
 
                 state.modalWindow.activeOperation = action.payload
             }
-        }
+        },
     },
     extraReducers: {
         [connectWallet.fulfilled]: (state, action) => {
@@ -183,7 +184,8 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = true
         },
         [getTotalPayout.fulfilled]: (state, action) => {
-            state.modalWindow.data.totalPayout = action.payload
+            state.modalWindow.data.totalPayout = action.payload[0]
+            state.modalWindow.data.inputValue = action.payload[1]
             state.modalWindow.data.Loading = false
         }
     }

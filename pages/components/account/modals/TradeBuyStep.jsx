@@ -18,7 +18,8 @@ const TradeBuyStep = ({
     decimals,
     available,
     coinAddress,
-    totalPayout
+    totalPayout,
+    inputValue
 
 }) => {
     const [direction, setDirection] = useState(1)
@@ -151,6 +152,9 @@ const TradeBuyStep = ({
                             decimals={decimals}
                             APY={APY}
                             totalPayout={totalPayout}
+                            inputValue={inputValue}
+
+
                         />
                     ) : null}
                 </>

@@ -22,9 +22,10 @@ const TradeModal = () => {
   const available = useSelector(({ store }) => store.modalWindow.data.available)
   const decimals = useSelector(({ store }) => store.modalWindow.data.decimals)
   const APY = useSelector(({ store }) => store.modalWindow.data.APY)
-  const coinAddress = useSelector(({store}) => store.modalWindow.data.coinAddress)
-  const Loading = useSelector(({store}) => store.modalWindow.data.Loading)
-  const totalPayout = useSelector(({store}) => store.modalWindow.data.totalPayout)
+  const coinAddress = useSelector(({ store }) => store.modalWindow.data.coinAddress)
+  const Loading = useSelector(({ store }) => store.modalWindow.data.Loading)
+  const totalPayout = useSelector(({ store }) => store.modalWindow.data.totalPayout)
+  const inputValue = useSelector(({ store }) => store.modalWindow.data.inputValue)
 
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
@@ -138,6 +139,7 @@ const TradeModal = () => {
             available={available}
             coinAddress={coinAddress}
             totalPayout={totalPayout}
+            inputValue={inputValue}
 
 
           // selectedToken={selectedToken}
