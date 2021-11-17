@@ -33,6 +33,7 @@ const SelectSumm = ({
                         decimals,
                         available,
                         coinAddress,
+    loadingButton
 
 
                     }) => {
@@ -175,7 +176,7 @@ const SelectSumm = ({
                             className={styles.previewBtn}
                             onClick={() =>  {
                                 sendPreview();
-                                    dispatch(getTotalPayout({assetAddress: coinAddress,amount: summ}))
+                                    dispatch(getTotalPayout({assetAddress: coinAddress, amount: summ, decimals: decimals}))
 
                             }}
                             disabled={direction || summ === ""}

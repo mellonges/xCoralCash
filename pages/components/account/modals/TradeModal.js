@@ -18,12 +18,13 @@ const TradeModal = () => {
   const iconAddress = useSelector(({ store }) => store.modalWindow.data.iconAddress)
   const assetName = useSelector(({ store }) => store.modalWindow.data.assetName)
   const deposited = useSelector(({ store }) => store.modalWindow.data.deposited)
-  const firstLoading = useSelector(({ store }) => store.modalWindow.data.firstLoading)
   const expiration = useSelector(({ store }) => store.modalWindow.data.expiration)
   const available = useSelector(({ store }) => store.modalWindow.data.available)
   const decimals = useSelector(({ store }) => store.modalWindow.data.decimals)
   const APY = useSelector(({ store }) => store.modalWindow.data.APY)
   const coinAddress = useSelector(({store}) => store.modalWindow.data.coinAddress)
+  const Loading = useSelector(({store}) => store.modalWindow.data.Loading)
+  const totalPayout = useSelector(({store}) => store.modalWindow.data.totalPayout)
 
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
@@ -129,13 +130,15 @@ const TradeModal = () => {
             toggle={toggle}
             assetName={assetName}
             iconAddress={iconAddress}
-            firstLoading={firstLoading}
+            Loading={Loading}
             deposited={deposited}
             expiration={expiration}
             APY={APY}
             decimals={decimals}
             available={available}
             coinAddress={coinAddress}
+            loadingButton={loadingButton}
+            totalPayout={totalPayout}
 
 
           // selectedToken={selectedToken}

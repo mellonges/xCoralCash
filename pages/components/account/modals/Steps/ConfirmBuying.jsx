@@ -23,7 +23,8 @@ const ConfirmBuying = ({
   expiration,
   APY,
   decimals,
-  available
+  available,
+    totalPayout
 
 }) => {
   let tokenBalance;
@@ -221,7 +222,7 @@ const ConfirmBuying = ({
           <div className={styles.label}>Total payout</div>
           <div className={styles.value}>
             {/*{formatPrice(buyingInformation.chargeAmount)}*/}
-            2,430.21
+            {formatPrice(totalPayout).slice(1)}
           </div>
         </div>
       </div>

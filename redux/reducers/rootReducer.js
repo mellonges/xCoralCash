@@ -49,7 +49,7 @@ const rootStore = createSlice({
             isOpen: false,
             activeOperation: 1,
             data: {
-                firstLoading: false,
+                Loading: false,
                 iconAddress: null,
                 assetName: null,
                 deposited: null,
@@ -60,7 +60,8 @@ const rootStore = createSlice({
                 available: null,
                 decimals: null,
                 totalPayout: null,
-                coinAddress: null
+                coinAddress: null,
+                loadingButton: null,
 
 
             },
@@ -97,7 +98,7 @@ const rootStore = createSlice({
             }
         },
         dispatchDataForModalWindow(state, action) {
-            state.modalWindow.data.firstLoading = true
+            state.modalWindow.data.Loading = true
             state.modalWindow.data.disabledRedeem = action.payload.disabledRedeem
             state.modalWindow.data.iconAddress = action.payload.iconAddress
             state.modalWindow.data.assetName = action.payload.assetName
@@ -176,10 +177,14 @@ const rootStore = createSlice({
         [getAvailable.fulfilled]: (state, action) => {
             state.modalWindow.data.available = action.payload[0]
             state.modalWindow.data.decimals = action.payload[1]
-            state.modalWindow.data.firstLoading = false
+            state.modalWindow.data.Loading = false
         },
-        [getTotalPayout.pending]: (state, action) => {
+        [getTotalPayout.pending]: (state) => {
+            state.modalWindow.data.loadingButton = true
+        },
+        [getTotalPayout.fulfilled]: (state, action) => {
             state.modalWindow.data.totalPayout = action.payload
+            state.modalWindow.data.Loading = false
         }
     }
 

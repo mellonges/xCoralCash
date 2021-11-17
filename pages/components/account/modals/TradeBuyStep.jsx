@@ -11,14 +11,14 @@ const TradeBuyStep = ({
     setSwitchOffTabs,
     iconAddress,
     assetName,
-    firstLoading,
+    Loading,
     deposited,
     expiration,
     APY,
     decimals,
     available,
-    coinAddress
-
+    coinAddress,
+    totalPayout
 
 }) => {
     const [direction, setDirection] = useState(1)
@@ -99,7 +99,7 @@ const TradeBuyStep = ({
 
     return (
         <div className={`${styles.buying} position-relative`}>
-            {firstLoading ? (
+            {!Loading ? (
                 <div className={styles.loadingWrapper}>
                     <div className={styles.ldsRing}>
                         <div></div>
@@ -131,6 +131,7 @@ const TradeBuyStep = ({
                             decimals={decimals}
                             coinAddress={coinAddress}
                         // tokensList={tokensList}
+                            loadingButton={loadingButton}
                         />
                     ) : null}
                     {activeStep === 'confirmBuying' ? (
@@ -151,6 +152,7 @@ const TradeBuyStep = ({
                             available={available}
                             decimals={decimals}
                             APY={APY}
+                            totalPayout={totalPayout}
                         />
                     ) : null}
                 </>
