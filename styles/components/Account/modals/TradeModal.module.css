@@ -1,0 +1,50 @@
+/** Colors **/
+/** Fonts **/
+body .tradeModal {
+  max-width: 403px !important;
+  width: auto !important;
+  min-width: unset !important;
+  padding-bottom: 31px;
+}
+body .tradeModal .operationTabs {
+  border-radius: 10px 10px 0 0;
+}
+body .tradeModal .operationTabs .tabItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #8199a5;
+  height: 53px;
+  background: #f3f4f4;
+  border: 1px solid #eaedf1;
+  cursor: pointer;
+}
+body .tradeModal .operationTabs .tabItem:first-child {
+  border-radius: 10px 0 0 0;
+}
+body .tradeModal .operationTabs .tabItem:last-child {
+  border-radius: 0 10px 0 0;
+}
+body .tradeModal .operationTabs .tabItem.active {
+  background: #ffffff;
+  border-bottom: none;
+  color: #00b2c0;
+  cursor: default;
+}
+body .tradeModal .operationTabs .tabItem:hover:not(.active) {
+  background-color: #f0f6fa;
+  color: #11343f;
+}
+
+@media screen and (max-width: 768px) {
+  body .tradeModal {
+    max-width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=TradeModal.module.css.map */

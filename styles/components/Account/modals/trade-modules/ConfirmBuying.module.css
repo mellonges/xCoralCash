@@ -1,0 +1,106 @@
+/** Colors **/
+/** Fonts **/
+.ConfirmBuying .title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #11343f;
+}
+.ConfirmBuying .top {
+  border-bottom: 1px solid #f0f6fa;
+  padding-bottom: 14px;
+}
+.ConfirmBuying .top .searchForm {
+  margin-top: 16px;
+}
+.ConfirmBuying .top .searchForm .searchFormGroup {
+  padding: 12px 14px;
+  background: #edf3f7;
+  border-radius: 3px;
+}
+.ConfirmBuying .top .searchForm .searchInput {
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  line-height: 18px;
+  /* Fonts / Gray 1 */
+  padding: 0;
+  color: #678086;
+}
+.ConfirmBuying .top .searchForm .searchInput:focus {
+  outline: none;
+  border: none !important;
+}
+.ConfirmBuying .top .searchForm .inputText {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+.ConfirmBuying .confirmInfo .price {
+  font-size: 42px;
+  line-height: 53px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: #00aac0;
+  padding: 12px 0 0 0;
+  text-align: center;
+}
+.ConfirmBuying .confirmInfo .row {
+  margin-top: 15px;
+}
+.ConfirmBuying .confirmInfo .row .label {
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height */
+  color: #697f8a;
+}
+.ConfirmBuying .confirmInfo .row .label span {
+  margin-left: 10px;
+}
+.ConfirmBuying .confirmInfo .row .value {
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height */
+  text-align: right;
+  /* Fonts / Dark */
+  color: #11343f;
+  display: flex;
+  align-items: center;
+}
+.ConfirmBuying .confirmInfo .row .cardLogo {
+  display: flex;
+  align-items: end;
+}
+.ConfirmBuying .confirmInfo .row .cardLogo img {
+  margin-right: 7px;
+}
+.ConfirmBuying .previewBtn {
+  width: 100%;
+  min-height: 60px;
+  background: #00aac0;
+  border-radius: 4.14664px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: unset;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-top: 19px;
+  margin-top: 33px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.ConfirmBuying .previewBtn span {
+  display: inline-block;
+}
+.ConfirmBuying .previewBtn .loadingCircleIcon {
+  width: 24px;
+  height: 24px;
+}
+.ConfirmBuying .previewBtn .loadingCircleIcon circle {
+  stroke: #fff !important;
+}
+
+/*# sourceMappingURL=ConfirmBuying.module.css.map */
