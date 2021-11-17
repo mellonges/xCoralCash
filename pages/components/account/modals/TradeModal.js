@@ -23,6 +23,7 @@ const TradeModal = () => {
   const available = useSelector(({ store }) => store.modalWindow.data.available)
   const decimals = useSelector(({ store }) => store.modalWindow.data.decimals)
   const APY = useSelector(({ store }) => store.modalWindow.data.APY)
+  const coinAddress = useSelector(({store}) => store.modalWindow.data.coinAddress)
 
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
@@ -133,8 +134,8 @@ const TradeModal = () => {
             expiration={expiration}
             APY={APY}
             decimals={decimals}
-            deposited={deposited}
             available={available}
+            coinAddress={coinAddress}
 
 
           // selectedToken={selectedToken}
@@ -151,7 +152,6 @@ const TradeModal = () => {
             deposited={deposited}
             expiration={expiration}
             decimals={decimals}
-            deposited={deposited}
             available={available}
           />
         ) : null}

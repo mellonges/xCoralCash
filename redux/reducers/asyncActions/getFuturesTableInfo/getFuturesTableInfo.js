@@ -17,11 +17,10 @@ export const getFuturesTableInfo = createAsyncThunk(
             const secondsInYear = 31536000
             const { futures, monetaryPolicy } = getState().store.contracts
             let userTableData
-            let address = localStorage.getItem("lastWalletAddress")
-            // let address = getState().store.address
+            // let address = localStorage.getItem("lastWalletAddress")
+            let address = getState().store.address
             console.log(address)
             if (address && isConnected) {
-                if ("if")
                     userTableData = await futures.methods.pendingPayoutFor(address).call()
                 console.log(userTableData)
                 userArr = combineTableInfo(userTableData)
@@ -82,7 +81,7 @@ export const getFuturesTableInfo = createAsyncThunk(
                 const vestingRewardsTerm = i["1"][4] * 13
 
                 return {
-                    coinName: i[0],
+                    coinAddress: i[0],
                     termsID: i['1'][0],
                     expiration: vestingRewardsTerm,
                     DEPOSITED_AND_REDEEMABLE: (function () {

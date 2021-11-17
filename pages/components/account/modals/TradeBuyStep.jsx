@@ -16,7 +16,8 @@ const TradeBuyStep = ({
     expiration,
     APY,
     decimals,
-    available
+    available,
+    coinAddress
 
 
 }) => {
@@ -115,7 +116,6 @@ const TradeBuyStep = ({
                             direction={direction}
                             setDirection={setDirection}
                             selectedWays={selectedWays}
-                            summ={summ}
                             setSumm={setSumm}
                             // setSelectedWays={setSelectedWays}
                             // paymentMethods={paymentMethods}
@@ -129,6 +129,7 @@ const TradeBuyStep = ({
                             expiration={expiration}
                             available={available}
                             decimals={decimals}
+                            coinAddress={coinAddress}
                         // tokensList={tokensList}
                         />
                     ) : null}

@@ -14,6 +14,7 @@ import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFutur
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
 import { toast } from "react-toastify";
 import {getAvailable} from "./asyncActions/getFuturesTableInfo/getAvailable";
+import {getTotalPayout} from "./asyncActions/getTotalPayout";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -32,7 +33,7 @@ const ERC20 = {
     WETH: new web3.eth.Contract(XCORAL_ABI, process.env.NEXT_PUBLIC_WETH),
     xCORAL: contracts.xCORAL
 }
-
+ const monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
 const rootStore = createSlice({
     name: "rootStore",
     initialState: {
@@ -58,6 +59,8 @@ const rootStore = createSlice({
                 APY: null,
                 available: null,
                 decimals: null,
+                totalPayout: null,
+                coinAddress: null
 
 
             },
@@ -101,8 +104,9 @@ const rootStore = createSlice({
             state.modalWindow.data.deposited = action.payload.deposited
             state.modalWindow.data.redeemable_xcoral = action.payload.redeemable_xcoral
             state.modalWindow.data.APY = action.payload.APY
+            state.modalWindow.data.coinAddress = action.payload.coinAddress
             const expiration = new Date(action.payload.expiration * 1000 + Date.now())
-            state.modalWindow.data.expiration = `${expiration.getMonth()} ${expiration.getDate()} ${expiration.getFullYear()}`
+            state.modalWindow.data.expiration = `${monthNames[expiration.getMonth()]} ${expiration.getDate()} ${expiration.getFullYear()}`
         },
         setActiveOperation(state, action) {
             if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
@@ -173,6 +177,9 @@ const rootStore = createSlice({
             state.modalWindow.data.available = action.payload[0]
             state.modalWindow.data.decimals = action.payload[1]
             state.modalWindow.data.firstLoading = false
+        },
+        [getTotalPayout.pending]: (state, action) => {
+            state.modalWindow.data.totalPayout = action.payload
         }
     }
 

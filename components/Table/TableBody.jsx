@@ -18,7 +18,7 @@ import { msToTime } from "@/functions/msToTime";
 import {getAvailable} from "../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
 
 const TableBody = ({
-    coinName,
+    coinAddress,
     asset = 0,
     disabled,
     expiration,
@@ -34,8 +34,8 @@ const TableBody = ({
     //     }, [])
     console.log(expiration)
     const dispatch = useDispatch()
-    const assetName = getCoinName(coinName)
-    const iconAddress = getIconAsset(coinName)
+    const assetName = getCoinName(coinAddress)
+    const iconAddress = getIconAsset(coinAddress)
     return (
         <>
             <tbody>
@@ -122,7 +122,8 @@ const TableBody = ({
                                         disabledRedeem: disabled,
                                         redeemable_xcoral,
                                         expiration,
-                                        APY
+                                        APY,
+                                        coinAddress,
                                     }))
                                     dispatch(getAvailable(assetName))
                                 }}
