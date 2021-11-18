@@ -8,9 +8,6 @@ import BonusBlockMobile from "../../components/BonusBlockMobile";
 import {useDispatch, useSelector} from "react-redux";
 import {getWalletInfo} from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
 import LoadingWalletInfo from "../../components/LoadingWalletInfo";
-import CurrentPriceSvg from "/SVG/CurrentPriceSVG";
-import TargetPriceSvg from "/SVG/TargetPriceSVG";
-import NextRebaseInSvg from "/SVG/NextRebaseInSVG";
 
 const Index = () => {
 const dispatch = useDispatch()
