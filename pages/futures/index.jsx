@@ -36,7 +36,7 @@ const Index = () => {
                     <thead className={stylesFutures.HeadTable}>
                         <tr>
                             <th>ASSET</th>
-                            <th>YIELD <TooltipComponent id={1} tooltTipContent={"ROI (Return on Investment) indicates the yield you’ll make after 15 days of bonding the asset of your choice. APY is calculated assuming you would reinvest bonding proceeds each 15 days (current ROI is assumed to not change during the year)"} /> </th>
+                            <th>YIELD APY <TooltipComponent id={1} tooltTipContent={"ROI (Return on Investment) indicates the yield you’ll make after 15 days of bonding the asset of your choice. APY is calculated assuming you would reinvest bonding proceeds each 15 days (current ROI is assumed to not change during the year)"} /> </th>
                             <th>DEPOSITED <TooltipComponent id={2} tooltTipContent={"Indicates how many tokens that are pending all rewards to be accrued you have bonded"} /> </th>
                             <th>REDEEMABLE XCORAL <TooltipComponent id={3} tooltTipContent={"How many xCORAL tokens can be redeemed now, and how many are upcoming"} /> </th>
                             <th>MANAGE</th>

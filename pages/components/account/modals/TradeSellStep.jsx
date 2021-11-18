@@ -19,6 +19,7 @@ const TradeSellStep = ({
   deposited,
   expiration,
   available,
+    loadingButton,
   decimals,
     termsID,
     coinAddress,
@@ -135,6 +136,7 @@ const TradeSellStep = ({
               termsID={termsID}
               available={available}
               decimals={decimals}
+              loadingButton={loadingButton}
               coinAddress={coinAddress}
               redeemable_xcoral={redeemable_xcoral}
 

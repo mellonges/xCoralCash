@@ -135,7 +135,7 @@ const TradeBuyStep = ({
                         <ConfirmBuying
                             setActiveStep={setActiveStep}
                             setSwitchOffTabs={setSwitchOffTabs}
-                            title="Order preview"
+                            title="Deposit preview"
                             buyingInformation={buyingInformation}
                             direction={direction}
                             setBuyingInformation={setBuyingInformation}

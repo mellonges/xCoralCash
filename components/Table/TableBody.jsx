@@ -65,7 +65,7 @@ const TableBody = ({
                     <td>
                         <div className={styles.tooltipMobile}>
                         </div>
-                        {APY?.toFixed(2)}% APY
+                        {APY?.toFixed(2)}%
                     </td>
                     <td>
                         <div className={stylesFutures.OthTDTitle}>

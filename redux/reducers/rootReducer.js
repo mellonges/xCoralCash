@@ -83,7 +83,7 @@ const rootStore = createSlice({
         futuresTableInfo: {
             init: false,
             data: null,
-            systemInfo: null,
+            hardReload: false,
         },
 
         contracts,
@@ -118,6 +118,7 @@ const rootStore = createSlice({
             state.modalWindow.data.coinAddress = action.payload.coinAddress
             const expiration = new Date(action.payload.expiration * 1000 + Date.now())
             state.modalWindow.data.expiration = `${monthNames[expiration.getMonth()]} ${expiration.getDate()} ${expiration.getFullYear()}`
+            state.modalWindow.data.Loading = false
         },
         setActiveOperation(state, action) {
             if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {

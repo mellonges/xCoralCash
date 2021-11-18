@@ -163,6 +163,7 @@ const TradeModal = () => {
             decimals={decimals}
             available={available}
             termsID={termsID}
+            loadingButton={loadingButton}
             coinAddress={coinAddress}
             redeemable_xcoral={redeemable_xcoral}
           />

@@ -277,42 +277,44 @@ const ConfirmBuying = ({
             </svg>
           </> : `Approve ${assetName}`}
         </Button>
-      ) : <Button
+      ) : ( <Button
         color="primary"
         className={styles.previewBtn}
-        onClick={() => dispatch(sendTransactionReducer({inputValue, coinAddress, termsID, methods: "deposit", decimals}))}
-      >{loadingButton ? <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={`${styles.loadingCircleIcon} ml-auto`}
-          width="200px"
-          height="200px"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid"
-      >
-        <circle
-            cx="50"
-            cy="50"
-            fill="none"
-            stroke="#003d56"
-            strokeWidth="10"
-            r="35"
-            strokeDasharray="164.93361431346415 56.97787143782138"
-        >
-          <animateTransform
-              attributeName="transform"
-              type="rotate"
-              repeatCount="indefinite"
-              dur="0.9345794392523364s"
-              values="0 50 50;360 50 50"
-              keyTimes="0;1"
-          ></animateTransform>
-        </circle>
-      </svg>
-       : "Deposit now"}</Button>}
+        onClick={() => dispatch(sendTransactionReducer({inputValue, coinAddress, termsID, methods: "deposit", decimals}))}>
+        {loadingButton  ? <> <span className="ml-auto">Processing...</span>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`${styles.loadingCircleIcon} ml-auto`}
+                width="200px"
+                height="200px"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+            >
+              <circle
+                  cx="50"
+                  cy="50"
+                  fill="none"
+                  stroke="#003d56"
+                  strokeWidth="10"
+                  r="35"
+                  strokeDasharray="164.93361431346415 56.97787143782138"
+              >
+                <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    repeatCount="indefinite"
+                    dur="0.9345794392523364s"
+                    values="0 50 50;360 50 50"
+                    keyTimes="0;1"
+                ></animateTransform>
+              </circle>
+            </svg>
+          </>
+       : "Deposit now"}</Button>)}
 
       <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
       <TokenBalance
-        text={"Deposited Already"}
+        text={"Deposited"}
         balance={formatPrice(deposited).slice(1)}
       />
     </div>

@@ -26,6 +26,7 @@ const Redeem = ({
     isConvert = false,
     loading,
     tokensList,
+    loadingButton,
     deposited,
     coinAddress,
     assetName,
@@ -33,6 +34,7 @@ const Redeem = ({
     expiration,
     decimals,
     termsID,
+
     available,
     redeemable_xcoral,
 
@@ -223,25 +225,19 @@ const Redeem = ({
           </div>
         </div> */}
                     </div>
-                    {!loading ? (
+                    {!loadingButton ? (
                         <Button
                             color="primary"
                             className={styles.previewBtn}
                             onClick={() => dispatch(sendTransactionReducer({coinAddress, termsID, methods: "redeem"}))}
                         >
-                            {isSell
-                                ? "Preview Sell"
-                                : isConvert
-                                    ? `Preview conversion`
-                                    : !isConvert
-                                        ? "Preview Buy"
-                                        : ""}
+                            Redeem Now
                         </Button>
                     ) : (
                         <Button
                             color="primary"
                             className={styles.previewBtn}
-                            disabled={loading}
+                            disabled={true}
                         // onClick={() => generateBuyPreview()}
                         >
                             <span className="ml-auto">Processing...</span>
@@ -276,7 +272,7 @@ const Redeem = ({
                     )}
                     <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1) + " " + assetName} />
                     <TokenBalance
-                        text={"Deposited Already"}
+                        text={"Deposited"}
                         balance={formatPrice(deposited).slice(1) + " " + assetName}
                     />
                 </div>

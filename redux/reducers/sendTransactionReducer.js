@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import {getFuturesTableInfo} from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 
 export const sendTransactionReducer = createAsyncThunk(
     "rootStore/sendTransactionReducer",
@@ -17,12 +18,14 @@ export const sendTransactionReducer = createAsyncThunk(
             console.log("coinAddress" + "  " + coinAddress)
             encodeABI = await futures.methods.redeemAsset(userAddress, coinAddress, termsID).encodeABI()
         }
-        web3.eth.sendTransaction({
+        await web3.eth.sendTransaction({
             from: userAddress,
             to: process.env.NEXT_PUBLIC_FUTURES,
             data: encodeABI,
         }).on("transactionHash", (hash) => {
             notify.hash(hash)
+        }).on("receipt", () => {
+            console.log("success")
         } )
     } catch (e) {
         console.error(e)

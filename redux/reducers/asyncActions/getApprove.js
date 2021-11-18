@@ -9,7 +9,7 @@ export const getApprove = createAsyncThunk(
             const encodeABI = await getApproveAllContracts(assetAddress)
             const userAddress = getState().store.address
             const web3 = getState().store.web3ForUser
-            web3.eth.sendTransaction({
+           await web3.eth.sendTransaction({
                 from: userAddress,
                 to: assetAddress,
                 data: encodeABI,
