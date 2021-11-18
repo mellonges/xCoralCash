@@ -8,7 +8,7 @@ import FUTURES_ABI from "../../ABI/futures.json"
 import TREASURY_ABI from "../../ABI/treasury.json"
 import Web3 from "web3"
 import { getWalletInfo } from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
-import { msToTime } from "@/functions/msToTime";
+import {msToTime, msToTimeForDashboard} from "@/functions/msToTime";
 import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
@@ -173,7 +173,7 @@ const rootStore = createSlice({
             const nextRebaseIn = action.payload[4] - (Date.now() / 1000).toFixed(0)
             if (nextRebaseIn <= 0) {
                 state.walletMiniInfo.nextRebaseIn = "Happening now"
-            } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
+            } else state.walletMiniInfo.nextRebaseIn = msToTimeForDashboard(nextRebaseIn)
         },
         [getFuturesTableInfo.pending]: state => {
             state.futuresTableInfo.init = false
@@ -213,6 +213,7 @@ const rootStore = createSlice({
         },
         [getApprove.fulfilled]: state => {
             state.modalWindow.data.loadingButton = false
+            state.modalWindow.isOpen = false
         }
     }
 

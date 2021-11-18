@@ -7,7 +7,7 @@ const makeStore = () =>
     configureStore({
         reducer: {store},
         devTools: true,
-        middleware: getDefaultMiddleware => getDefaultMiddleware(customizedMiddleware)
+        // middleware: customizedMiddleware => customizedMiddleware,
     });
 export const wrapper = createWrapper(makeStore);
 

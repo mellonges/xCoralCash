@@ -23,7 +23,7 @@ export async function getApproveAllContracts(ERC20) {
             return result
         }
         case process.env.NEXT_PUBLIC_XCORAL_DAI_UNI_LP: {
-            let result = await ERC20_CONTRACTS.XCORAL_DAI_UNI_LP.methods.approve(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI
+            let result = await ERC20_CONTRACTS.XCORAL_DAI_UNI_LP.methods.approve(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
             return result
         }
         case process.env.NEXT_PUBLIC_SUIKO: {

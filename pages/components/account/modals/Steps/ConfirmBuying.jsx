@@ -238,7 +238,7 @@ const ConfirmBuying = ({
         </div>
       </div>
 
-      {inputValue < allowance ? (
+      {inputValue > allowance ? (
         <Button
           color="primary"
           className={styles.previewBtn}
