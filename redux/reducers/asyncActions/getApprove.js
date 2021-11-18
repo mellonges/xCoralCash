@@ -5,13 +5,16 @@ export const getApprove = createAsyncThunk(
     "rootStore/getApprove",
     async function(assetAddress, {getState}) {
         try {
+            const notify = getState().store.notify
             const encodeABI = await getApproveAllContracts(assetAddress)
             const userAddress = getState().store.address
             const web3 = getState().store.web3ForUser
-            web3.sendTransaction({
+            web3.eth.sendTransaction({
                 from: userAddress,
                 to: assetAddress,
                 data: encodeABI,
+            }).on("transactionHash", (hash) => {
+                notify.hash(hash)
             })
         } catch (e) {
             console.error(e)

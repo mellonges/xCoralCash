@@ -16,6 +16,7 @@ import { toast } from "react-toastify";
 import { getAvailable } from "./asyncActions/getFuturesTableInfo/getAvailable";
 import { getTotalPayout } from "./asyncActions/getTotalPayout";
 import {sendTransactionReducer} from "./sendTransactionReducer";
+import {getApprove} from "./asyncActions/getApprove";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -139,7 +140,7 @@ const rootStore = createSlice({
         [connectWallet.rejected]: () => {
             console.error("закрыл окно уебок")
         },
-        [disconnectWallet.fulfilled]: (state) => {
+        [disconnectWallet.fulfilled]: state => {
             state.address = null
             state.network = null
             state.balance = null
@@ -174,7 +175,7 @@ const rootStore = createSlice({
                 state.walletMiniInfo.nextRebaseIn = "Happening now"
             } else state.walletMiniInfo.nextRebaseIn = msToTime(nextRebaseIn)
         },
-        [getFuturesTableInfo.pending]: (state) => {
+        [getFuturesTableInfo.pending]: state => {
             state.futuresTableInfo.init = false
         },
         [getFuturesTableInfo.fulfilled]: (state, action) => {
@@ -183,12 +184,13 @@ const rootStore = createSlice({
 
 
         },
+
         [getAvailable.fulfilled]: (state, action) => {
             state.modalWindow.data.available = action.payload[0]
             state.modalWindow.data.decimals = action.payload[1]
             state.modalWindow.data.Loading = false
         },
-        [getTotalPayout.pending]: (state) => {
+        [getTotalPayout.pending]: state => {
             state.modalWindow.data.Loading = true
         },
         [getTotalPayout.fulfilled]: (state, action) => {
@@ -198,12 +200,18 @@ const rootStore = createSlice({
             state.modalWindow.data.allowance = action.payload[2]
             state.modalWindow.data.Loading = false
         },
-        [sendTransactionReducer.pending]: (state) => {
+        [sendTransactionReducer.pending]: state => {
             state.modalWindow.data.loadingButton = true
         },
 
         [sendTransactionReducer.fulfilled]: (state) => {
             state.modalWindow.isOpen = false
+            state.modalWindow.data.loadingButton = false
+        },
+        [getApprove.pending]: state => {
+            state.modalWindow.data.loadingButton = true
+        },
+        [getApprove.fulfilled]: state => {
             state.modalWindow.data.loadingButton = false
         }
     }

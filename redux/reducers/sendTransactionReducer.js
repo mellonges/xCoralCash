@@ -6,12 +6,12 @@ export const sendTransactionReducer = createAsyncThunk(
     try {
         let encodeABI
         const userAddress = getState().store.address
-        console.log(userAddress + "44 12312 ")
         const futures = getState().store.contracts.futures
         const web3 = getState().store.web3ForUser
         const amountValue = BigInt(inputValue * 10 ** decimals)
         const notify = getState().store.notify
         if (methods === "deposit") {
+            console.log(`amountValue: ${amountValue} coinAddress: ${coinAddress} termsID ${termsID} ${userAddress}`)
             encodeABI = await futures.methods.deposit(amountValue, coinAddress, termsID, userAddress).encodeABI()
         } else if (methods === "redeem") {
             console.log("coinAddress" + "  " + coinAddress)

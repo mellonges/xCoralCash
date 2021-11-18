@@ -48,7 +48,7 @@ const ConfirmBuying = ({
   const dispatch = useDispatch()
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  console.log("allowance: " + allowance)
   const toggle = () => setTooltipOpen(!tooltipOpen);
 
   // const confirmBuying = () => {
@@ -238,7 +238,7 @@ const ConfirmBuying = ({
         </div>
       </div>
 
-      {inputValue > allowance ? (
+      {inputValue < allowance ? (
         <Button
           color="primary"
           className={styles.previewBtn}
