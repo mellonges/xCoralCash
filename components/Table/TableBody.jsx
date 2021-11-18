@@ -165,7 +165,8 @@ const TableBody = ({
                                         redeemable_xcoral,
                                         expiration,
                                         APY,
-                                        redeemable_xcoral,
+                                        termsID,
+                                        coinAddress,
                                     }))
                                     dispatch(setActiveOperation(2))
 

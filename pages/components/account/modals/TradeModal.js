@@ -162,6 +162,8 @@ const TradeModal = () => {
             expiration={expiration}
             decimals={decimals}
             available={available}
+            termsID={termsID}
+            coinAddress={coinAddress}
             redeemable_xcoral={redeemable_xcoral}
           />
         ) : null}

@@ -22,7 +22,7 @@ const TradeBuyStep = ({
     inputValue,
     allowance,
     loadingButton,
-    termsID
+    termsID,
 
 }) => {
     const [direction, setDirection] = useState(1)

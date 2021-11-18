@@ -8,6 +8,8 @@ import styles2 from "../styles/components/Account/modals/trade-modules/ConfirmBu
 import { formatPrice } from "functions/helpers";
 import TokenBalance from "@/components/account/modals/Steps/TokenBalance";
 import { formatBalance } from "@/functions/formatBalance";
+import {useDispatch} from "react-redux";
+import {sendTransactionReducer} from "../redux/reducers/sendTransactionReducer";
 
 const Redeem = ({
     selectedWays,
@@ -25,10 +27,12 @@ const Redeem = ({
     loading,
     tokensList,
     deposited,
+    coinAddress,
     assetName,
     iconAddress,
     expiration,
     decimals,
+    termsID,
     available,
     redeemable_xcoral,
 
@@ -41,6 +45,7 @@ const Redeem = ({
     const summ = formatPrice(redeemable_xcoral).slice(1)
     const [showChooseTokenInfo, setShowChooseTokenInto] = useState(false);
     const selectSUmmRef = useRef();
+    const dispatch = useDispatch()
 
     useEffect(() => {
         if (showTokensList) setSwitchOffTabs(true);

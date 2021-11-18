@@ -20,6 +20,8 @@ const TradeSellStep = ({
   expiration,
   available,
   decimals,
+    termsID,
+    coinAddress,
   redeemable_xcoral,
 }) => {
   const [selectedWays, setSelectedWays] = useState({});
@@ -130,9 +132,10 @@ const TradeSellStep = ({
               iconAddress={iconAddress}
               assetName={assetName}
               expiration={expiration}
-              deposited={deposited}
+              termsID={termsID}
               available={available}
               decimals={decimals}
+              coinAddress={coinAddress}
               redeemable_xcoral={redeemable_xcoral}
 
 

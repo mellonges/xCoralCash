@@ -26,7 +26,7 @@ const ConfirmBuying = ({
   allowance,
   coinAddress,
   loadingButton,
-  termsID
+  termsID,
 
 
 }) => {

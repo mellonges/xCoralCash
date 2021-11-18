@@ -2,10 +2,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const sendTransactionReducer = createAsyncThunk(
     "rootStore/sendTransactionReducer",
-    async function({ inputValue, coinAddress, termsID, methods, decimals }, { getState }) {
+    async function({ inputValue = 0, coinAddress, termsID, methods, decimals = 0 }, { getState }) {
     try {
         let encodeABI
         const userAddress = getState().store.address
+        console.log(userAddress + "44 12312 ")
         const futures = getState().store.contracts.futures
         const web3 = getState().store.web3ForUser
         const amountValue = BigInt(inputValue * 10 ** decimals)
@@ -13,6 +14,7 @@ export const sendTransactionReducer = createAsyncThunk(
         if (methods === "deposit") {
             encodeABI = await futures.methods.deposit(amountValue, coinAddress, termsID, userAddress).encodeABI()
         } else if (methods === "redeem") {
+            console.log("coinAddress" + "  " + coinAddress)
             encodeABI = await futures.methods.redeemAsset(userAddress, coinAddress, termsID).encodeABI()
         }
         web3.eth.sendTransaction({
