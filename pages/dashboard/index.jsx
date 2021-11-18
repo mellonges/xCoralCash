@@ -8,9 +8,9 @@ import BonusBlockMobile from "../../components/BonusBlockMobile";
 import {useDispatch, useSelector} from "react-redux";
 import {getWalletInfo} from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
 import LoadingWalletInfo from "../../components/LoadingWalletInfo";
-import CurrentPriceSvg from "../../SVG/CurrentPriceSVG";
-import TargetPriceSvg from "../../SVG/TargetPriceSVG";
-import NextRebaseInSvg from "../../SVG/NextRebaseInSVG";
+import CurrentPriceSvg from "../../public/SVG/CurrentPriceSVG";
+import TargetPriceSvg from "../../public/SVG/TargetPriceSVG";
+import NextRebaseInSvg from "../../public/SVG/NextRebaseInSVG";
 
 const Index = () => {
 const dispatch = useDispatch()
@@ -19,7 +19,6 @@ const dispatch = useDispatch()
     const targetPrice = useSelector(({store}) => store.walletMiniInfo.targetPrice)
     const currentAPY = useSelector(({store}) => store.walletMiniInfo.currentAPY)
     const nextRebaseIn = useSelector(({store}) => store.walletMiniInfo.nextRebaseIn)
-    const [loading, setLoading] = useState(true)
     useEffect(() => {
         dispatch(getWalletInfo())
     }, [])

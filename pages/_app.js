@@ -3,51 +3,30 @@ import "../styles/global.scss";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import NextNprogress from "nextjs-progressbar";
-import axios from "axios";
-import NProgress from "nprogress";
-import Amplify from "aws-amplify";
 import React, { useEffect } from "react";
 import Notify from "bnc-notify"
-Amplify.configure({
-    Auth: {
-        region: "us-east-1",
-        userPoolId: "us-east-1_uokTPpod8",
-        userPoolWebClientId: "34a9d8hhtf78j9lkde2srnmsnp",
-    },
-});
-
-
 import TradeModal from "./components/account/modals/TradeModal";
-import DepositModal from "./components/account/modals/deposit/DepositModal";
-import WithdrawModal from "./components/account/modals/withdraw/WithdrawModal";
 import { wrapper } from "../redux/Store";
 import { useDispatch, useSelector } from "react-redux";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
 import { dispatchNotify, dispatchOnboard, dispatchWeb3forUser } from "../redux/reducers/rootReducer";
 import getNetworkName from "../functions/getNetworkName"
-import { disconnectWallet } from "../redux/reducers/asyncActions/disconnectWallet";
 import { repairConnect } from "../redux/reducers/asyncActions/repairConnect";
 import { changeWalletAddress } from "../redux/reducers/asyncActions/changeWalletAddress";
-import { getFuturesTableInfo } from "../redux/reducers/asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 
 const dappId = process.env.API_KEY
 const networkId = +process.env.NEXT_PUBLIC_XCORAL_NETWORK_ID
 function MyApp({ Component, pageProps }) {
     const dispatch = useDispatch()
     let setTimeOudDisconnectId
-    const optionsForNotify = {
-        transactionHandler: () => dispatch(getFuturesTableInfo())
-    }
     
-    const isConnected = useSelector(({ store }) => store.isConnected)
     const currentWalletAddress = useSelector(({ store }) => store.address)
     useEffect(() => {
         const notify = Notify({
             dappId,
             networkId
         })
-        // console.log("render");
         const onboard = Onboard({
             dappId,
             hideBranding: true,
@@ -132,28 +111,7 @@ function MyApp({ Component, pageProps }) {
         dispatch(repairConnect())
 
     }, [])
-    let loading;
-    axios.defaults.onDownloadProgress = (e) => {
-        const percentage = calculatePercentage(e.loaded, e.total);
-        NProgress.set(percentage);
-    };
-    const calculatePercentage = (loaded, total) =>
-        Math.floor(loaded * 1.0) / total;
 
-    axios.interceptors.request.use((config) => {
-        if (!loading) {
-            NProgress.start();
-            loading = true;
-        }
-        return config;
-    });
-    axios.interceptors.response.use((response) => {
-        if (loading) {
-            NProgress.done();
-            loading = undefined;
-        }
-        return response;
-    });
 
 
     return (
@@ -178,8 +136,6 @@ function MyApp({ Component, pageProps }) {
                 pauseOnHover
             />
             <TradeModal />
-            {/*<DepositModal/>*/}
-            {/*<WithdrawModal/>*/}
         </>
     );
 }
