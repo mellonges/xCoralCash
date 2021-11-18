@@ -70,13 +70,15 @@
     height: 88px;
 
     .balance {
+      display: flex;
+      align-items: end !important;
       .Icon {
         background: #c4c4c4;
         border-radius: 18.4615px;
         width: 48px;
         height: 48px;
-        display: flex;
         margin-right: 26px;
+        display: flex;
         align-items: center;
         justify-content: center;
       }
@@ -387,24 +389,40 @@
 }
 @media screen and (max-width: 991px) {
   .Wallet {
-    .BonusesMobile {display: block;}
+    .BonusesMobile {
+      display: block;
+      .topBlock {
+        display: block !important;
+        .actionButtons {
+          .depositBtn {
+            width: 100% !important;
+            margin-top: 25px;
+            margin-bottom: 0;
+            display: block;
+          }
+        }
+      }
+    }
     .BonusMobile {display: none;}
     .WalletMobile {
       display: block;
       .topBlock {
+        .balance {
+          display: block !important;
+        }
         height: max-content;
         background-position: left;
         display: block !important;
         .actionButtons {
           display: block !important;
           width: 100% !important;
+          margin-top: 15px;
           button {
             display: flex !important;
             width: 100% !important;
             margin: 0 auto;
             align-items: center;
             max-width: unset;
-            margin-top: 30px;
             svg {
               justify-content: start;
               display: flex;
@@ -413,8 +431,6 @@
           } 
         }
         .balance {
-          display: flex;
-          align-items: center;
           .Icon {
             display: flex;
             align-items: center;
@@ -422,9 +438,9 @@
             margin-left: 0;
             width: 45px;
             height: 45px;
-            background: #8aaab4;
             border-radius: 17.3077px;
             margin-right: 15px;
+            margin-bottom: 15px;
           }
           .info {
             display: block !important;
@@ -470,7 +486,6 @@
         .Icon {
           width: 45px;
           height: 45px;
-          background: #8aaab4;
           border-radius: 17.3077px;
           margin-right: 15px;
         }
@@ -504,7 +519,7 @@
         margin-top: 25px;
         margin-left: unset !important;
         flex-wrap: wrap;
-        width: 100%;
+        width: 100% !important;
         .withdrawBtn,
         .depositBtn {
           padding: 13px 25px;
