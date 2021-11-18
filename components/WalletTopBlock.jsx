@@ -1,15 +1,6 @@
-import {
-  ChangeAccountDepositModalState,
-  ChangeAccountWithdrawModalState,
-} from "@/functions/observers";
 import { Button } from "reactstrap";
-import { formatPrice } from "@/functions/helpers";
 import styles from "@/styles/pages/account/Wallet.module.scss";
-import { useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
-import CountUp from "react-countup";
-// import XLogo from "../SVG/Xcoral-logo.svg"
-// import Dollar from "../SVG/dollar.svg"
+import React from "react";
 
 const WalletTopBlock = ({ xCoralBalance }) => {
   return (

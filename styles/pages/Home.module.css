@@ -307,6 +307,9 @@
   margin-bottom: 47px;
   padding-top: 66px;
 }
+.tradeAssets .textBlock .iconItem button:hover {
+  background: #189cad;
+}
 .tradeAssets .textBlock .iconItem:last-child {
   margin-bottom: 0;
   width: max-content;

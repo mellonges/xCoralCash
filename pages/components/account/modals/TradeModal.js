@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
-import { AccountTradeModalObserver } from "../../../../functions/observers";
 import styles from "../../../../styles/components/Account/modals/TradeModal.module.scss";
 import TradeBuyStep from "./TradeBuyStep";
-import TradeConvertStep from "./TradeConvertStep";
 import TradeSellStep from "./TradeSellStep";
-import Router from "next/router";
-import { TradeModalContext } from "../../../../functions/contexts";
-import { getTokensList } from "../../../../functions/getBackendData";
 import { useDispatch, useSelector } from "react-redux";
 import { openAndCloseModalWindow, setActiveOperation } from "../../../../redux/reducers/rootReducer";
 

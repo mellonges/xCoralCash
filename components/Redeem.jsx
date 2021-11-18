@@ -15,17 +15,10 @@ const Redeem = ({
     selectedWays,
     direction,
     setDirection,
-    setSelectedWays,
     setSumm,
     setSwitchOffTabs,
-    paymentMethods,
-    holdings,
-    sendPreview,
-    selectedToken,
     isSell = false,
     isConvert = false,
-    loading,
-    tokensList,
     loadingButton,
     deposited,
     coinAddress,
@@ -204,7 +197,6 @@ const Redeem = ({
                                     <img width="21px" height="21px" src={`/coins_icons/coin_${iconAddress}.png`} />
                                     {assetName}
                                 </div>
-                                {/*{selectedWays.paywith.title}*/}
                             </div>
                         </div>
                         <div
@@ -216,14 +208,6 @@ const Redeem = ({
                                 {expiration}
                             </div>
                         </div>
-                        {/* <div
-          className={`${styles.row} d-flex justify-content-between align-items-center`}
-        >
-          <div className={styles.label}>Purchase</div>
-          <div className={styles.value}>
-            {formatPrice(buyingInformation.amountSpend)}
-          </div>
-        </div> */}
                     </div>
                     {!loadingButton ? (
                         <Button

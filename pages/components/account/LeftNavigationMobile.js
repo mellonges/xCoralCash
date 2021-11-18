@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import React from "react";
-import { useRef } from "react";
 import { useEffect } from "react";
 import Scrollbar from "react-scrollbars-custom";
 import { Button } from "reactstrap";

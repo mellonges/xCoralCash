@@ -2,7 +2,6 @@
 import { Button } from "reactstrap";
 import styles from "@/styles/pages/account/Wallet.module.scss";
 import Link from "next/link";
-// import CreditCard from "../SVG/credit-card.svg"
 const BonusBlock = () => {
     return (
         <div

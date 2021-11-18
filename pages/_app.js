@@ -67,7 +67,6 @@ function MyApp({ Component, pageProps }) {
                     } else {
                         clearTimeout(setTimeOudDisconnectId)
                         toast.dismiss()
-                        // toast.success("Returned to Ethereum Mainnet",{pauseOnHover: false, pauseOnFocusLoss: false,})
                     }
 
 
@@ -81,9 +80,7 @@ function MyApp({ Component, pageProps }) {
                     }
 
 
-                    // if (isConnected) {
-                    //     changeWalletAddress(address)
-                    // }
+
                 }
             },
             walletSelect: {
