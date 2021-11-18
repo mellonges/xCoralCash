@@ -59,11 +59,11 @@
   transition: 0.3s;
 }
 .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink {
+  cursor: pointer;
   display: flex;
   align-items: center;
   color: #9fc2cb;
   padding: 5px 0;
-  transition: 0.3s;
 }
 .AccountWrapper .leftSide .leftSideNav .listNavigation .listItem .navLink.active {
   border-right: 3px solid #45ffde;
@@ -101,7 +101,8 @@
 }
 .AccountWrapper .TopPanel .displayAddressPlace {
   background: #F7FAFC;
-  border: 10px solid #F7FAFC;
+  border: 1px solid #ECF2F4;
+  padding: 10px;
   box-sizing: border-box;
   border-radius: 4px;
   font-weight: 500;

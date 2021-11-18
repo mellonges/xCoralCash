@@ -8,7 +8,7 @@ import FUTURES_ABI from "../../ABI/futures.json"
 import TREASURY_ABI from "../../ABI/treasury.json"
 import Web3 from "web3"
 import { getWalletInfo } from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
-import {msToTime, msToTimeForDashboard} from "@/functions/msToTime";
+import { msToTimeForDashboard} from "@/functions/msToTime";
 import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
@@ -83,7 +83,7 @@ const rootStore = createSlice({
         futuresTableInfo: {
             init: false,
             data: null,
-            hardReload: false,
+            hardReload: 0,
         },
 
         contracts,
@@ -100,7 +100,7 @@ const rootStore = createSlice({
         },
         openAndCloseModalWindow(state) {
             if (!state.isConnected) {
-                toast.error("you must connect wallet", { position: "top-center", autoClose: false })
+                toast.info("you must connect wallet", { position: "bottom-right", autoClose: 1500 })
             } else {
                 state.modalWindow.isOpen = !state.modalWindow.isOpen
 
@@ -208,6 +208,7 @@ const rootStore = createSlice({
         [sendTransactionReducer.fulfilled]: (state) => {
             state.modalWindow.isOpen = false
             state.modalWindow.data.loadingButton = false
+            state.futuresTableInfo.hardReload += 1
         },
         [getApprove.pending]: state => {
             state.modalWindow.data.loadingButton = true

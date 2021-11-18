@@ -57,14 +57,7 @@ function MyApp({ Component, pageProps }) {
                         setTimeOudDisconnectId = setTimeout(() => {
 
                         }, 15000)
-                    } else if (networkId === undefined) {
-                        toast.info("Disconnect", {
-                            autoClose: 1000,
-                            position: "bottom-center",
-                            pauseOnHover: false,
-                            pauseOnFocusLoss: false,
-                        })
-                    } else {
+                    }  else {
                         clearTimeout(setTimeOudDisconnectId)
                         toast.dismiss()
                     }

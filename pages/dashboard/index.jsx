@@ -24,7 +24,7 @@ const dispatch = useDispatch()
 
             <MainLayout pageTitle={"Dashboard"}>
                 <div className={styles.Wallet}>
-                    <h1 className={styles.pageTitle}>Wallet</h1>
+                    <h1 className={styles.pageTitle}>Dashboard</h1>
                     <div className={styles.WalletMobile}>
                         <WalletTopBlock xCoralBalance={xCoralBalance}  />
                     </div>

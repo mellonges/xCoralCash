@@ -8,14 +8,14 @@ const Footer = () => {
     { title: "Buy on SushiSwap", url: "#" },
     { title: "Twitter", url: "/prices" },
     {title: "Telegram", url: "#"},
-    {title: "Use App", url: "#"},
+    {title: "Use App", url: "/dashboard"},
   ];
 
   const footerNavCol2 = [
     {title: "Discord", url: "#"},
     {title: "Medium", url: "#"},
     {title: "DexTools", url: "#" },
-    {title: "Docs", url: "#"}
+    {title: "Docs", url: "https://docs.xcoral.cash"}
   ];
 
   return (
@@ -37,9 +37,7 @@ const Footer = () => {
           </nav>
           <nav  className={styles.footerNav}>
             {footerNavCol2.map((navItem, i) => (
-                <Link key={i} href={navItem.url}>
-                  <a>{navItem.title}</a>
-                </Link>
+                  <a key={i} target="_blank" href={navItem.url}>{navItem.title}</a>
             ))}
           </nav>
         </div>

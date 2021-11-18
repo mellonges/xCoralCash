@@ -670,14 +670,14 @@
     min-height: auto;
   }
   .introSection .introSectionContent {
-    padding: 113px 23px 56px 23px;
+    padding: 56px 23px;
   }
   .introSection .introSectionContent .sectionRow {
     flex-direction: column-reverse;
   }
   .introSection .introSectionContent .sectionRow .title {
     font-size: 49.3882px;
-    margin-top: 271px;
+    margin-top: 0;
     text-align: center;
     letter-spacing: -0.03em;
     position: relative;
@@ -816,6 +816,7 @@
   }
   .tradeAssets .tradeAssetsRow {
     width: 100%;
+    margin: 0 auto;
   }
   .tradeAssets .tradeAssetsRow .imageBlock {
     margin-top: 0;

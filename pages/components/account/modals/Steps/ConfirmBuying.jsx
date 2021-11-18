@@ -278,6 +278,7 @@ const ConfirmBuying = ({
           </> : `Approve ${assetName}`}
         </Button>
       ) : ( <Button
+          disabled={loadingButton}
         color="primary"
         className={styles.previewBtn}
         onClick={() => dispatch(sendTransactionReducer({inputValue, coinAddress, termsID, methods: "deposit", decimals}))}>

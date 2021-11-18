@@ -33,6 +33,7 @@ const SelectSumm = ({
     expiration,
     decimals,
     available,
+    loadingButton,
     coinAddress,
 
 
@@ -182,7 +183,7 @@ const SelectSumm = ({
                                 dispatch(getTotalPayout({ assetAddress: coinAddress, amount: summ, decimals: decimals }))
 
                             }}
-                            disabled={direction || summ === ""}
+                            disabled={direction || summ === "" || loadingButton}
                         >
                             Preview Deposit
                         </Button>

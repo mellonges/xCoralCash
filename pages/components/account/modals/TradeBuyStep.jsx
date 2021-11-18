@@ -125,6 +125,7 @@ const TradeBuyStep = ({
                             expiration={expiration}
                             available={available}
                             decimals={decimals}
+                            loadingButton={loadingButton}
                             coinAddress={coinAddress}
 
                         // tokensList={tokensList}

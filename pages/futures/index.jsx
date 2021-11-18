@@ -15,9 +15,10 @@ const Index = () => {
     const isConnected = useSelector(({ store }) => store.isConnected)
     const address = useSelector(({ store }) => store.address)
     const futuresTableInfo = useSelector(({ store }) => store.futuresTableInfo)
+    const hardReloaded = useSelector(({store}) => store.futuresTableInfo.hardReload)
     useEffect(() => {
         dispatch(getFuturesTableInfo())
-    }, [isConnected, address])
+    }, [isConnected, address, hardReloaded])
     const headlineRef = useRef({});
     return (
         <div>

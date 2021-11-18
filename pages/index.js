@@ -137,7 +137,7 @@ const HomePage = () => {
                                         <span>Passive Investing</span>
                                     </h2>
                                     <div className={styles.text}>
-                                        Passive investing is what defines the today’s stock market. More than 90% of capital injected into the market is being allocated towards passively managed ETFs tracking indices like S&P 500 and NASDAQ 100. Historical performance of benchmarks proves that those trying to “beat the market” tend to lose most of the time to those who just buy & hold.
+                                        Wealth inequality is only becoming larger, and economy as a whole is getting more and more unsustainable. Stock markets and home price indices are at all times high — a result of years of financial deregulation, low interest rates and lavish monetary policies, causing global economies to become overly financialized.
                                     </div>
                                     <div className={`${styles.iconItem} d-flex `}>
                                         <div className={styles.Icon}>
@@ -156,7 +156,7 @@ const HomePage = () => {
                                         </div>
                                         <div className={styles.info}>
                                             <span>Bringing coordination to investing</span>
-                                            We keep xCORAL appreciating regardless of market conditions, and prevent irrational actors from disrupting system sustainability
+                                            We enforce custom behavioral tokenomics designed to prevent bank runs and keep xCORAL appreciating regardless of market conditions
                                         </div>
                                     </div>
                                 </div>
@@ -171,6 +171,7 @@ const HomePage = () => {
                                     <div className={styles.text}>
                                         Most rebase currencies do not let you capitalize on their price; the reason being that their rebases affect your personal wallet in addition to LP pools, meaning that any price appreciation is immediately getting offset by dilution in your holdings.
                                     </div>
+                                    <br/>
                                     <div className={styles.text}>This is not the case with <span style={{color: "#1ab0c4"}}>xCORAL</span> — our rebases only affect the liquidity pools, leaving your wallets intact.</div>
                                     <div className={`${styles.iconItem} d-flex `}>
                                         <Button className={styles.submitPerson}>Buy xCoral on SushiSwap</Button>
