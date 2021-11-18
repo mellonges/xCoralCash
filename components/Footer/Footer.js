@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Button } from "reactstrap";
+import React from "react";
+import {Container } from "reactstrap";
 import styles from "../../styles/components/Footer/Footer.module.scss";
 
 const Footer = () => {

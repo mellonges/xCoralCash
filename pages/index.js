@@ -11,7 +11,6 @@ const HomePage = () => {
         <LayoutMain title={pageTitle}>
             <div className={styles.homePage}>
                 <IntroSection />
-                {/*<TokensFilter people={people} />*/}
                 <div className={styles.howWorks}>
                     <Container>
                         <h3 className={styles.blockTitle}>How xCORAL Works?</h3>
@@ -175,204 +174,15 @@ const HomePage = () => {
                                     <div className={styles.text}>This is not the case with <span style={{color: "#1ab0c4"}}>xCORAL</span> — our rebases only affect the liquidity pools, leaving your wallets intact.</div>
                                     <div className={`${styles.iconItem} d-flex `}>
                                         <Button className={styles.submitPerson}>Buy xCoral on SushiSwap</Button>
-                                        {/*<div className={styles.Icon}>*/}
-                                        {/*    <svg*/}
-                                        {/*        width="29"*/}
-                                        {/*        height="29"*/}
-                                        {/*        viewBox="0 0 29 29"*/}
-                                        {/*        fill="none"*/}
-                                        {/*        xmlns="http://www.w3.org/2000/svg"*/}
-                                        {/*    >*/}
-                                        {/*        <path*/}
-                                        {/*            d="M14.5 0C6.50438 0 0 6.50438 0 14.5C0 22.4956 6.50438 29 14.5 29C22.4956 29 29 22.4956 29 14.5C29 6.50438 22.4956 0 14.5 0ZM21.396 22C21.1604 22.2356 20.8511 22.3542 20.5417 22.3542C20.2324 22.3542 19.9229 22.2356 19.6875 22L13.6457 15.9585C13.4185 15.7326 13.2917 15.4255 13.2917 15.1042V7.25C13.2917 6.58182 13.8329 6.04174 14.5 6.04174C15.1671 6.04174 15.7083 6.58182 15.7083 7.25V14.604L21.396 20.2915C21.8684 20.7641 21.8684 21.5276 21.396 22V22Z"*/}
-                                        {/*            fill="#FAFDFF"*/}
-                                        {/*        />*/}
-                                        {/*    </svg>*/}
-                                        {/*</div>*/}
-                                        {/*<div className={styles.info}>*/}
-                                        {/*    <span>Plenty of information</span>*/}
-                                        {/*    ... to make investment decisions. Social media,*/}
-                                        {/*    newspapers, TV — you'll find a lot of data to confirm your*/}
-                                        {/*    buy or sell decision.*/}
-                                        {/*</div>*/}
+
                                     </div>
                                 </div>
 
-                            {/*<Col lg="6">*/}
-                            {/*    <div className={`${styles.imageBlockWrapper} w-100 h-100`}>*/}
-                            {/*        <div className={styles.imageBlock}>*/}
-                            {/*            <div className={styles.twitterBlock}>*/}
-                            {/*                <div className={styles.postText}>*/}
-                            {/*                    This is the mist corrupt election in our lifetime. Where*/}
-                            {/*                    is the DOJ and AG? <a>#hashtag</a>*/}
-                            {/*                </div>*/}
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
                             </Col>
                         </Row>
                     </Container>
                 </section>
-                {/*<section className={styles.thousandsOfPeople}>*/}
-                {/*    <Container>*/}
-                {/*        <Row>*/}
-                {/*            <Col lg="6">*/}
-                {/*                <ThousandsOFPeopleCards randomToken={randomToken}/>*/}
-                {/*            </Col>*/}
-                {/*            <Col lg="6">*/}
-                {/*                <div className={styles.textBlock}>*/}
-                {/*                    <h2 className={styles.title}>*/}
-                {/*                        Thousands <span>of people</span>*/}
-                {/*                    </h2>*/}
-                {/*                    <div className={styles.text}>*/}
-                {/*                        Politicians, comedians, media personalities, TikTokers,*/}
-                {/*                        influencers — you name it. Don’t see a person you want to*/}
-                {/*                        buy in? Let us know, and we’ll get them listed within a day.*/}
-                {/*                    </div>*/}
-                {/*                    <div className={`d-flex ${styles.points}`}>*/}
-                {/*                        <div className={styles.infoItem}>*/}
-                {/*                            {["Sport", "Politicans", "TikTokers"].map((point) => (*/}
-                {/*                                <div*/}
-                {/*                                    key={point}*/}
-                {/*                                    className={`${styles.point} d-flex align-items-start`}*/}
-                {/*                                >*/}
-                {/*          <span className={styles.icon}>*/}
-                {/*            <svg*/}
-                {/*                width="25"*/}
-                {/*                height="22"*/}
-                {/*                viewBox="0 0 25 22"*/}
-                {/*                fill="none"*/}
-                {/*                xmlns="http://www.w3.org/2000/svg"*/}
-                {/*            >*/}
-                {/*              <path*/}
-                {/*                  d="M23.9083 0.168633C22.7801 -0.436511 21.5218 0.730554 20.7842 1.42215C19.0921 3.06468 17.6602 4.96657 16.0548 6.69555C14.2758 8.59744 12.627 10.4993 10.8046 12.358C9.7633 13.3954 8.63517 14.5193 7.94094 15.816C6.37892 14.3031 5.03384 12.6606 3.29827 11.3207C2.03997 10.3697 -0.0427222 9.67812 0.000667293 11.969C0.0874462 14.9516 2.7342 18.1502 4.68673 20.1817C5.51113 21.0462 6.59587 21.9539 7.85416 21.9971C9.37279 22.0836 10.9348 20.2682 11.846 19.274C13.4515 17.545 14.7532 15.5998 16.2283 13.8277C18.1375 11.4936 20.09 9.20258 21.9557 6.82523C23.1273 5.35559 26.8154 1.72465 23.9083 0.168633ZM1.90973 11.7961C1.86634 11.7961 1.82295 11.7961 1.73617 11.8393C1.56262 11.7961 1.43245 11.7528 1.25889 11.6664C1.38906 11.5799 1.60601 11.6232 1.90973 11.7961Z"*/}
-                {/*                  fill="#00ADB6"*/}
-                {/*              />*/}
-                {/*            </svg>*/}
-                {/*          </span>*/}
-                {/*                                    <span className={styles.pointText}>{point}</span>*/}
-                {/*                                </div>*/}
-                {/*                            ))}*/}
-                {/*                        </div>*/}
-                {/*                        <div className={styles.infoItem}>*/}
-                {/*                            {["Comedians", "Entrepreneurs", "and more..."].map(*/}
-                {/*                                (point, i) => (*/}
-                {/*                                    <div*/}
-                {/*                                        key={point}*/}
-                {/*                                        className={`${styles.point} d-flex align-items-start`}*/}
-                {/*                                    >*/}
-                {/*            <span className={styles.icon}>*/}
-                {/*              {i != 2 && (*/}
-                {/*                  <svg*/}
-                {/*                      width="25"*/}
-                {/*                      height="22"*/}
-                {/*                      viewBox="0 0 25 22"*/}
-                {/*                      fill="none"*/}
-                {/*                      xmlns="http://www.w3.org/2000/svg"*/}
-                {/*                  >*/}
-                {/*                      <path*/}
-                {/*                          d="M23.9083 0.168633C22.7801 -0.436511 21.5218 0.730554 20.7842 1.42215C19.0921 3.06468 17.6602 4.96657 16.0548 6.69555C14.2758 8.59744 12.627 10.4993 10.8046 12.358C9.7633 13.3954 8.63517 14.5193 7.94094 15.816C6.37892 14.3031 5.03384 12.6606 3.29827 11.3207C2.03997 10.3697 -0.0427222 9.67812 0.000667293 11.969C0.0874462 14.9516 2.7342 18.1502 4.68673 20.1817C5.51113 21.0462 6.59587 21.9539 7.85416 21.9971C9.37279 22.0836 10.9348 20.2682 11.846 19.274C13.4515 17.545 14.7532 15.5998 16.2283 13.8277C18.1375 11.4936 20.09 9.20258 21.9557 6.82523C23.1273 5.35559 26.8154 1.72465 23.9083 0.168633ZM1.90973 11.7961C1.86634 11.7961 1.82295 11.7961 1.73617 11.8393C1.56262 11.7961 1.43245 11.7528 1.25889 11.6664C1.38906 11.5799 1.60601 11.6232 1.90973 11.7961Z"*/}
-                {/*                          fill="#00ADB6"*/}
-                {/*                      />*/}
-                {/*                  </svg>*/}
-                {/*              )}*/}
-                {/*            </span>*/}
-                {/*                                        <span className={styles.pointText}>{point}</span>*/}
-                {/*                                    </div>*/}
-                {/*                                )*/}
-                {/*                            )}*/}
-                {/*                        </div>*/}
-                {/*                    </div>*/}
-                {/*                    <Button*/}
-                {/*                        className={styles.submitPerson}*/}
-                {/*                        onClick={() => alert("Gonna be popup modal")}*/}
-                {/*                    >*/}
-                {/*                        + Submit a person request*/}
-                {/*                    </Button>*/}
-                {/*                </div>*/}
-                {/*            </Col>*/}
-                {/*        </Row>*/}
-                {/*    </Container>*/}
-                {/*</section>*/}
-                {/*<section className={styles.buildPortfolio}>*/}
-                {/*    <div className={styles.bg}>*/}
-                {/*        <Container>*/}
-                {/*            <h2 className={`${styles.blockTitle} text-center`}>*/}
-                {/*                Build a portfolio of people <span>you believe in</span>*/}
-                {/*            </h2>*/}
-                {/*            <div className={`${styles.items}`}>*/}
-                {/*                <BuildPortfolioCards people={people}/>*/}
-                {/*            </div>*/}
-                {/*            /!* <div className={styles.text}>*!/*/}
-                {/*            /!*  Just like with stock trading: buy people that you think are*!/*/}
-                {/*            /!*  undervalued and see their price grow. Sell when you think they*!/*/}
-                {/*            /!*  are overvalued*!/*/}
-                {/*            /!*</div>*!/*/}
-                {/*        </Container>*/}
-                {/*    </div>*/}
-                {/*</section>*/}
-                {/*<section className={styles.confidenceBlock}>*/}
-                {/*    <Container>*/}
-                {/*        <h2 className={styles.blockTitle}>*/}
-                {/*            Trade with <span>confidence</span>*/}
-                {/*        </h2>*/}
-                {/*        <div className={styles.description}>*/}
-                {/*            Safeguarding your funds is our biggest priority*/}
-                {/*        </div>*/}
-                {/*        <div className={styles.items}>*/}
-                {/*            <Row className="align-items-lg-stretch">*/}
-                {/*                <Col md="4">*/}
-                {/*                    <div className={`${styles.item} d-flex flex-column`}>*/}
-                {/*                        <div className={styles.iconWrapper}>*/}
-                {/*                            <img*/}
-                {/*                                src="/images/icon1.png"*/}
-                {/*                                alt=""*/}
-                {/*                                className={styles.Icon}*/}
-                {/*                            />*/}
-                {/*                        </div>*/}
-                {/*                        <div className={styles.title}>Intuitive Experience</div>*/}
-                {/*                        <div className={styles.description}>*/}
-                {/*                            HumanBace was built to make it easy and safe to trade*/}
-                {/*                            people you respect. Get started in minutes*/}
-                {/*                        </div>*/}
-                {/*                    </div>*/}
-                {/*                </Col>*/}
-                {/*                <Col md="4">*/}
-                {/*                    <div className={`${styles.item} d-flex flex-column`}>*/}
-                {/*                        <div className={styles.iconWrapper}>*/}
-                {/*                            <img*/}
-                {/*                                src="/images/icon2.png"*/}
-                {/*                                alt=""*/}
-                {/*                                className={styles.Icon}*/}
-                {/*                            />*/}
-                {/*                        </div>*/}
-                {/*                        <div className={styles.title}>Advanced Security</div>*/}
-                {/*                        <div className={styles.description}>*/}
-                {/*                            We take a comprehensive approach in protecting our users*/}
-                {/*                            including cold storage and regular third-party audits*/}
-                {/*                        </div>*/}
-                {/*                    </div>*/}
-                {/*                </Col>*/}
-                {/*                <Col md="4">*/}
-                {/*                    <div className={`${styles.item} d-flex flex-column`}>*/}
-                {/*                        <div className={styles.iconWrapper}>*/}
-                {/*                            <img*/}
-                {/*                                src="/images/icon3.png"*/}
-                {/*                                alt=""*/}
-                {/*                                className={styles.Icon}*/}
-                {/*                            />*/}
-                {/*                        </div>*/}
-                {/*                        <div className={styles.title}>Always there for you</div>*/}
-                {/*                        <div className={styles.description}>*/}
-                {/*                            We offer global extensive support to ensure all concerns*/}
-                {/*                            are addressed in a timely manner*/}
-                {/*                        </div>*/}
-                {/*                    </div>*/}
-                {/*                </Col>*/}
-                {/*            </Row>*/}
-                {/*        </div>*/}
-                {/*    </Container>*/}
-                {/*</section>*/}
+
                 <Footer/>
             </div>
         </LayoutMain>

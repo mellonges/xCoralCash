@@ -28,6 +28,7 @@
 }
 .TableFutures tr td {
   padding: 19px 10px;
+  font-weight: 500;
   vertical-align: middle;
 }
 .TableFutures tr td .OthTDTitle {
@@ -46,6 +47,18 @@
 .TableFutures tr .TDContentExp .TDContentExpCont {
   display: flex;
   align-items: center;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont img {
+  margin: 0 10px 0 0;
+  max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
+}
+.TableFutures tr .TDContentExp .TDContentExpCont svg {
+  margin: 0 10px 0 0;
 }
 .TableFutures tr .TDContentExp .TDContentExpCont .TDImg {
   width: 40px;
@@ -80,6 +93,7 @@
   color: #007585;
 }
 .TableFutures tr .TDContentExp .TDContentExpCont .OthTDTitle .OthTDSubTitle {
+  opacity: 0.5;
   font-weight: 500;
   color: #007585;
 }

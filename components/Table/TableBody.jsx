@@ -12,7 +12,6 @@ import {
 import { formatPrice } from "@/functions/helpers";
 import getCoinName from "@/functions/getCoinName";
 import { useSelector } from 'react-redux';
-import Image from 'next/image'
 import getIconAsset from "@/functions/getIconAsset";
 import { msToTime } from "@/functions/msToTime";
 import { getAvailable } from "../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
@@ -29,10 +28,7 @@ const TableBody = ({
     termsID,
 }) => {
     const isConnected = useSelector(({ store }) => store.isConnected)
-    // let coinIcon
-    // useEffect(async () => {
-    //     coinIcon = await import(`../../coins_icons/coin_${getIconAsset(coinName)}.png`)
-    //     }, [])
+
     console.log(expiration)
     const dispatch = useDispatch()
     const assetName = getCoinName(coinAddress)

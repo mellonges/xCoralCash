@@ -1,25 +1,17 @@
-// import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
-// import { Button } from 'reactstrap'
+import React from 'react'
 import styles from "styles/pages/account/Layout.module.scss"
-// import { useState, useEffect, useRef } from 'react'
-// import SearchForm from '../Home/SearchForm'
-// import {AnimatePresence, motion} from 'framer-motion'
-// import {ChangeAccountTradeModalState} from '../../../functions/observers'
-import Link from "next/link";
-// import {logOut} from "@/functions/getBackendData";
 import { useDispatch, useSelector } from "react-redux";
 import getNetworkName from "@/functions/getNetworkName";
-// import { connect } from 'rxjs/operators'
-import { toast } from 'react-toastify'
 import { connectWallet } from "../../redux/reducers/asyncActions/connectWallet";
 import { disconnectWallet } from "../../redux/reducers/asyncActions/disconnectWallet";
-import Onboard from "bnc-onboard";
-import Web3 from "web3";
-import { getWalletInfo } from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
+import * as PropTypes from "prop-types";
+import Link from "next/link"
 
 
-
+Link.propTypes = {
+    href: PropTypes.string,
+    children: PropTypes.node
+};
 const Navbar = () => {
     const dispatch = useDispatch()
     const isConnected = useSelector(({ store }) => store.isConnected)
@@ -35,30 +27,19 @@ const Navbar = () => {
     }
 
     return (
-        // <div className={styles.AccountWrapper}>
         <div className={styles.TopPanel}>
 
 
             <div
                 style={{ justifyContent: "end" }}
                 className="d-none d-lg-flex align-items-center w-100">
-                {/*<div className={styles.searchFormWrapper}>*/}
-                {/*  <SearchForm classes={styles} />*/}
-                {/*</div>*/}
                 <div>
                     {isConnected && <div className={styles.displayAddressPlace}>
-                        {/* {getNetworkName(network)} */}
                         {getNetworkName(network)} network <b
                             className={styles.showAddress}>{walletAddress}</b></div>}
                 </div>
                 <button onClick={() => connectFunctionForButton()}
                     style={{ backgroundColor: "#1ab0c4" }}
-                    // onClick={(e) => {
-                    //   e.preventDefault()
-                    //   ChangeAccountTradeModalState({
-                    //     isOpen: true,
-                    //   })
-                    // }}
                     className={`btn btn-primary ${styles.tradeBtn}`}
                 >
                     {isConnected ? "Disconnect" : "Connect Wallet"}
@@ -74,7 +55,7 @@ const Navbar = () => {
                         style={{ justifyContent: "end" }}
                     >
                         {isConnected ? <div className={styles.displayAddressPlace}> {getNetworkName(network)} network <b
-                            className={styles.showAddress}>{walletAddress.slice(0, 4) + '.'.repeat(3) + walletAddress.slice(-4)}</b></div> : <Link href="/account/">
+                            className={styles.showAddress}>{walletAddress.slice(0, 4) + '.'.repeat(3) + walletAddress.slice(-4)}</b></div> : <Link href="/">
                             <a
                                 style={{
                                     fontFamily: "Asul",
@@ -92,19 +73,12 @@ const Navbar = () => {
                             </a>
                         </Link>}
                     </div>
-
-                    {/*<Notifications color="light" />  */}
                 </div>
                 <div className="ml-auto d-flex align-items-center">
 
                     <button onClick={(() => connectFunctionForButton())}
 
-                        // onClick={(e) => {
-                        //   e.preventDefault()
-                        //   ChangeAccountTradeModalState({
-                        //     isOpen: true,
-                        //   })
-                        // }}
+
                         className={`btn btn-primary`}
                         style={{
                             backgroundColor: "#1ab0c4",
@@ -128,8 +102,6 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        // </div>
-
     )
 }
 export default Navbar
