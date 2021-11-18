@@ -312,10 +312,10 @@ const ConfirmBuying = ({
           </>
        : "Deposit now"}</Button>)}
 
-      <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1)} />
+      <TokenBalance text={"Available"} balance={formatPrice(available / 10 ** decimals).slice(1) + " " + assetName} />
       <TokenBalance
         text={"Deposited"}
-        balance={formatPrice(deposited).slice(1)}
+        balance={formatPrice(deposited).slice(1) + " " + assetName}
       />
     </div>
   )

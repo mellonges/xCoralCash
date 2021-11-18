@@ -34,7 +34,7 @@ const BonusBlock = () => {
             <div className={`ml-auto ${styles.actionButtons} d-flex`}>
                 <Link href="/futures">
                     <Button color="primary" className={`d-flex ${styles.depositBtn}`}>
-                        <span className="ml-auto mr-auto">Bond now</span>
+                        <span className="ml-auto mr-auto">Deposit Now</span>
                     </Button>
                 </Link>
             </div>
