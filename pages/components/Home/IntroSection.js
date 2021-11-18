@@ -8,8 +8,7 @@ import Header from "../Header/Header";
 import SearchForm from "./SearchForm";
 import TopCoinCardContent from "./TopCoinCardContent";
 
-const IntroSection = ({ twoCoins }) => {
-  const router = useRouter();
+const IntroSection = () => {
   return (
     <div className={styles.introSection}>
       <Header color="dark" />
