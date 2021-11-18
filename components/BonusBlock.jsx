@@ -8,7 +8,7 @@ const BonusBlock = () => {
             // style={{backgroundColor: "#01405C"}}
             className={`${styles.topBlock} d-flex align-items-center`}>
             <div className={`${styles.balance}  d-flex align-items-center`}>
-                <div className={styles.Icon}>
+                <div className={`${styles.Icon} ${styles.IconB}`}>
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_2344:7136)">
                             <path d="M1.73627 14.5185L2.81798 20.9606C3.12948 22.8157 4.88584 24.067 6.74097 23.7555L24.9152 20.7039C26.7703 20.3924 28.0217 18.636 27.7102 16.7809L26.6285 10.3388C26.5743 10.0162 26.2688 9.79855 25.9462 9.85272L2.22235 13.8362C1.89975 13.8904 1.6821 14.1959 1.73627 14.5185ZM8.63784 17.5641L7.08005 17.8257C6.51545 17.9205 5.9809 17.5397 5.88609 16.9751C5.79129 16.4105 6.17214 15.8759 6.73674 15.7811L8.29452 15.5195C8.85912 15.4247 9.39368 15.8056 9.48848 16.3702C9.58328 16.9348 9.20244 17.4693 8.63784 17.5641Z" fill="white" />

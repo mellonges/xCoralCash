@@ -69,11 +69,13 @@
     border-radius: 6px;
     height: 88px;
 
+    margin-bottom: 13px;
+
     .balance {
       display: flex;
       align-items: end !important;
       .Icon {
-        background: #c4c4c4;
+        background: #8AAAB4;
         border-radius: 18.4615px;
         width: 48px;
         height: 48px;
@@ -82,6 +84,7 @@
         align-items: center;
         justify-content: center;
       }
+      .IconB {background: #145E80;}
       .info {
         span {
           font-weight: 500;
@@ -156,7 +159,7 @@
   }
   .contentInner {
     width: 100%;
-    margin-top: 48px;
+    margin-top: 13px;
     .Wallet_Block {
       display: flex;
       align-items: center;
@@ -408,7 +411,8 @@
       display: block;
       .topBlock {
         .balance {
-          display: block !important;
+          display: flex !important;
+          align-items: center !important;
         }
         height: max-content;
         background-position: left;
@@ -440,7 +444,6 @@
             height: 45px;
             border-radius: 17.3077px;
             margin-right: 15px;
-            margin-bottom: 15px;
           }
           .info {
             display: block !important;
@@ -453,6 +456,7 @@
               line-height: 17px;
               letter-spacing: -0.02em;
               justify-content: start;
+              margin-bottom: 5px;
             }
             .balaneAmount {
               display: flex !important;

@@ -773,12 +773,12 @@
     background-size: auto;
     min-height: auto;
     .introSectionContent {
-      padding: 113px 23px 56px 23px;
+      padding: 56px 23px;
       .sectionRow {
         flex-direction: column-reverse;
         .title {
           font-size: 49.3882px;
-          margin-top: 271px;
+          margin-top: 0;
           text-align: center;
           letter-spacing: -0.03em;
           position: relative;
@@ -937,6 +937,7 @@
     padding-bottom: 81px;
     .tradeAssetsRow {
       width: 100%;
+      margin: 0 auto;
       .imageBlock {
         margin-top: 0;
         background-position: cover;
