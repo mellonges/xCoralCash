@@ -19,7 +19,8 @@ const TradeSellStep = ({
   deposited,
   expiration,
   available,
-  decimals
+  decimals,
+  redeemable_xcoral,
 }) => {
   const [selectedWays, setSelectedWays] = useState({});
 
@@ -132,6 +133,7 @@ const TradeSellStep = ({
               deposited={deposited}
               available={available}
               decimals={decimals}
+              redeemable_xcoral={redeemable_xcoral}
 
 
             // sendPreview={sendPreview}

@@ -88,7 +88,7 @@ const TableBody = ({
                             <div className={stylesFutures.OthTDTitle}>
                                 {formatPrice(redeemable_xcoral).slice(1)}
                                 <div className={stylesFutures.OthTDSubTitle}>
-                                    Upcoming {upcoming_xcoral}
+                                    Upcoming {formatPrice(upcoming_xcoral).slice(1)}
                                 </div>
                             </div>
                         </div>
@@ -165,6 +165,7 @@ const TableBody = ({
                                         redeemable_xcoral,
                                         expiration,
                                         APY,
+                                        redeemable_xcoral,
                                     }))
                                     dispatch(setActiveOperation(2))
 

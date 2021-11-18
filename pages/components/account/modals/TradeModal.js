@@ -29,6 +29,7 @@ const TradeModal = () => {
   const allowance = useSelector(({ store }) => store.modalWindow.data.allowance)
   const loadingButton = useSelector(({ store }) => store.modalWindow.data.loadingButton)
   const termsID = useSelector(({ store }) => store.modalWindow.data.termsID)
+  const redeemable_xcoral = useSelector(({store}) => store.modalWindow.data.redeemable_xcoral)
   // const [activeOperation, setActiveOperation] = useState(1);
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
@@ -161,6 +162,7 @@ const TradeModal = () => {
             expiration={expiration}
             decimals={decimals}
             available={available}
+            redeemable_xcoral={redeemable_xcoral}
           />
         ) : null}
 

@@ -7,7 +7,7 @@ import axios from "axios";
 import NProgress from "nprogress";
 import Amplify from "aws-amplify";
 import React, { useEffect } from "react";
-
+import Notify from "bnc-notify"
 Amplify.configure({
     Auth: {
         region: "us-east-1",
@@ -24,7 +24,7 @@ import { wrapper } from "../redux/Store";
 import { useDispatch, useSelector } from "react-redux";
 import Onboard from "bnc-onboard";
 import Web3 from "web3";
-import { dispatchOnboard, dispatchWeb3forUser } from "../redux/reducers/rootReducer";
+import { dispatchNotify, dispatchOnboard, dispatchWeb3forUser } from "../redux/reducers/rootReducer";
 import getNetworkName from "../functions/getNetworkName"
 import { disconnectWallet } from "../redux/reducers/asyncActions/disconnectWallet";
 import { repairConnect } from "../redux/reducers/asyncActions/repairConnect";
@@ -33,13 +33,20 @@ import { getFuturesTableInfo } from "../redux/reducers/asyncActions/getFuturesTa
 
 const dappId = process.env.API_KEY
 const networkId = +process.env.NEXT_PUBLIC_XCORAL_NETWORK_ID
-
 function MyApp({ Component, pageProps }) {
-    let setTimeOudDisconnectId
     const dispatch = useDispatch()
+    let setTimeOudDisconnectId
+    const optionsForNotify = {
+        transactionHandler: () => dispatch(getFuturesTableInfo())
+    }
+    
     const isConnected = useSelector(({ store }) => store.isConnected)
     const currentWalletAddress = useSelector(({ store }) => store.address)
     useEffect(() => {
+        const notify = Notify({
+            dappId,
+            networkId
+        })
         // console.log("render");
         const onboard = Onboard({
             dappId,
@@ -121,6 +128,7 @@ function MyApp({ Component, pageProps }) {
             ]
         })
         dispatch(dispatchOnboard(onboard))
+        dispatch(dispatchNotify(notify))
         dispatch(repairConnect())
 
     }, [])

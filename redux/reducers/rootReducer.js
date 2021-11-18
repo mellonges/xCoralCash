@@ -45,6 +45,7 @@ const rootStore = createSlice({
         balance: null,
         network: null,
         web3ForERC20: web3,
+        notify: null,
         xCoralBalance: null,
         modalWindow: {
             isOpen: false,
@@ -92,6 +93,9 @@ const rootStore = createSlice({
         },
         dispatchWeb3forUser(state, action) {
             state.web3ForUser = action.payload
+        },
+        dispatchNotify(state, action) {
+            state.notify = action.payload
         },
         openAndCloseModalWindow(state) {
             if (!state.isConnected) {
@@ -199,6 +203,7 @@ const rootStore = createSlice({
         },
 
         [sendTransactionReducer.fulfilled]: (state) => {
+            state.modalWindow.isOpen = false
             state.modalWindow.data.loadingButton = false
         }
     }
@@ -207,4 +212,4 @@ const rootStore = createSlice({
 
 
 export default rootStore.reducer
-export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation, dispatchDataForModalWindow } = rootStore.actions
+export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation, dispatchDataForModalWindow, dispatchNotify } = rootStore.actions

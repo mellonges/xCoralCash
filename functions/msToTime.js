@@ -13,7 +13,7 @@
 
 
 export function msToTime(time) {
-    let timeSeconds = time / 1000;
+    let timeSeconds = time 
     if (timeSeconds < 36000) {
         return (Math.floor(timeSeconds / 60)) + "mins"
     }

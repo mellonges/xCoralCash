@@ -11,7 +11,6 @@ import { formatBalance } from "@/functions/formatBalance";
 
 const Redeem = ({
     selectedWays,
-    summ,
     direction,
     setDirection,
     setSelectedWays,
@@ -31,6 +30,7 @@ const Redeem = ({
     expiration,
     decimals,
     available,
+    redeemable_xcoral,
 
 
 }) => {
@@ -38,7 +38,7 @@ const Redeem = ({
     const [showTokensList, setShowTokensList] = useState(false);
     const [showPaymentMethods, setShowPaymentMethods] = useState(false);
     const [validationErrors, setValidationErrors] = useState({});
-
+    const summ = formatPrice(redeemable_xcoral).slice(1)
     const [showChooseTokenInfo, setShowChooseTokenInto] = useState(false);
     const selectSUmmRef = useRef();
 
@@ -107,8 +107,9 @@ const Redeem = ({
                     onClick={() => selectSUmmRef.current && selectSUmmRef.current.focus()}
                 >
                     <AutosizeInput
+                    disabled={true}
                         className={`${styles.summInput}`}
-                        placeholder="0"
+                        placeholder={redeemable_xcoral}
                         ref={selectSUmmRef}
                         value={summ}
                         onFocus={() => setSummFocused(true)}
@@ -221,7 +222,7 @@ const Redeem = ({
                         <Button
                             color="primary"
                             className={styles.previewBtn}
-                            onClick={() => sendPreview()}
+                            onClick={() => dispatch(sendTransactionReducer({coinAddress, termsID, methods: "redeem"}))}
                         >
                             {isSell
                                 ? "Preview Sell"
