@@ -150,7 +150,7 @@ const LeftSidePanel = () => {
                     <a href="#" onClick={() => addTokenForMetaMask()} className={styles.navLink}>
                       <span className={styles.navIcon}>
                         {/* ебаное svg */}
-                        <img src="SVG/add.svg" alt=""/>
+                        <img src="/SVG/add.svg" alt=""/>
                         {/* ебаное svg */}
                       </span>
                       Add xCORAL

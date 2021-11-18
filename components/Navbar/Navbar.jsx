@@ -4,9 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import getNetworkName from "@/functions/getNetworkName";
 import { connectWallet } from "../../redux/reducers/asyncActions/connectWallet";
 import { disconnectWallet } from "../../redux/reducers/asyncActions/disconnectWallet";
+import * as PropTypes from "prop-types";
+import Link from "next/link"
 
 
-
+Link.propTypes = {
+    href: PropTypes.string,
+    children: PropTypes.node
+};
 const Navbar = () => {
     const dispatch = useDispatch()
     const isConnected = useSelector(({ store }) => store.isConnected)
@@ -50,7 +55,7 @@ const Navbar = () => {
                         style={{ justifyContent: "end" }}
                     >
                         {isConnected ? <div className={styles.displayAddressPlace}> {getNetworkName(network)} network <b
-                            className={styles.showAddress}>{walletAddress.slice(0, 4) + '.'.repeat(3) + walletAddress.slice(-4)}</b></div> : <Link href="/account/">
+                            className={styles.showAddress}>{walletAddress.slice(0, 4) + '.'.repeat(3) + walletAddress.slice(-4)}</b></div> : <Link href="/">
                             <a
                                 style={{
                                     fontFamily: "Asul",
