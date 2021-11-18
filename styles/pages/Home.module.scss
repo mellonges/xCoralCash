@@ -357,6 +357,9 @@
     .iconItem {
       margin-bottom: 47px;
       padding-top: 66px;
+      button:hover {
+        background: #189cad;
+      }
       &:last-child {
         margin-bottom: 0;
         width: max-content;
