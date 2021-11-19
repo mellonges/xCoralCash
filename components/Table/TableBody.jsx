@@ -99,8 +99,9 @@ const TableBody = ({
                             </svg>
 
                             <div className={stylesFutures.OthTDTitle}>
-                                {isConnected ? 0 : "—"}
+                                {isConnected ? 0  : "—"}
                                 <div className={stylesFutures.OthTDSubTitle}>
+                                    Upcoming {formatPrice(upcoming_xcoral).slice(1)}
                                 </div>
                             </div>
                         </div>
