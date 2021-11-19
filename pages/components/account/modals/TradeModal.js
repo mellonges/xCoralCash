@@ -1,13 +1,13 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
 import styles from "../../../../styles/components/Account/modals/TradeModal.module.scss";
 import TradeBuyStep from "./TradeBuyStep";
 import TradeSellStep from "./TradeSellStep";
 import { useDispatch, useSelector } from "react-redux";
-import { openAndCloseModalWindow, setActiveOperation } from "../../../../redux/reducers/rootReducer";
-
+import { openAndCloseModalWindow, setActiveOperationForRedeemButton } from "../../../../redux/reducers/rootReducer";
 const TradeModal = () => {
   const dispatch = useDispatch()
+  const isAvailable = useSelector(({ store }) => store.modalWindow.data.isAvailable)
   const isOpen = useSelector(({ store }) => store.modalWindow.isOpen)
   const activeOperation = useSelector(({ store }) => store.modalWindow.activeOperation)
   const iconAddress = useSelector(({ store }) => store.modalWindow.data.iconAddress)
@@ -24,8 +24,8 @@ const TradeModal = () => {
   const allowance = useSelector(({ store }) => store.modalWindow.data.allowance)
   const loadingButton = useSelector(({ store }) => store.modalWindow.data.loadingButton)
   const termsID = useSelector(({ store }) => store.modalWindow.data.termsID)
-  const redeemable_xcoral = useSelector(({store}) => store.modalWindow.data.redeemable_xcoral)
-  // const [activeOperation, setActiveOperation] = useState(1);
+  const redeemable_xcoral = useSelector(({ store }) => store.modalWindow.data.redeemable_xcoral)
+
   const [switchOffTabs, setSwitchOffTabs] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
   const [selectedToken, setSelectedToken] = useState();
@@ -71,7 +71,7 @@ const TradeModal = () => {
         toggle();
         if (operationCompleted) /* Router.reload() */ console.log("reload()");
       }}
-      onClosed={() => dispatch(setActiveOperation(1))}
+      // onClosed={() => dispatch(setActiveOperation({isAvailable: true, operation: 1}))}
       centered={true}
       className={styles.tradeModal}
     >
@@ -102,14 +102,14 @@ const TradeModal = () => {
         <div
           className={`${styles.tabItem} ${activeOperation === 1 ? styles.active : ""
             }`}
-          onClick={() => dispatch(setActiveOperation(1))}
+          onClick={() => dispatch(setActiveOperationForRedeemButton({ isAvailable, operation: 1 }))}
         >
           Deposit
         </div>
         <div
           className={`${styles.tabItem} ${activeOperation === 2 ? styles.active : ""
             } `}
-          onClick={() => dispatch(setActiveOperation(2))}
+          onClick={() => dispatch(setActiveOperationForRedeemButton({ isAvailable, operation: 2 }))}
         >
           Redeem
         </div>

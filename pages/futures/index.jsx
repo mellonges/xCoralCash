@@ -15,7 +15,7 @@ const Index = () => {
     const isConnected = useSelector(({ store }) => store.isConnected)
     const address = useSelector(({ store }) => store.address)
     const futuresTableInfo = useSelector(({ store }) => store.futuresTableInfo)
-    const hardReloaded = useSelector(({store}) => store.futuresTableInfo.hardReload)
+    const hardReloaded = useSelector(({ store }) => store.futuresTableInfo.hardReload)
     useEffect(() => {
         dispatch(getFuturesTableInfo())
     }, [isConnected, address, hardReloaded])
@@ -26,7 +26,7 @@ const Index = () => {
                 <h2 className={stylesFutures.HeaderTitle}>xCORAL Futures</h2>
                 <p className={stylesFutures.HeaderSubTitle}>Purchasing Coral futures enables you to maximize your gains. Instead of purchasing xCORAL tokens from SushiSwap or Uniswap, just deposit your assets directly into the Coral Treasury — this will yield you an equivalent amount of xCORAL tokens (principal) plus some bonus. The resulting rewards xCORAL tokens will be redeemable progressively as the future contract vests, up until it fully expires. Principal xCORAL tokens though will only become redeemable all at one tranche according to the principal term set by the contract.</p>
 
-                <a className={stylesFutures.HeaderHrefBTN} href="#">  How Futures works?</a>
+                <a className={stylesFutures.HeaderHrefBTN} href="#"> <img src="/SVG/info.svg" alt="" />  How Futures works?</a>
                 <h2 ref={headlineRef} className={styles.title}>
                     Assets
                 </h2>
@@ -44,8 +44,7 @@ const Index = () => {
                         </tr>
 
                     </thead>
-                    {/*<TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />*/}
-                    {futuresTableInfo.init ? futuresTableInfo?.data.map(i => i.isAvailable || i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral || i.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral ? <TableBody isAvailable={i.isAvailable} disabled={isConnected && i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral > 0.01} coinAddress={i?.coinAddress} asset={i?.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} termsID={i.termsID} deposited={i?.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i?.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i?.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral}  /> : null )
+                    {futuresTableInfo.init ? futuresTableInfo?.data.map(i => i.isAvailable || i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral || i.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral ? <TableBody isAvailable={i.isAvailable} disabled={isConnected && i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral > 0.01} coinAddress={i?.coinAddress} asset={i?.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} termsID={i.termsID} deposited={i?.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i?.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i?.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral} /> : null)
                         : [...Array(12)].map((v, i) => (
                             <tbody>
                                 <tr key={i}>

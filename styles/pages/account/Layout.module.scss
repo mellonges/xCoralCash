@@ -79,7 +79,7 @@
 
               .navIcon {
                 svg:not(.priceIcon) path {
-                  fill: $white !important;
+                stroke: $white !important;
                 }
                 .priceIcon path {
                   stroke: $white !important;
