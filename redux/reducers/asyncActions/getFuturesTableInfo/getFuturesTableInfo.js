@@ -78,12 +78,15 @@ export const getFuturesTableInfo = createAsyncThunk(
 
 
             const futuresTableData = combineTableInfo(assetsData).map(i => {
+
+            console.log(i['1'][1])
                 const vestingRewardsTerm = i["1"][4] * 13
 
                 return {
                     coinAddress: i[0],
                     termsID: i['1'][0],
                     expiration: vestingRewardsTerm,
+                    isAvailable: i['1'][1],
                     DEPOSITED_AND_REDEEMABLE: (function () {
 
                         if (isConnected) {

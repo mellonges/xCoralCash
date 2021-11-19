@@ -121,24 +121,28 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         setActiveOperation(state, action) {
-            if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
-                state.modalWindow.activeOperation = action.payload
+            if(!state.futuresTableInfo.data.isAvailable && action.payload === 1) {
+                console.log("returned")
+                return
             }
+            else if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
+                state.modalWindow.activeOperation = action.payload
+            } 
         },
     },
     extraReducers: {
         [connectWallet.fulfilled]: (state, action) => {
-            state.isConnected = true
             state.address = action.payload[0].address
             state.network = action.payload[0].network
             state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
             state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
             localStorage.setItem("selectedWallet", action.payload[0].wallet.name)
             localStorage.setItem("lastWalletAddress", action.payload[0].address)
+            state.isConnected = true
 
         },
         [connectWallet.rejected]: () => {
-            console.error("закрыл окно уебок")
+            console.error("dont selected walllet")
         },
         [disconnectWallet.fulfilled]: state => {
             state.address = null
@@ -150,12 +154,11 @@ const rootStore = createSlice({
         },
 
         [repairConnect.fulfilled]: (state, action) => {
-            console.log(action.payload)
-            state.isConnected = true
             state.address = action.payload[2]
             state.network = action.payload[0].network
             state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
             state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
+            state.isConnected = true
 
         },
         [repairConnect.rejected]: () => {

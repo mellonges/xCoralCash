@@ -27,15 +27,16 @@ export async function getApproveAllContracts(ERC20) {
             return result
         }
         case process.env.NEXT_PUBLIC_SUIKO: {
-            let result = await ERC20_CONTRACTS.SUIKO.methods.approve().call(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
+            let result = await ERC20_CONTRACTS.SUIKO.methods.approve(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
             return result
         }
         case process.env.NEXT_PUBLIC_WETH: {
-            let result = await  ERC20_CONTRACTS.WETH.methods.approve().call(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
+            let result = await  ERC20_CONTRACTS.WETH.methods.approve(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
             return result
         }
         case process.env.NEXT_PUBLIC_XCORAL: {
-            let result = await ERC20_CONTRACTS.xCORAL.methods.approve().call(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
+            let result = await ERC20_CONTRACTS.xCORAL.methods.approve(process.env.NEXT_PUBLIC_FUTURES, amount).encodeABI()
+            console.log("xCOral approve")
             return result
         }
         default: return null

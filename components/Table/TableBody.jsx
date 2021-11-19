@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import getIconAsset from "@/functions/getIconAsset";
 import { msToTime } from "@/functions/msToTime";
 import { getAvailable } from "../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
+import { toast } from 'react-toastify';
 
 const TableBody = ({
     coinAddress,
@@ -26,6 +27,7 @@ const TableBody = ({
     redeemable_xcoral = 0,
     upcoming_xcoral = 0,
     termsID,
+    isAvailable,
 }) => {
     const isConnected = useSelector(({ store }) => store.isConnected)
 
@@ -71,7 +73,7 @@ const TableBody = ({
                             </div>
                         </div>
                     </td>
-                    {redeemable_xcoral ? <td className={stylesFutures.TDContentExp}>
+                    {redeemable_xcoral || upcoming_xcoral ? <td className={stylesFutures.TDContentExp}>
                         <div className={stylesFutures.TDContentExpCont}>
                             <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="14.9702" cy="11" r="11" fill="#007585" fill-opacity="0.25" />
@@ -110,6 +112,10 @@ const TableBody = ({
                         <div className={stylesFutures.TDContentExpCont}>
                             <Button
                                 onClick={() => {
+                                    if(!isAvailable) {
+                                        toast.error("This Futures contract is no longer available for deposits", {position: "bottom-right"})
+                                        return
+                                    }
                                     dispatch(setActiveOperation(1))
                                     dispatch(openAndCloseModalWindow())
                                     dispatch(dispatchDataForModalWindow({
@@ -164,6 +170,7 @@ const TableBody = ({
                                         termsID,
                                         coinAddress,
                                     }))
+                                    dispatch(getAvailable(assetName))
                                     dispatch(setActiveOperation(2))
 
 

@@ -18,15 +18,33 @@ export const sendTransactionReducer = createAsyncThunk(
             console.log("coinAddress" + "  " + coinAddress)
             encodeABI = await futures.methods.redeemAsset(userAddress, coinAddress, termsID).encodeABI()
         }
-        await web3.eth.sendTransaction({
-            from: userAddress,
-            to: process.env.NEXT_PUBLIC_FUTURES,
-            data: encodeABI,
-        }).on("transactionHash", (hash) => {
-            notify.hash(hash)
-        }).on("receipt", () => {
-            console.log("success")
-        } )
+        //    await web3.eth.sendTransaction({
+        //     from: userAddress,
+        //     to: process.env.NEXT_PUBLIC_FUTURES,
+        //     data: encodeABI,
+        // }).on("transactionHash", (hash) => {
+        //     const {emitter} =  notify.hash(hash)
+        //      emitter.on("txConfirmed",  () => {
+        //         console.log("from emiter")
+                
+        //     })
+
+        // })
+
+        await new Promise((resolve, reject) => {
+            web3.eth.sendTransaction({
+              from: userAddress,
+              to: process.env.NEXT_PUBLIC_FUTURES,
+              data: encodeABI,
+            }).on("transactionHash", (hash) => {
+              const {emitter} =  notify.hash(hash)
+              emitter.on("txConfirmed",  () => {
+                console.log("from emiter")
+                resolve()
+              })
+            })
+          })
+
     } catch (e) {
         console.error(e)
     }

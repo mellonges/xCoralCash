@@ -241,6 +241,7 @@ const ConfirmBuying = ({
       {inputValue > allowance ? (
         <Button
           color="primary"
+          disabled={loadingButton}
           className={styles.previewBtn}
           onClick={() => {
             dispatch(getApprove(coinAddress))

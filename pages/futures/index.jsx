@@ -45,7 +45,7 @@ const Index = () => {
 
                     </thead>
                     {/*<TableBody disabled={!isConnected} nameCoin={"Bitcoin"}  />*/}
-                    {futuresTableInfo.init ? futuresTableInfo?.data.map(i => <TableBody disabled={isConnected && i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral > 0.01} coinAddress={i?.coinAddress} asset={i?.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} termsID={i.termsID} deposited={i?.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i?.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i?.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral} />)
+                    {futuresTableInfo.init ? futuresTableInfo?.data.map(i => i.isAvailable || i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral || i.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral ? <TableBody isAvailable={i.isAvailable} disabled={isConnected && i.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral > 0.01} coinAddress={i?.coinAddress} asset={i?.DEPOSITED_AND_REDEEMABLE.asset} expiration={i.expiration} APY={i.yield} key={i.termsID} termsID={i.termsID} deposited={i?.DEPOSITED_AND_REDEEMABLE.deposited} redeemable_xcoral={i?.DEPOSITED_AND_REDEEMABLE.redeemable_xcoral} upcoming_xcoral={i?.DEPOSITED_AND_REDEEMABLE.upcoming_xcoral}  /> : null )
                         : [...Array(12)].map((v, i) => (
                             <tbody>
                                 <tr key={i}>

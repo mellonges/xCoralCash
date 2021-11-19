@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
                 },
                 network: networkId => {
                     if (networkId !== 3 && networkId !== undefined) {
-                        toast.error(`You use ${getNetworkName(networkId)} Network, please switch to Ethereum Ropsten`, {
+                        toast.error(`Please connect to Ethereum Mainnet to use this app`, {
                             position: "bottom-right",
                             autoClose: 3000,
                             hideProgressBar: true,
@@ -49,16 +49,8 @@ function MyApp({ Component, pageProps }) {
                             progress: undefined,
                             pauseOnFocusLoss: false,
                         });
-                        toast.warn("disconnect in 15 seconds", {
-                            autoClose: 15000,
-                            pauseOnHover: false,
-                            pauseOnFocusLoss: false
-                        })
-                        setTimeOudDisconnectId = setTimeout(() => {
-
-                        }, 15000)
+                    
                     }  else {
-                        clearTimeout(setTimeOudDisconnectId)
                         toast.dismiss()
                     }
 
@@ -78,12 +70,11 @@ function MyApp({ Component, pageProps }) {
             },
             walletSelect: {
                 wallets: [
-                    { walletName: 'metamask', preferred: true, },
+                    { walletName: 'metamask'},
                     { walletName: 'binance' },
                     {
                         walletName: 'walletConnect',
-                        infuraKey: '9f1757927fcf4dea9977f8b3b8748df9',
-                        preferred: true,
+                        infuraKey: process.env.INFURA_NET,
                     },
 
                 ]
