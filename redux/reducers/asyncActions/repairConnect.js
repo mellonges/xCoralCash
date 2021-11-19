@@ -10,6 +10,7 @@ async function(_, {getState, rejectWithValue}) {
             const isSelectedSuccess = await onboard.walletSelect(walletName)
             if (isSelectedSuccess) {
                const  currentUserState = onboard.getState()
+                console.log(currentUserState)
                 const xCoralBalanceContract = getState().store.contracts.xCORAL
                 const address = localStorage.getItem("lastWalletAddress")
                 const xCoralBalance = await xCoralBalanceContract.methods.balanceOf(address).call()

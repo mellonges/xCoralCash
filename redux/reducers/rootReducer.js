@@ -151,6 +151,7 @@ const rootStore = createSlice({
         },
 
         [repairConnect.fulfilled]: (state, action) => {
+            console.log(action.payload)
             state.isConnected = true
             state.address = action.payload[2]
             state.network = action.payload[0].network
