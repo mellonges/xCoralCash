@@ -101,7 +101,6 @@ const TableBody = ({
                             <div className={stylesFutures.OthTDTitle}>
                                 {isConnected ? 0  : "—"}
                                 <div className={stylesFutures.OthTDSubTitle}>
-                                    Upcoming {formatPrice(upcoming_xcoral).slice(1)}
                                 </div>
                             </div>
                         </div>

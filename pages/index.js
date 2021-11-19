@@ -34,7 +34,7 @@ const HomePage = () => {
                                 </div>
                                 <div className={styles.Info}>
                                     <strong className="d-block">Safe haven</strong>
-                                    <span>xCORAL is the elastic-supply rebase currency that always appreciates in value. It’s a perfect place to park your wealth — think Bitcon, but risk- and volatility-free.</span>
+                                    <span>xCORAL is the elastic-supply rebase currency that always appreciates in value. It’s a perfect place to park your wealth — think Bitcon, but risk- and volatility-free, with no correlation to the rest of the economy</span>
                                 </div>
                             </Col>
                             <Col className={`${styles.item} d-flex`}>
@@ -55,7 +55,7 @@ const HomePage = () => {
                                 <div className={styles.Info}>
                                     <strong className="d-block">Perpetually rising in value</strong>
                                     <span>
-                    Liquidity pools with xCORAL are rebased several times per day to ensure price growing at a neccessary rate. APY is flexible (40-150%), but always positive
+                                        Liquidity pools with xCORAL are rebased several times per day to ensure price growing at a neccessary rate. APY is flexible and depends on protocol state, but always positive
                   </span>
                                 </div>
                             </Col>
@@ -77,7 +77,7 @@ const HomePage = () => {
                                 <div className={styles.Info}>
                                     <strong className="d-block">Amplify your gains</strong>
                                     <span>
-                                    Coral Futures enable you to maximize your gains by avoiding slippage and earning deposit bonuses while keeeping long-terms goals of the holders aligned
+                                        Today’s monetary policies intentionally devalue money, forcing everybody to invest somewhere to keep their savings from dilution. xCORAL is bringing savings back.
                   </span>
                                 </div>
                             </Col>
@@ -90,7 +90,7 @@ const HomePage = () => {
                             <Col lg="5">
                                 <div className={styles.textBlock}>
                                     <h2 className={styles.title}>
-                                        Reinventing, <span>Stock Market</span>
+                                        Reinventing <span>Savings</span>
                                     </h2>
                                     <div className={styles.text}>
                                         Savings have been fundamentally broken due to inexorable money printing conducted by central banks. Simply holding your hard-earned cash is not working anymore — the modern money is designed in a way that makes it lose its value with an increasing pace.
