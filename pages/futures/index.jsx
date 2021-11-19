@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import MainLayout from "../../layouts/MaintLayout";
 import styles from "../../styles/pages/account/Wallet.module.scss"
 import stylesFutures from "../../styles/pages/account/Futures/Futures.module.scss"
-import { Button, Table } from "reactstrap";
-import TransfersMobileTable from "@/components/account/wallet/TransfersMobileTable";
+import { Table } from "reactstrap";
 import TableBody from "../../components/Table/TableBody";
 import TooltipComponent from "../../components/Tooltip";
 import { useDispatch, useSelector } from "react-redux";
