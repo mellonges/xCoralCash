@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { connectWallet } from "./asyncActions/connectWallet";
 import { disconnectWallet } from "./asyncActions/disconnectWallet";
 import { repairConnect } from "./asyncActions/repairConnect";
-import XCORAL_ABI from "../../ABI/xcoral.json"
-import MONETARY_ABI from "../../ABI/monetary.json"
-import FUTURES_ABI from "../../ABI/futures.json"
-import TREASURY_ABI from "../../ABI/treasury.json"
+import XCORAL_ABI from "../../ABI/xcoral.json";
+import MONETARY_ABI from "../../ABI/monetary.json";
+import FUTURES_ABI from "../../ABI/futures.json";
+import TREASURY_ABI from "../../ABI/treasury.json";
 import Web3 from "web3"
 import { getWalletInfo } from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
 import { msToTimeForDashboard} from "@/functions/msToTime";
@@ -122,7 +122,6 @@ const rootStore = createSlice({
         },
         setActiveOperation(state, action) {
             if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
-
                 state.modalWindow.activeOperation = action.payload
             }
         },

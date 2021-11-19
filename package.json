@@ -1,14 +1,14 @@
 {
   "name": "xCoral.cash",
   "version": "1.0.0",
-  "description": "Human Base Tech frontend based on the NextJS",
+  "description": "xCoralCash frontend based on the NextJS",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start"
   },
-  "author": "Danialart Studio (Danilov Eugene)",
+  "author": "404piano <https://github.com/404piano>",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
