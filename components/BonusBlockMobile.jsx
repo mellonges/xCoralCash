@@ -25,9 +25,10 @@ const BonusBlockMobile = () => {
                     <strong
                         // style={{color: "white"}}
                         className={styles.balaneAmount}>
-                        Try Bonding your DAI to earn bonuses
+                        Amplify your rewards
+
                     </strong>
-                    <span>Deposit your DAI or DAI-xCORAL LP tokens to Coral Treasury to earn a bonus of up to 10%</span>
+                    <span>Purchase xCORAL Futures contract by depositing your DAI or DAI-xCORAL LP tokens to earn rewards</span>
                 </div>
             </div>
             <div className={`ml-auto ${styles.actionButtons} d-flex`}>
