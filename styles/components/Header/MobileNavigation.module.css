@@ -1,0 +1,84 @@
+/** Colors **/
+/** Fonts **/
+.mobileNavigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+}
+.mobileNavigation .top {
+  width: 100%;
+  border-bottom: 1px solid #ecf2f4;
+  padding-bottom: 19px;
+  padding: 15px 20px 20px;
+}
+.mobileNavigation .top .logotype {
+  font-weight: bold;
+  font-size: 24.6559px;
+  line-height: 96.3%;
+  /* identical to box height, or 24px */
+  letter-spacing: -0.07em;
+  /* BG / Dark */
+  color: #11343f;
+  font-family: "Asul", sans-serif;
+}
+.mobileNavigation .top .logotype span {
+  color: #1ab0c4;
+}
+.mobileNavigation .registerButtons {
+  max-width: 570px;
+  padding: 0 15px;
+  margin: 38px auto 0px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ecf2f4;
+}
+.mobileNavigation .registerButtons .getStarted {
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #fff;
+  padding: 18px 20px;
+}
+.mobileNavigation .registerButtons .logIn {
+  color: #1ab0c4;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-align: center;
+  display: block;
+  padding: 20px 0;
+}
+.mobileNavigation .navigation {
+  margin-top: 28px;
+  padding: 0 20px;
+}
+.mobileNavigation .navigation .navItem {
+  display: block;
+  max-width: 540px;
+  margin: 0 auto 6px;
+  font-size: 18px;
+  line-height: 23px;
+  border: 1px solid #c0d7df !important;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.02em;
+  /* Fonts / Dark */
+  color: #11343f;
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #c0d7df;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=MobileNavigation.module.css.map */
