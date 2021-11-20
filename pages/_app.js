@@ -14,6 +14,7 @@ import { dispatchNotify, dispatchOnboard, dispatchWeb3forUser } from "../redux/r
 import getNetworkName from "../functions/getNetworkName"
 import { repairConnect } from "../redux/reducers/asyncActions/repairConnect";
 import { changeWalletAddress } from "../redux/reducers/asyncActions/changeWalletAddress";
+import {disconnectWallet} from "../redux/reducers/asyncActions/disconnectWallet";
 
 const dappId = process.env.API_KEY
 const networkId = +process.env.NEXT_PUBLIC_XCORAL_NETWORK_ID
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }) {
                 },
                 network: networkId => {
                     if (networkId !== 3 && networkId !== undefined) {
+                        dispatch(disconnectWallet())
                         toast.error(`Please connect to Ethereum Mainnet to use this app`, {
                             position: "bottom-right",
                             autoClose: 3000,

@@ -132,9 +132,9 @@ const HomePage = () => {
                             <Col lg="6">
                                 <div className={styles.textBlock}>
                                     <h2 className={styles.title}>
-                                        The Pinnacle Of
+                                        Combating
                                         <br/>
-                                        <span>Passive Investing</span>
+                                        <span>Financialization</span>
                                     </h2>
                                     <div className={styles.text}>
                                         Wealth inequality is only becoming larger, and economy as a whole is getting more and more unsustainable. Stock markets and home price indices are at all times high — a result of years of financial deregulation, low interest rates and lavish monetary policies, causing global economies to become overly financialized.
