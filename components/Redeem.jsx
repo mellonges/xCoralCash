@@ -37,7 +37,7 @@ const Redeem = ({
     const [showTokensList, setShowTokensList] = useState(false);
     const [showPaymentMethods, setShowPaymentMethods] = useState(false);
     const [validationErrors, setValidationErrors] = useState({});
-    const summ = formatPrice(redeemable_xcoral).slice(1)
+    const summ = `${formatPrice(redeemable_xcoral).slice(1)}`
     const [showChooseTokenInfo, setShowChooseTokenInto] = useState(false);
     const selectSUmmRef = useRef();
     const dispatch = useDispatch()
@@ -122,7 +122,7 @@ const Redeem = ({
                                 e.target.value != "" &&
                                 /^\d{0,8}(\.?)(\d{1,2})?$/.test(e.target.value)
                             ) {
-                                setSumm(e.target.value);
+                                // setSumm(e.target.value);
                                 setValidationErrors({
                                     ...validationErrors,
                                     summ: undefined,
@@ -154,7 +154,7 @@ const Redeem = ({
                                     });
                             } else if (e.target.value === "") setSumm("");
                         }}
-                    />
+                    /> <sup className={`${styles.dollarSymbol} ${styles.active}`}>xCORAL</sup>
                     {direction === 1 ? (
                         <sup
                             className={`${styles.dollarSymbol} ${focused || (summ.length && summ !== "0") ? styles.active : ""
@@ -171,7 +171,7 @@ const Redeem = ({
                         >
                             {selectedWays.token && selectedWays.token.ticker}
                         </sub>
-                    ) : null}
+                    ) : null} 
                 </div>
                 {validationErrors.summ ? (
                     <div className="text-center">

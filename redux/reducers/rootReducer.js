@@ -8,15 +8,15 @@ import FUTURES_ABI from "../../ABI/futures.json";
 import TREASURY_ABI from "../../ABI/treasury.json";
 import Web3 from "web3"
 import { getWalletInfo } from "./asyncActions/getWalletInfo/getCurrentPriceReducer";
-import { msToTimeForDashboard} from "@/functions/msToTime";
+import { msToTimeForDashboard } from "@/functions/msToTime";
 import { formatBalance } from "@/functions/formatBalance";
 import { getFuturesTableInfo } from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
 import { changeWalletAddress } from "./asyncActions/changeWalletAddress";
 import { toast } from "react-toastify";
 import { getAvailable } from "./asyncActions/getFuturesTableInfo/getAvailable";
 import { getTotalPayout } from "./asyncActions/getTotalPayout";
-import {sendTransactionReducer} from "./sendTransactionReducer";
-import {getApprove} from "./asyncActions/getApprove";
+import { sendTransactionReducer } from "./sendTransactionReducer";
+import { getApprove } from "./asyncActions/getApprove";
 
 
 const web3 = new Web3(process.env.INFURA_NET)
@@ -67,7 +67,8 @@ const rootStore = createSlice({
                 loadingButton: null,
                 inputValue: null,
                 allowance: null,
-                termsID: null
+                termsID: null,
+                isAvailable: null,
 
 
             },
@@ -84,6 +85,7 @@ const rootStore = createSlice({
             init: false,
             data: null,
             hardReload: 0,
+
         },
 
         contracts,
@@ -121,14 +123,19 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         setActiveOperation(state, action) {
-            if(!state.futuresTableInfo.data.isAvailable && action.payload === 1) {
-                console.log("returned")
-                return
+            state.modalWindow.data.isAvailable = action.payload.isAvailable
+
+            if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload.operation === 2 || action.payload.operation === 1) {
+                state.modalWindow.activeOperation = action.payload.operation
             }
-            else if (state.isConnected && state.modalWindow.data.disabledRedeem && action.payload === 2 || action.payload === 1) {
-                state.modalWindow.activeOperation = action.payload
-            } 
         },
+        setActiveOperationForRedeemButton(state, action) {
+            if (action.payload.isAvailable && action.payload.operation !== 2)
+                state.modalWindow.activeOperation = action.payload.operation
+            else if (action.payload.operation === 2 && state.modalWindow.data.disabledRedeem) {
+                state.modalWindow.activeOperation = action.payload.operation
+            }
+        }
     },
     extraReducers: {
         [connectWallet.fulfilled]: (state, action) => {
@@ -226,4 +233,4 @@ const rootStore = createSlice({
 
 
 export default rootStore.reducer
-export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation, dispatchDataForModalWindow, dispatchNotify } = rootStore.actions
+export const { dispatchOnboard, dispatchWeb3forUser, openAndCloseModalWindow, setActiveOperation, dispatchDataForModalWindow, dispatchNotify, setActiveOperationForRedeemButton } = rootStore.actions

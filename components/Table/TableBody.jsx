@@ -19,7 +19,7 @@ import { toast } from 'react-toastify';
 
 const TableBody = ({
     coinAddress,
-    asset = 0,
+
     disabled,
     expiration,
     APY,
@@ -116,7 +116,7 @@ const TableBody = ({
                                         toast.error("This Futures contract is no longer available for deposits", {position: "bottom-right"})
                                         return
                                     }
-                                    dispatch(setActiveOperation(1))
+                                    dispatch(setActiveOperation({isAvailable, operation: 1}))
                                     dispatch(openAndCloseModalWindow())
                                     dispatch(dispatchDataForModalWindow({
                                         assetName,
@@ -171,7 +171,9 @@ const TableBody = ({
                                         coinAddress,
                                     }))
                                     dispatch(getAvailable(assetName))
-                                    dispatch(setActiveOperation(2))
+                                    dispatch(setActiveOperation({isAvailable: isAvailable, operation: 2}))
+
+
 
 
                                 }}
