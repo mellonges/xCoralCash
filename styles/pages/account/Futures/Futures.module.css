@@ -19,6 +19,9 @@
   margin-bottom: 25px;
   transition: 0.3s;
 }
+.HeaderHrefBTN img {
+  margin-right: 7px;
+}
 
 .TableFutures .HeadTable {
   background: #eef1f3;
