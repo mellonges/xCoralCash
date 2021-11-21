@@ -22,7 +22,7 @@
     .topBlock {
       height: auto;
       background: none;
-      padding: 22px;
+      padding: 21px 39px;
       display: block;
       .info {
         .span {
@@ -73,12 +73,12 @@
 
     .balance {
       display: flex;
-      align-items: end !important;
+      align-items: center !important;
       .Icon {
         background: #8AAAB4;
         border-radius: 18.4615px;
-        width: 48px;
-        height: 48px;
+        width: 45px;
+        height: 45px;
         margin-right: 26px;
         display: flex;
         align-items: center;
@@ -397,11 +397,28 @@
       .topBlock {
         display: block !important;
         .actionButtons {
+          margin-top: 15px; 
+          display: block !important;
+          width: 100%;
           .depositBtn {
-            width: 100% !important;
-            margin-top: 25px;
-            margin-bottom: 0;
-            display: block;
+            display: block !important;
+            width: 100%;
+            margin-top: 0;
+            max-width: unset;
+          }
+        }
+        .balance {
+          align-items: flex-start !important;
+          .info {
+            .balaneAmount {
+              font-size: 16px;
+            }
+            span {
+              font-size: 12px;
+              color: #11343F;
+              font-weight: 400;
+              line-height: 13.12px;
+            }
           }
         }
       }
@@ -470,6 +487,18 @@
 }
 @media screen and (max-width: 768px) {
   .Wallet {
+    .BonusesMobile {
+      .topBlock {
+        padding: 21px;
+        .balance {
+          .Icon {
+            width: 90px;
+            height: 45px;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
     .pageTitle {
       font-weight: bold;
       font-size: 26px;
@@ -487,12 +516,6 @@
       align-items: flex-start !important;
 
       .balance {
-        .Icon {
-          width: 45px;
-          height: 45px;
-          border-radius: 17.3077px;
-          margin-right: 15px;
-        }
         .info {
           span {
             font-weight: 500;
@@ -517,16 +540,6 @@
           /* Fonts / Dark */
 
           color: #11343f;
-        }
-      }
-      .actionButtons {
-        margin-top: 25px;
-        margin-left: unset !important;
-        flex-wrap: wrap;
-        width: 100% !important;
-        .withdrawBtn,
-        .depositBtn {
-          padding: 13px 25px;
         }
       }
     }
