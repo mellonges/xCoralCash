@@ -846,6 +846,7 @@
     display: none;
   }
   .tradeAssets .tradeAssetsRow .title {
+    word-break: break-all;
     font-size: 50px;
     line-height: 109.3%;
     text-align: center;

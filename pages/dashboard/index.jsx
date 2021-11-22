@@ -8,6 +8,8 @@ import BonusBlockMobile from "../../components/BonusBlockMobile";
 import {useDispatch, useSelector} from "react-redux";
 import {getWalletInfo} from "../../redux/reducers/asyncActions/getWalletInfo/getCurrentPriceReducer";
 import LoadingWalletInfo from "../../components/LoadingWalletInfo";
+import stylesForGraph from "../../styles/pages/account/Home.module.scss";
+import Graph from "../../components/Graph/Graph";
 
 const Index = () => {
 const dispatch = useDispatch()
@@ -82,8 +84,9 @@ const dispatch = useDispatch()
                         </> }
 
                     </div>
-
-                {/*<Graph />*/}
+                        <div className={stylesForGraph.graph}>
+                        </div>
+                        {/*<Graph />*/}
                                 </div>
                             </div>
             </MainLayout>
@@ -92,3 +95,5 @@ const dispatch = useDispatch()
 };
 
 export default Index;
+
+

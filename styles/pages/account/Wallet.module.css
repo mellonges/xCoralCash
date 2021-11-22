@@ -19,7 +19,7 @@
 .Wallet .BonusesMobile .topBlock {
   height: auto;
   background: none;
-  padding: 22px;
+  padding: 21px 39px;
   display: block;
 }
 .Wallet .BonusesMobile .topBlock .info .span {
@@ -57,13 +57,13 @@
 }
 .Wallet .topBlock .balance {
   display: flex;
-  align-items: end !important;
+  align-items: center !important;
 }
 .Wallet .topBlock .balance .Icon {
   background: #8AAAB4;
   border-radius: 18.4615px;
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   margin-right: 26px;
   display: flex;
   align-items: center;
@@ -331,11 +331,28 @@
   .Wallet .BonusesMobile .topBlock {
     display: block !important;
   }
+  .Wallet .BonusesMobile .topBlock .actionButtons {
+    margin-top: 15px;
+    display: block !important;
+    width: 100%;
+  }
   .Wallet .BonusesMobile .topBlock .actionButtons .depositBtn {
-    width: 100% !important;
-    margin-top: 25px;
-    margin-bottom: 0;
-    display: block;
+    display: block !important;
+    width: 100%;
+    margin-top: 0;
+    max-width: unset;
+  }
+  .Wallet .BonusesMobile .topBlock .balance {
+    align-items: flex-start !important;
+  }
+  .Wallet .BonusesMobile .topBlock .balance .info .balaneAmount {
+    font-size: 16px;
+  }
+  .Wallet .BonusesMobile .topBlock .balance .info span {
+    font-size: 12px;
+    color: #11343F;
+    font-weight: 400;
+    line-height: 13.12px;
   }
   .Wallet .BonusMobile {
     display: none;
@@ -399,6 +416,14 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .Wallet .BonusesMobile .topBlock {
+    padding: 21px;
+  }
+  .Wallet .BonusesMobile .topBlock .balance .Icon {
+    width: 90px;
+    height: 45px;
+    margin-right: 15px;
+  }
   .Wallet .pageTitle {
     font-weight: bold;
     font-size: 26px;
@@ -412,12 +437,6 @@
   .Wallet .topBlock {
     flex-direction: column;
     align-items: flex-start !important;
-  }
-  .Wallet .topBlock .balance .Icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 17.3077px;
-    margin-right: 15px;
   }
   .Wallet .topBlock .balance .info span {
     font-weight: 500;
@@ -435,16 +454,6 @@
     letter-spacing: -0.03em;
     /* Fonts / Dark */
     color: #11343f;
-  }
-  .Wallet .topBlock .actionButtons {
-    margin-top: 25px;
-    margin-left: unset !important;
-    flex-wrap: wrap;
-    width: 100% !important;
-  }
-  .Wallet .topBlock .actionButtons .withdrawBtn,
-.Wallet .topBlock .actionButtons .depositBtn {
-    padding: 13px 25px;
   }
 }
 @media screen and (max-width: 480px) {
