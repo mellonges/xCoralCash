@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Button, Tooltip } from "reactstrap";
-import { submitTrade } from "../../../../../functions/getBackendData";
 import { formatPrice } from "../../../../../functions/helpers";
 
 import styles from "../../../../../styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
-import TooltipComponent from "../../../../../components/Tooltip";
 import TokenBalance from "./TokenBalance";
 import styles2 from "@/styles/components/Account/modals/trade-modules/ConfirmBuying.module.scss";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { getApprove } from "../../../../../redux/reducers/asyncActions/getApprove";
 import {sendTransactionReducer} from "../../../../../redux/reducers/sendTransactionReducer";
+import {getAvailable} from "../../../../../redux/reducers/asyncActions/getFuturesTableInfo/getAvailable";
 const ConfirmBuying = ({
   setActiveStep,
   setSwitchOffTabs,
@@ -30,52 +29,9 @@ const ConfirmBuying = ({
 
 
 }) => {
-  let tokenBalance;
-
-  // if (
-  //   selectedWays &&
-  //   selectedWays.token &&
-  //   holdings &&
-  //   (direction === 2 || !direction)
-  // )
-  //   tokenBalance = holdings.find(
-  //     (token) => token.ticker === selectedWays.token.ticker
-  //   );
-  // else if (direction === 1 && paymentMethods)
-  //   tokenBalance = paymentMethods.find(
-  //     (method) => method.paymentMethodID === "USD"
-  //   );
+const reload = useSelector(({store}) => store.modalWindow.data.reload)
+useEffect(() => console.log(reload), [reload])
   const dispatch = useDispatch()
-  const [tooltipOpen, setTooltipOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  console.log("allowance: " + allowance)
-  const toggle = () => setTooltipOpen(!tooltipOpen);
-
-  // const confirmBuying = () => {
-  //   let ticker = selectedWays.token.ticker;
-  //   setLoading(true);
-  //   submitTrade(
-  //     "buy",
-  //     ticker,
-  //     selectedWays.paywith.type === "wallet" ? "wallet" : "card",
-  //     selectedWays.paywith.type !== "wallet"
-  //       ? selectedWays.paywith.paymentMethodID
-  //       : undefined,
-  //     buyingInformation.chargeAmount
-  //   )
-  //     .then((res) => res.data)
-  //     .then((res) => {
-  //       setActiveStep("finishOrError");
-  //       if (!res.success) setBuyingInformation(res.payload);
-  //       else
-  //         setBuyingInformation({
-  //           ...buyingInformation,
-  //           success: true,
-  //         });
-  //     })
-  //     .catch((err) => console.error(err))
-  //     .finally(() => setLoading(false));
-  // };
 
   return (
     <div className={`${styles.ConfirmBuying}`}>
@@ -238,7 +194,7 @@ const ConfirmBuying = ({
         </div>
       </div>
 
-      {inputValue > allowance ? (
+      {inputValue > allowance && !reload ? (
         <Button
           color="primary"
           disabled={loadingButton}

@@ -69,6 +69,7 @@ const rootStore = createSlice({
                 allowance: null,
                 termsID: null,
                 isAvailable: null,
+                reload: 0,
 
 
             },
@@ -235,8 +236,9 @@ const rootStore = createSlice({
             state.modalWindow.data.loadingButton = false
         },
         [getApprove.fulfilled]: state => {
+            state.modalWindow.data.reload += 1
             state.modalWindow.data.loadingButton = false
-            state.modalWindow.isOpen = false
+            // state.modalWindow.isOpen = false
         }
     }
 
