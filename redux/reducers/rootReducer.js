@@ -174,6 +174,7 @@ const rootStore = createSlice({
             console.log("repairConnect error")
         },
         [changeWalletAddress.fulfilled]: (state, action) => {
+            if (!state.isConnected) return
             state.address = action.payload[0]
             state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
             localStorage.setItem("lastWalletAddress", action.payload[0])

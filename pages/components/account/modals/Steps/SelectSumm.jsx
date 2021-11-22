@@ -102,7 +102,7 @@ const SelectSumm = ({
                         onChange={(e) => {
                             if (
                                 e.target.value != "" &&
-                                /^\d{0,9}(\.?)(\d{1,2})?$/.test(e.target.value)
+                                /^\d{0,9}(\.?)(\d{1,5})?$/.test(e.target.value)
                             ) {
                                 if (e.target.value > availableFormat) {
                                     setSumm(e.target.value);

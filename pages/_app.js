@@ -20,10 +20,8 @@ const dappId = process.env.API_KEY
 const networkId = +process.env.NEXT_PUBLIC_XCORAL_NETWORK_ID
 function MyApp({ Component, pageProps }) {
     const dispatch = useDispatch()
-    let setTimeOudDisconnectId
-    
+
     const currentWalletAddress = useSelector(({ store }) => store.address)
-    const isConnected = useSelector(({store}) => store.isConnected)
     useEffect(() => {
         const notify = Notify({
             dappId,
@@ -59,9 +57,8 @@ function MyApp({ Component, pageProps }) {
 
                 },
                 address: address => {
-                    console.info("dispatch table info")
                         if (!address) return
-                        if (isConnected || address != currentWalletAddress) {
+                        if (address != currentWalletAddress) {
                             dispatch(changeWalletAddress(address))
                         }
 
