@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Modal, ModalBody } from "reactstrap";
 import styles from "../../../../styles/components/Account/modals/TradeModal.module.scss";
 import TradeBuyStep from "./TradeBuyStep";
@@ -41,6 +41,9 @@ const TradeModal = () => {
   //     setSelectedToken(data.token);
   //   });
 
+
+
+  useEffect(() => console.log("RENDER RENDER RENDER!!!"))
   //     getTokensList({
   //       page: 1,
   //       sort: "price_desc",

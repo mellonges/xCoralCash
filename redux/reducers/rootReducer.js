@@ -106,7 +106,6 @@ const rootStore = createSlice({
                 toast.info("Please connect your wallet", { position: "bottom-right", autoClose: 1500 })
             } else {
                 state.modalWindow.isOpen = !state.modalWindow.isOpen
-
             }
         },
         dispatchDataForModalWindow(state, action) {
