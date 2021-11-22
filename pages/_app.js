@@ -60,14 +60,13 @@ function MyApp({ Component, pageProps }) {
                 },
                 address: address => {
                     console.info("dispatch table info")
-                    if (address != currentWalletAddress) {
                         if (!address) return
-                        if (isConnected) {
+                        if (isConnected || address != currentWalletAddress) {
                             dispatch(changeWalletAddress(address))
                         }
 
                         // toast.success(`${address.slice(0, 4) + '.'.repeat(3) + address.slice(-4)}`, { pauseOnFocusLoss: false })
-                    }
+
 
 
 
