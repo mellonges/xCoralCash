@@ -39,8 +39,7 @@ function MyApp({ Component, pageProps }) {
                     dispatch(dispatchWeb3forUser(web3))
                 },
                 network: networkId => {
-                    if (networkId !== 3 && networkId !== undefined) {
-                        dispatch(disconnectWallet())
+                    if (networkId !== 3 && networkId !== undefined && localStorage.getItem("lastWalletAddress")) {
                         toast.error(`Please connect to Ethereum Mainnet to use this app`, {
                             position: "bottom-right",
                             autoClose: 3000,
@@ -50,10 +49,10 @@ function MyApp({ Component, pageProps }) {
                             draggable: true,
                             progress: undefined,
                             pauseOnFocusLoss: false,
-                        });
-                    
-                    }  else {
-                        toast.dismiss()
+                        })
+                        dispatch(disconnectWallet())
+
+
                     }
 
 
