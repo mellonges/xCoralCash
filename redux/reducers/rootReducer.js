@@ -206,6 +206,7 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         [getTotalPayout.pending]: state => {
+            state.modalWindow.data.reload = false
             state.modalWindow.data.Loading = true
         },
         [getTotalPayout.fulfilled]: (state, action) => {
@@ -216,7 +217,6 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         [sendTransactionReducer.pending]: state => {
-            state.modalWindow.data.reload = false
             state.modalWindow.data.loadingButton = true
         },
 
