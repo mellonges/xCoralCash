@@ -216,6 +216,7 @@ const rootStore = createSlice({
             state.modalWindow.data.Loading = false
         },
         [sendTransactionReducer.pending]: state => {
+            state.modalWindow.data.reload = false
             state.modalWindow.data.loadingButton = true
         },
 
@@ -236,7 +237,7 @@ const rootStore = createSlice({
             state.modalWindow.data.loadingButton = false
         },
         [getApprove.fulfilled]: state => {
-            state.modalWindow.data.reload += 1
+            state.modalWindow.data.reload = true
             state.modalWindow.data.loadingButton = false
             // state.modalWindow.isOpen = false
         }
