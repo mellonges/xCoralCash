@@ -11,7 +11,7 @@ import LoadingWalletInfo from "../../components/LoadingWalletInfo";
 import stylesForGraph from "../../styles/pages/account/Home.module.scss";
 import Graph from "../../components/Graph/Graph";
 
-const Index = () => {
+const Index = ({graphData}) => {
 const dispatch = useDispatch()
     const xCoralBalance = useSelector(({store}) => store.xCoralBalance)
     const currentPrice = useSelector(({store}) => store.walletMiniInfo.currentPrice)
@@ -95,5 +95,9 @@ const dispatch = useDispatch()
 };
 
 export default Index;
-
-
+export async function getStaticProps(context) {
+    let graphData = 0
+    return {
+        props: {graphData}, // will be passed to the page component as props
+    }
+}
