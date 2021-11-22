@@ -149,9 +149,11 @@ const LeftSidePanel = () => {
                   <li className={styles.listItem}>
                     <a href="#" onClick={() => addTokenForMetaMask()} className={styles.navLink}>
                       <span className={styles.navIcon}>
-
-                        <img src="SVG/add.svg" alt=""/>
-
+<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.5 1L1 5.25L9.5 9.5L18 5.25L9.5 1Z" stroke="#658796" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M1 13.75L9.5 18L18 13.75" stroke="#658796" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M1 9.5L9.5 13.75L18 9.5" stroke="#658796" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                       </span>
                       Add xCORAL
                     </a>
