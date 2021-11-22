@@ -119,7 +119,7 @@ const HomePage = () => {
                             </Col>
                             <Col lg="7">
                                 <div className={styles.imageWrapper}>
-                                    <img src="images/screen-main.svg" alt=""/>
+                                    <img src="images/main.png" alt=""/>
 
                                 </div>
                             </Col>

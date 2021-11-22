@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import {getFuturesTableInfo} from "./asyncActions/getFuturesTableInfo/getFuturesTableInfo";
+import {error} from "next/dist/build/output/log";
 
 export const sendTransactionReducer = createAsyncThunk(
     "rootStore/sendTransactionReducer",
@@ -41,11 +42,15 @@ export const sendTransactionReducer = createAsyncThunk(
               emitter.on("txConfirmed",  () => {
                 console.log("from emiter")
                 resolve()
+
               })
+            }).on("error", (error) => {
+                reject(error)
             })
-          })
+          }
+          )
 
     } catch (e) {
-        console.error(e)
+        return  rejectWithValue(e)
     }
     })

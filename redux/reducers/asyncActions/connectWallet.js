@@ -9,11 +9,13 @@ export const connectWallet = createAsyncThunk(
            const isSelected = await onboard.walletSelect()
                 if(!isSelected) {
                     throw "dont selected error"
-                    // i know
+
                 }
             else if (isSelected) {
-                console.log(isSelected)
               const isConnectedOnboard = await onboard.walletCheck()
+                    if (!isConnectedOnboard) {
+                        throw "dont fulfilled connect"
+                    }
                 if (isConnectedOnboard) {
                     console.log(isConnectedOnboard)
                     const currentUserState = await onboard.getState()

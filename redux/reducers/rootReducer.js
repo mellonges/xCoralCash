@@ -142,6 +142,7 @@ const rootStore = createSlice({
             state.address = action.payload[0].address
             state.network = action.payload[0].network
             state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
+            console.log("tut")
             state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
             localStorage.setItem("selectedWallet", action.payload[0].wallet.name)
             localStorage.setItem("lastWalletAddress", action.payload[0].address)
@@ -149,6 +150,7 @@ const rootStore = createSlice({
 
         },
         [connectWallet.rejected]: () => {
+
             console.error("dont selected walllet")
         },
         [disconnectWallet.fulfilled]: state => {
@@ -220,8 +222,16 @@ const rootStore = createSlice({
             state.modalWindow.data.loadingButton = false
             state.futuresTableInfo.hardReload += 1
         },
+        [sendTransactionReducer.rejected]: state => {
+          state.modalWindow.data.loadingButton = false
+            console.log("rejected")
+        },
         [getApprove.pending]: state => {
             state.modalWindow.data.loadingButton = true
+        },
+
+        [getApprove.rejected]: state => {
+            state.modalWindow.data.loadingButton = false
         },
         [getApprove.fulfilled]: state => {
             state.modalWindow.data.loadingButton = false

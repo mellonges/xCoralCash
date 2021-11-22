@@ -3,7 +3,7 @@ import {getApproveAllContracts} from "@/functions/getFuckingApprove";
 
 export const getApprove = createAsyncThunk(
     "rootStore/getApprove",
-    async function(assetAddress, {getState}) {
+    async function(assetAddress, {getState, rejectWithValue}) {
         try {
             const notify = getState().store.notify
             const encodeABI = await getApproveAllContracts(assetAddress)
@@ -18,7 +18,7 @@ export const getApprove = createAsyncThunk(
                 notify.hash(hash)
             })
         } catch (e) {
-            console.error(e)
+           return  rejectWithValue(e)
         }
     }
 
