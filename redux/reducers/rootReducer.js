@@ -141,7 +141,7 @@ const rootStore = createSlice({
         [connectWallet.fulfilled]: (state, action) => {
             state.address = action.payload[0].address
             state.network = action.payload[0].network
-            state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
+            state.balance = action.payload[0].balance === null ? 0 : action.payload.balance
             console.log("tut")
             state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
             localStorage.setItem("selectedWallet", action.payload[0].wallet.name)
@@ -165,7 +165,7 @@ const rootStore = createSlice({
         [repairConnect.fulfilled]: (state, action) => {
             state.address = action.payload[2]
             state.network = action.payload[0].network
-            state.balance = action.payload[0].balance == null ? 0 : action.payload.balance
+            state.balance = action.payload[0].balance === null ? 0 : action.payload.balance
             state.xCoralBalance = formatBalance(action.payload[1] / 10 ** 9).slice(1)
             state.isConnected = true
 
